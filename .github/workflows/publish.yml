@@ -1,0 +1,81 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish-docker-images:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up context
+        id: project_context
+        uses: FranzDiebold/github-env-vars-action@v2.3.1
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: docker_metadata
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/${{ github.repository }},${{ github.repository }}
+          tags: |
+            type=raw,value=nightly
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+          labels: |
+            org.opencontainers.image.vendor=OKP4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.DOCKER_REGISTRY_ID }}
+          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_REGISTRY_ID }}
+          password: ${{ secrets.DOCKER_HUB_REGISTRY_TOKEN }}
+
+      - name: Build and publish image(s)
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.docker_metadata.outputs.tags }}
+          labels: ${{ steps.docker_metadata.outputs.labels }}
+
+  dockerhub-description:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Find change in readme file
+        id: readme-change
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            README.md
+
+      - name: Docker Hub Description
+        if: steps.readme-change.outputs.any_changed == 'true'
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_REGISTRY_ID }}
+          short-description: Docker image for https://github.com/${{ github.repository }}
+          password: ${{ secrets.DOCKER_HUB_REGISTRY_TOKEN }}
+          repository: ${{ github.repository }}
+          readme-filepath: README.md
