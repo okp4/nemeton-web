@@ -2,10 +2,10 @@ name: Lint
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   workflow_dispatch:
 
@@ -40,6 +40,25 @@ jobs:
 
       - name: Lint yaml files
         uses: ibiqlik/action-yamllint@v3.1.0
+
+  lint-ts:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup node environment (for building)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.0
+
+      - name: Fetch dependencies
+        run: |
+          yarn
+
+      - name: Lint typescript
+        run: |
+          yarn lint
 
   lint-branch-name:
     runs-on: ubuntu-20.04
