@@ -1,12 +1,23 @@
 {
-  "name": "nemeton-web",
+  "name": "@okp4/nemeton-web",
+  "description": "OKP4 Nemeton program landing page",
+  "repository": "git@github.com:okp4/nemeton-web.git",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "OKP4",
+    "web": "https://okp4.network"
+  },
+  "license": "BSD-3-Clause",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": "^16.14.0",
+    "yarn": "~1.22.17"
   },
   "dependencies": {
     "next": "12.3.1",
