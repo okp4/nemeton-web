@@ -61,6 +61,16 @@ jobs:
         run: |
           yarn lint
 
+  lint-dockerfile:
+    runs-on: ubuntu-20.04
+    if: github.actor != 'dependabot[bot]'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Lint dockerfile (hadolint)
+        uses: hadolint/hadolint-action@v2.1.0
+
   lint-branch-name:
     runs-on: ubuntu-20.04
     if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
