@@ -8,8 +8,6 @@
     "functional/prefer-readonly-type": 0,
     "functional/no-let": 1,
     "max-lines-per-function": 0,
-    "react/jsx-no-bind": 0,
-    "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/prefer-readonly-parameter-types": 0,
     "@typescript-eslint/typedef": 0
   }
