@@ -13,7 +13,7 @@
 
 ## Purpose
 
-It displays :
+This is the landing page for OKP4 Nemeton program. It displays :
 
 - 🎇 Phases of the Program
 - 📊 Leaderboard
@@ -21,19 +21,11 @@ It displays :
 - ✔️How to join
 - ⚠️ Terms
 
-&nbsp;
-
-![Landing Page](https://user-images.githubusercontent.com/63841183/193064981-a3e32ef9-7a76-4124-bf37-64660458ecdf.png)
-
 ## development
 
 ```bash
 yarn dev
 ```
-
-## Credits
-
-Based on [This starter template](https://reactjsexample.com/a-free-next-js-typescript-landing-page-template-for-saas-products-online-services-and-more/)
 
 ## You want to get involved? 😍
 
