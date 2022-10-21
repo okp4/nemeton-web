@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Header } from '../components/layout/header/Header'
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,9 @@ const Home: NextPage = () => {
         <link href="/okp4-logo.png" rel="icon" />
       </Head>
 
-      <main>Nemeton Landing page</main>
+      <main>
+        <Header />
+      </main>
     </div>
   )
 }
