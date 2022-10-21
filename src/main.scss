@@ -25,7 +25,17 @@ main {
   background-color: $primary-green;
   min-height: 100vh;
   color: $primary-white;
-  background-image: url('/image/nemeton.jpg');
-  background-size: 100%;
+  background-image: url('/image/nemeton-large.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 1440px) {
+    background-image: url('/image/nemeton-medium.png');
+  }
+
+  @media screen and (max-width: 390px) {
+    background-image: url('/image/nemeton-mobile.png');
+  }
 }

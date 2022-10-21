@@ -1,42 +1,129 @@
 .okp4-nemeton-web-header-main {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(2, auto);
   width: 100%;
-  justify-content: center;
-  padding-top: 100px;
-  .okp4-nemeton-web-header-first-part-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    .okp4-nemeton-web-header-left-part-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 442px;
-      > h1:first-of-type {
-        font-size: 180px;
-        text-align: center;
-      }
-      > button:first-of-type {
-        width: 453px;
-        height: 93px;
-        background: #ffffff 0% 0% no-repeat padding-box;
-        border: 2px solid #1f403c;
-        cursor: pointer;
-        font-family: 'Six Caps', sans-serif;
-        font-size: 60px;
+  padding-top: 230px;
+  column-gap: 200px;
+
+  @media screen and (max-width: 1440px) {
+    grid-template: repeat(6, auto) / auto;
+    column-gap: 0;
+    justify-items: center;
+    padding-top: 52px;
+  }
+
+  .okp4-nemeton-web-header-title-container {
+    grid-area: 1 / 1 / 1 / 1;
+    width: 442px;
+    justify-self: end;
+    line-height: 186px;
+    @media screen and (max-width: 1440px) {
+      grid-area: 2 / 1 / 2 / 1;
+      padding: 30px 0;
+      justify-self: center;
+    }
+
+    > h1:first-of-type {
+      font-size: 180px;
+      text-align: center;
+      letter-spacing: 18px;
+
+      @media screen and (max-width: 1440px) {
+        font-size: 140px;
+        letter-spacing: 14px;
+        line-height: 136px;
       }
     }
-    .okp4-nemeton-web-header-right-part-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 359px;
-      > h1:first-of-type {
-        font-size: 90px;
-        text-align: center;
+  }
+
+  .okp4-nemeton-web-header-divider {
+    grid-area: 3 / 1 / 3 / 1;
+    width: 380px;
+    border-top: 2px solid white;
+  }
+
+  .okp4-nemeton-web-header-join-button-container {
+    grid-area: 2 / 1 / 2 / 1;
+    justify-self: end;
+    align-self: end;
+    @media screen and (max-width: 1440px) {
+      grid-area: 5 / 1 / 5 / 1;
+      justify-self: center;
+    }
+
+    > button:first-of-type {
+      align-self: flex-end;
+      width: 453px;
+      height: 93px;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 2px solid #1f403c;
+      color: #1f403c;
+      cursor: pointer;
+      font-family: 'Six Caps', sans-serif;
+      font-size: 60px;
+
+      @media screen and (max-width: 1440px) {
+        width: 255px;
+        height: 71px;
+        font-size: 45px;
+        letter-spacing: 1.8px;
+      }
+    }
+  }
+
+  .okp4-nemeton-web-header-logo-container {
+    grid-area: 1 / 2 / 1 / 2;
+    padding-top: 20px;
+    @media screen and (max-width: 1440px) {
+      grid-area: 1 / 1 / 1 / 1;
+    }
+  }
+
+  .okp4-nemeton-web-header-description-container {
+    grid-area: 2 / 2 / 3 / 3;
+    width: 359px;
+    text-align: center;
+    align-self: start;
+    padding-bottom: 14px;
+
+    @media screen and (max-width: 1440px) {
+      grid-area: 4 / 1 / 4 / 1;
+      width: 749px;
+    }
+
+    > h1:first-of-type {
+      font-size: 90px;
+      line-height: 94px;
+
+      @media screen and (max-width: 1440px) {
+        font-size: 61px;
+        letter-spacing: 3.66px;
+      }
+    }
+  }
+
+  .okp4-nemeton-web-header-links-container {
+    grid-area: 3 / 1 / 3 / 3;
+    display: flex;
+    justify-self: center;
+    justify-content: space-around;
+    max-width: 644px;
+    width: 100%;
+    margin-top: 50px;
+    @media screen and (max-width: 1440px) {
+      grid-area: 6 / 1 / 6 / 1;
+      max-width: 640px;
+      width: 100%;
+      margin-top: 97px;
+    }
+
+    > h2 {
+      font-size: 60px;
+      cursor: pointer;
+
+      @media screen and (max-width: 1440px) {
+        font-size: 50px;
+        letter-spacing: 2px;
       }
     }
   }
