@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps:wght@300;400;500;700;900&display=swap');
+@import './variables.scss';
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Six Caps', sans-serif !important;
+
+  div#__next,
+  div#__next > div {
+    min-height: 100vh;
+  }
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+main {
+  background-color: $primary-green;
+  min-height: 100vh;
+  color: $primary-white;
+  background-image: url('/image/nemeton.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
