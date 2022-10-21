@@ -1,0 +1,60 @@
+.okp4-nemeton-web-sidh-container {
+  display: flex;
+  width: 100%;
+  background-image: url('/image/sidh.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 1440px) {
+    background-size: 802px 602px;
+  }
+
+  .okp4-nemeton-web-sidh-phase {
+    width: 1766px;
+    height: 720px;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 0 177px;
+    @media screen and (max-width: 1440px) {
+      width: 1197px;
+      height: 602px;
+      margin: 0 122px;
+    }
+
+    .okp4-nemeton-web-sidh-phase-details {
+      padding: 20px 0 0 45px;
+      .okp4-nemeton-web-sidh-phase-title {
+        display: flex;
+        align-items: baseline;
+        > h1:first-of-type {
+          font-size: 200px;
+        }
+
+        > h2:first-of-type {
+          padding-right: 22px;
+          font-size: 60px;
+        }
+      }
+
+      > p:first-of-type {
+        width: 522px;
+        height: 130px;
+        padding-bottom: 40px;
+        font-size: 22px;
+        font-family: 'Gotham light', sans-serif;
+      }
+
+      > button:first-of-type {
+        margin-left: 80px;
+        width: 350px;
+        height: 72px;
+        border-color: white;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-family: 'Six Caps', sans-serif;
+        font-size: 50px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
