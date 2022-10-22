@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Header } from '../components/layout/header/Header'
 import { Sidh } from '../components/sidh/Sidh'
 import { Imbolc } from '../components/imbolc/Imbolc'
+import { Beltaine } from '../components/beltaine/Beltaine'
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <Header />
         <Sidh />
         <Imbolc />
+        <Beltaine />
       </main>
     </div>
   )
