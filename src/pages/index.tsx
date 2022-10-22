@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/layout/header/Header'
+import { Footer } from '../components/layout/footer/Footer'
+
 import { Sidh } from '../components/sidh/Sidh'
 import { Imbolc } from '../components/imbolc/Imbolc'
 import { Beltaine } from '../components/beltaine/Beltaine'
@@ -22,6 +24,7 @@ const Home: NextPage = () => {
         <Sidh />
         <Imbolc />
         <Beltaine />
+        <Footer />
       </main>
     </div>
   )

@@ -1,0 +1,48 @@
+.okp4-nemeton-web-footer-container {
+  width: 100%;
+
+  .okp4-nemeton-web-footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+    align-items: center;
+    padding: 253px 177px 112px 177px;
+    @media screen and (max-width: 1440px) {
+      height: 85px;
+      padding: 125px 122px;
+    }
+
+    .okp4-nemeton-web-footer-links-container {
+      display: flex;
+      justify-content: space-between;
+      width: 376px;
+
+      @media screen and (max-width: 1440px) {
+        width: 282px;
+      }
+
+      > p {
+        font-size: 20px;
+        font-family: 'Gotham light', sans-serif;
+        cursor: pointer;
+
+        @media screen and (max-width: 1440px) {
+          font-size: 15px;
+        }
+      }
+
+      .okp4-nemeton-web-footer-links-divider {
+        border-left: 1px solid white;
+      }
+    }
+
+    .okp4-nemeton-web-footer-socials-media-container {
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      @media screen and (max-width: 1440px) {
+        width: 269px;
+      }
+    }
+  }
+}
