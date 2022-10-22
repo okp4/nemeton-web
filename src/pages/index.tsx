@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/layout/header/Header'
 import { Sidh } from '../components/sidh/Sidh'
+import { Imbolc } from '../components/imbolc/Imbolc'
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       <main>
         <Header />
         <Sidh />
+        <Imbolc />
       </main>
     </div>
   )
