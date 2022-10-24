@@ -1,4 +1,6 @@
 .okp4-nemeton-web-footer-container {
+  display: flex;
+  justify-content: center;
   width: 100%;
 
   .okp4-nemeton-web-footer-content {
@@ -7,6 +9,12 @@
     height: 110px;
     align-items: center;
     padding: 253px 177px 112px 177px;
+    width: 100%;
+
+    @media screen and (min-width: 1440px) {
+      min-width: 1170px;
+    }
+
     @media screen and (max-width: 1440px) {
       height: 85px;
       padding: 125px 122px;

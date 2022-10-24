@@ -2,10 +2,12 @@ import Image from 'next/image'
 import { useMediaType } from '../../../hook/useMediaType'
 import './footer.scss'
 
+const okp4Links: string[] = ['discord', 'github', 'linkedin', 'medium', 'telegram', 'twitter']
+
 export const Footer = (): JSX.Element => {
   const isLargeScreen = useMediaType('(min-width: 1441px)')
   const isMobileScreen = useMediaType('(max-width: 390px)')
-
+  const iconSize = isLargeScreen || isMobileScreen ? 50 : 38
   return (
     <div className="okp4-nemeton-web-footer-container">
       <div className="okp4-nemeton-web-footer-content">
@@ -32,11 +34,15 @@ export const Footer = (): JSX.Element => {
           <p>Whitepaper</p>
         </div>
         <div className="okp4-nemeton-web-footer-socials-media-container">
-          <p>Icon</p>
-          <p>Icon</p>
-          <p>Icon</p>
-          <p>Icon</p>
-          <p>Icon</p>
+          {okp4Links.map((link: string) => (
+            <Image
+              alt={`${link}-link`}
+              height={iconSize}
+              key={link}
+              src={`/icons/${link}-round-dark.svg`}
+              width={iconSize}
+            />
+          ))}
         </div>
       </div>
     </div>
