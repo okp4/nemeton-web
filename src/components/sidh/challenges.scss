@@ -1,0 +1,98 @@
+.okp4-nemeton-web-sidh-challenges-container {
+  display: flex;
+  width: 100%;
+  height: 874px;
+  background-color: #2e534f;
+  margin-top: 84px;
+  box-shadow: 0 -10px 5px #2e534f;
+  @media screen and (max-width: 1440px) {
+    height: 628px;
+  }
+  .okp4-nemeton-web-sidh-challenges {
+    display: flex;
+    justify-content: space-between;
+    width: 1766px;
+    height: 720px;
+    margin: 64px 240px 0 240px;
+
+    @media screen and (max-width: 1440px) {
+      margin: 32px 122px 45px 122px;
+    }
+
+    .okp4-nemeton-web-sidh-challenges-duration {
+      display: flex;
+      width: 380px;
+      height: 105px;
+      background-color: #1f403c;
+      border-radius: 20px;
+
+      > p {
+        font-family: 'Gotham light', sans-serif;
+        font-size: 22px;
+        align-self: center;
+        padding-left: 30px;
+      }
+    }
+    .okp4-nemeton-web-sidh-challenges-summary {
+      display: flex;
+      flex-direction: column;
+      width: 740px;
+      height: 200px;
+
+      @media screen and (max-width: 1440px) {
+        width: 547px;
+      }
+
+      .okp4-nemeton-web-sidh-challenge-subject {
+        padding-bottom: 36px;
+
+        @media screen and (max-width: 1440px) {
+          padding-bottom: 10px;
+        }
+
+        > h3 {
+          font-size: 50px;
+          letter-spacing: 2px;
+
+          @media screen and (max-width: 1440px) {
+            font-size: 40px;
+            letter-spacing: 1.6px;
+          }
+        }
+
+        .okp4-nemeton-web-sidh-challenges-rewards {
+          padding: 20px 0 0 43px;
+          line-height: 32px;
+
+          @media screen and (max-width: 1440px) {
+            padding: 6px 0 0 24px;
+          }
+
+          .okp4-nemeton-web-sidh-challenge-reward {
+            display: flex;
+            justify-content: space-between;
+            > p {
+              font-family: 'Gotham light', sans-serif;
+              font-size: 28px;
+              &:first-of-type {
+                width: 541px;
+                @media screen and (max-width: 1440px) {
+                  width: 425px;
+                }
+              }
+
+              @media screen and (max-width: 1440px) {
+                font-size: 22px;
+              }
+            }
+          }
+
+          .okp4-nemeton-web-sidh-challenge-divider {
+            border-top: 1px solid white;
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+}
