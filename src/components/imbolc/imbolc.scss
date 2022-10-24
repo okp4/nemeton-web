@@ -1,7 +1,7 @@
 .okp4-nemeton-web-imbolc-container {
   display: flex;
   width: 100%;
-  margin: 182px 0 189px 0;
+  margin: 107px 0 189px 0;
   @media screen and (min-width: 2125px) {
     justify-content: center;
   }
@@ -16,6 +16,7 @@
     justify-content: flex-end;
     position: relative;
     width: 1766px;
+    min-width: 1170px;
     height: 720px;
     border-radius: 20px;
     margin: 0 177px;
@@ -25,6 +26,7 @@
       width: 1197px;
       height: 676px;
       margin: 0 122px;
+      min-width: unset;
     }
 
     .okp4-nemeton-web-imbolc-announcement {
