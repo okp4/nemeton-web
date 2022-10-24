@@ -1,6 +1,11 @@
 .okp4-nemeton-web-beltaine-container {
   display: flex;
   width: 100%;
+
+  @media screen and (min-width: 2125px) {
+    justify-content: center;
+  }
+
   @media screen and (max-width: 1440px) {
     background-size: 802px 602px;
   }

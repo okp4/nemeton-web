@@ -1,12 +1,19 @@
 .okp4-nemeton-web-sidh-with-challenges-container {
   display: flex;
   flex-direction: column;
+
   .okp4-nemeton-web-sidh-container {
     display: flex;
     width: 100%;
     background-image: url('/image/sidh.png');
     background-position: right;
     background-repeat: no-repeat;
+
+    @media screen and (min-width: 2125px) {
+      background-image: none;
+      justify-content: center;
+    }
+
     @media screen and (max-width: 1440px) {
       background-size: 802px 602px;
     }
@@ -17,6 +24,13 @@
       border: 1px solid white;
       border-radius: 20px;
       margin: 0 177px;
+
+      @media screen and (min-width: 2125px) {
+        background-image: url('/image/sidh.png');
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+
       @media screen and (max-width: 1440px) {
         width: 1197px;
         height: 602px;
