@@ -6,8 +6,13 @@ import { Footer } from '../components/layout/footer/Footer'
 import { Sidh } from '../components/sidh/Sidh'
 import { Imbolc } from '../components/imbolc/Imbolc'
 import { Beltaine } from '../components/beltaine/Beltaine'
+import type { Config } from '../types/config.type'
 
-const Home: NextPage = () => {
+export type HomeProps = {
+  staticUrls: Config['app']
+}
+
+const Home: NextPage<HomeProps> = ({ staticUrls }) => {
   return (
     <div>
       <Head>
@@ -20,11 +25,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Header />
+        <Header typeformUrl={staticUrls.typeformUrl} />
         <Sidh />
         <Imbolc />
         <Beltaine />
-        <Footer />
+        <Footer staticUrls={staticUrls} />
       </main>
     </div>
   )
