@@ -28,3 +28,106 @@ main {
   min-height: 100vh;
   color: $primary-white;
 }
+
+.okp4-nemeton-web-challenge-clear-icon {
+  position: absolute;
+  right: 50px;
+  margin-top: 20px;
+  font-size: 32px !important;
+}
+
+.okp4-nemeton-web-icon {
+  cursor: pointer;
+  &.rotate-down {
+    transform: rotate(180deg);
+    transition: transform 0.1s linear;
+  }
+  &.rotate-up {
+    transform: rotate(0deg);
+    transition: transform 0.1s linear;
+  }
+}
+
+.okp4-nemeton-web-page-main {
+  .okp4-nemeton-web-page-content-container {
+    max-width: 1600px;
+    padding: 10px 230px 30px 230px;
+    margin: auto;
+
+    @media screen and (max-width: 580px) {
+      padding: 30px;
+      width: calc(100% - 60px);
+    }
+    h1 {
+      font-size: 120px;
+      @media screen and (max-width: 580px) {
+        font-size: 81px;
+        text-align: center;
+      }
+    }
+    h2 {
+      font-size: 60px;
+      margin: 20px 0;
+      text-shadow: 0px 3px 6px #00000080;
+      @media screen and (max-width: 580px) {
+        font-size: 40px;
+      }
+    }
+    h3 {
+      font-size: 30px;
+      font-family: 'Gotham light', sans-serif;
+      @media screen and (max-width: 580px) {
+        font-size: 24px;
+      }
+    }
+    p {
+      margin: 17px 0;
+      font-size: 28px;
+      font-family: 'Gotham light', sans-serif;
+      word-break: break-word;
+      text-align: justify;
+      @media screen and (max-width: 580px) {
+        font-size: 22px;
+      }
+    }
+    li {
+      font-size: 28px;
+      font-family: 'Gotham light', sans-serif;
+      word-break: break-word;
+      text-align: justify;
+      @media screen and (max-width: 580px) {
+        font-size: 22px;
+      }
+    }
+    a {
+      color: inherit;
+    }
+
+    .okp4-nemeton-web-page-content-accordion-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 30px 30px 50px;
+      border-radius: 15px;
+      background-color: #2e534f;
+      margin: 5px 0;
+
+      h3 {
+        max-width: 85%;
+        @media screen and (max-width: 580px) {
+          max-width: 75%;
+        }
+      }
+    }
+    .okp4-nemeton-web-page-content-accordion-answer-container {
+      visibility: hidden;
+      height: 0;
+      width: 88%;
+      margin: auto;
+      &.active {
+        visibility: visible;
+        height: 100%;
+      }
+    }
+  }
+}
