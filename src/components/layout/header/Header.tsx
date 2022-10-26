@@ -5,6 +5,10 @@ import Link from 'next/link'
 
 import { useMediaType } from '../../../hook/useMediaType'
 
+type HeaderProps = {
+  typeformUrl: string
+}
+
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
@@ -63,6 +67,9 @@ const MobileMenu = (): JSX.Element => {
 
 const DesktopMenu = (): JSX.Element => (
   <div className="okp4-nemeton-web-header-links-container">
+    <Link href="/">
+      <h2>Home</h2>
+    </Link>
     <Link href="/phases">
       <h2>Phases</h2>
     </Link>
@@ -78,9 +85,9 @@ const DesktopMenu = (): JSX.Element => (
   </div>
 )
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
   const isLargeScreen = useMediaType('(min-width: 1441px)')
-  const isMobileScreen = useMediaType('(max-width: 390px)')
+  const isMobileScreen = useMediaType('(max-width: 580px)')
 
   return (
     <div className="okp4-nemeton-web-header-main">
@@ -88,7 +95,9 @@ export const Header: React.FC = () => {
         <h1>Nemeton Program</h1>
       </div>
       <div className="okp4-nemeton-web-header-join-button-container">
-        <button>Join the program</button>
+        <a href={typeformUrl} rel="noreferrer" target="_blank">
+          <button>Join the program</button>
+        </a>
       </div>
       <div className="okp4-nemeton-web-header-logo-container">
         {isLargeScreen ? (
