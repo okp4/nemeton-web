@@ -25,6 +25,10 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
     "@okp4/eslint-config": "^1.1.0",
     "@types/node": "18.11.0",
     "@types/react": "18.0.21",
