@@ -15,5 +15,9 @@ export type Config = {
       faqUrl: string
     }
     typeformUrl: string
+    supportUrls: {
+      discordNemetonUrl: string
+      discordTicketUrl: string
+    }
   }
 }

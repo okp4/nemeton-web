@@ -11,6 +11,8 @@ declare namespace NodeJS {
     OKP4_DOCS_NODES_URL: string
     OKP4_DOCS_FAQ_URL: string
     OKP4_TYPEFORM_URL: string
+    OKP4_DISCORD_NEMETON_URL: string
+    OKP4_DISCORD_TICKET_URL: string
   }
 }
 

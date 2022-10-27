@@ -4,6 +4,7 @@ import React, { useMemo } from 'react'
 import { useMediaType } from '../../../hook/useMediaType'
 import type { Config } from '../../../types/config.type'
 import './footer.scss'
+import Link from 'next/link'
 
 type SocialMedia = {
   label: string
@@ -75,7 +76,9 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
           )}
         </a>
         <div className="okp4-nemeton-web-footer-links-container">
-          <p>Support</p>
+          <Link href="/support">
+            <p>Support</p>
+          </Link>
           <div className="okp4-nemeton-web-footer-links-divider" />
           <p>Privacy Policy</p>
           <div className="okp4-nemeton-web-footer-links-divider" />
