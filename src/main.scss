@@ -34,6 +34,14 @@ main {
   right: 50px;
   margin-top: 20px;
   font-size: 32px !important;
+  cursor: pointer;
+
+  @media screen and (max-width: 580px) {
+    position: relative;
+    right: 0;
+    align-self: flex-end;
+    margin-top: unset;
+  }
 }
 
 .okp4-nemeton-web-icon {

@@ -2,42 +2,56 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  background-image: url('/image/footer-small.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .okp4-nemeton-web-footer-content {
     display: flex;
     justify-content: space-between;
-    height: 110px;
     align-items: center;
     padding: 253px 177px 112px 177px;
     width: 100%;
 
-    @media screen and (min-width: 1440px) {
-      min-width: 1170px;
+    @media screen and (min-width: 1250px) {
+      height: 510px;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
     }
 
     @media screen and (max-width: 1440px) {
-      height: 85px;
       padding: 125px 122px;
+    }
+
+    @media screen and (max-width: 1250px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    @media screen and (max-width: 580px) {
+      padding: 30px;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: 'Gotham light', sans-serif;
+      cursor: pointer;
+      margin: 0 10px;
+      text-align: center;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      @media screen and (max-width: 1540px) {
+        font-size: 15px;
+      }
     }
 
     .okp4-nemeton-web-footer-links-container {
       display: flex;
       justify-content: space-between;
-      width: 376px;
-
-      @media screen and (max-width: 1440px) {
-        width: 282px;
-      }
-
-      > p {
-        font-size: 20px;
-        font-family: 'Gotham light', sans-serif;
-        cursor: pointer;
-
-        @media screen and (max-width: 1440px) {
-          font-size: 15px;
-        }
-      }
 
       .okp4-nemeton-web-footer-links-divider {
         border-left: 1px solid white;
@@ -46,10 +60,13 @@
 
     .okp4-nemeton-web-footer-socials-media-container {
       display: flex;
-      justify-content: space-between;
-      width: 350px;
-      @media screen and (max-width: 1440px) {
-        width: 269px;
+      gap: 8px;
+
+      .okp4-nemeton-web-footer-socials-media-icon {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
