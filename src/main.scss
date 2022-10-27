@@ -62,10 +62,16 @@ main {
     padding: 10px 230px 30px 230px;
     margin: auto;
 
+    @media screen and (min-width: 581px) and (max-width: 1440px) {
+      padding: 10px 115px 30px;
+      width: calc(100% - 230px);
+    }
+
     @media screen and (max-width: 580px) {
       padding: 30px;
       width: calc(100% - 60px);
     }
+
     h1 {
       font-size: 120px;
       @media screen and (max-width: 580px) {
@@ -73,6 +79,7 @@ main {
         text-align: center;
       }
     }
+
     h2 {
       font-size: 60px;
       margin: 20px 0;
@@ -81,6 +88,7 @@ main {
         font-size: 40px;
       }
     }
+
     h3 {
       font-size: 30px;
       font-family: 'Gotham light', sans-serif;
@@ -88,6 +96,7 @@ main {
         font-size: 24px;
       }
     }
+
     p {
       margin: 17px 0;
       font-size: 28px;
@@ -98,6 +107,7 @@ main {
         font-size: 22px;
       }
     }
+
     li {
       font-size: 28px;
       font-family: 'Gotham light', sans-serif;
@@ -106,7 +116,12 @@ main {
       @media screen and (max-width: 580px) {
         font-size: 22px;
       }
+
+      li {
+        list-style-type: disc;
+      }
     }
+
     a {
       color: inherit;
     }
@@ -122,11 +137,13 @@ main {
 
       h3 {
         max-width: 85%;
+
         @media screen and (max-width: 580px) {
           max-width: 75%;
         }
       }
     }
+
     .okp4-nemeton-web-page-content-accordion-answer-container {
       visibility: hidden;
       height: 0;

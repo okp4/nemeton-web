@@ -19,7 +19,11 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse<Confi
         nodesUrl: process.env.OKP4_DOCS_NODES_URL,
         faqUrl: process.env.OKP4_DOCS_FAQ_URL
       },
-      typeformUrl: process.env.OKP4_TYPEFORM_URL
+      typeformUrl: process.env.OKP4_TYPEFORM_URL,
+      supportUrls: {
+        discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
+        discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL
+      }
     }
   }
   return res.status(200).json(config)
