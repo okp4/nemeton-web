@@ -12,7 +12,8 @@ export const SidhChallenges: React.FC<ChallengesProps> = ({ onClose, refObj }): 
     <div className="okp4-nemeton-web-sidh-challenges">
       <ClearIcon className="okp4-nemeton-web-challenge-clear-icon" />
       <div className="okp4-nemeton-web-sidh-challenges-duration">
-        <p>Duration: 2 weeks</p>
+        <p>Duration: 4 weeks</p>
+        <p>From Dec. 1st to Jan. 1st</p>
       </div>
       <div className="okp4-nemeton-web-sidh-challenges-summary">
         <div className="okp4-nemeton-web-sidh-challenge-subject">
