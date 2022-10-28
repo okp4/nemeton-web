@@ -1,8 +1,16 @@
+import ClearIcon from '@mui/icons-material/Clear'
+import React from 'react'
 import './challenges.scss'
 
-export const SidhChallenges = (): JSX.Element => (
-  <div className="okp4-nemeton-web-sidh-challenges-container">
+type ChallengesProps = {
+  refObj: React.RefObject<HTMLDivElement> | null
+  onClose: () => void
+}
+
+export const SidhChallenges: React.FC<ChallengesProps> = ({ onClose, refObj }): JSX.Element => (
+  <div className="okp4-nemeton-web-sidh-challenges-container" onClick={onClose} ref={refObj}>
     <div className="okp4-nemeton-web-sidh-challenges">
+      <ClearIcon className="okp4-nemeton-web-challenge-clear-icon" />
       <div className="okp4-nemeton-web-sidh-challenges-duration">
         <p>Duration: 2 weeks</p>
       </div>
