@@ -33,5 +33,8 @@ export type Config = {
       arbitrageUrl: string
       arbitrageRulesUrl: string
     }
+    privacyUrls: {
+      cookiePolicyUrl: string
+    }
   }
 }
