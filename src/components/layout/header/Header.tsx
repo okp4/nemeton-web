@@ -1,10 +1,12 @@
 import React, { useCallback, useState } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import './header.scss'
 import Link from 'next/link'
-
 import { useMediaType } from '../../../hook/useMediaType'
+import type { Route } from '../../../routes'
+import { headerRoutes } from '../../../routes'
 
 type HeaderProps = {
   typeformUrl: string
@@ -12,6 +14,7 @@ type HeaderProps = {
 
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
+  const router = useRouter()
 
   const toggleMenu = useCallback(() => {
     setMenuOpen(!menuOpen)
@@ -35,51 +38,36 @@ const MobileMenu = (): JSX.Element => {
         />
       </div>
       <div className={classNames('okp4-nemeton-web-header-mobile-menu-links', { open: menuOpen })}>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        <Link href="/">
-          <h2>Home</h2>
-        </Link>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        <Link href="/phases">
-          <h2>Phases</h2>
-        </Link>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        <Link href="/rewards">
-          <h2>Rewards</h2>
-        </Link>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        <Link href="/faq">
-          <h2>F.A.Q</h2>
-        </Link>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        <Link href="/terms">
-          <h2>TERMS</h2>
-        </Link>
-        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        {headerRoutes.map(({ name, path }: Route, index: number) => (
+          <React.Fragment key={path}>
+            {index >= 0 && <div className="okp4-nemeton-web-header-mobile-links-divider" />}
+            <Link href={path}>
+              <h2 className={classNames('link-label', { active: router.asPath === path })}>
+                {name}
+              </h2>
+            </Link>
+            {index === headerRoutes.length - 1 && (
+              <div className="okp4-nemeton-web-header-mobile-links-divider" />
+            )}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   )
 }
 
-const DesktopMenu = (): JSX.Element => (
-  <div className="okp4-nemeton-web-header-links-container">
-    <Link href="/">
-      <h2>Home</h2>
-    </Link>
-    <Link href="/phases">
-      <h2>Phases</h2>
-    </Link>
-    <Link href="/rewards">
-      <h2>Rewards</h2>
-    </Link>
-    <Link href="/faq">
-      <h2>F.A.Q</h2>
-    </Link>
-    <Link href="/terms">
-      <h2>TERMS</h2>
-    </Link>
-  </div>
-)
+const DesktopMenu = (): JSX.Element => {
+  const router = useRouter()
+  return (
+    <div className="okp4-nemeton-web-header-links-container">
+      {headerRoutes.map(({ name, path }: Route) => (
+        <Link href={path} key={path}>
+          <h2 className={classNames('link-label', { active: router.asPath === path })}>{name}</h2>
+        </Link>
+      ))}
+    </div>
+  )
+}
 
 export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
   const isLargeScreen = useMediaType('(min-width: 1441px)')

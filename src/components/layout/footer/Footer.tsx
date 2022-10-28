@@ -1,10 +1,14 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import getConfig from 'next/config'
 import React, { useMemo } from 'react'
 import { useMediaType } from '../../../hook/useMediaType'
 import type { Config } from '../../../types/config.type'
 import './footer.scss'
 import Link from 'next/link'
+import type { Route } from '../../../routes'
+import { footerRoutes } from '../../../routes'
+import classNames from 'classnames'
 
 type SocialMedia = {
   label: string
@@ -16,7 +20,8 @@ type FooterProps = {
 }
 
 export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
-  const { socialMediaUrls, websiteUrl } = staticUrls
+  const { socialMediaUrls, websiteUrl, docsUrls } = staticUrls
+  const router = useRouter()
   const socialMedias: SocialMedia[] = useMemo(
     () => [
       {
@@ -76,13 +81,19 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
           )}
         </a>
         <div className="okp4-nemeton-web-footer-links-container">
-          <Link href="/support">
-            <p>Support</p>
-          </Link>
-          <div className="okp4-nemeton-web-footer-links-divider" />
-          <p>Privacy Policy</p>
-          <div className="okp4-nemeton-web-footer-links-divider" />
-          <p>Whitepaper</p>
+          {footerRoutes.map(({ name, path }: Route) => (
+            <React.Fragment key={path}>
+              <Link href={path}>
+                <h2 className={classNames('link-label', { active: router.asPath === path })}>
+                  {name}
+                </h2>
+              </Link>
+              <div className="okp4-nemeton-web-footer-links-divider" />
+            </React.Fragment>
+          ))}
+          <a className="link-label" href={docsUrls.whitepaperUrl} rel="noreferrer" target="_blank">
+            Whitepaper
+          </a>
         </div>
         <div className="okp4-nemeton-web-footer-socials-media-container">
           {socialMedias.map((socialMedia: SocialMedia) => (
