@@ -62,7 +62,12 @@ main {
     padding: 10px 230px 30px 230px;
     margin: auto;
 
-    @media screen and (min-width: 581px) and (max-width: 1440px) {
+    @media screen and (min-width: 581px) and (max-width: 800px) {
+      padding: 10px 70px 30px;
+      width: calc(100% - 140px);
+    }
+
+    @media screen and (min-width: 801px) and (max-width: 1440px) {
       padding: 10px 115px 30px;
       width: calc(100% - 230px);
     }
