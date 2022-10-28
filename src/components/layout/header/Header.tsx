@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import classNames from 'classnames'
 import Image from 'next/image'
 import './header.scss'
 import Link from 'next/link'
@@ -18,49 +19,44 @@ const MobileMenu = (): JSX.Element => {
 
   return (
     <div
-      className={
-        menuOpen
-          ? 'okp4-nemeton-web-header-links-mobile-container open'
-          : 'okp4-nemeton-web-header-links-mobile-container'
-      }
+      className={classNames('okp4-nemeton-web-header-links-mobile-container', { open: menuOpen })}
     >
-      <div className="okp4-nemeton-web-header-links-mobile-menu">
-        <h2>Menu</h2>
-        <div
-          className={`okp4-nemeton-web-header-links-mobile-burger-menu ${
-            menuOpen ? 'rotate-down' : 'rotate-up'
-          }`}
-        >
-          <Image
-            alt="mobile-menu"
-            height={30}
-            onClick={toggleMenu}
-            src="/icons/menu-dark.svg"
-            width={30}
-          />
-        </div>
+      <div
+        className={`okp4-nemeton-web-header-links-mobile-burger-menu ${
+          menuOpen ? 'rotate-down' : 'rotate-up'
+        }`}
+      >
+        <Image
+          alt="mobile-menu"
+          height={40}
+          onClick={toggleMenu}
+          src="/icons/menu-dark.svg"
+          width={40}
+        />
       </div>
-      {menuOpen && (
-        <div className="okp4-nemeton-web-header-mobile-menu-links">
-          <div className="okp4-nemeton-web-header-mobile-links-divider" />
-          <Link href="/phases">
-            <h2>Phases</h2>
-          </Link>
-          <div className="okp4-nemeton-web-header-mobile-links-divider" />
-          <Link href="/rewards">
-            <h2>Rewards</h2>
-          </Link>
-          <div className="okp4-nemeton-web-header-mobile-links-divider" />
-          <Link href="/faq">
-            <h2>F.A.Q</h2>
-          </Link>
-          <div className="okp4-nemeton-web-header-mobile-links-divider" />
-          <Link href="/terms">
-            <h2>TERMS</h2>
-          </Link>
-          <div className="okp4-nemeton-web-header-mobile-links-divider" />
-        </div>
-      )}
+      <div className={classNames('okp4-nemeton-web-header-mobile-menu-links', { open: menuOpen })}>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        <Link href="/">
+          <h2>Home</h2>
+        </Link>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        <Link href="/phases">
+          <h2>Phases</h2>
+        </Link>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        <Link href="/rewards">
+          <h2>Rewards</h2>
+        </Link>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        <Link href="/faq">
+          <h2>F.A.Q</h2>
+        </Link>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+        <Link href="/terms">
+          <h2>TERMS</h2>
+        </Link>
+        <div className="okp4-nemeton-web-header-mobile-links-divider" />
+      </div>
     </div>
   )
 }
