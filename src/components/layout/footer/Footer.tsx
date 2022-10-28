@@ -68,10 +68,10 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
             />
           ) : (
             <Image
-              alt="okp4-inline-logo"
-              height={isMobileScreen ? 39 : 85}
-              src="/image/okp4-inline-logo.png"
-              width={isMobileScreen ? 145 : 305}
+              alt="okp4-mobile-logo"
+              height={isMobileScreen ? 42 : 85}
+              src="/image/okp4-logo-mobile.svg"
+              width={isMobileScreen ? 150 : 305}
             />
           )}
         </a>

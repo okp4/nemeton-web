@@ -104,12 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
             width={359}
           />
         ) : (
-          <Image
-            alt="okp4-inline-logo"
-            height={isMobileScreen ? 62 : 76}
-            src="/image/okp4-inline-logo.png"
-            width={isMobileScreen ? 225 : 273}
-          />
+          <Image alt="okp4-logo-mobile" height={42} src="/image/okp4-logo-mobile.svg" width={150} />
         )}
       </div>
       <div className="okp4-nemeton-web-header-description-container">
