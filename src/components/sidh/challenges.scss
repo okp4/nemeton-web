@@ -39,6 +39,8 @@
       border-radius: 20px;
       @media screen and (max-width: 580px) {
         width: 100%;
+        flex-direction: column;
+        justify-content: center;
       }
 
       > p {
@@ -49,7 +51,6 @@
 
         @media screen and (max-width: 580px) {
           font-size: 20px;
-          margin: auto;
           padding-left: unset;
         }
       }

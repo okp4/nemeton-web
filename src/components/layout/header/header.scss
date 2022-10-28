@@ -113,6 +113,7 @@
 
   .okp4-nemeton-web-header-logo-container {
     grid-area: 1 / 2 / 1 / 2;
+    position: relative;
     @media screen and (max-width: 1440px) {
       grid-area: 1 / 1 / 1 / 1;
     }
