@@ -9,17 +9,21 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 581px) and (max-width: 1440px) {
     background-image: url('/image/nemeton-medium.png');
+    padding: 50px 0 150px;
+    background-size: auto;
+  }
+
+  @media screen and (max-width: 1440px) {
     grid-template: repeat(6, auto) / auto;
     column-gap: 0;
     justify-items: center;
-    padding-top: 52px;
   }
 
   @media screen and (max-width: 580px) {
     background-image: url('/image/nemeton-mobile.png');
-    padding: 50px 0 110px;
+    padding: 50px 0 130px;
   }
 
   .okp4-nemeton-web-header-title-container {
@@ -45,9 +49,9 @@
       line-height: 186px;
 
       @media screen and (max-width: 1440px) {
-        font-size: 140px;
-        letter-spacing: 14px;
-        line-height: 136px;
+        font-size: 100px;
+        letter-spacing: 10px;
+        line-height: 100px;
       }
 
       @media screen and (max-width: 580px) {
@@ -175,9 +179,20 @@
       margin-top: 97px;
     }
 
-    > h2 {
+    .link-label {
       font-size: 60px;
       cursor: pointer;
+      opacity: 0.8;
+      line-height: 66px;
+
+      &.active {
+        opacity: 1;
+        font-size: 70px;
+        @media screen and (max-width: 1440px) {
+          font-size: 60px;
+          letter-spacing: 2px;
+        }
+      }
 
       @media screen and (max-width: 1440px) {
         font-size: 50px;
@@ -221,13 +236,19 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      max-width: 580px;
       background-color: #2e534f;
       z-index: 100;
-      margin-top: 10px;
       font-family: 'Gotham light', sans-serif;
       font-size: 12px;
       transition: opacity 0.4s;
+
+      .link-label {
+        opacity: 0.7;
+        &.active {
+          opacity: 1;
+          font-size: 20px;
+        }
+      }
 
       &.open {
         opacity: 1;
