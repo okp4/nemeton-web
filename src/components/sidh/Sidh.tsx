@@ -22,25 +22,29 @@ export const Sidh = (): JSX.Element => {
   return (
     <div className="okp4-nemeton-web-phase-main ">
       <div className="okp4-nemeton-web-phase-container sidh">
-        <div className="okp4-nemeton-web-phase-content-container">
-          <div className="okp4-nemeton-web-sidh-phase-content-details">
-            <div className="okp4-nemeton-web-sidh-phase-content-title">
+        <div className="okp4-nemeton-web-phase-content-container sidh">
+          <div className="okp4-nemeton-web-phase-content-details">
+            <div className="okp4-nemeton-web-phase-content-title">
               <h2>Phase 1</h2>
               <h1>Sidh</h1>
             </div>
             <p>{description}</p>
             {!isMobileScreen && (
-              <span className="okp4-nemeton-web-challenge-button" onClick={toggleChallengesOpen}>
-                Challenges & Rewards
-              </span>
+              <div className="okp4-nemeton-web-phase-content-button-container">
+                <span className="okp4-nemeton-web-challenge-button disabled">
+                  Challenges & Rewards
+                </span>
+                <p>Available on Dec 1st</p>
+              </div>
             )}
           </div>
         </div>
       </div>
       {isMobileScreen && (
-        <span className="okp4-nemeton-web-challenge-button" onClick={toggleChallengesOpen}>
-          Challenges & Rewards
-        </span>
+        <div className="okp4-nemeton-web-phase-content-button-container">
+          <span className="okp4-nemeton-web-challenge-button disabled">Challenges & Rewards</span>
+          <p>Available on Dec 1st</p>
+        </div>
       )}
       {isChallengesOpen && (
         <SidhChallenges onClose={toggleChallengesOpen} refObj={challengeContainerRef} />
