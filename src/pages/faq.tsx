@@ -17,7 +17,7 @@ type FAQUrls = {
   typeformUrl: string
 }
 
-export type FAQProps = Pick<Config, "title" | "keywords" | "urls">
+export type FAQProps = Pick<Config, 'title' | 'keywords' | 'urls'>
 
 const faqs = (urls: FAQUrls): FAQ[] => [
   {
@@ -28,8 +28,9 @@ const faqs = (urls: FAQUrls): FAQ[] => [
         <p>
           The Nemeton Program is OKP4 incentivized testnet. Any validator can apply for the Nemeton
           program by registering on the &#39;Join the program&#39; form. Only 150 validators will be
-          selected for Phases 1 to 5 to become Druids, the official title for incentivized testnet
-          participants. <br />
+          selected for phases 1 to 4 to become Druids, the official title for incentivized testnet
+          participants. The phase 5 (by the end of the program) will open for developers to join
+          though. <br />
           During every phase from 1 to 5, Druids will have the opportunity to participate in the
           following:
         </p>
@@ -108,12 +109,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     question: 'How do I sign up for the Nemeton program?',
     answer: (
       <p>
-        To register for the Nemeton Program, complete the registration form below. <br />
+        To register for the Nemeton Program, complete the{' '}
         <a href={urls.typeformUrl} rel="noreferrer" target="_blank">
-          LINK TO REGISTER FOR NEMETON PROGRAM
+          registration form
         </a>
-        <br />
-        We will review your application and inform you if you have been accepted or not to our
+        . We will review your application and inform you if you have been accepted or not to our
         program.
       </p>
     )
@@ -236,7 +236,7 @@ const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
   }
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title}/>
+      <Head keywords={keywords} title={title} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container">
@@ -250,17 +250,17 @@ const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
             <ul>
               <li>
                 <a href={whitepaperUrl} rel="noreferrer" target="_blank">
-                  Whitepaper OKP4
+                  Whitepaper
                 </a>
               </li>
               <li>
                 <a href={nodesUrl} rel="noreferrer" target="_blank">
-                  Validator’s Guide
+                  Node & Validators Guide
                 </a>
               </li>
               <li>
                 <a href={faqUrl} rel="noreferrer" target="_blank">
-                  Frequently Asked Questions OKP4
+                  FAQ
                 </a>
               </li>
             </ul>
