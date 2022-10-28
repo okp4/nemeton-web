@@ -126,33 +126,206 @@ main {
       color: inherit;
     }
 
-    .okp4-nemeton-web-page-content-accordion-container {
+    .okp4-nemeton-web-page-content-wrapper {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 30px 30px 30px 50px;
-      border-radius: 15px;
-      background-color: #2e534f;
-      margin: 5px 0;
+      flex-direction: column;
+      gap: 10px;
+      .okp4-nemeton-web-page-content-accordion-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 30px 30px 30px 50px;
+        border-radius: 15px;
+        background-color: #2e534f;
+        margin: 5px 0;
 
-      h3 {
-        max-width: 85%;
-
-        @media screen and (max-width: 580px) {
-          max-width: 75%;
+        h3 {
+          max-width: 85%;
+          @media screen and (max-width: 580px) {
+            max-width: 75%;
+          }
         }
+      }
+      .okp4-nemeton-web-page-content-accordion-answer-container {
+        width: 88%;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.okp4-nemeton-web-phase-main {
+  display: flex;
+  flex-direction: column;
+
+  .okp4-nemeton-web-phase-container {
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    justify-content: center;
+    background-image: url('/image/sidh.png');
+    background-position: right;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 2125px) {
+      background-image: none;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 1440px) {
+      background-size: 802px 602px;
+    }
+
+    @media screen and (max-width: 580px) {
+      background-repeat: no-repeat;
+      background-position: center top 5%;
+      background-size: contain;
+    }
+    &.imbolc {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/imbolc-mobile.png');
+      }
+    }
+    &.sidh {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/sidh-mobile.png');
+      }
+    }
+    &.beltaine {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/beltaine-mobile.png');
       }
     }
 
-    .okp4-nemeton-web-page-content-accordion-answer-container {
-      visibility: hidden;
-      height: 0;
-      width: 88%;
-      margin: auto;
-      &.active {
-        visibility: visible;
-        height: 100%;
+    .okp4-nemeton-web-phase-content-container {
+      max-width: 1766px;
+      width: 100%;
+      min-width: 1170px;
+      height: 720px;
+      border: 1px solid white;
+      border-radius: 20px;
+      margin: 0 177px;
+      position: relative;
+
+      &.no-border {
+        border: unset;
       }
+
+      @media screen and (min-width: 2125px) {
+        background-image: url('/image/sidh.png');
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+
+      @media screen and (max-width: 1440px) {
+        max-width: 1197px;
+        height: 602px;
+        margin: 0 122px;
+        min-width: unset;
+      }
+
+      @media screen and (max-width: 580px) {
+        background-image: none;
+        width: 100%;
+        height: 475px;
+        margin: 50px 26px 0 26px;
+        min-width: unset;
+      }
+
+      .okp4-nemeton-web-sidh-phase-content-details {
+        padding: 20px 0 0 45px;
+        @media screen and (max-width: 580px) {
+          padding: 0 20px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          max-height: inherit;
+        }
+        .okp4-nemeton-web-sidh-phase-content-title {
+          display: flex;
+          align-items: baseline;
+          @media screen and (max-width: 580px) {
+            justify-content: center;
+          }
+          > h1:first-of-type {
+            font-size: 200px;
+            @media screen and (max-width: 580px) {
+              font-size: 100px;
+            }
+          }
+
+          > h2:first-of-type {
+            padding-right: 22px;
+            font-size: 60px;
+            @media screen and (max-width: 580px) {
+              font-size: 30px;
+            }
+          }
+        }
+
+        > p:first-of-type {
+          max-width: 522px;
+          height: 130px;
+          padding-bottom: 40px;
+          font-size: 22px;
+          font-family: 'Gotham light', sans-serif;
+          @media screen and (max-width: 580px) {
+            font-size: 20px;
+            height: unset;
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+  .okp4-nemeton-web-challenge-button {
+    margin-left: 80px;
+    max-width: 350px;
+    height: 72px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    padding: 2px 28px;
+    @media screen and (max-width: 580px) {
+      max-width: unset;
+      font-size: 43px;
+      margin-top: 26px;
+      margin-left: 0;
+      align-self: center;
+    }
+  }
+}
+
+.okp4-nemeton-web-phase-mask-container {
+  position: absolute;
+  background-color: #2e534f;
+  width: 100%;
+  height: 475px;
+  min-width: unset;
+  border-radius: 20px;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > h2:first-of-type {
+    font-size: 80px;
+    padding: 0 40px;
+    @media screen and (max-width: 580px) {
+      font-size: 40px;
+    }
+  }
+
+  .okp4-nemeton-web-phase-mask-divider {
+    width: 100px;
+    border-top: 3px solid white;
+    @media screen and (max-width: 580px) {
+      width: 40px;
     }
   }
 }
