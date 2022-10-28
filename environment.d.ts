@@ -15,6 +15,12 @@ declare namespace NodeJS {
     OKP4_TYPEFORM_URL: string
     OKP4_DISCORD_NEMETON_URL: string
     OKP4_DISCORD_TICKET_URL: string
+    OKP4_MAIL_CONTACT_ADDRESS: string
+    OKP4_LICENCE_BLOCKCHAIN_URL: string
+    OKP4_LICENCE_CODE_URL: string
+    OKP4_LICENCE_ASSETS_URL: string
+    OKP4_ARBITRAGE_URL: string
+    OKP4_ARBITRAGE_RULES_URL: string
   }
 }
 
