@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
   )
   const isLargeScreen = useMediaType('(min-width: 1540px)')
   const isMobileScreen = useMediaType('(max-width: 580px)')
-  const iconSize = isLargeScreen || isMobileScreen ? 50 : 38
+  const iconSize = isLargeScreen ? 50 : 28
   const { publicRuntimeConfig } = getConfig()
   return (
     <div className="okp4-nemeton-web-footer-container">
@@ -69,9 +69,9 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
           ) : (
             <Image
               alt="okp4-inline-logo"
-              height={isMobileScreen ? 62 : 85}
+              height={isMobileScreen ? 39 : 85}
               src="/image/okp4-inline-logo.png"
-              width={isMobileScreen ? 225 : 305}
+              width={isMobileScreen ? 145 : 305}
             />
           )}
         </a>
