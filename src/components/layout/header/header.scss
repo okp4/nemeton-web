@@ -3,11 +3,13 @@
   grid-template: repeat(3, auto) / repeat(2, auto);
   width: 100%;
   padding-top: 230px;
-  column-gap: 200px;
+  column-gap: 260px;
   background-image: url('/image/nemeton-large.png');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  row-gap: 65px;
+  padding-bottom: 70px;
 
   @media screen and (min-width: 581px) and (max-width: 1440px) {
     background-image: url('/image/nemeton-medium.png');
@@ -18,12 +20,14 @@
   @media screen and (max-width: 1440px) {
     grid-template: repeat(6, auto) / auto;
     column-gap: 0;
+    row-gap: 15px;
     justify-items: center;
   }
 
   @media screen and (max-width: 580px) {
     background-image: url('/image/nemeton-mobile.png');
     padding: 50px 0 130px;
+    row-gap: 0 !important;
   }
 
   .okp4-nemeton-web-header-title-container {
@@ -43,10 +47,11 @@
     }
 
     > h1:first-of-type {
-      font-size: 180px;
+      font-size: 140px;
       text-align: center;
-      letter-spacing: 18px;
-      line-height: 186px;
+      letter-spacing: 14px;
+      line-height: 140px;
+      text-shadow: 0px 3px 6px #00000080;
 
       @media screen and (max-width: 1440px) {
         font-size: 100px;
@@ -131,7 +136,7 @@
 
   .okp4-nemeton-web-header-description-container {
     grid-area: 2 / 2 / 3 / 3;
-    max-width: 359px;
+    max-width: 340px;
     text-align: center;
     align-self: start;
     padding-bottom: 14px;
@@ -148,8 +153,9 @@
     }
 
     > h1:first-of-type {
-      font-size: 90px;
-      line-height: 94px;
+      font-size: 61px;
+      line-height: 60px;
+      text-shadow: 0px 3px 6px #00000080;
 
       @media screen and (max-width: 1440px) {
         font-size: 61px;
@@ -176,7 +182,7 @@
       grid-area: 6 / 1 / 6 / 1;
       max-width: 640px;
       width: 100%;
-      margin-top: 97px;
+      margin-top: 60px;
     }
 
     .link-label {
@@ -184,6 +190,7 @@
       cursor: pointer;
       opacity: 0.8;
       line-height: 66px;
+      text-shadow: 0px 3px 6px #00000080;
 
       &.active {
         opacity: 1;

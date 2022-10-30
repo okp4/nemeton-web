@@ -1,28 +1,30 @@
 .okp4-nemeton-web-footer-container {
   display: flex;
   justify-content: center;
-  width: 100%;
-  background-image: url('/image/footer-small.png');
+  width: calc(100% - 244px);
+  position: relative;
+  background-image: url('/image/footer-large.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 300px 122px 120px 122px;
+  background-size: 100% 900px;
+
+  @media screen and (max-width: 900px) {
+    padding: 60px 30px 30px 30px;
+    width: calc(100% - 60px);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 901px) and (max-width: 1249px) {
+    padding: 120px 122px 120px 122px;
+  }
 
   .okp4-nemeton-web-footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 253px 177px 112px 177px;
     width: 100%;
-
-    @media screen and (min-width: 1251px) {
-      height: 390px;
-      padding-top: 0px !important;
-      padding-bottom: 0px !important;
-    }
-
-    @media screen and (max-width: 1440px) {
-      padding: 125px 122px;
-    }
 
     @media screen and (max-width: 1250px) {
       flex-direction: column;
@@ -30,7 +32,6 @@
     }
 
     @media screen and (max-width: 580px) {
-      padding: 30px;
       gap: 30px;
     }
 
