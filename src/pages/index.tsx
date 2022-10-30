@@ -10,33 +10,31 @@ import { Beltaine } from '../components/beltaine/Beltaine'
 import type { Config } from '../types/config.type'
 
 export type HomeProps = {
-  staticUrls: Config['app']
+  keywords: Config['keywords']
+  urls: Config['urls']
 }
 
 // eslint-disable-next-line @typescript-eslint/typedef
 const { publicRuntimeConfig } = getConfig()
 
-const Home: NextPage<HomeProps> = ({ staticUrls }) => {
+const Home: NextPage<HomeProps> = ({ keywords, urls }) => {
   return (
     <div>
       <Head>
         <title>Nemeton Program - OKP4</title>
-        <meta
-          content="Incentivized testnet, Validators, Know, Blockchain, Testnet, OKP4"
-          name="keywords"
-        />
+        <meta content={keywords} name="keywords" />
         <meta content={publicRuntimeConfig.version} name="version" />
         <link href="/okp4-logo.png" rel="icon" />
       </Head>
 
       <main>
-        <Header typeformUrl={staticUrls.typeformUrl} />
+        <Header typeformUrl={urls.typeformUrl} />
         <div className="okp4-nemeton-web-phases-main">
           <Sidh />
           <Imbolc />
           <Beltaine />
         </div>
-        <Footer staticUrls={staticUrls} />
+        <Footer urls={urls} />
       </main>
     </div>
   )

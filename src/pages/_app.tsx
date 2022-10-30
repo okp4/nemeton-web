@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element | null {
       .then(setConfig)
       .catch((error: unknown) => console.error(error))
   }, [])
-  return config && <Component {...pageProps} staticUrls={config.app} />
+  return config && <Component {...pageProps} {...config} />
 }
 
 export default MyApp

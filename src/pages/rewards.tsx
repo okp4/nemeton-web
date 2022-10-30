@@ -4,11 +4,11 @@ import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 
 export type RewardsProps = {
-  staticUrls: Config['app']
+  urls: Config['urls']
 }
 
-const Rewards: NextPage<RewardsProps> = ({ staticUrls }) => {
-  const { typeformUrl } = staticUrls
+const Rewards: NextPage<RewardsProps> = ({ urls }) => {
+  const { typeformUrl } = urls
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -25,7 +25,7 @@ const Rewards: NextPage<RewardsProps> = ({ staticUrls }) => {
             the program.
           </p>
         </div>
-        <Footer staticUrls={staticUrls} />
+        <Footer urls={urls} />
       </main>
     </div>
   )

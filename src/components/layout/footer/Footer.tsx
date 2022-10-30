@@ -15,11 +15,11 @@ type SocialMedia = {
 }
 
 type FooterProps = {
-  staticUrls: Config['app']
+  urls: Config['urls']
 }
 
-export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
-  const { socialMediaUrls, websiteUrl, docsUrls } = staticUrls
+export const Footer: React.FC<FooterProps> = ({ urls }): JSX.Element => {
+  const { socialMediaUrls, websiteUrl, docsUrls } = urls
   const router = useRouter()
   const socialMedias: SocialMedia[] = useMemo(
     () => [

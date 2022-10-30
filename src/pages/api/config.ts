@@ -4,7 +4,8 @@ import type { Config } from '../../types/config.type'
 // eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 export default function handler(_req: NextApiRequest, res: NextApiResponse<Config>): void {
   const config: Config = {
-    app: {
+    keywords: process.env.APP_KEYWORDS,
+    urls: {
       websiteUrl: process.env.OKP4_WEBSITE_URL,
       socialMediaUrls: {
         discordUrl: process.env.OKP4_DISCORD_URL,

@@ -1,5 +1,6 @@
 export type Config = {
-  app: {
+  keywords: string
+  urls: {
     websiteUrl: string
     socialMediaUrls: {
       discordUrl: string

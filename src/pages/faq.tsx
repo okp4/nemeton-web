@@ -17,7 +17,7 @@ type FAQUrls = {
 }
 
 export type FAQProps = {
-  staticUrls: Config['app']
+  urls: Config['urls']
 }
 
 const faqs = (urls: FAQUrls): FAQ[] => [
@@ -226,9 +226,9 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   }
 ]
 
-const Faq: NextPage<FAQProps> = ({ staticUrls }) => {
+const Faq: NextPage<FAQProps> = ({ urls }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const { socialMediaUrls, docsUrls, typeformUrl } = staticUrls
+  const { socialMediaUrls, docsUrls, typeformUrl } = urls
   const { discordUrl } = socialMediaUrls
   const { whitepaperUrl, nodesUrl, faqUrl } = docsUrls
 
@@ -301,7 +301,7 @@ const Faq: NextPage<FAQProps> = ({ staticUrls }) => {
             })}
           </div>
         </div>
-        <Footer staticUrls={staticUrls} />
+        <Footer urls={urls} />
       </main>
     </div>
   )

@@ -5,15 +5,15 @@ import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 
 export type SupportProps = {
-  staticUrls: Config['app']
+  urls: Config['urls']
 }
 
-const Support: NextPage<SupportProps> = ({ staticUrls }) => {
+const Support: NextPage<SupportProps> = ({ urls }) => {
   const {
     typeformUrl,
     supportUrls: { discordNemetonUrl, discordTicketUrl },
     docsUrls: { nodesUrl }
-  } = staticUrls
+  } = urls
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -53,7 +53,7 @@ const Support: NextPage<SupportProps> = ({ staticUrls }) => {
             </ul>
           </p>
         </div>
-        <Footer staticUrls={staticUrls} />
+        <Footer urls={urls} />
       </main>
     </div>
   )
