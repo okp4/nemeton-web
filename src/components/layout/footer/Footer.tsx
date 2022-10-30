@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
     [socialMediaUrls]
   )
   const isLargeScreen = useMediaType('(min-width: 1540px)')
-  const isMobileScreen = useMediaType('(max-width: 580px)')
+  const isMobileScreen = useMediaType('(max-width: 900px)')
   const iconSize = isLargeScreen ? 50 : 28
   const { publicRuntimeConfig } = getConfig()
   return (
