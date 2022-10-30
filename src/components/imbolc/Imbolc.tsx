@@ -7,7 +7,7 @@ export const Imbolc = (): JSX.Element => {
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   return (
-    <div className="okp4-nemeton-web-phase-main ">
+    <div className="okp4-nemeton-web-phase-main">
       <div className="okp4-nemeton-web-phase-container imbolc">
         <div className="okp4-nemeton-web-phase-content-container no-border imbolc">
           <div className="okp4-nemeton-web-phase-mask-container">

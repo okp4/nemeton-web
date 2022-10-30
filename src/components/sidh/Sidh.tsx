@@ -20,7 +20,7 @@ export const Sidh = (): JSX.Element => {
   }, [isChallengesOpen])
 
   return (
-    <div className="okp4-nemeton-web-phase-main ">
+    <div className="okp4-nemeton-web-phase-main">
       <div className="okp4-nemeton-web-phase-container sidh">
         <div className="okp4-nemeton-web-phase-content-container sidh">
           <div className="okp4-nemeton-web-phase-content-details">

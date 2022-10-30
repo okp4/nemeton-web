@@ -3,7 +3,7 @@ const description =
 
 export const Beltaine = (): JSX.Element => {
   return (
-    <div className="okp4-nemeton-web-phase-main ">
+    <div className="okp4-nemeton-web-phase-main">
       <div className="okp4-nemeton-web-phase-container beltaine">
         <div className="okp4-nemeton-web-phase-content-container no-border beltaine">
           <div className="okp4-nemeton-web-phase-mask-container">
