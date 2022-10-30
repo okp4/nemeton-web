@@ -11,12 +11,14 @@
   background-size: 100% 900px;
 
   @media screen and (max-width: 900px) {
+    background-image: url('/image/footer-small.png');
     padding: 60px 30px 30px 30px;
     width: calc(100% - 60px);
     background-size: cover;
   }
 
   @media screen and (min-width: 901px) and (max-width: 1249px) {
+    background-image: url('/image/footer-medium.png');
     padding: 120px 122px 120px 122px;
   }
 
