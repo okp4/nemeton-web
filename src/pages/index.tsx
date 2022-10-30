@@ -9,19 +9,16 @@ import { Imbolc } from '../components/imbolc/Imbolc'
 import { Beltaine } from '../components/beltaine/Beltaine'
 import type { Config } from '../types/config.type'
 
-export type HomeProps = {
-  keywords: Config['keywords']
-  urls: Config['urls']
-}
+export type HomeProps = Pick<Config, "title" | "keywords" | "urls">
 
 // eslint-disable-next-line @typescript-eslint/typedef
 const { publicRuntimeConfig } = getConfig()
 
-const Home: NextPage<HomeProps> = ({ keywords, urls }) => {
+const Home: NextPage<HomeProps> = ({ keywords, title, urls }) => {
   return (
     <div>
       <Head>
-        <title>Nemeton Program - OKP4</title>
+        <title>{title}</title>
         <meta content={keywords} name="keywords" />
         <meta content={publicRuntimeConfig.version} name="version" />
         <link href="/okp4-logo.png" rel="icon" />

@@ -1,4 +1,5 @@
 export type Config = {
+  title: string
   keywords: string
   urls: {
     websiteUrl: string
