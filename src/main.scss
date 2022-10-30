@@ -84,6 +84,7 @@ main {
       font-size: 60px;
       margin: 20px 0;
       text-shadow: 0px 3px 6px #00000080;
+      letter-spacing: 2.4px;
       @media screen and (max-width: 580px) {
         font-size: 40px;
       }
@@ -152,203 +153,233 @@ main {
   }
 }
 
-.okp4-nemeton-web-phase-main {
+.okp4-nemeton-web-phases-main {
   display: flex;
   flex-direction: column;
-
-  .okp4-nemeton-web-phase-content-button-container {
+  gap: 90px;
+  margin-top: 80px;
+  @media screen and (max-width: 580px) {
+    gap: 50px;
+    margin-top: 20px;
+  }
+  .okp4-nemeton-web-phase-main {
     display: flex;
     flex-direction: column;
-    margin-left: 80px;
-    gap: 10px;
 
-    > p {
-      font-family: 'Gotham light', sans-serif;
-      align-self: center;
-    }
+    .okp4-nemeton-web-phase-content-button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0 0 80px;
 
-    @media screen and (max-width: 580px) {
-      margin-left: unset;
-    }
-  }
-
-  .okp4-nemeton-web-phase-container {
-    display: flex;
-    width: 100%;
-    margin-top: 80px;
-    justify-content: center;
-
-    @media screen and (min-width: 2125px) {
-      background-image: none;
-      justify-content: center;
-    }
-
-    @media screen and (max-width: 1440px) {
-      background-size: 802px 602px;
-    }
-
-    @media screen and (max-width: 580px) {
-      background-repeat: no-repeat;
-      background-position: center top 5%;
-      background-size: contain;
-    }
-    &.imbolc {
-      @media screen and (max-width: 580px) {
-        background-image: url('/image/imbolc-mobile.png');
+      > p {
+        font-family: 'Gotham light', sans-serif;
+        align-self: center;
       }
-    }
-    &.sidh {
-      @media screen and (max-width: 580px) {
-        background-image: url('/image/sidh-mobile.png');
-      }
-    }
-    &.beltaine {
-      @media screen and (max-width: 580px) {
-        background-image: url('/image/beltaine-mobile.png');
+
+      @media screen and (max-width: 900px) {
+        margin-left: unset;
       }
     }
 
-    .okp4-nemeton-web-phase-content-container {
-      max-width: 1766px;
+    .okp4-nemeton-web-phase-container {
+      display: flex;
       width: 100%;
-      min-width: 1170px;
-      height: 720px;
-      border: 1px solid white;
-      border-radius: 20px;
-      margin: 0 177px;
-      position: relative;
-      background-repeat: no-repeat;
-
-      &.no-border {
-        border: unset;
-      }
-
-      &.imbolc {
-        @media screen and (min-width: 581px) and (max-width: 1440px) {
-          background-image: url('/image/imbolc-medium.png');
-          background-position: left;
-          background-size: contain;
-        }
-      }
-
-      &.beltaine {
-        @media screen and (min-width: 581px) and (max-width: 1440px) {
-          background-image: url('/image/beltaine-medium.png');
-          background-position: right;
-          background-size: auto;
-        }
-      }
-
-      &.sidh {
-        @media screen and (min-width: 581px) and (max-width: 1440px) {
-          background-image: url('/image/sidh-medium.png');
-          background-position: right;
-          background-size: contain;
-        }
-      }
+      justify-content: center;
 
       @media screen and (min-width: 2125px) {
-        background-image: url('/image/sidh.png');
-        background-position: right;
-        background-repeat: no-repeat;
+        background-image: none;
+        justify-content: center;
       }
 
       @media screen and (max-width: 1440px) {
-        max-width: 1197px;
-        height: 470px;
-        margin: 0 122px;
-        min-width: unset;
+        background-size: 802px 602px;
       }
 
       @media screen and (max-width: 580px) {
-        background-image: none;
-        width: 100%;
-        height: 475px;
-        margin: 50px 26px 0 26px;
-        min-width: unset;
+        background-repeat: no-repeat;
+        background-position: center top 5%;
+        background-size: contain;
+      }
+      &.imbolc {
+        @media screen and (max-width: 580px) {
+          background-image: url('/image/imbolc-mobile.png');
+        }
+      }
+      &.sidh {
+        @media screen and (max-width: 580px) {
+          background-image: url('/image/sidh-mobile.png');
+        }
+      }
+      &.beltaine {
+        @media screen and (max-width: 580px) {
+          background-image: url('/image/beltaine-mobile.png');
+        }
       }
 
-      .okp4-nemeton-web-phase-content-details {
-        padding: 20px 0 0 45px;
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
+      .okp4-nemeton-web-phase-content-container {
+        max-width: 1312px;
+        width: 100%;
+        min-width: 1170px;
+        height: 519px;
+        border: 1px solid white;
+        border-radius: 20px;
+        margin: 0 177px;
+        position: relative;
+        background-repeat: no-repeat;
+
+        &.no-border {
+          border: unset;
+        }
 
         &.imbolc {
-          @media screen and (min-width: 581px) and (max-width: 1440px) {
-            align-items: flex-end;
-            padding: 20px 45px 0 0;
+          background-image: url('/image/imbolc-large.png');
+          background-position: left;
+          background-size: contain;
+          @media screen and (min-width: 581px) and (max-width: 1920px) {
+            background-image: url('/image/imbolc-medium.png');
+          }
+          @media screen and (max-width: 900px) {
+            background-size: cover;
           }
         }
+
+        &.beltaine {
+          background-image: url('/image/beltaine-large.png');
+          background-position: right;
+          background-size: auto;
+          @media screen and (min-width: 581px) and (max-width: 1920px) {
+            background-image: url('/image/beltaine-medium.png');
+          }
+          @media screen and (max-width: 900px) {
+            background-size: cover;
+          }
+        }
+
+        &.sidh {
+          background-image: url('/image/sidh-large.png');
+          background-position: right;
+          background-size: contain;
+          @media screen and (min-width: 581px) and (max-width: 1920px) {
+            background-image: url('/image/sidh-medium.png');
+          }
+          @media screen and (max-width: 900px) {
+            background-size: cover;
+          }
+        }
+
+        @media screen and (min-width: 2125px) {
+          background-image: url('/image/sidh.png');
+          background-position: right;
+          background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 1440px) {
+          max-width: 1197px;
+          height: 470px;
+          margin: 0 122px;
+          min-width: unset;
+        }
+
         @media screen and (max-width: 580px) {
-          padding: 0 20px;
-          height: 100%;
+          background-image: none !important;
+          width: 100%;
+          height: 475px;
+          margin: 50px 26px 0 26px;
+          min-width: unset;
+        }
+
+        .okp4-nemeton-web-phase-content-details {
+          padding: 20px 0 0 45px;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
-          max-height: inherit;
-        }
-        .okp4-nemeton-web-phase-content-title {
-          display: flex;
           align-items: baseline;
-          @media screen and (max-width: 580px) {
-            justify-content: center;
+          gap: 15px;
+          height: 100%;
+
+          @media screen and (max-width: 900px) {
+            padding: 0 20px;
+            align-items: center;
           }
-          > h1:first-of-type {
-            font-size: 140px;
+
+          &.imbolc {
+            @media screen and (min-width: 901px) {
+              align-items: flex-end;
+              padding: 20px 45px 0 0;
+            }
+          }
+          @media screen and (max-width: 580px) {
+            padding: 0 20px;
+            gap: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            max-height: inherit;
+          }
+          .okp4-nemeton-web-phase-content-title {
+            display: flex;
+            align-items: baseline;
             @media screen and (max-width: 580px) {
-              font-size: 100px;
+              justify-content: center;
+            }
+            > h1:first-of-type {
+              font-size: 140px;
+              @media screen and (max-width: 580px) {
+                font-size: 100px;
+              }
+            }
+
+            > h2:first-of-type {
+              padding-right: 22px;
+              font-size: 40px;
+              @media screen and (max-width: 580px) {
+                font-size: 30px;
+              }
             }
           }
 
-          > h2:first-of-type {
-            padding-right: 22px;
-            font-size: 40px;
+          > p:first-of-type {
+            max-width: 420px;
+            font-size: 20px;
+            font-family: 'Gotham light', sans-serif;
             @media screen and (max-width: 580px) {
-              font-size: 30px;
+              font-size: 18px;
+              height: unset;
+              padding-bottom: 20px;
             }
-          }
-        }
-
-        > p:first-of-type {
-          max-width: 460px;
-          height: 130px;
-          font-size: 20px;
-          font-family: 'Gotham light', sans-serif;
-          @media screen and (max-width: 580px) {
-            font-size: 18px;
-            height: unset;
-            padding-bottom: 20px;
           }
         }
       }
     }
-  }
-  .okp4-nemeton-web-challenge-button {
-    max-width: 350px;
-    height: 72px;
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    font-family: 'Six Caps', sans-serif;
-    font-size: 50px;
-    letter-spacing: 2px;
-    padding: 0px 28px;
+    .okp4-nemeton-web-challenge-button {
+      max-width: 350px;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      font-family: 'Six Caps', sans-serif;
+      font-size: 42px;
+      letter-spacing: 2px;
+      padding: 0px 28px;
 
-    &.right {
-      margin: 0 80px 0 0;
-    }
+      &.right {
+        margin: 20px 80px 0 0;
+        @media screen and (max-width: 900px) {
+          margin-right: unset;
+        }
+      }
 
-    &.disabled {
-      pointer-events: none;
-    }
+      &.disabled {
+        pointer-events: none;
+      }
 
-    @media screen and (max-width: 580px) {
-      max-width: unset;
-      font-size: 43px;
-      margin-top: 26px;
-      align-self: center;
+      @media screen and (max-width: 580px) {
+        max-width: unset;
+        font-size: 38px;
+        margin-top: 26px;
+        align-self: center;
+        margin-left: unset;
+      }
     }
   }
 }
@@ -357,7 +388,7 @@ main {
   position: absolute;
   background-color: #2e534f;
   width: 100%;
-  height: 475px;
+  height: 519px;
   min-width: unset;
   border-radius: 20px;
   opacity: 0.95;
@@ -365,10 +396,18 @@ main {
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 580px) {
+    height: 475px;
+  }
+
+  @media screen and (min-width: 581px) and (max-width: 1440px) {
+    height: 470px;
+  }
+
   > h2:first-of-type {
     font-size: 80px;
     padding: 0 40px;
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 900px) {
       font-size: 40px;
     }
   }
@@ -376,7 +415,7 @@ main {
   .okp4-nemeton-web-phase-mask-divider {
     width: 100px;
     border-top: 3px solid white;
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 900px) {
       width: 40px;
     }
   }
