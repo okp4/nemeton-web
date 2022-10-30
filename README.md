@@ -55,5 +55,15 @@ Please check out OKP4 health files :
 - [Contributing](https://github.com/okp4/.github/blob/main/CONTRIBUTING.md)
 - [Code of conduct](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
 
+## License
+
+All the code in this repository is licensed under the [![bsd-3-clause][bsd-3-clause-image]][cc-by-sa] [license](LICENSE).
+
+The assets (markdown documentation, images, etc.) are licensed under the [![cc-by-sa-4.0][cc-by-sa-image]][cc-by-sa] [license](LICENSE-ASSETS).
+
 [Nemeton]: https://nemeton.okp4.network
 [OKP4]: https://okp4.network
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://i.creativecommons.org/l/by-sa/4.0/80x15.png
+[bsd-3-clause]: https://opensource.org/licenses/BSD-3-Clause
+[bsd-3-clause-image]: https://img.shields.io/badge/License-BSD_3--Clause-blue.svg
