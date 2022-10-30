@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import getConfig from 'next/config'
 import React, { useMemo } from 'react'
 import { useMediaType } from '../../../hook/useMediaType'
 import type { Config } from '../../../types/config.type'
@@ -54,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
   const isLargeScreen = useMediaType('(min-width: 1540px)')
   const isMobileScreen = useMediaType('(max-width: 900px)')
   const iconSize = isLargeScreen ? 50 : 28
-  const { publicRuntimeConfig } = getConfig()
+
   return (
     <div className="okp4-nemeton-web-footer-container">
       <div className="okp4-nemeton-web-footer-content">
@@ -62,7 +61,6 @@ export const Footer: React.FC<FooterProps> = ({ staticUrls }): JSX.Element => {
           href={websiteUrl}
           rel="noreferrer"
           target="_blank"
-          title={`v${publicRuntimeConfig.version}`}
         >
           {isLargeScreen ? (
             <Image
