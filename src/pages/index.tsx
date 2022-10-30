@@ -26,9 +26,11 @@ const Home: NextPage<HomeProps> = ({ staticUrls }) => {
 
       <main>
         <Header typeformUrl={staticUrls.typeformUrl} />
-        <Sidh />
-        <Imbolc />
-        <Beltaine />
+        <div className="okp4-nemeton-web-phases-main">
+          <Sidh />
+          <Imbolc />
+          <Beltaine />
+        </div>
         <Footer staticUrls={staticUrls} />
       </main>
     </div>
