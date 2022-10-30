@@ -1,6 +1,6 @@
-# The landing page for the OKP4 Nemeton Program
+# OKP4 Nemeton Program Landing Page
 
-> Nemeton program is the [OKP4](https://okp4.network/) incentivized testnet program.
+> 🧙 Landing Page repository for the [Nemeton program][Nemeton] - the [OKP4](https://okp4.network/) incentivized testnet program.
 
 [![version](https://img.shields.io/github/v/release/okp4/nemeton-web?style=for-the-badge&logo=github)](https://github.com/okp4/nemeton-web/releases)
 [![lint](https://img.shields.io/github/workflow/status/okp4/nemeton-web/Lint?label=lint&style=for-the-badge&logo=github)](https://github.com/okp4/nemeton-web/actions/workflows/lint.yml)
@@ -13,18 +13,39 @@
 
 ## Purpose
 
-This is the landing page for OKP4 Nemeton program. It displays :
+Here you'll find the source code of the landing page for the [OKP4 Nemeton program][Nemeton] - the [OKP4] incentivized testnet program that will start on November 2, 2022!
 
-- 🎇 Phases of the Program
+Here's the content:
+
+- 📍 Phases of the Program
 - 📊 Leaderboard
 - 💸 Rewards
-- ✔️How to join
-- ⚠️ Terms
+- 🤗 How to join
+- ⚖️ Terms
 
-## development
+## Setup
 
-```bash
-yarn dev
+🚚 Install the dependencies and build the project:
+
+```sh
+yarn
+
+yarn build
+```
+
+## Use
+
+### Environment
+
+To launch the Web App, you need to set some environment variables. Default values are provided for the development environment in the file `.env.development`.
+Feel free to adapt the values to your needs.
+
+### Launch
+
+Run the server with the following command line.
+
+```sh
+yarn start
 ```
 
 ## You want to get involved? 😍
@@ -33,3 +54,6 @@ Please check out OKP4 health files :
 
 - [Contributing](https://github.com/okp4/.github/blob/main/CONTRIBUTING.md)
 - [Code of conduct](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
+
+[Nemeton]: https://nemeton.okp4.network
+[OKP4]: https://okp4.network
