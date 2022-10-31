@@ -14,7 +14,7 @@ const Rewards: NextPage<RewardsProps> = ({ keywords, title, urls }) => {
       <Head keywords={keywords} title={title} />
       <main>
         <Header typeformUrl={typeformUrl} />
-        <div className="okp4-nemeton-web-page-content-container">
+        <div className="okp4-nemeton-web-page-content-container" id="rewards">
           <h1>Rewards</h1>
           <p>Druids will be rewarded with a mix of token rewards + delegation commitment.</p>
           <p>
