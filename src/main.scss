@@ -136,6 +136,14 @@ main {
 
       ul {
         list-style-type: disc;
+
+        @media screen and (max-width: 720px) {
+          padding-inline-start: 20px;
+
+          li {
+            margin-left: unset;
+          }
+        }
       }
     }
 
