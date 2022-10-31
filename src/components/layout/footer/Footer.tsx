@@ -57,26 +57,13 @@ export const Footer: React.FC<FooterProps> = ({ urls }): JSX.Element => {
   return (
     <div className="okp4-nemeton-web-footer-container">
       <div className="okp4-nemeton-web-footer-content">
-        <a
-          href={websiteUrl}
-          rel="noreferrer"
-          target="_blank"
-        >
-          {isLargeScreen ? (
-            <Image
-              alt="okp4-inline-logo"
-              height={110}
-              src="/image/okp4-inline-logo.png"
-              width={396}
-            />
-          ) : (
-            <Image
-              alt="okp4-mobile-logo"
-              height={isMobileScreen ? 42 : 85}
-              src="/image/okp4-logo-mobile.svg"
-              width={isMobileScreen ? 150 : 305}
-            />
-          )}
+        <a href={websiteUrl} rel="noreferrer" target="_blank">
+          <Image
+            alt="okp4-mobile-logo"
+            height={isMobileScreen ? 42 : 85}
+            src="/image/okp4-logo-mobile.svg"
+            width={isMobileScreen ? 150 : 305}
+          />
         </a>
         <div className="okp4-nemeton-web-footer-links-container">
           {footerRoutes.map(({ name, path }: Route) => (
