@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
-import getConfig from 'next/config'
-import Head from 'next/head'
+import { Head } from '../components/head/Head'
 import { Header } from '../components/layout/header/Header'
 import { Footer } from '../components/layout/footer/Footer'
 
@@ -11,19 +10,10 @@ import type { Config } from '../types/config.type'
 
 export type HomeProps = Pick<Config, "title" | "keywords" | "urls">
 
-// eslint-disable-next-line @typescript-eslint/typedef
-const { publicRuntimeConfig } = getConfig()
-
 const Home: NextPage<HomeProps> = ({ keywords, title, urls }) => {
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta content={keywords} name="keywords" />
-        <meta content={publicRuntimeConfig.version} name="version" />
-        <link href="/okp4-logo.png" rel="icon" />
-      </Head>
-
+      <Head keywords={keywords} title={title}/>
       <main>
         <Header typeformUrl={urls.typeformUrl} />
         <div className="okp4-nemeton-web-phases-main">

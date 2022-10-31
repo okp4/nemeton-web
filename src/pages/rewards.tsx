@@ -1,15 +1,18 @@
 import type { NextPage } from 'next'
+import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 
-export type RewardsProps = Pick<Config, 'urls'>
+export type RewardsProps = Pick<Config, "title" | "keywords" | "urls">
 
-const Rewards: NextPage<RewardsProps> = ({ urls }) => {
+
+const Rewards: NextPage<RewardsProps> = ({ keywords, title, urls }) => {
   const { typeformUrl } = urls
 
   return (
     <div className="okp4-nemeton-web-page-main">
+      <Head keywords={keywords} title={title}/>
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container">
