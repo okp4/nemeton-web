@@ -16,9 +16,7 @@ type FAQUrls = {
   typeformUrl: string
 }
 
-export type FAQProps = {
-  urls: Config['urls']
-}
+export type FAQProps = Pick<Config, 'urls'>
 
 const faqs = (urls: FAQUrls): FAQ[] => [
   {

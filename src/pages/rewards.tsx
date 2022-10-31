@@ -3,9 +3,7 @@ import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 
-export type RewardsProps = {
-  urls: Config['urls']
-}
+export type RewardsProps = Pick<Config, 'urls'>
 
 const Rewards: NextPage<RewardsProps> = ({ urls }) => {
   const { typeformUrl } = urls

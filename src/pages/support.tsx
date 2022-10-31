@@ -4,9 +4,7 @@ import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 
-export type SupportProps = {
-  urls: Config['urls']
-}
+export type SupportProps = Pick<Config, 'urls'>
 
 const Support: NextPage<SupportProps> = ({ urls }) => {
   const {
