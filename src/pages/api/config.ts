@@ -25,6 +25,18 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse<Confi
       supportUrls: {
         discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
         discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL
+      },
+      mailAddresses: {
+        contact: process.env.OKP4_MAIL_CONTACT_ADDRESS
+      },
+      licenceUrls: {
+        blockchainLicenceUrl: process.env.OKP4_LICENCE_BLOCKCHAIN_URL,
+        codeLicenceUrl: process.env.OKP4_LICENCE_CODE_URL,
+        assetsLicenceUrl: process.env.OKP4_LICENCE_ASSETS_URL
+      },
+      termsUrls: {
+        arbitrageUrl: process.env.OKP4_ARBITRAGE_URL,
+        arbitrageRulesUrl: process.env.OKP4_ARBITRAGE_RULES_URL
       }
     }
   }

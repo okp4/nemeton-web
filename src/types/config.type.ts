@@ -21,5 +21,17 @@ export type Config = {
       discordNemetonUrl: string
       discordTicketUrl: string
     }
+    mailAddresses: {
+      contact: string
+    }
+    licenceUrls: {
+      blockchainLicenceUrl: string
+      codeLicenceUrl: string
+      assetsLicenceUrl: string
+    }
+    termsUrls: {
+      arbitrageUrl: string
+      arbitrageRulesUrl: string
+    }
   }
 }
