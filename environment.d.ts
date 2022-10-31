@@ -21,6 +21,7 @@ declare namespace NodeJS {
     OKP4_LICENCE_ASSETS_URL: string
     OKP4_ARBITRAGE_URL: string
     OKP4_ARBITRAGE_RULES_URL: string
+    OKP4_COOKIE_POLICY_URL: string
   }
 }
 

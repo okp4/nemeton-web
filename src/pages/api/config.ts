@@ -37,6 +37,9 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse<Confi
       termsUrls: {
         arbitrageUrl: process.env.OKP4_ARBITRAGE_URL,
         arbitrageRulesUrl: process.env.OKP4_ARBITRAGE_RULES_URL
+      },
+      privacyUrls: {
+        cookiePolicyUrl: process.env.OKP4_COOKIE_POLICY_URL
       }
     }
   }
