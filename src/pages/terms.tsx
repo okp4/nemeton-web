@@ -296,20 +296,26 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
                 <p>
                   All OKP4 elements related to blockchain (mainly, but not limited to, blockchain
                   and smart contracts) are subject to the license{' '}
-                  <a href={blockchainLicenceUrl}>Apache-2</a>.
+                  <a href={blockchainLicenceUrl} rel="noreferrer" target="_blank">
+                    Apache-2
+                  </a>
+                  .
                 </p>
               </li>
               <li>
                 <p>
                   Other OKP4 code elements not related to the blockchain are subject to the license{' '}
-                  <a href={codeLicenceUrl}>BSD 3-Clause</a>.
+                  <a href={codeLicenceUrl} rel="noreferrer" target="_blank">
+                    BSD 3-Clause
+                  </a>
+                  .
                 </p>
               </li>
               <li>
                 <p>
                   The other OKP4 elements of content and other works (documents, images... without
                   limitation) are subject to the license{' '}
-                  <a href={assetsLicenceUrl}>
+                  <a href={assetsLicenceUrl} rel="noreferrer" target="_blank">
                     Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
                   </a>
                   .
@@ -552,10 +558,16 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
               (c) Conduct of Arbitration and Arbitration Rules. The arbitration shall be conducted
               by the Chambre Arbitrale Internationale de Paris (&apos;CAIP&apos;) under its
               then-current Consumer Arbitration Rules (&apos;CAIP Rules&apos;), unless modified by
-              these Terms. The CAIP Rules are available at <a href={arbitrageUrl}>{arbitrageUrl}</a>
+              these Terms. The CAIP Rules are available at{' '}
+              <a href={arbitrageUrl} rel="noreferrer" target="_blank">
+                {arbitrageUrl}
+              </a>
               . A party wishing to initiate an arbitration must submit a written request for
               arbitration to CAIP and notify the other party as set forth in the CAIP Rules
-              (Arbitration Rules: <a href={arbitrageRulesUrl}>{arbitrageRulesUrl}</a>
+              (Arbitration Rules:{' '}
+              <a href={arbitrageRulesUrl} rel="noreferrer" target="_blank">
+                {arbitrageRulesUrl}
+              </a>
               ). The place of arbitration shall be Toulouse. The language of the arbitration shall
               be English. The parties agree that the arbitrator shall have exclusive authority to
               decide all questions relating to the interpretation, applicability, performance, and
@@ -648,7 +660,10 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
             <p>
               Contact Information. If you have any questions regarding these Terms or Nemeton,
               please contact <a href={`mailto:${contact}`}>{contact}</a> or join us on our{' '}
-              <a href={discordUrl}>OKP4 Discord server</a>.
+              <a href={discordUrl} rel="noreferrer" target="_blank">
+                OKP4 Discord server
+              </a>
+              .
             </p>
           </ol>
         </div>
