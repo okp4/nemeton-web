@@ -6,29 +6,42 @@ export type Route = {
 export const headerRoutes: Route[] = [
   {
     name: 'Home',
-    path: '/'
+    path: '/#home'
   },
   {
     name: 'Rewards',
-    path: '/rewards'
+    path: '/rewards#rewards'
   },
   {
     name: 'F.A.Q',
-    path: '/faq'
+    path: '/faq#faq'
   },
   {
     name: 'Terms',
-    path: '/terms'
+    path: '/terms#terms-conditions'
   }
 ]
 
 export const footerRoutes: Route[] = [
   {
     name: 'Support',
-    path: '/support'
+    path: '/support#support-page'
   },
   {
     name: 'Privacy Policy',
-    path: '/privacy'
+    path: '/privacy#privacy-cookie-policy'
+  }
+]
+
+export const supportRoutes: Route[] = [
+  {
+    name: 'F.A.Q',
+    path: '/faq#faq'
+  }
+]
+export const termsRoutes: Route[] = [
+  {
+    name: 'Privacy Policy',
+    path: '/privacy#privacy-cookie-policy'
   }
 ]

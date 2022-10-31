@@ -239,7 +239,7 @@ const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
       <Head keywords={keywords} title={title} />
       <main>
         <Header typeformUrl={typeformUrl} />
-        <div className="okp4-nemeton-web-page-content-container">
+        <div className="okp4-nemeton-web-page-content-container" id="faq">
           <h1>F.A.Q.</h1>
           <div>
             <p>

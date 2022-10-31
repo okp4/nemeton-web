@@ -4,6 +4,7 @@ import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
+import { termsRoutes } from '../routes'
 
 export type TermsProps = Pick<Config, 'title' | 'keywords' | 'urls'>
 
@@ -16,12 +17,14 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
     termsUrls: { arbitrageUrl, arbitrageRulesUrl }
   } = urls
 
+  const [{ path: privacyPath }] = termsRoutes
+
   return (
     <div className="okp4-nemeton-web-page-main">
       <Head keywords={keywords} title={title} />
       <main>
         <Header typeformUrl={typeformUrl} />
-        <div className="okp4-nemeton-web-page-content-container">
+        <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">
           <h1>Terms & conditions</h1>
           <p>
             These Nemeton Testnet participation Terms & Conditions (the &quot;Terms&quot;) apply to
@@ -47,7 +50,7 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
             <p>
               By accessing or using our OKP4 Services, or by participating in our Testnet, you agree
               to these Terms and Conditions as well as our{' '}
-              <Link href={'/privacy'}>Privacy Policy</Link> and any other agreements or terms set
+              <Link href={privacyPath}>Privacy Policy</Link> and any other agreements or terms set
               forth by OKP4. These Terms constitute a binding obligation between you and OKP4. If
               you do not agree to these Terms, do not use our Services; if you do use our Services,
               you accept this Agreement. If you have any questions about these Terms, the Services
@@ -57,7 +60,7 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
               <h2>Privacy Policy</h2>
             </li>
             <p>
-              Please refer to our <Link href={'/privacy'}>Privacy Policy</Link> for more details on
+              Please refer to our <Link href={privacyPath}>Privacy Policy</Link> for more details on
               what information OKP4 may collect, use, or disclose and under what circumstances. You
               acknowledge and agree that your participation in Nemeton is subject to this Privacy
               Policy.

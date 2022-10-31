@@ -19,7 +19,7 @@ const Privacy: NextPage<PrivacyProps> = ({ keywords, title, urls }) => {
       <Head keywords={keywords} title={title} />
       <main>
         <Header typeformUrl={typeformUrl} />
-        <div className="okp4-nemeton-web-page-content-container">
+        <div className="okp4-nemeton-web-page-content-container" id="privacy-cookie-policy">
           <h1>Privacy & Cookie policy</h1>
           <p>Last updated: October 19, 2022</p>
           <p>
