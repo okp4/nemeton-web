@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.0.1](https://github.com/okp4/nemeton-web/compare/v1.0.0...v1.0.1) (2022-11-02)
+
+
+### Bug Fixes
+
+* **ui:** reword Home route ([c3d8a76](https://github.com/okp4/nemeton-web/commit/c3d8a761a52f4d39ccec2b077fa21d27f408d961))
+
 ## 1.0.0 (2022-11-02)
 
 
