@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>OKP4 Nemeton Program Landing Page</h1>
+  <h1>Nemeton Landing Page</h1>
 </div>
 
 [![nemeton github banqner](./etc/nemeton-banner.jpg)](https://nemeton.okp4.network)
@@ -19,7 +19,7 @@
 
 ## Purpose
 
-Here you'll find the source code of the landing page for the [OKP4 Nemeton program][Nemeton] - the [OKP4] incentivized testnet program that will start on November 2, 2022!
+Here you'll find the source code of the landing page for the [OKP4 Nemeton program][Nemeton] - the [OKP4] incentivized testnet program that has started on November 2, 2022.
 
 Here's the content:
 
