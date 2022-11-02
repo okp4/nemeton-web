@@ -13,7 +13,7 @@ export const headerRoutes: Route[] = [
     path: '/rewards#rewards'
   },
   {
-    name: 'F.A.Q',
+    name: 'F.A.Q.',
     path: '/faq#faq'
   },
   {
