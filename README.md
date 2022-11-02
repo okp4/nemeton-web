@@ -1,15 +1,21 @@
-# OKP4 Nemeton Program Landing Page
+<div align="center">
+  <h1>OKP4 Nemeton Program Landing Page</h1>
+</div>
+
+[![nemeton github banqner](./etc/nemeton-banner.jpg)](https://nemeton.okp4.network)
+
+<div align="center">
+<a href="https://github.com/okp4/nemeton-web/releases"><img src="https://img.shields.io/github/v/release/okp4/nemeton-web?style=for-the-badge&amp;logo=github" alt="version"></a>
+<a href="https://github.com/okp4/nemeton-web/actions/workflows/lint.yml"><img src="https://img.shields.io/github/workflow/status/okp4/nemeton-web/Lint?label=lint&amp;style=for-the-badge&amp;logo=github" alt="lint"></a>
+<a href="https://github.com/okp4/nemeton-web/actions/workflows/build.yml"><img src="https://img.shields.io/github/workflow/status/okp4/nemeton-web/Build?label=build&amp;style=for-the-badge&amp;logo=github" alt="build"></a>
+<a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&amp;logo=conventionalcommits" alt="conventional commits"></a>
+<a href="https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=for-the-badge" alt="contributor covenant"></a>
+<a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge" alt="license"></a>
+<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&amp;logo=typescript&amp;logoColor=white" alt="TypeScript">
+<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge" alt="prettier"></a></p>
+</div>
 
 > 🧙 Landing Page repository for the [Nemeton program][Nemeton] - the [OKP4](https://okp4.network/) incentivized testnet program.
-
-[![version](https://img.shields.io/github/v/release/okp4/nemeton-web?style=for-the-badge&logo=github)](https://github.com/okp4/nemeton-web/releases)
-[![lint](https://img.shields.io/github/workflow/status/okp4/nemeton-web/Lint?label=lint&style=for-the-badge&logo=github)](https://github.com/okp4/nemeton-web/actions/workflows/lint.yml)
-[![build](https://img.shields.io/github/workflow/status/okp4/nemeton-web/Build?label=build&style=for-the-badge&logo=github)](https://github.com/okp4/nemeton-web/actions/workflows/build.yml)
-[![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
-[![contributor covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=for-the-badge)](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
-[![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-[![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 ## Purpose
 
