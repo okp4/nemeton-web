@@ -2,7 +2,7 @@
   <h1>Nemeton Landing Page</h1>
 </div>
 
-[![nemeton github banqner](./etc/nemeton-banner.jpg)](https://nemeton.okp4.network)
+[![nemeton github bannner](./etc/nemeton-banner.jpg)](https://nemeton.okp4.network)
 
 <div align="center">
 <a href="https://github.com/okp4/nemeton-web/releases"><img src="https://img.shields.io/github/v/release/okp4/nemeton-web?style=for-the-badge&amp;logo=github" alt="version"></a>
