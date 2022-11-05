@@ -6,9 +6,10 @@ import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 import { termsRoutes } from '../routes'
 
-export type TermsProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type TermsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
+const Terms: NextPage<TermsProps> = props => {
+  const { urls } = props
   const {
     typeformUrl,
     socialMediaUrls: { discordUrl },
@@ -21,7 +22,7 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">

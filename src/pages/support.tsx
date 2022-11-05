@@ -6,9 +6,10 @@ import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 import { supportRoutes } from '../routes'
 
-export type SupportProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type SupportProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const Support: NextPage<SupportProps> = ({ keywords, title, urls }) => {
+const Support: NextPage<SupportProps> = (props) => {
+  const { urls } = props
   const {
     typeformUrl,
     supportUrls: { discordNemetonUrl, discordTicketUrl },
@@ -19,7 +20,7 @@ const Support: NextPage<SupportProps> = ({ keywords, title, urls }) => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="support-page">

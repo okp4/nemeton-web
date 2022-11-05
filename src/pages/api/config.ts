@@ -6,6 +6,7 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse<Confi
   const config: Config = {
     title: process.env.APP_TITLE,
     keywords: process.env.APP_KEYWORDS,
+    description: process.env.APP_DESCRIPTION,
     urls: {
       websiteUrl: process.env.OKP4_WEBSITE_URL,
       socialMediaUrls: {
