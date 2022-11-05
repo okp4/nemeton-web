@@ -235,6 +235,7 @@
 
     .okp4-nemeton-web-header-mobile-menu-links {
       opacity: 0;
+      visibility: hidden;
       position: absolute;
       padding: 30px 0;
       top: 115px;
@@ -247,7 +248,7 @@
       z-index: 100;
       font-family: 'Gotham light', sans-serif;
       font-size: 12px;
-      transition: opacity 0.4s;
+      transition: all 0.4s;
 
       .link-label {
         opacity: 0.7;
@@ -260,6 +261,7 @@
 
       &.open {
         opacity: 1;
+        visibility: visible;
       }
     }
 
