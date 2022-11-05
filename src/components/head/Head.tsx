@@ -22,7 +22,7 @@ export const Head: React.FC<HeadProps> = ({ title, keywords }): JSX.Element => {
       <title>{pageTitle}</title>
       <meta content={keywords} name="keywords" />
       <meta content={publicRuntimeConfig.version} name="version" />
-      <link href="/okp4-logo.png" rel="icon" />
+      <link href="/okp4-logo.webp" rel="icon" />
     </HtmlHead>
   )
 }

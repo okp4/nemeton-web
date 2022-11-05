@@ -4,7 +4,7 @@
   width: 100%;
   padding-top: 230px;
   column-gap: 260px;
-  background-image: url('/image/nemeton-large.png');
+  background-image: url('/image/nemeton-large.webp');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   padding-bottom: 70px;
 
   @media screen and (min-width: 581px) and (max-width: 1440px) {
-    background-image: url('/image/nemeton-medium.png');
+    background-image: url('/image/nemeton-medium.webp');
     padding: 50px 0 150px;
     background-size: auto;
   }
@@ -25,7 +25,7 @@
   }
 
   @media screen and (max-width: 580px) {
-    background-image: url('/image/nemeton-mobile.png');
+    background-image: url('/image/nemeton-mobile.webp');
     padding: 50px 0 130px;
     row-gap: 0 !important;
   }

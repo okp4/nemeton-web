@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
           <Image
             alt="okp4-vertical-logo"
             height={275}
-            src="/image/okp4-logo-vertical.png"
+            src="/image/okp4-logo-vertical.webp"
             width={359}
           />
         ) : (

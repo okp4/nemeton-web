@@ -242,17 +242,17 @@ main {
       }
       &.imbolc {
         @media screen and (max-width: 580px) {
-          background-image: url('/image/imbolc-mobile.png');
+          background-image: url('/image/imbolc-mobile.webp');
         }
       }
       &.sidh {
         @media screen and (max-width: 580px) {
-          background-image: url('/image/sidh-mobile.png');
+          background-image: url('/image/sidh-mobile.webp');
         }
       }
       &.beltaine {
         @media screen and (max-width: 580px) {
-          background-image: url('/image/beltaine-mobile.png');
+          background-image: url('/image/beltaine-mobile.webp');
         }
       }
 
@@ -272,11 +272,11 @@ main {
         }
 
         &.imbolc {
-          background-image: url('/image/imbolc-large.png');
+          background-image: url('/image/imbolc-large.webp');
           background-position: left;
           background-size: contain;
           @media screen and (min-width: 581px) and (max-width: 1920px) {
-            background-image: url('/image/imbolc-medium.png');
+            background-image: url('/image/imbolc-medium.webp');
           }
           @media screen and (max-width: 900px) {
             background-size: cover;
@@ -284,11 +284,11 @@ main {
         }
 
         &.beltaine {
-          background-image: url('/image/beltaine-large.png');
+          background-image: url('/image/beltaine-large.webp');
           background-position: right;
           background-size: auto;
           @media screen and (min-width: 581px) and (max-width: 1920px) {
-            background-image: url('/image/beltaine-medium.png');
+            background-image: url('/image/beltaine-medium.webp');
           }
           @media screen and (max-width: 900px) {
             background-size: cover;
@@ -296,11 +296,11 @@ main {
         }
 
         &.sidh {
-          background-image: url('/image/sidh-large.png');
+          background-image: url('/image/sidh-large.webp');
           background-position: right;
           background-size: contain;
           @media screen and (min-width: 581px) and (max-width: 1920px) {
-            background-image: url('/image/sidh-medium.png');
+            background-image: url('/image/sidh-medium.webp');
           }
           @media screen and (max-width: 900px) {
             background-size: cover;
@@ -308,7 +308,7 @@ main {
         }
 
         @media screen and (min-width: 2125px) {
-          background-image: url('/image/sidh.png');
+          background-image: url('/image/sidh.webp');
           background-position: right;
           background-repeat: no-repeat;
         }

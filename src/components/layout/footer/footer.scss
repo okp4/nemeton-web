@@ -3,7 +3,7 @@
   justify-content: center;
   width: calc(100% - 244px);
   position: relative;
-  background-image: url('/image/footer-large.png');
+  background-image: url('/image/footer-large.webp');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,14 +11,14 @@
   background-size: 100% 900px;
 
   @media screen and (max-width: 900px) {
-    background-image: url('/image/footer-small.png');
+    background-image: url('/image/footer-small.webp');
     padding: 60px 30px 30px 30px;
     width: calc(100% - 60px);
     background-size: cover;
   }
 
   @media screen and (min-width: 901px) and (max-width: 1249px) {
-    background-image: url('/image/footer-medium.png');
+    background-image: url('/image/footer-medium.webp');
     padding: 120px 122px 120px 122px;
   }
 
