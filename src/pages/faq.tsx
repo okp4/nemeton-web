@@ -1,9 +1,10 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
+import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
 
 type FAQ = {
@@ -307,5 +308,11 @@ const Faq: NextPage<FAQProps> = props => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<FAQProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Faq

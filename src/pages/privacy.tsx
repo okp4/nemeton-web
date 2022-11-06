@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
+import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
 
 export type PrivacyProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
@@ -230,5 +231,11 @@ const Privacy: NextPage<PrivacyProps> = props => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<PrivacyProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Privacy

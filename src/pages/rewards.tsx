@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
+import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
 
 export type RewardsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
@@ -30,5 +31,11 @@ const Rewards: NextPage<RewardsProps> = props => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<RewardsProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Rewards
