@@ -17,7 +17,6 @@ export const Head: React.FC<HeadProps> = ({ description, title, keywords }): JSX
   const segment = getLastSegmentInPath(router.pathname)
   const pageTitle = `${title}${segment ? ` | ${segment.toUpperCase()}` : ''}`
 
-  console.log(router.route)
   return (
     <HtmlHead>
       <title>{pageTitle}</title>
