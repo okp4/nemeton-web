@@ -13,7 +13,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && stylelint --fix '**/*.scss'"
   },
   "engines": {
     "node": "^16.18.0",
