@@ -9,6 +9,10 @@ module.exports = {
   publicRuntimeConfig: {
     version: pkg.version
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   webpack(config) {
     config.experiments = { ...config.experiments, ...{ topLevelAwait: true } }
     config.module.rules[2].oneOf?.forEach(one => {

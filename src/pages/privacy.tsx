@@ -1,12 +1,14 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
+import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
 
-export type PrivacyProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type PrivacyProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const Privacy: NextPage<PrivacyProps> = ({ keywords, title, urls }) => {
+const Privacy: NextPage<PrivacyProps> = props => {
+  const { urls } = props
   const {
     typeformUrl,
     privacyUrls: { cookiePolicyUrl },
@@ -16,7 +18,7 @@ const Privacy: NextPage<PrivacyProps> = ({ keywords, title, urls }) => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="privacy-cookie-policy">
@@ -229,5 +231,11 @@ const Privacy: NextPage<PrivacyProps> = ({ keywords, title, urls }) => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<PrivacyProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Privacy

@@ -2,6 +2,7 @@ declare namespace NodeJS {
   interface ProcessEnv {
     APP_TITLE: string
     APP_KEYWORDS: string
+    APP_DESCRIPTION: string
     OKP4_DISCORD_URL: string
     OKP4_GITHUB_URL: string
     OKP4_LINKEDIN_URL: string

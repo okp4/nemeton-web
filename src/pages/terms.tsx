@@ -1,14 +1,16 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
 import { termsRoutes } from '../routes'
+import { config } from '../lib/config'
 
-export type TermsProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type TermsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
+const Terms: NextPage<TermsProps> = props => {
+  const { urls } = props
   const {
     typeformUrl,
     socialMediaUrls: { discordUrl },
@@ -21,7 +23,7 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">
@@ -675,5 +677,11 @@ const Terms: NextPage<TermsProps> = ({ keywords, title, urls }) => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<TermsProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Terms

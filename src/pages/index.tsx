@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import { Head } from '../components/head/Head'
 import { Header } from '../components/layout/header/Header'
 import { Footer } from '../components/layout/footer/Footer'
@@ -7,13 +7,15 @@ import { Sidh } from '../components/sidh/Sidh'
 import { Imbolc } from '../components/imbolc/Imbolc'
 import { Beltaine } from '../components/beltaine/Beltaine'
 import type { Config } from '../types/config.type'
+import { config } from '../lib/config'
 
-export type HomeProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type HomeProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const Home: NextPage<HomeProps> = ({ keywords, title, urls }) => {
+const Home: NextPage<HomeProps> = props => {
+  const { urls } = props
   return (
     <div>
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={urls.typeformUrl} />
         <div className="okp4-nemeton-web-phases-main" id="home">
@@ -26,5 +28,11 @@ const Home: NextPage<HomeProps> = ({ keywords, title, urls }) => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Home

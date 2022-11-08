@@ -1,9 +1,10 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
+import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
 
 type FAQ = {
@@ -17,7 +18,7 @@ type FAQUrls = {
   typeformUrl: string
 }
 
-export type FAQProps = Pick<Config, 'title' | 'keywords' | 'urls'>
+export type FAQProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
 const faqs = (urls: FAQUrls): FAQ[] => [
   {
@@ -225,7 +226,8 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   }
 ]
 
-const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
+const Faq: NextPage<FAQProps> = props => {
+  const { urls } = props
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const { socialMediaUrls, docsUrls, typeformUrl } = urls
   const { discordUrl } = socialMediaUrls
@@ -236,7 +238,7 @@ const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
   }
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head keywords={keywords} title={title} />
+      <Head {...props} />
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="faq">
@@ -306,5 +308,11 @@ const Faq: NextPage<FAQProps> = ({ keywords, title, urls }) => {
     </div>
   )
 }
+
+export const getServerSideProps: GetServerSideProps<FAQProps> = async () => ({
+  props: {
+    ...config
+  }
+})
 
 export default Faq
