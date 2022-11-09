@@ -1,6 +1,5 @@
 import ClearIcon from '@mui/icons-material/Clear'
 import React from 'react'
-import './challenges.scss'
 
 type ChallengesProps = {
   refObj: React.RefObject<HTMLDivElement> | null
