@@ -1,3 +1,5 @@
+@import 'src/variables.scss';
+
 .okp4-nemeton-web-header-main {
   display: grid;
   grid-template: repeat(3, auto) / repeat(2, auto);
@@ -42,7 +44,7 @@
     }
 
     @media screen and (max-width: 580px) {
-      padding: 85px 0 6px 0;
+      padding: 85px 0 6px;
       grid-area: 2/1/2/3;
     }
 
@@ -51,7 +53,7 @@
       text-align: center;
       letter-spacing: 14px;
       line-height: 140px;
-      text-shadow: 0px 3px 6px #00000080;
+      text-shadow: 0 3px 6px #00000080;
 
       @media screen and (max-width: 1440px) {
         font-size: 100px;
@@ -97,7 +99,7 @@
       align-self: flex-end;
       width: 453px;
       height: 93px;
-      background: #ffffff 0% 0% no-repeat padding-box;
+      background: $primary-white 0% 0% no-repeat padding-box;
       border: unset;
       color: #1f403c;
       cursor: pointer;
@@ -155,7 +157,7 @@
     > h1:first-of-type {
       font-size: 61px;
       line-height: 60px;
-      text-shadow: 0px 3px 6px #00000080;
+      text-shadow: 0 3px 6px #00000080;
 
       @media screen and (max-width: 1440px) {
         font-size: 61px;
@@ -177,7 +179,7 @@
     justify-content: space-around;
     max-width: 644px;
     width: 100%;
-    margin: 50px 0 218px 0;
+    margin: 50px 0 218px;
     @media screen and (max-width: 1440px) {
       grid-area: 6 / 1 / 6 / 1;
       max-width: 640px;
@@ -190,7 +192,7 @@
       cursor: pointer;
       opacity: 0.8;
       line-height: 66px;
-      text-shadow: 0px 3px 6px #00000080;
+      text-shadow: 0 3px 6px #00000080;
 
       &.active {
         opacity: 1;
@@ -253,6 +255,7 @@
       .link-label {
         opacity: 0.7;
         cursor: pointer;
+
         &.active {
           opacity: 1;
           font-size: 20px;
