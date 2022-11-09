@@ -2,6 +2,7 @@
 @import url('https://fonts.cdnfonts.com/css/gotham');
 
 @import './variables.scss';
+
 html,
 body {
   height: 100%;
@@ -46,10 +47,12 @@ main {
 
 .okp4-nemeton-web-icon {
   cursor: pointer;
+
   &.rotate-down {
     transform: rotate(180deg);
     transition: transform 0.1s linear;
   }
+
   &.rotate-up {
     transform: rotate(0deg);
     transition: transform 0.1s linear;
@@ -59,7 +62,7 @@ main {
 .okp4-nemeton-web-page-main {
   .okp4-nemeton-web-page-content-container {
     max-width: 1600px;
-    padding: 10px 230px 30px 230px;
+    padding: 10px 230px 30px;
     margin: auto;
 
     @media screen and (min-width: 581px) and (max-width: 800px) {
@@ -88,7 +91,7 @@ main {
     h2 {
       font-size: 60px;
       margin: 20px 0;
-      text-shadow: 0px 3px 6px #00000080;
+      text-shadow: 0 3px 6px #00000080;
       letter-spacing: 2.4px;
 
       @media screen and (max-width: 580px) {
@@ -168,6 +171,7 @@ main {
       display: flex;
       flex-direction: column;
       gap: 10px;
+
       .okp4-nemeton-web-page-content-accordion-container {
         display: flex;
         justify-content: space-between;
@@ -184,6 +188,7 @@ main {
           }
         }
       }
+
       .okp4-nemeton-web-page-content-accordion-answer-container {
         width: 88%;
         margin: auto;
@@ -201,6 +206,7 @@ main {
     gap: 30px;
     margin-top: 20px;
   }
+
   .okp4-nemeton-web-phase-main {
     display: flex;
     flex-direction: column;
@@ -240,16 +246,19 @@ main {
         background-position: center top 5%;
         background-size: contain;
       }
+
       &.imbolc {
         @media screen and (max-width: 580px) {
           background-image: url('/image/imbolc-mobile.webp');
         }
       }
+
       &.sidh {
         @media screen and (max-width: 580px) {
           background-image: url('/image/sidh-mobile.webp');
         }
       }
+
       &.beltaine {
         @media screen and (max-width: 580px) {
           background-image: url('/image/beltaine-mobile.webp');
@@ -324,7 +333,7 @@ main {
           background-image: none !important;
           width: 100%;
           height: 475px;
-          margin: 50px 26px 0 26px;
+          margin: 50px 26px 0;
           min-width: unset;
         }
 
@@ -355,12 +364,14 @@ main {
             justify-content: flex-end;
             max-height: inherit;
           }
+
           .okp4-nemeton-web-phase-content-title {
             display: flex;
             align-items: baseline;
             @media screen and (max-width: 580px) {
               justify-content: center;
             }
+
             > h1:first-of-type {
               font-size: 140px;
               @media screen and (max-width: 580px) {
@@ -390,6 +401,7 @@ main {
         }
       }
     }
+
     .okp4-nemeton-web-challenge-button {
       max-width: 350px;
       border: 2px solid white;
@@ -399,7 +411,7 @@ main {
       font-family: 'Six Caps', sans-serif;
       font-size: 42px;
       letter-spacing: 2px;
-      padding: 0px 28px;
+      padding: 0 28px;
 
       &.right {
         margin: 20px 80px 0 0;

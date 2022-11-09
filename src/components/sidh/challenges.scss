@@ -13,15 +13,16 @@
     width: calc(100% - 60px);
     margin-top: 40px;
   }
+
   .okp4-nemeton-web-sidh-challenges {
     display: flex;
     justify-content: space-between;
     width: 1766px;
     height: 720px;
-    margin: 64px 240px 0 240px;
+    margin: 64px 240px 0;
 
     @media screen and (max-width: 1440px) {
-      margin: 32px 122px 45px 122px;
+      margin: 32px 122px 45px;
     }
     @media screen and (max-width: 580px) {
       flex-direction: column;
@@ -55,6 +56,7 @@
         }
       }
     }
+
     .okp4-nemeton-web-sidh-challenges-summary {
       display: flex;
       flex-direction: column;
@@ -103,9 +105,11 @@
           .okp4-nemeton-web-sidh-challenge-reward {
             display: flex;
             justify-content: space-between;
+
             > p {
               font-family: 'Gotham light', sans-serif;
               font-size: 28px;
+
               &:first-of-type {
                 width: 541px;
                 @media screen and (max-width: 580px) {

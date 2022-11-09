@@ -7,19 +7,19 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 300px 122px 120px 122px;
+  padding: 300px 122px 120px;
   background-size: 100% 900px;
 
   @media screen and (max-width: 900px) {
     background-image: url('/image/footer-small.webp');
-    padding: 60px 30px 30px 30px;
+    padding: 60px 30px 30px;
     width: calc(100% - 60px);
     background-size: cover;
   }
 
   @media screen and (min-width: 901px) and (max-width: 1249px) {
     background-image: url('/image/footer-medium.webp');
-    padding: 120px 122px 120px 122px;
+    padding: 120px 122px;
   }
 
   .okp4-nemeton-web-footer-content {
@@ -44,6 +44,7 @@
       margin: 0 10px;
       text-align: center;
       opacity: 0.7;
+
       &.active {
         opacity: 1;
       }
@@ -77,6 +78,7 @@
 
       .okp4-nemeton-web-footer-socials-media-icon {
         cursor: pointer;
+
         &:hover {
           opacity: 0.7;
         }
