@@ -102,36 +102,36 @@
             padding: 6px 0 0 24px;
           }
 
-          .okp4-nemeton-web-sidh-challenge-reward {
-            display: flex;
-            justify-content: space-between;
-
-            > p {
-              font-family: 'Gotham light', sans-serif;
-              font-size: 28px;
-
-              &:first-of-type {
-                width: 541px;
-                @media screen and (max-width: 580px) {
-                  width: 100%;
-                }
-                @media screen and (min-width: 580px) and (max-width: 1440px) {
-                  width: 425px;
-                }
-              }
-              @media screen and (max-width: 580px) {
-                font-size: 20px;
-              }
-
-              @media screen and (min-width: 580px) and (max-width: 1440px) {
-                font-size: 22px;
-              }
-            }
-          }
-
           .okp4-nemeton-web-sidh-challenge-divider {
             border-top: 1px solid white;
             margin: 5px;
+          }
+        }
+
+        .okp4-nemeton-web-sidh-challenge-reward {
+          display: flex;
+          justify-content: space-between;
+
+          > p {
+            font-family: 'Gotham light', sans-serif;
+            font-size: 28px;
+
+            &:first-of-type {
+              width: 541px;
+              @media screen and (max-width: 580px) {
+                width: 100%;
+              }
+              @media screen and (min-width: 580px) and (max-width: 1440px) {
+                width: 425px;
+              }
+            }
+            @media screen and (max-width: 580px) {
+              font-size: 20px;
+            }
+
+            @media screen and (min-width: 580px) and (max-width: 1440px) {
+              font-size: 22px;
+            }
           }
         }
       }

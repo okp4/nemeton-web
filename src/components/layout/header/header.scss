@@ -1,3 +1,5 @@
+@import 'src/variables.scss';
+
 .okp4-nemeton-web-header-main {
   display: grid;
   grid-template: repeat(3, auto) / repeat(2, auto);
@@ -97,7 +99,7 @@
       align-self: flex-end;
       width: 453px;
       height: 93px;
-      background: #ffffff 0% 0% no-repeat padding-box;
+      background: $primary-white 0% 0% no-repeat padding-box;
       border: unset;
       color: #1f403c;
       cursor: pointer;
