@@ -13,6 +13,10 @@
   row-gap: 65px;
   padding-bottom: 70px;
 
+  a {
+    text-decoration: unset;
+  }
+
   @media screen and (min-width: 581px) and (max-width: 1440px) {
     background-image: url('/image/nemeton-medium.webp');
     padding: 50px 0 150px;

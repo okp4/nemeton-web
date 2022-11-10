@@ -18,6 +18,10 @@ body {
   }
 }
 
+a {
+  color: inherit;
+}
+
 p,
 h1,
 h2,
@@ -163,10 +167,6 @@ main {
       li {
         list-style-type: disc;
       }
-    }
-
-    a {
-      color: inherit;
     }
 
     .okp4-nemeton-web-page-content-wrapper {
