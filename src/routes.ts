@@ -9,6 +9,10 @@ export const headerRoutes: Route[] = [
     path: '/#home'
   },
   {
+    name: 'Leaderboard',
+    path: '/leaderboard#leaderboard'
+  },
+  {
     name: 'Rewards',
     path: '/rewards#rewards'
   },
