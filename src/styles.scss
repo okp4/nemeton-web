@@ -4,6 +4,8 @@
 @import 'src/components/layout/header/header.scss';
 @import 'src/components/layout/footer/footer.scss';
 @import 'src/components/sidh/challenges.scss';
+@import 'src/components/card/card.scss';
+@import 'src/components/podium/podium.scss';
 
 html,
 body {
@@ -66,6 +68,11 @@ main {
 }
 
 .okp4-nemeton-web-page-main {
+  .okp4-nemeton-web-page-divider {
+    border: 2px solid $primary-white;
+    width: 371px;
+  }
+
   .okp4-nemeton-web-page-content-container {
     max-width: 1600px;
     padding: 10px 230px 30px;
@@ -470,6 +477,70 @@ main {
     border-top: 3px solid white;
     @media screen and (max-width: 900px) {
       width: 40px;
+    }
+  }
+}
+
+.okp4-nemeton-web-page-leaderboard-summary-container {
+  display: flex;
+  gap: 60px;
+  letter-spacing: 0.04em;
+  margin-top: 62px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .okp4-nemeton-web-page-leaderboard-summary-card-title-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    > h2:first-of-type {
+      font-size: 28px !important;
+      margin: 0;
+      letter-spacing: 0.04em;
+      text-shadow: unset;
+    }
+  }
+
+  .okp4-nemeton-web-page-leaderboard-summary-card-title {
+    font-size: 61px !important;
+  }
+
+  .okp4-nemeton-web-page-leaderboard-summary-card-description {
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+}
+
+.okp4-nemeton-web-page-leaderboard-main-container {
+  padding-top: 62px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('/image/nemeton-medium-reversed.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+  }
+
+  .okp4-nemeton-web-page-leaderboard-main-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #1f403c;
+    border-radius: 20px 20px 0 0;
+    height: 1300px;
+    margin-top: 100px;
+    padding: 68px 89px;
+
+    .okp4-nemeton-web-page-leaderboard-main-description {
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0;
     }
   }
 }
