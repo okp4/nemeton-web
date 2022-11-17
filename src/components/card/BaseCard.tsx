@@ -6,7 +6,7 @@ type BaseCardProps = {
   backgroundImageUrl?: string
 }
 
-export const BaseCard: React.FC<BaseCardProps> = ({ title, description, backgroundImageUrl }) => (
+export const BaseCard: React.FC<BaseCardProps> = ({ title, description }) => (
   <div className="okp4-nemeton-web-base-card-main">
     {title && <div className="okp4-nemeton-web-base-card-title-container">{title}</div>}
     {description && (
