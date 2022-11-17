@@ -1,0 +1,11 @@
+.okp4-nemeton-web-base-card-main {
+  width: 188px;
+  height: 162px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid $primary-white;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+  border-radius: 20px;
+  padding: 0 30px;
+}
