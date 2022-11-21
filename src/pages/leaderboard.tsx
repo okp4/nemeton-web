@@ -7,6 +7,8 @@ import type { PodiumStep } from '../components/podium/Podium'
 import { Podium } from '../components/podium/Podium'
 import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
+import { Table } from '../components/table/Table'
+import React from 'react'
 
 export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
@@ -85,6 +87,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
                 Complete more tasks to become the leader!
               </p>
               <Podium steps={podiumSteps} />
+              <Table />
             </div>
           </div>
         </div>
