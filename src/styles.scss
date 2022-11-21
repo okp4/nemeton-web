@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Six+Caps:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/gotham');
 @import './variables.scss';
+@import './mixins.scss';
 @import 'src/components/layout/header/header.scss';
 @import 'src/components/layout/footer/footer.scss';
 @import 'src/components/sidh/challenges.scss';
 @import 'src/components/card/card.scss';
 @import 'src/components/podium/podium.scss';
+@import 'src/components/search/search.scss';
+@import 'src/components/table/table.scss';
 
 html,
 body {

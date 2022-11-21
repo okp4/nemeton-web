@@ -1,26 +1,12 @@
 .okp4-nemeton-web-podium-main {
-  width: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  filter: drop-shadow(4px 0 20px rgba(0, 0, 0, 0.12));
-  border-radius: 16px;
+  @include with-gradient-container;
   min-height: 227px;
   margin-top: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid;
-  box-shadow: 4px 0 20px 0 rgba(0, 0, 0, 0.12);
-  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-
-  h2 {
-    font-size: 61px !important;
-    text-shadow: unset !important;
-    text-transform: uppercase;
-  }
 
   .okp4-nemeton-web-podium-steps-container {
     display: flex;
     gap: 80px;
+    margin-left: auto;
 
     .okp4-nemeton-web-podium-step-container {
       display: flex;
