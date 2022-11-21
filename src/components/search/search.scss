@@ -1,0 +1,26 @@
+.okp4-nemeton-web-search-main {
+  margin-left: auto;
+
+  input {
+    border-radius: 100px;
+    width: 303px;
+    height: 48px;
+    border: unset;
+    color: $primary-white;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Gotham light', sans-serif;
+    padding: 0 30px 0 60px;
+    background: rgba(255, 255, 255, 0.08) url('/icons/search.svg') no-repeat;
+    background-size: 24px;
+    background-position: left 20px center;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
