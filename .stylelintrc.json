@@ -11,6 +11,12 @@
     "scss/at-extend-no-missing-placeholder": null,
     "color-no-invalid-hex": true,
     "function-parentheses-space-inside": ["never-single-line"],
-    "selector-max-compound-selectors": 6
+    "selector-max-compound-selectors": 7,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["class"]
+      }
+    ]
   }
 }
