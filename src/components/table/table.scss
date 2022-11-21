@@ -1,0 +1,131 @@
+$podium-colors: ('gold', 'silver', 'bronze');
+
+.okp4-nemeton-web-table-main {
+  @include with-gradient-container;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: baseline;
+
+  .okp4-nemeton-web-table-header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .okp4-nemeton-web-table-content-container {
+    width: 100%;
+    margin-top: 20px;
+
+    table {
+      width: 100%;
+      border-spacing: 0 12px;
+      table-layout: fixed;
+
+      tr {
+        height: 48px;
+      }
+
+      th {
+        font-family: 'Gotham bold', sans-serif;
+        line-height: 24px;
+        font-size: 14px;
+        opacity: 0.6;
+        color: $primary-white;
+        text-transform: uppercase;
+        text-align: start;
+
+        &:first-child {
+          padding-left: 41px;
+        }
+      }
+
+      tbody {
+        tr {
+          font-family: 'Gotham light', sans-serif;
+          background: none;
+          border-radius: 6px;
+          position: relative;
+
+          &:nth-child(-n + 3) {
+            font-family: 'Gotham', sans-serif;
+            font-weight: 700;
+          }
+
+          &.gold {
+            background: linear-gradient(90deg, #d1c193 0%, rgba(209, 193, 147, 0) 100%);
+          }
+
+          &.silver {
+            background: linear-gradient(90deg, #b4b8bb 0%, rgba(180, 184, 187, 0) 100%);
+          }
+
+          &.bronze {
+            background: linear-gradient(90deg, #b49689 0%, rgba(180, 150, 137, 0) 100%);
+          }
+
+          .okp4-nemeton-web-table-podium-logo {
+            position: absolute;
+            width: 39px;
+            height: 39px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            left: -14px;
+            top: 5px;
+            bottom: 0;
+            @each $podium-color in $podium-colors {
+              &.#{$podium-color} {
+                background-image: url('/icons/#{$podium-color}-druid.svg');
+              }
+            }
+          }
+
+          td {
+            font-size: 16px;
+            line-height: 24px;
+            color: $primary-white;
+            border: unset;
+            position: relative;
+
+            &:nth-child(2) {
+              text-transform: capitalize;
+            }
+
+            &:nth-child(3) {
+              display: flex;
+              height: 46px;
+              align-items: center;
+              width: auto;
+              font-family: 'Gotham light', sans-serif;
+
+              span:first-of-type {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+
+            &:first-child {
+              border-top-left-radius: 6px;
+              border-bottom-left-radius: 6px;
+              padding-left: 41px;
+            }
+
+            &:last-child {
+              border-bottom-right-radius: 6px;
+              border-top-right-radius: 6px;
+            }
+          }
+
+          .okp4-nemeton-web-table-copy-logo {
+            width: 100%;
+            height: 18px;
+            background-image: url('/icons/copy.svg');
+            background-repeat: no-repeat;
+            margin-left: 4px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
