@@ -46,6 +46,16 @@ yarn build
 To launch the Web App, you need to set some environment variables. Default values are provided for the development environment in the file `.env.development`.
 Feel free to adapt the values to your needs.
 
+## GraphQL
+
+ The GraphQL types are generated using the schema available on the [nemeton-leaderboard](https://github.com/okp4/nemeton-leaderboard).
+
+ The schema can be fetched with `GH_TOKEN=your-github-token yarn fetch-schema`. It'll fetch the version referenced in the [.schema.version] file.
+
+ The generation can then be invoked with `yarn graphql:code-gen`.
+
+ The generated sources shall be committed to repository, the CI will ensure that.
+
 ### Launch
 
 Run the server with the following command line.
@@ -71,5 +81,4 @@ The assets (markdown documentation, images, etc.) are licensed under the [![cc-b
 [OKP4]: https://okp4.network
 [cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://i.creativecommons.org/l/by-sa/4.0/80x15.png
-[bsd-3-clause]: https://opensource.org/licenses/BSD-3-Clause
 [bsd-3-clause-image]: https://img.shields.io/badge/License-BSD_3--Clause-blue.svg
