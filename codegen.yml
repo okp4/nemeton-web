@@ -1,0 +1,21 @@
+overwrite: true
+schema: "schema/*.graphqls"
+config:
+  scalars:
+    Address: string
+    ValoperAddress: string
+    Cursor: string
+    Time: string
+    URI: string
+    PGPKeyID: string
+generates:
+  src/graphql/generated/query/types.ts:
+    documents: "src/graphql/query/phase.graphql"
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      immutableTypes: true
+      strictScalars: false
+      useTypeImports: true
