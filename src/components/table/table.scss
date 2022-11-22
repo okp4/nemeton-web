@@ -45,6 +45,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
           background: none;
           border-radius: 6px;
           position: relative;
+          transform: scale(1, 1);
 
           &:nth-child(-n + 3) {
             font-family: 'Gotham', sans-serif;
@@ -70,7 +71,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
             background-repeat: no-repeat;
             background-position: left center;
             left: -14px;
-            top: 5px;
+            top: 3px;
             bottom: 0;
             @each $podium-color in $podium-colors {
               &.#{$podium-color} {
@@ -79,12 +80,21 @@ $podium-colors: ('gold', 'silver', 'bronze');
             }
           }
 
+          .flex-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            max-width: 100%;
+
+            > img:first-of-type {
+              border-radius: 4px;
+            }
+          }
+
           td {
             font-size: 16px;
-            line-height: 24px;
             color: $primary-white;
             border: unset;
-            position: relative;
 
             &:nth-child(2) {
               text-transform: capitalize;
@@ -94,7 +104,6 @@ $podium-colors: ('gold', 'silver', 'bronze');
               display: flex;
               height: 46px;
               align-items: center;
-              width: auto;
               font-family: 'Gotham light', sans-serif;
 
               span:first-of-type {
