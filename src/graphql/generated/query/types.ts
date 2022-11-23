@@ -313,49 +313,154 @@ export enum ValidatorStatus {
   Jailed = 'JAILED'
 }
 
-export type QPhaseQueryVariables = Exact<{
-  number: Scalars['Int'];
+export type QBoardQueryVariables = Exact<{
+  search?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  after?: InputMaybe<Scalars['Cursor']>;
 }>;
 
 
-export type QPhaseQuery = { readonly __typename?: 'Query', readonly phase?: { readonly __typename?: 'Phase', readonly number: number, readonly name: string, readonly startDate: string, readonly endDate: string } | null };
+export type QBoardQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly pageInfo: { readonly __typename?: 'PageInfo', readonly startCursor: string, readonly endCursor: string, readonly hasNextPage: boolean, readonly count: number }, readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly cursor: string, readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly points: number, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks?: { readonly __typename?: 'Tasks', readonly completedCount: number, readonly finishedCount: number } | null } }> } };
+
+export type QPhasesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export const QPhaseDocument = gql`
-    query QPhase($number: Int!) {
-  phase(number: $number) {
-    number
-    name
-    startDate
-    endDate
+export type QPhasesQuery = { readonly __typename?: 'Query', readonly phases: { readonly __typename?: 'Phases', readonly current?: { readonly __typename?: 'Phase', readonly number: number, readonly name: string, readonly startDate: string, readonly endDate: string } | null } };
+
+export type QValidatorCountQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type QValidatorCountQuery = { readonly __typename?: 'Query', readonly validatorCount: number };
+
+
+export const QBoardDocument = gql`
+    query QBoard($search: String, $first: Int, $after: Cursor) {
+  board(search: $search, first: $first, after: $after) {
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      count
+    }
+    edges {
+      cursor
+      node {
+        rank
+        moniker
+        identity {
+          picture {
+            href
+          }
+        }
+        valoper
+        points
+        tasks {
+          completedCount
+          finishedCount
+        }
+      }
+    }
   }
 }
     `;
 
 /**
- * __useQPhaseQuery__
+ * __useQBoardQuery__
  *
- * To run a query within a React component, call `useQPhaseQuery` and pass it any options that fit your needs.
- * When your component renders, `useQPhaseQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useQBoardQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQBoardQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useQPhaseQuery({
+ * const { data, loading, error } = useQBoardQuery({
  *   variables: {
- *      number: // value for 'number'
+ *      search: // value for 'search'
+ *      first: // value for 'first'
+ *      after: // value for 'after'
  *   },
  * });
  */
-export function useQPhaseQuery(baseOptions: Apollo.QueryHookOptions<QPhaseQuery, QPhaseQueryVariables>) {
+export function useQBoardQuery(baseOptions?: Apollo.QueryHookOptions<QBoardQuery, QBoardQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<QPhaseQuery, QPhaseQueryVariables>(QPhaseDocument, options);
+        return Apollo.useQuery<QBoardQuery, QBoardQueryVariables>(QBoardDocument, options);
       }
-export function useQPhaseLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QPhaseQuery, QPhaseQueryVariables>) {
+export function useQBoardLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QBoardQuery, QBoardQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<QPhaseQuery, QPhaseQueryVariables>(QPhaseDocument, options);
+          return Apollo.useLazyQuery<QBoardQuery, QBoardQueryVariables>(QBoardDocument, options);
         }
-export type QPhaseQueryHookResult = ReturnType<typeof useQPhaseQuery>;
-export type QPhaseLazyQueryHookResult = ReturnType<typeof useQPhaseLazyQuery>;
-export type QPhaseQueryResult = Apollo.QueryResult<QPhaseQuery, QPhaseQueryVariables>;
+export type QBoardQueryHookResult = ReturnType<typeof useQBoardQuery>;
+export type QBoardLazyQueryHookResult = ReturnType<typeof useQBoardLazyQuery>;
+export type QBoardQueryResult = Apollo.QueryResult<QBoardQuery, QBoardQueryVariables>;
+export const QPhasesDocument = gql`
+    query QPhases {
+  phases {
+    current {
+      number
+      name
+      startDate
+      endDate
+    }
+  }
+}
+    `;
+
+/**
+ * __useQPhasesQuery__
+ *
+ * To run a query within a React component, call `useQPhasesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQPhasesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useQPhasesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useQPhasesQuery(baseOptions?: Apollo.QueryHookOptions<QPhasesQuery, QPhasesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<QPhasesQuery, QPhasesQueryVariables>(QPhasesDocument, options);
+      }
+export function useQPhasesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QPhasesQuery, QPhasesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<QPhasesQuery, QPhasesQueryVariables>(QPhasesDocument, options);
+        }
+export type QPhasesQueryHookResult = ReturnType<typeof useQPhasesQuery>;
+export type QPhasesLazyQueryHookResult = ReturnType<typeof useQPhasesLazyQuery>;
+export type QPhasesQueryResult = Apollo.QueryResult<QPhasesQuery, QPhasesQueryVariables>;
+export const QValidatorCountDocument = gql`
+    query QValidatorCount {
+  validatorCount
+}
+    `;
+
+/**
+ * __useQValidatorCountQuery__
+ *
+ * To run a query within a React component, call `useQValidatorCountQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQValidatorCountQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useQValidatorCountQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useQValidatorCountQuery(baseOptions?: Apollo.QueryHookOptions<QValidatorCountQuery, QValidatorCountQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<QValidatorCountQuery, QValidatorCountQueryVariables>(QValidatorCountDocument, options);
+      }
+export function useQValidatorCountLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QValidatorCountQuery, QValidatorCountQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<QValidatorCountQuery, QValidatorCountQueryVariables>(QValidatorCountDocument, options);
+        }
+export type QValidatorCountQueryHookResult = ReturnType<typeof useQValidatorCountQuery>;
+export type QValidatorCountLazyQueryHookResult = ReturnType<typeof useQValidatorCountLazyQuery>;
+export type QValidatorCountQueryResult = Apollo.QueryResult<QValidatorCountQuery, QValidatorCountQueryVariables>;
