@@ -10,7 +10,7 @@ config:
     PGPKeyID: string
 generates:
   src/graphql/generated/query/types.ts:
-    documents: "src/graphql/query/phase.graphql"
+    documents: "src/graphql/document/*.graphql"
     plugins:
       - typescript
       - typescript-operations
