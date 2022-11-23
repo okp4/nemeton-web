@@ -1,0 +1,10 @@
+query QPhases {
+  phases {
+    current {
+      number
+      name
+      startDate
+      endDate
+    }
+  }
+}

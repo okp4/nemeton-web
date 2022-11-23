@@ -1,8 +1,0 @@
-query QPhase($number: Int!) {
-  phase(number: $number) {
-    number
-    name
-    startDate
-    endDate
-  }
-}

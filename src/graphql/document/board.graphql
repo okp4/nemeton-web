@@ -1,0 +1,28 @@
+query QBoard($search: String, $first: Int, $after: Cursor) {
+  board(search: $search, first: $first, after: $after) {
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      count
+    }
+    edges {
+      cursor
+      node {
+        rank
+        moniker
+        identity {
+          picture {
+            href
+          }
+        }
+        valoper
+        points
+        tasks {
+          completedCount
+          finishedCount
+        }
+      }
+    }
+  }
+}
