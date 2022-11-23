@@ -8,4 +8,18 @@
   box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
   border-radius: 20px;
   padding: 0 30px;
+  position: relative;
+
+  &.disabled {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}
+
+.okp4-nemeton-web-base-card-bg-image {
+  opacity: 0.4;
+  border-radius: 20px;
 }
