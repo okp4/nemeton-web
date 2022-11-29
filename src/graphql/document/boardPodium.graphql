@@ -1,0 +1,16 @@
+query QBoardPodium($first: Int) {
+  board(first: $first) {
+    edges {
+      node {
+        rank
+        moniker
+        identity {
+          kid
+          picture {
+            href
+          }
+        }
+      }
+    }
+  }
+}

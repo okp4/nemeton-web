@@ -12,6 +12,7 @@ query QBoard($search: String, $first: Int, $after: Cursor) {
         rank
         moniker
         identity {
+          kid
           picture {
             href
           }
