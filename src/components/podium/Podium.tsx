@@ -9,7 +9,7 @@ type PodiumProps = {
 export type PodiumStep = {
   backgroundImageUrl: string
   legend: string
-  rank: 1 | 2 | 3
+  rank: number
 }
 
 export const Podium: React.FC<PodiumProps> = ({ steps }) => (

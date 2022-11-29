@@ -1,6 +1,11 @@
 .okp4-nemeton-web-search-main {
   margin-left: auto;
 
+  @media screen and (max-width: 580px) {
+    margin-left: unset;
+    width: 100%;
+  }
+
   input {
     border-radius: 100px;
     width: 303px;
@@ -14,6 +19,10 @@
     background: rgba(255, 255, 255, 0.08) url('/icons/search.svg') no-repeat;
     background-size: 24px;
     background-position: left 20px center;
+
+    @media screen and (max-width: 580px) {
+      width: calc(100% - 90px);
+    }
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.4);
