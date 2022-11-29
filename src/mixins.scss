@@ -15,4 +15,17 @@
     text-shadow: unset !important;
     text-transform: uppercase;
   }
+
+  @media screen and (max-width: 580px) {
+    background: none;
+    flex-direction: column;
+    border-image: none;
+    border: unset;
+    filter: unset;
+    box-shadow: unset;
+    margin-top: 20px;
+    padding: unset;
+    width: auto;
+    gap: 70px;
+  }
 }
