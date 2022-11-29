@@ -11,7 +11,15 @@ module.exports = {
   },
   i18n: {
     locales: ['en'],
-    defaultLocale: 'en',
+    defaultLocale: 'en'
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**'
+      }
+    ]
   },
   webpack(config) {
     config.experiments = { ...config.experiments, ...{ topLevelAwait: true } }
