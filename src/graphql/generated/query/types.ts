@@ -17,25 +17,26 @@ export type Scalars = {
    * Represents an okp4 address as [Bech32](https://en.bitcoin.it/wiki/Bech32) format prefixed by the blockchain prefix.
    * e.g. `okp41jse8senm9hcvydhl8v9x47kfe5z82zmwtw8jvj`
    */
-  Address: string;
+  AccAddress: any;
   /**
    * Represents an opaque identifier on a resource allowing cursor based pagination.
-   * e.g. `Y291Y291bW9uY3Vs`
+   * e.g. `1jS3rqHqNoGdj6nJ2VN3UvJvqnz`
    */
   Cursor: string;
   /**
-   * Represents a PGP key id.
+   * Represents a Keybase Key ID.
    * e.g. `547DBC6F536D3AD2`
    */
-  PGPKeyID: string;
+  KID: any;
   /**
    * Represents a date time in a RFC3339 Nano format.
    * e.g. `2006-01-02T15:04:05.999999999Z07:00`
    */
   Time: string;
+  UInt64: any;
   /**
    * Represents an [Uniform Resource Identifier](https://fr.wikipedia.org/wiki/Uniform_Resource_Identifier) to permanently identify a resource.
-   * e.g. ``
+   * e.g. `https://okp4.network/`
    */
   URI: string;
   /**
@@ -43,6 +44,17 @@ export type Scalars = {
    * e.g. `okp4valoper1jse8senm9hcvydhl8v9x47kfe5z82zmwtw8jvj`
    */
   ValoperAddress: string;
+};
+
+/** Represents the state of a basic task. */
+export type BasicTaskState = TaskState & {
+  readonly __typename?: 'BasicTaskState';
+  /** `true` if the validator  completed this task. */
+  readonly completed: Scalars['Boolean'];
+  /** The number of points earned by the validator on this task. */
+  readonly earnedPoints: Scalars['UInt64'];
+  /** The task we're talking about. */
+  readonly task: Task;
 };
 
 /** Represents a blockchain block range. */
@@ -69,7 +81,7 @@ export type BoardConnection = {
 export type Identity = {
   readonly __typename?: 'Identity';
   /** The identity PGP key id. */
-  readonly pgp: Scalars['PGPKeyID'];
+  readonly kid: Scalars['KID'];
   /** The resolved identity picture, if any. */
   readonly picture?: Maybe<Link>;
 };
@@ -94,11 +106,11 @@ export type PageInfo = {
   /** The number of elements in the page. */
   readonly count: Scalars['Int'];
   /** The cursor of the last element of the page. */
-  readonly endCursor: Scalars['Cursor'];
+  readonly endCursor?: Maybe<Scalars['Cursor']>;
   /** `true` if there is other elements after the endCursor. */
   readonly hasNextPage: Scalars['Boolean'];
   /** The cursor of the first element of the page. */
-  readonly startCursor: Scalars['Cursor'];
+  readonly startCursor?: Maybe<Scalars['Cursor']>;
 };
 
 /** Contains tasks state in the context of a phase and a validator. */
@@ -179,7 +191,7 @@ export type QueryPhaseArgs = {
 
 export type QueryValidatorArgs = {
   cursor?: InputMaybe<Scalars['Cursor']>;
-  delegator?: InputMaybe<Scalars['Address']>;
+  delegator?: InputMaybe<Scalars['AccAddress']>;
   discord?: InputMaybe<Scalars['String']>;
   rank?: InputMaybe<Scalars['Int']>;
   twitter?: InputMaybe<Scalars['String']>;
@@ -192,7 +204,7 @@ export type SubmissionTask = TaskState & {
   /** `true` if the validator  completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
-  readonly earnedPoints: Scalars['Int'];
+  readonly earnedPoints: Scalars['UInt64'];
   /** `true` if the validator has submitted the content expected for the task. */
   readonly submitted: Scalars['Boolean'];
   /** The task we're talking about. */
@@ -213,7 +225,7 @@ export type Task = {
   /** The name of the task. */
   readonly name: Scalars['String'];
   /** The points earned if the task is completed. No value means there is no fixed amount of points as rewards, the amount is calculated regarding the performance. */
-  readonly rewards?: Maybe<Scalars['Int']>;
+  readonly rewards?: Maybe<Scalars['UInt64']>;
   /** The date the task begins. */
   readonly startDate: Scalars['Time'];
   /** `true` if the task is in progress. */
@@ -227,7 +239,7 @@ export type TaskState = {
   /** `true` if the validator  completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
-  readonly earnedPoints: Scalars['Int'];
+  readonly earnedPoints: Scalars['UInt64'];
   /** The task we're talking about. */
   readonly task: Task;
 };
@@ -239,14 +251,16 @@ export type Tasks = {
   readonly completedCount: Scalars['Int'];
   /** The total number of finished tasks the validator was supposed to perform. */
   readonly finishedCount: Scalars['Int'];
+  /** Details the tasks state a validator is supposed to perform in the specified phase. */
+  readonly forPhase?: Maybe<PerPhaseTasks>;
   /** Details the tasks state a validator is supposed to perform per phase. */
   readonly perPhase: ReadonlyArray<PerPhaseTasks>;
 };
 
 
 /** Contains information relative to the state of the tasks a validator shall perform. */
-export type TasksPerPhaseArgs = {
-  number?: InputMaybe<Scalars['Int']>;
+export type TasksForPhaseArgs = {
+  number: Scalars['Int'];
 };
 
 /** Represents the state of a specific task of uptime. */
@@ -257,7 +271,7 @@ export type UptimeTask = TaskState & {
   /** `true` if the validator  completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
-  readonly earnedPoints: Scalars['Int'];
+  readonly earnedPoints: Scalars['UInt64'];
   /** The number of missed blocks. */
   readonly missedBlockCount: Scalars['Int'];
   /** The missed block ranges. */
@@ -274,7 +288,7 @@ export type Validator = {
   /** The validator country. */
   readonly country: Scalars['String'];
   /** The address of the validator node delegator. */
-  readonly delegator: Scalars['Address'];
+  readonly delegator: Scalars['AccAddress'];
   /** The validator discord account. */
   readonly discord: Scalars['String'];
   /** The validator identity on https://keybase.io/, can be used to retrieve its picture. */
@@ -284,17 +298,19 @@ export type Validator = {
   /** The validator moniker. */
   readonly moniker: Scalars['String'];
   /** The validator points count. */
-  readonly points: Scalars['Int'];
+  readonly points: Scalars['UInt64'];
   /** The validator position in the board. */
   readonly rank: Scalars['Int'];
   /** The validator current status. */
   readonly status: ValidatorStatus;
   /** The validator affected tasks, does not reference not tasks who has not started yet. */
-  readonly tasks?: Maybe<Tasks>;
+  readonly tasks: Tasks;
   /** The validator twitter account. */
   readonly twitter?: Maybe<Scalars['String']>;
   /** The validator node valoper address. */
   readonly valoper: Scalars['ValoperAddress'];
+  /** The validator website. */
+  readonly website?: Maybe<Scalars['URI']>;
 };
 
 /** Represents an edge to a validator. */
@@ -320,7 +336,14 @@ export type QBoardQueryVariables = Exact<{
 }>;
 
 
-export type QBoardQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly pageInfo: { readonly __typename?: 'PageInfo', readonly startCursor: string, readonly endCursor: string, readonly hasNextPage: boolean, readonly count: number }, readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly cursor: string, readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly points: number, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks?: { readonly __typename?: 'Tasks', readonly completedCount: number, readonly finishedCount: number } | null } }> } };
+export type QBoardQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly pageInfo: { readonly __typename?: 'PageInfo', readonly startCursor?: string | null, readonly endCursor?: string | null, readonly hasNextPage: boolean, readonly count: number }, readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly cursor: string, readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly kid: any, readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly completedCount: number, readonly finishedCount: number } } }> } };
+
+export type QBoardPodiumQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>;
+}>;
+
+
+export type QBoardPodiumQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly identity?: { readonly __typename?: 'Identity', readonly kid: any, readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null } }> } };
 
 export type QPhasesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -348,6 +371,7 @@ export const QBoardDocument = gql`
         rank
         moniker
         identity {
+          kid
           picture {
             href
           }
@@ -393,6 +417,52 @@ export function useQBoardLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QBo
 export type QBoardQueryHookResult = ReturnType<typeof useQBoardQuery>;
 export type QBoardLazyQueryHookResult = ReturnType<typeof useQBoardLazyQuery>;
 export type QBoardQueryResult = Apollo.QueryResult<QBoardQuery, QBoardQueryVariables>;
+export const QBoardPodiumDocument = gql`
+    query QBoardPodium($first: Int) {
+  board(first: $first) {
+    edges {
+      node {
+        rank
+        moniker
+        identity {
+          kid
+          picture {
+            href
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useQBoardPodiumQuery__
+ *
+ * To run a query within a React component, call `useQBoardPodiumQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQBoardPodiumQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useQBoardPodiumQuery({
+ *   variables: {
+ *      first: // value for 'first'
+ *   },
+ * });
+ */
+export function useQBoardPodiumQuery(baseOptions?: Apollo.QueryHookOptions<QBoardPodiumQuery, QBoardPodiumQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<QBoardPodiumQuery, QBoardPodiumQueryVariables>(QBoardPodiumDocument, options);
+      }
+export function useQBoardPodiumLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QBoardPodiumQuery, QBoardPodiumQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<QBoardPodiumQuery, QBoardPodiumQueryVariables>(QBoardPodiumDocument, options);
+        }
+export type QBoardPodiumQueryHookResult = ReturnType<typeof useQBoardPodiumQuery>;
+export type QBoardPodiumLazyQueryHookResult = ReturnType<typeof useQBoardPodiumLazyQuery>;
+export type QBoardPodiumQueryResult = Apollo.QueryResult<QBoardPodiumQuery, QBoardPodiumQueryVariables>;
 export const QPhasesDocument = gql`
     query QPhases {
   phases {
