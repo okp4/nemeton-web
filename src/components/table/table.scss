@@ -67,18 +67,21 @@ $podium-colors: ('gold', 'silver', 'bronze');
             background: linear-gradient(90deg, #d1c193 0%, rgba(209, 193, 147, 0) 100%);
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
+            background-attachment: fixed;
           }
 
           &.silver {
             background: linear-gradient(90deg, #b4b8bb 0%, rgba(180, 184, 187, 0) 100%);
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
+            background-attachment: fixed;
           }
 
           &.bronze {
             background: linear-gradient(90deg, #b49689 0%, rgba(180, 150, 137, 0) 100%);
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
+            background-attachment: fixed;
           }
 
           .okp4-nemeton-web-table-podium-logo {

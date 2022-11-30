@@ -197,7 +197,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
                 Here you can check the points earned by all the druids. Complete more tasks to
                 become the leader!
               </p>
-              {druidCount > 0 && <Podium steps={podiumSteps} />}
+              {podium.length > 0 && <Podium steps={podiumSteps} />}
               <InfiniteScroll
                 dataLength={druids.length}
                 hasMore={!boardLoading && !!boardData?.board.pageInfo.hasNextPage}
