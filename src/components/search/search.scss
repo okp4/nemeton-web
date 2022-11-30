@@ -1,7 +1,7 @@
 .okp4-nemeton-web-search-main {
   margin-left: auto;
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 1000px) {
     margin-left: unset;
     width: 100%;
   }
@@ -20,7 +20,7 @@
     background-size: 24px;
     background-position: left 20px center;
 
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 1000px) {
       width: calc(100% - 90px);
     }
 

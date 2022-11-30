@@ -7,7 +7,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
   align-items: baseline;
   overflow: auto;
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 1000px) {
     margin-top: 40px;
     gap: unset;
   }
@@ -17,7 +17,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
     align-items: center;
     width: 100%;
 
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 1000px) {
       flex-direction: column;
       gap: 28px;
     }
@@ -49,7 +49,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
         &:first-child {
           padding-left: 41px;
 
-          @media screen and (max-width: 580px) {
+          @media screen and (max-width: 1000px) {
             padding-left: unset;
           }
         }
@@ -121,7 +121,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
             }
 
             &:nth-child(3) {
-              @media screen and (min-width: 580px) {
+              @media screen and (min-width: 1000px) {
                 font-family: 'Gotham light', sans-serif;
               }
             }
@@ -137,7 +137,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
               border-bottom-left-radius: 6px;
               padding-left: 41px;
 
-              @media screen and (max-width: 580px) {
+              @media screen and (max-width: 1000px) {
                 padding-left: 15px;
               }
             }

@@ -76,7 +76,7 @@ main {
     border: 2px solid $primary-white;
     width: 371px;
 
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 1000px) {
       width: 188px;
       margin: auto;
     }
@@ -87,13 +87,9 @@ main {
     padding: 10px 115px 30px;
     margin: auto;
 
-    @media screen and (min-width: 581px) and (max-width: 800px) {
-      padding: 10px 70px 30px;
-      width: calc(100% - 140px);
-    }
-
-    @media screen and (min-width: 801px) and (max-width: 1440px) {
-      width: calc(100% - 230px);
+    @media screen and (min-width: 581px) and (max-width: 1440px) {
+      width: calc(100% - 80px);
+      padding: 10px 40px 30px;
     }
 
     @media screen and (max-width: 580px) {
@@ -103,7 +99,7 @@ main {
 
     h1 {
       font-size: 120px;
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1000px) {
         font-size: 81px;
         text-align: center;
       }
@@ -115,7 +111,7 @@ main {
       text-shadow: 0 3px 6px #00000080;
       letter-spacing: 2.4px;
 
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1000px) {
         font-size: 40px;
         margin: 10px 0;
       }
@@ -131,7 +127,7 @@ main {
     h3 {
       font-size: 30px;
       font-family: 'Gotham light', sans-serif;
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1000px) {
         font-size: 24px;
       }
     }
@@ -141,7 +137,7 @@ main {
       font-size: 28px;
       font-family: 'Gotham light', sans-serif;
       word-break: break-word;
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1000px) {
         font-size: 22px;
 
         &.center {
@@ -502,7 +498,7 @@ main {
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
     gap: 18px;
     margin-top: 23px;
@@ -538,11 +534,11 @@ main {
 .okp4-nemeton-web-page-leaderboard-main-container {
   padding-top: 62px;
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 1000px) {
     padding-top: unset;
   }
 
-  @media screen and (min-width: 580px) {
+  @media screen and (min-width: 1000px) {
     &::before {
       content: '';
       position: absolute;
@@ -564,11 +560,15 @@ main {
     margin-top: 100px;
     padding: 68px 89px;
 
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 1000px) {
       margin-top: 44px;
       background: none;
       padding: unset;
       align-items: center;
+    }
+
+    @media screen and (min-width: 581px) and (max-width: 1440px) {
+      padding: 40px 20px;
     }
 
     .okp4-nemeton-web-page-leaderboard-main-description {
@@ -577,7 +577,7 @@ main {
       margin: 0;
       max-width: 446px;
 
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1000px) {
         text-align: center;
       }
     }
