@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -11,9 +11,12 @@ type HeaderProps = {
   typeformUrl: string
 }
 
-const MobileMenu = (): JSX.Element => {
+type MenuProps = Readonly<{
+  routerPath: string | null
+}>
+
+const MobileMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
-  const router = useRouter()
 
   const toggleMenu = useCallback(() => {
     setMenuOpen(!menuOpen)
@@ -41,9 +44,7 @@ const MobileMenu = (): JSX.Element => {
           <React.Fragment key={path}>
             {index >= 0 && <div className="okp4-nemeton-web-header-mobile-links-divider" />}
             <Link href={path}>
-              <h2 className={classNames('link-label', { active: router.asPath === path })}>
-                {name}
-              </h2>
+              <h2 className={classNames('link-label', { active: routerPath === path })}>{name}</h2>
             </Link>
             {index === headerRoutes.length - 1 && (
               <div className="okp4-nemeton-web-header-mobile-links-divider" />
@@ -55,13 +56,12 @@ const MobileMenu = (): JSX.Element => {
   )
 }
 
-const DesktopMenu = (): JSX.Element => {
-  const router = useRouter()
+const DesktopMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
   return (
     <div className="okp4-nemeton-web-header-links-container">
       {headerRoutes.map(({ name, path }: Route) => (
         <Link href={path} key={path}>
-          <h2 className={classNames('link-label', { active: router.asPath === path })}>{name}</h2>
+          <h2 className={classNames('link-label', { active: path === routerPath })}>{name}</h2>
         </Link>
       ))}
     </div>
@@ -69,8 +69,14 @@ const DesktopMenu = (): JSX.Element => {
 }
 
 export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
+  const [routerPath, setRouterPath] = useState<string | null>(null)
   const isLargeScreen = useMediaType('(min-width: 1441px)')
   const isMobileScreen = useMediaType('(max-width: 580px)')
+  const router = useRouter()
+
+  useEffect(() => {
+    setRouterPath(router.asPath)
+  }, [router.asPath])
 
   return (
     <div className="okp4-nemeton-web-header-main">
@@ -98,7 +104,11 @@ export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
         <h1>incentivized testnet program</h1>
       </div>
       {!isLargeScreen && <div className="okp4-nemeton-web-header-divider" />}
-      {isMobileScreen ? <MobileMenu /> : <DesktopMenu />}
+      {isMobileScreen ? (
+        <MobileMenu routerPath={routerPath} />
+      ) : (
+        <DesktopMenu routerPath={routerPath} />
+      )}
     </div>
   )
 }
