@@ -7,7 +7,7 @@
   @media screen and (max-width: 1440px) {
     height: 628px;
   }
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 1100px) {
     height: 100%;
     padding: 20px 30px;
     width: calc(100% - 60px);
@@ -17,29 +17,25 @@
   .okp4-nemeton-web-sidh-challenges {
     display: flex;
     justify-content: space-between;
-    width: 1766px;
-    height: 720px;
-    margin: 64px 240px 0;
+    width: 100%;
+    padding: 60px;
 
-    @media screen and (max-width: 1440px) {
-      margin: 32px 122px 45px;
-    }
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 1100px) {
       flex-direction: column;
-      margin: unset;
-      height: unset;
-      width: 100%;
       gap: 30px;
+      padding: 20px;
     }
 
     .okp4-nemeton-web-sidh-challenges-duration {
       display: flex;
-      width: 380px;
       height: 105px;
       background-color: #1f403c;
       border-radius: 20px;
-      @media screen and (max-width: 580px) {
-        width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      @media screen and (max-width: 1100px) {
         flex-direction: column;
         justify-content: center;
       }
@@ -48,9 +44,8 @@
         font-family: 'Gotham bold', sans-serif;
         font-size: 22px;
         align-self: center;
-        padding-left: 30px;
 
-        @media screen and (max-width: 580px) {
+        @media screen and (max-width: 1100px) {
           font-size: 20px;
           padding-left: unset;
         }
@@ -60,16 +55,28 @@
     .okp4-nemeton-web-sidh-challenges-summary {
       display: flex;
       flex-direction: column;
-      width: 740px;
-      height: 200px;
 
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: 1100px) {
         width: 100%;
         height: unset;
       }
 
-      @media screen and (min-width: 580px) and (max-width: 1440px) {
-        width: 547px;
+      .okp4-nemeton-web-sidh-challenge-details-container {
+        align-self: flex-end;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        > svg:first-of-type {
+          font-size: 26px;
+        }
+
+        > a {
+          font-family: 'Gotham bold', sans-serif;
+          font-size: 20px;
+          text-decoration: underline;
+        }
       }
 
       .okp4-nemeton-web-sidh-challenge-subject {
@@ -88,48 +95,40 @@
             letter-spacing: 1.6px;
           }
 
-          @media screen and (max-width: 580px) {
+          @media screen and (max-width: 1100px) {
             font-size: 34px;
             letter-spacing: 2px;
           }
         }
 
         .okp4-nemeton-web-sidh-challenges-rewards {
-          padding: 20px 0 0 43px;
+          padding: 40px 0 0 40px;
           line-height: 32px;
 
           @media screen and (max-width: 1440px) {
-            padding: 6px 0 0 24px;
+            padding: 20px 0 0 20px;
           }
 
           .okp4-nemeton-web-sidh-challenge-divider {
             border-top: 1px solid white;
-            margin: 5px;
+            margin: 10px 0;
           }
         }
 
         .okp4-nemeton-web-sidh-challenge-reward {
           display: flex;
           justify-content: space-between;
+          gap: 20px;
 
           > p {
             font-family: 'Gotham light', sans-serif;
             font-size: 28px;
 
-            &:first-of-type {
-              width: 541px;
-              @media screen and (max-width: 580px) {
-                width: 100%;
-              }
-              @media screen and (min-width: 580px) and (max-width: 1440px) {
-                width: 425px;
-              }
-            }
-            @media screen and (max-width: 580px) {
+            @media screen and (max-width: 1100px) {
               font-size: 20px;
             }
 
-            @media screen and (min-width: 580px) and (max-width: 1440px) {
+            @media screen and (min-width: 1100px) and (max-width: 1440px) {
               font-size: 22px;
             }
           }
