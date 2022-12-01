@@ -171,7 +171,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
       ),
     [podium]
   )
-console.log({graphqlUri})
+
   return (
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
