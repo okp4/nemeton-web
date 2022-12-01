@@ -29,27 +29,33 @@ const Support: NextPage<SupportProps> = props => {
           <p>For any help please consult these links for answers:</p>
           <ul>
             <li>
-              <a href={nodesUrl} rel="noreferrer" target="_blank">
-                Nodes & Validators Guide
-              </a>
+              <p>
+                <a href={nodesUrl} rel="noreferrer" target="_blank">
+                  Nodes & Validators Guide
+                </a>
+              </p>
             </li>
-            <br />
             <li>
-              <Link href={faqPath}>FAQ</Link>
+              <p>
+                <Link href={faqPath}>FAQ</Link>
+              </p>
             </li>
-            <br />
             <li>
-              OKP4 Discord server:
+              <p>OKP4 Discord server:</p>
               <ul>
                 <li>
-                  <a href={discordNemetonUrl} rel="noreferrer" target="_blank">
-                    Nemeton program
-                  </a>
+                  <p>
+                    <a href={discordNemetonUrl} rel="noreferrer" target="_blank">
+                      Nemeton program
+                    </a>
+                  </p>
                 </li>
                 <li>
-                  <a href={discordTicketUrl} rel="noreferrer" target="_blank">
-                    Request ticket
-                  </a>
+                  <p>
+                    <a href={discordTicketUrl} rel="noreferrer" target="_blank">
+                      Request ticket
+                    </a>
+                  </p>
                 </li>
               </ul>
             </li>

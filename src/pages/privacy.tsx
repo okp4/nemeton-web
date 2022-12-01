@@ -53,10 +53,18 @@ const Privacy: NextPage<PrivacyProps> = props => {
               personally identifiable Information may include, but is not limited to:
             </p>
             <ul>
-              <li>E-mail address</li>
-              <li>First and last name</li>
-              <li>Address, State, Region, Postal Code, City</li>
-              <li>Usage data</li>
+              <li>
+                <p>E-mail address</p>
+              </li>
+              <li>
+                <p>First and last name</p>
+              </li>
+              <li>
+                <p>Address, State, Region, Postal Code, City</p>
+              </li>
+              <li>
+                <p>Usage data</p>
+              </li>
             </ul>
           </div>
           <div>
@@ -89,11 +97,21 @@ const Privacy: NextPage<PrivacyProps> = props => {
             </p>
             <p>We may use your Information to, and not limited to:</p>
             <ul>
-              <li>To improve our website to better serve you.</li>
-              <li>Better respond to your customer service requests.</li>
-              <li>Administer a contest, promotion, survey, or other site feature.</li>
-              <li>Send periodic emails.</li>
-              <li>Follow up on correspondence.</li>
+              <li>
+                <p>To improve our website to better serve you.</p>
+              </li>
+              <li>
+                <p>Better respond to your customer service requests.</p>
+              </li>
+              <li>
+                <p>Administer a contest, promotion, survey, or other site feature.</p>
+              </li>
+              <li>
+                <p>Send periodic emails.</p>
+              </li>
+              <li>
+                <p>Follow up on correspondence.</p>
+              </li>
             </ul>
           </div>
           <div>
@@ -117,10 +135,18 @@ const Privacy: NextPage<PrivacyProps> = props => {
             <h2>SERVICE PROVIDERS</h2>
             <p>We may employ third party companies and individuals for the following reasons:</p>
             <ul>
-              <li>To facilitate our Service;</li>
-              <li>To provide the Service on our behalf;</li>
-              <li>To perform services related to the Service;</li>
-              <li>To help us analyze how our Service is used.</li>
+              <li>
+                <p>To facilitate our Service;</p>
+              </li>
+              <li>
+                <p>To provide the Service on our behalf;</p>
+              </li>
+              <li>
+                <p>To perform services related to the Service;</p>
+              </li>
+              <li>
+                <p>To help us analyze how our Service is used.</p>
+              </li>
             </ul>
             <p>
               We wish to inform users of our Services that these third parties have access to your
@@ -154,9 +180,15 @@ const Privacy: NextPage<PrivacyProps> = props => {
               event of a data breach:
             </p>
             <ul>
-              <li>We will notify you by e-mail</li>
-              <li>We will inform users by on-site notification</li>
-              <li>Within 7 business days</li>
+              <li>
+                <p>We will notify you by e-mail</p>
+              </li>
+              <li>
+                <p>We will inform users by on-site notification</p>
+              </li>
+              <li>
+                <p>Within 7 business days</p>
+              </li>
             </ul>
             <p>
               We also accept the principle of individual redress, which requires that individuals
@@ -219,10 +251,18 @@ const Privacy: NextPage<PrivacyProps> = props => {
             </p>
             <p>You can also contact us by post using the information below:</p>
             <ul>
-              <li>OKP4</li>
-              <li>1 passage de l’Europe</li>
-              <li>31400 Toulouse</li>
-              <li>France</li>
+              <li>
+                <p>OKP4</p>
+              </li>
+              <li>
+                <p>1 passage de l’Europe</p>
+              </li>
+              <li>
+                <p>31400 Toulouse</p>
+              </li>
+              <li>
+                <p>France</p>
+              </li>
             </ul>
           </div>
         </div>
