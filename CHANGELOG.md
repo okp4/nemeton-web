@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.1.1](https://github.com/okp4/nemeton-web/compare/v1.1.0...v1.1.1) (2022-12-01)
+
+
+### Bug Fixes
+
+* **hook:** get full days in countdown result ([76cd9fa](https://github.com/okp4/nemeton-web/commit/76cd9fa11d5c6b65507c6b23c6e91877e435be22))
+
 ## [1.1.0](https://github.com/okp4/nemeton-web/compare/v1.0.1...v1.1.0) (2022-12-01)
 
 
