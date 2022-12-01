@@ -1,7 +1,8 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client'
+import type { NormalizedCacheObject} from '@apollo/client';
+import {ApolloClient, InMemoryCache} from '@apollo/client'
 
-const client = new ApolloClient({
-  uri: 'https://api.nemeton.staging.okp4.network/graphql',
+const client = (uri: string): ApolloClient<NormalizedCacheObject> => new ApolloClient({
+  uri,
   cache: new InMemoryCache()
 })
 

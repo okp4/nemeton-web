@@ -25,6 +25,7 @@ import {
   mapValidatorEdgeDTOToDruid,
   mapPodiumValidatorEdgeDTOToPodiumDruid
 } from '../graphql/dto/mapper'
+import client from "../graphql/apolloClient";
 
 export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
@@ -36,17 +37,20 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [isSearchMode, setSearchMode] = useState<boolean>(false)
   const { urls } = props
-  const { typeformUrl } = urls
+  const { typeformUrl, graphqlUri } = urls
+  const gqlClient = useMemo(() => client(graphqlUri), [])
 
   const { error: boardPodiumError } = useQBoardPodiumQuery({
     fetchPolicy: 'network-only',
     variables: { first: 3 },
+    client: gqlClient,
     onCompleted: data => setPodium(data.board.edges.map(mapPodiumValidatorEdgeDTOToPodiumDruid))
   })
 
   const { error: validatorCountError, loading: validatorCountLoading } = useQValidatorCountQuery({
     notifyOnNetworkStatusChange: true,
     fetchPolicy: 'network-only',
+    client: gqlClient,
     onCompleted: data => setDruidCount(data.validatorCount)
   })
 
@@ -59,6 +63,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
   } = useQBoardQuery({
     notifyOnNetworkStatusChange: true,
     fetchPolicy: 'network-only',
+    client: gqlClient,
     onCompleted: data => {
       const newData = data.board.edges.map(mapValidatorEdgeDTOToDruid)
       isSearchMode && !variables?.after
@@ -70,6 +75,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
   const { error: phaseError, loading: phaseLoading } = useQPhasesQuery({
     notifyOnNetworkStatusChange: true,
     fetchPolicy: 'network-only',
+    client: gqlClient,
     onCompleted: data => setActivePhase(data.phases.current ?? null)
   })
 
@@ -165,7 +171,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
       ),
     [podium]
   )
-
+console.log({graphqlUri})
   return (
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />

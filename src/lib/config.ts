@@ -5,6 +5,7 @@ export const config: Config = {
   keywords: process.env.APP_KEYWORDS,
   description: process.env.APP_DESCRIPTION,
   urls: {
+    graphqlUri: process.env.GRAPHQL_URI,
     websiteUrl: process.env.OKP4_WEBSITE_URL,
     socialMediaUrls: {
       discordUrl: process.env.OKP4_DISCORD_URL,

@@ -3,6 +3,7 @@ export type Config = {
   keywords: string
   description: string
   urls: {
+    graphqlUri: string
     websiteUrl: string
     socialMediaUrls: {
       discordUrl: string
