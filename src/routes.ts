@@ -13,6 +13,10 @@ export const headerRoutes: Route[] = [
     path: '/leaderboard#leaderboard'
   },
   {
+    name: 'Tasks',
+    path: '/tasks#tasks'
+  },
+  {
     name: 'Rewards',
     path: '/rewards#rewards'
   },
