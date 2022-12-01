@@ -18,5 +18,9 @@ export const useCountdown = (end: moment.Moment): CountdownStats => {
 
     return () => clearInterval(interval)
   }, [duration, end])
-  return { days: countdown.days(), hours: countdown.hours(), minutes: countdown.minutes() }
+  return {
+    days: Math.floor(countdown.asDays()),
+    hours: countdown.hours(),
+    minutes: countdown.minutes()
+  }
 }
