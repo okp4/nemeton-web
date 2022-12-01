@@ -30,20 +30,22 @@ export const Sidh = (): JSX.Element => {
             </div>
             <p>{description}</p>
             {!isMobileScreen && (
-              <div className="okp4-nemeton-web-phase-content-button-container">
-                <span className="okp4-nemeton-web-challenge-button disabled">
-                  Challenges & Rewards
-                </span>
-                <p>Available on Dec 1st</p>
+              <div
+                className="okp4-nemeton-web-phase-content-button-container"
+                onClick={toggleChallengesOpen}
+              >
+                <span className="okp4-nemeton-web-challenge-button">Challenges & Rewards</span>
               </div>
             )}
           </div>
         </div>
       </div>
       {isMobileScreen && (
-        <div className="okp4-nemeton-web-phase-content-button-container">
-          <span className="okp4-nemeton-web-challenge-button disabled">Challenges & Rewards</span>
-          <p>Available on Dec 1st</p>
+        <div
+          className="okp4-nemeton-web-phase-content-button-container"
+          onClick={toggleChallengesOpen}
+        >
+          <span className="okp4-nemeton-web-challenge-button">Challenges & Rewards</span>
         </div>
       )}
       {isChallengesOpen && (
