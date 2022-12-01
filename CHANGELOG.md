@@ -1,5 +1,59 @@
 # ØKP4 Nemeton web changelog
 
+## [1.1.0](https://github.com/okp4/nemeton-web/compare/v1.0.1...v1.1.0) (2022-12-01)
+
+
+### Features
+
+* add description to html metadata ([8b8a04f](https://github.com/okp4/nemeton-web/commit/8b8a04f9255472395461b276a5da2ac149d19aeb))
+* **assets:** add avatar fallback image ([970c194](https://github.com/okp4/nemeton-web/commit/970c194083323ef41198e1f296f4da2512e03a06))
+* **assets:** add icons ([3c4e3bd](https://github.com/okp4/nemeton-web/commit/3c4e3bd89f39734c02f04f357089f631842c4e0c))
+* **assets:** add json folder and lottie json file ([785a7e7](https://github.com/okp4/nemeton-web/commit/785a7e7427b31eeb75957a0137b835f11b51dd4a))
+* **assets:** add reversed nemeton image ([7c79920](https://github.com/okp4/nemeton-web/commit/7c79920ceb64110650d62f2ce490de7c47f19b64))
+* **assets:** add summary card icons ([1049639](https://github.com/okp4/nemeton-web/commit/10496395ba5c5a19c1abb43b4e4236aecb704205))
+* **entity:** declare druid and phase entities ([372f58d](https://github.com/okp4/nemeton-web/commit/372f58d9b5a63993323e3a7d36ab4370c4080ec5))
+* **graphql:** add apollo client and provider ([32de579](https://github.com/okp4/nemeton-web/commit/32de579d28dcbd7eac04883e96bae86e71e67e37))
+* **graphql:** add dto types and mapper functions ([4817445](https://github.com/okp4/nemeton-web/commit/481744507c1ee0c480333765a1b96f47907e490b))
+* **graphql:** add queries ([f5a24f1](https://github.com/okp4/nemeton-web/commit/f5a24f175f2b6567384e9d4ce3d795be869b4d30))
+* **graphql:** add query document & generated files ([7c89d14](https://github.com/okp4/nemeton-web/commit/7c89d14f0b57465fcb519f66c6e3e23262faf690))
+* **graphql:** update board query & add podium board one ([b823214](https://github.com/okp4/nemeton-web/commit/b823214328a9eee31605de6e4c709fd6d796bb04))
+* **graphql:** update generated types ([041a6f5](https://github.com/okp4/nemeton-web/commit/041a6f54dc3524062f17c46791aa033114a9de20))
+* **graphql:** update generated types ([0e134cb](https://github.com/okp4/nemeton-web/commit/0e134cb4999ccac215117aeafcf7c9003652e626))
+* **graphql:** use graphql uri from env ([1b6bf2e](https://github.com/okp4/nemeton-web/commit/1b6bf2e2d4e93f6efc2a5fa6fc0ad5792bf912ac))
+* **hook:** add useCountdown hook ([1485369](https://github.com/okp4/nemeton-web/commit/14853692868da2cdcf742ea31390693f43978712))
+* **routes:** add leaderboard route ([95043cf](https://github.com/okp4/nemeton-web/commit/95043cf6897dcaf49d2697d92dd0dd99f8581f71))
+* **routes:** add tasks route ([b2fe87b](https://github.com/okp4/nemeton-web/commit/b2fe87b562065bace24b54e7eb4aec0845496cb8))
+* **ui:** add lottie loader component ([28ceac4](https://github.com/okp4/nemeton-web/commit/28ceac440cb1ec5db69be69eb57ea918ef4b3bf9))
+* **ui:** add mobile style for main components ([2a748e1](https://github.com/okp4/nemeton-web/commit/2a748e1bf3c3b840cfce329a7a7e8b93bfad3301))
+* **ui:** add mobile style for search and podium components ([f37bb01](https://github.com/okp4/nemeton-web/commit/f37bb015621bcaf4162cef1c5968856ca928ee2b))
+* **ui:** add podium styled component ([ed3a6b7](https://github.com/okp4/nemeton-web/commit/ed3a6b7bdedfb110c3a40e7a84f4546be948c0da))
+* **ui:** add snackbar component ([4d367de](https://github.com/okp4/nemeton-web/commit/4d367de4dccbd0953ff3cdfa63b2e1a7747beca0))
+* **ui:** add styled basic card ([af0d2b9](https://github.com/okp4/nemeton-web/commit/af0d2b914ca75b43f8c72797cf9d9071000bbf31))
+* **ui:** add styled Countdown component ([721bf30](https://github.com/okp4/nemeton-web/commit/721bf308f9620649034a3d137f6fc44563521327))
+* **ui:** add styled search component ([b837a01](https://github.com/okp4/nemeton-web/commit/b837a01e8346bdf56ed123109d85d5bc7617efb4))
+* **ui:** add tasks page ([fad5f37](https://github.com/okp4/nemeton-web/commit/fad5f379865cd7b41491edb7b1900395db13eabe))
+* **ui:** enable sidh challenges button ([d3717a6](https://github.com/okp4/nemeton-web/commit/d3717a63ee29336b1a30d5efe1fb35866b2bb55b))
+* **ui:** enhance sidh challenges component ([c5c5b79](https://github.com/okp4/nemeton-web/commit/c5c5b7914f1bf963ed93bbaea84f1b3ac0d212af))
+* **ui:** enhance styled base card ([f5dceb9](https://github.com/okp4/nemeton-web/commit/f5dceb905b06e4f559319b000c2a66cf359b7051))
+* **ui:** enhance styled table component ([a393e63](https://github.com/okp4/nemeton-web/commit/a393e63dc4a5b486f774ca263004767ffb982f32))
+* **ui:** enhance table component ([81bf769](https://github.com/okp4/nemeton-web/commit/81bf7691d966f9f5e120da73959f7094020cb719))
+* **ui:** import table in leaderboard page ([f0cc550](https://github.com/okp4/nemeton-web/commit/f0cc5506476491931ca0b27116e82ef6693e961d))
+* **ui:** init leaderboard page ([caaf270](https://github.com/okp4/nemeton-web/commit/caaf2704b0e37dadfbbafa6af8cdac35676e6ece))
+* **ui:** init table styled component ([cb90bf4](https://github.com/okp4/nemeton-web/commit/cb90bf4570506828919748d6c3fd712cfcfa04d1))
+* **ui:** wire Leaderboard page to API ([abe87ec](https://github.com/okp4/nemeton-web/commit/abe87ece7f647b3785a27ad40627cf59600643ee))
+
+
+### Bug Fixes
+
+* add missing property "lang" to html element ([5b7fa21](https://github.com/okp4/nemeton-web/commit/5b7fa21cf21e073d422b81ef5d989d6e41b1b07f))
+* fix hidden menu responding to mouse clicks ([2002324](https://github.com/okp4/nemeton-web/commit/2002324bd0fd1ce92df6e6cfebc9f25cf3e262fb))
+* remove console log ([6955cbd](https://github.com/okp4/nemeton-web/commit/6955cbd8d8ab7fcf4d6cba37ce68d34fe4db69a1))
+* **router:** ensure server hydratation for active link class ([b09a5e9](https://github.com/okp4/nemeton-web/commit/b09a5e990ad8de4e42bb63e0644f92309c308cb2))
+* **style:** adjust selector depth and remove id selectors ([8563e78](https://github.com/okp4/nemeton-web/commit/8563e78bb967015f4548f6520181eec25d466d4d))
+* **style:** background attachement for safari ([ad22dca](https://github.com/okp4/nemeton-web/commit/ad22dca9198c091f43a43f26af884664900064c8))
+* **style:** handle 'a' tag's style in next/link ([0c666a1](https://github.com/okp4/nemeton-web/commit/0c666a1954092203008f0e1a5e83ba20f7ec088d))
+* **style:** let stylelint autofixes all fixable errors ([d79c62a](https://github.com/okp4/nemeton-web/commit/d79c62a5e1e693f7d55094d56d855c16e4ab850b))
+
 ## [1.0.1](https://github.com/okp4/nemeton-web/compare/v1.0.0...v1.0.1) (2022-11-02)
 
 
