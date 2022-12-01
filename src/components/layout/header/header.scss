@@ -181,12 +181,12 @@
     display: flex;
     justify-self: center;
     justify-content: space-around;
-    max-width: 644px;
+    max-width: 900px;
     width: 100%;
     margin: 50px 0 218px;
     @media screen and (max-width: 1440px) {
       grid-area: 6 / 1 / 6 / 1;
-      max-width: 640px;
+      max-width: 800px;
       width: 100%;
       margin-top: 60px;
     }

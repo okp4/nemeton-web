@@ -43,17 +43,13 @@ main {
 }
 
 .okp4-nemeton-web-challenge-clear-icon {
-  position: absolute;
-  right: 50px;
-  margin-top: 20px;
   font-size: 32px !important;
   cursor: pointer;
+  order: 4;
 
-  @media screen and (max-width: 580px) {
-    position: relative;
-    right: 0;
+  @media screen and (max-width: 1100px) {
     align-self: flex-end;
-    margin-top: unset;
+    order: 0;
   }
 }
 
@@ -137,6 +133,7 @@ main {
       font-size: 28px;
       font-family: 'Gotham light', sans-serif;
       word-break: break-word;
+      line-height: 36px;
       @media screen and (max-width: 1000px) {
         font-size: 22px;
 
@@ -151,7 +148,7 @@ main {
       margin-block-start: 60px;
 
       li {
-        margin-left: 40px;
+        margin-left: 20px;
 
         h2 {
           font-family: 'Six Caps', sans-serif;
@@ -181,6 +178,24 @@ main {
 
       li {
         list-style-type: disc;
+      }
+    }
+
+    .content-block-main {
+      margin: 50px 0;
+
+      .content-block-title-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        > h3:first-of-type {
+          font-style: italic;
+        }
+
+        > svg {
+          font-size: 28px;
+        }
       }
     }
 
