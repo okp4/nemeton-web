@@ -24,7 +24,6 @@ export const SidhChallenges: React.FC<ChallengesProps> = ({ onClose, refObj }): 
               <p>Submit your gentx on time</p>
               <p>{Number(1000).toLocaleString()} Pts</p>
             </div>
-            <div className="okp4-nemeton-web-sidh-challenge-divider" />
             <div className="okp4-nemeton-web-sidh-challenge-reward">
               <p>Setup your node </p>
               <p>{Number(2000).toLocaleString()} Pts</p>
@@ -47,7 +46,6 @@ export const SidhChallenges: React.FC<ChallengesProps> = ({ onClose, refObj }): 
               <p>Uptime challenge</p>
               <p>{Number(2500).toLocaleString()} Pts</p>
             </div>
-            <div className="okp4-nemeton-web-sidh-challenge-divider" />
             <div className="okp4-nemeton-web-sidh-challenge-reward">
               <p>Submit an original content related to validation</p>
               <p>{Number(10000).toLocaleString()} Pts</p>
