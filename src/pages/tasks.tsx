@@ -300,9 +300,9 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Sidh - Tasks</h1>
-          <ol>
+          <ol style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
             {sidhTasks.map((sidhTask: SidhTask, index: number) => (
-              <React.Fragment key={index}>
+              <div className="okp4-nemeton-web-page-content-card-container" key={index}>
                 <li>
                   <h2>{sidhTask.name}</h2>
                 </li>
@@ -311,7 +311,7 @@ const Tasks: NextPage<TasksProps> = props => {
                     <ContentBlock description={description} icon={icon} key={index} title={title} />
                   )
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </ol>
         </div>
