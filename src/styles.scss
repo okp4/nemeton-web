@@ -190,20 +190,27 @@ main {
       }
     }
 
-    .content-block-main {
-      margin: 50px 0;
+    .okp4-nemeton-web-page-content-card-container {
+      background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0));
+      padding: 10px 30px;
+      border-radius: 16px;
 
-      .content-block-title-container {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+      .content-block-main {
+        margin: 50px 0;
 
-        > h3:first-of-type {
-          font-style: italic;
-        }
+        .content-block-title-container {
+          display: flex;
+          align-items: center;
+          gap: 5px;
 
-        > svg {
-          font-size: 28px;
+          > h3:first-of-type {
+            font-style: italic;
+            font-family: 'Gotham bold', sans-serif;
+          }
+
+          > svg {
+            font-size: 30px;
+          }
         }
       }
     }
