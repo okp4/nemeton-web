@@ -153,6 +153,11 @@ main {
         h2 {
           font-family: 'Six Caps', sans-serif;
         }
+
+        &::marker {
+          font-weight: 700;
+          font-family: 'Gotham', sans-serif;
+        }
       }
 
       ul {
