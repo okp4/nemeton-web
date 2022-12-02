@@ -1,5 +1,22 @@
 # ØKP4 Nemeton web changelog
 
+## [1.2.0](https://github.com/okp4/nemeton-web/compare/v1.1.1...v1.2.0) (2022-12-02)
+
+
+### Features
+
+* clarify reward points ([fbd9468](https://github.com/okp4/nemeton-web/commit/fbd9468fdcc43eaa7f0131c5bbf603f28b4eadf0))
+* reduce font sizes & adjust related properties ([33a7e69](https://github.com/okp4/nemeton-web/commit/33a7e69cfc934b3a5ceeeaf922b190dd65fb576d))
+* **ui:** handle points in mobile device ([39a332c](https://github.com/okp4/nemeton-web/commit/39a332cc50eeb2466bf5273d00cc6a9b32967381))
+* uniformize list items with paragraph style ([e846a0a](https://github.com/okp4/nemeton-web/commit/e846a0a7247b3db61eddcd18b09b9c407f09da64))
+
+
+### Bug Fixes
+
+* **ui:** decrease font size in home challenges & make li markers bold ([68b82fa](https://github.com/okp4/nemeton-web/commit/68b82fa3396d8118130bbe72864f4e8b49dd02bb))
+* **ui:** remove useless line dividers in home challenges ([bce5dfe](https://github.com/okp4/nemeton-web/commit/bce5dfe2ab5d290635b6651e0a72daa3d81f0656))
+* **ui:** update useMemo graphqlUri dependency parameter ([cda11c2](https://github.com/okp4/nemeton-web/commit/cda11c24bcb50576e35383bdbf1c6b77656deca4))
+
 ## [1.1.1](https://github.com/okp4/nemeton-web/compare/v1.1.0...v1.1.1) (2022-12-01)
 
 
