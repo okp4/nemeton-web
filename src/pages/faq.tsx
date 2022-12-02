@@ -36,9 +36,15 @@ const faqs = (urls: FAQUrls): FAQ[] => [
           following:
         </p>
         <ul>
-          <li> Node-specific tasks (to test the network) </li>
-          <li>Community tasks (to let the world know about the network) </li>
-          <li> Participate in challenges (to contribute to and improve the network)</li>
+          <li>
+            <p>Node-specific tasks (to test the network)</p>
+          </li>
+          <li>
+            <p>Community tasks (to let the world know about the network)</p>
+          </li>
+          <li>
+            <p>Participate in challenges (to contribute to and improve the network)</p>
+          </li>
         </ul>
       </>
     )
@@ -151,10 +157,18 @@ const faqs = (urls: FAQUrls): FAQ[] => [
           To participate in the Nemeton Program, we have put in place several criteria, which are:
         </p>
         <ul>
-          <li>Technical skills</li>
-          <li>Community</li>
-          <li>Reputation</li>
-          <li>Background & experiences</li>
+          <li>
+            <p>Technical skills</p>
+          </li>
+          <li>
+            <p>Community</p>
+          </li>
+          <li>
+            <p>Reputation</p>
+          </li>
+          <li>
+            <p>Background & experiences</p>
+          </li>
         </ul>
         <p>
           You can apply using our application form if you meet the selection criteria. Our team will
@@ -196,8 +210,12 @@ const faqs = (urls: FAQUrls): FAQ[] => [
       <>
         <p>During the program, there will be two types of ways to earn points:</p>
         <ul>
-          <li>Fixed points for specific tasks.</li>
-          <li>Pools of points to divide up for more creative tasks.</li>
+          <li>
+            <p>Fixed points for specific tasks.</p>
+          </li>
+          <li>
+            <p>Pools of points to divide up for more creative tasks.</p>
+          </li>
         </ul>
         <p>
           Druids will be rewarded with a mix of token rewards and delegation commitment. 1% of the
@@ -251,19 +269,25 @@ const Faq: NextPage<FAQProps> = props => {
             </p>
             <ul>
               <li>
-                <a href={whitepaperUrl} rel="noreferrer" target="_blank">
-                  Whitepaper
-                </a>
+                <p>
+                  <a href={whitepaperUrl} rel="noreferrer" target="_blank">
+                    Whitepaper
+                  </a>
+                </p>
               </li>
               <li>
-                <a href={nodesUrl} rel="noreferrer" target="_blank">
-                  Node & Validators Guide
-                </a>
+                <p>
+                  <a href={nodesUrl} rel="noreferrer" target="_blank">
+                    Node & Validators Guide
+                  </a>
+                </p>
               </li>
               <li>
-                <a href={faqUrl} rel="noreferrer" target="_blank">
-                  FAQ
-                </a>
+                <p>
+                  <a href={faqUrl} rel="noreferrer" target="_blank">
+                    FAQ
+                  </a>
+                </p>
               </li>
             </ul>
             <p>

@@ -94,7 +94,7 @@ main {
     }
 
     h1 {
-      font-size: 120px;
+      font-size: 100px;
       @media screen and (max-width: 1000px) {
         font-size: 81px;
         text-align: center;
@@ -102,9 +102,9 @@ main {
     }
 
     h2 {
-      font-size: 60px;
+      font-size: 50px;
       margin: 20px 0;
-      text-shadow: 0 3px 6px #00000080;
+      text-shadow: 0 2px 4px #00000080;
       letter-spacing: 2.4px;
 
       @media screen and (max-width: 1000px) {
@@ -121,21 +121,21 @@ main {
     }
 
     h3 {
-      font-size: 30px;
+      font-size: 25px;
       font-family: 'Gotham light', sans-serif;
       @media screen and (max-width: 1000px) {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
 
     p {
-      margin: 30px 0;
-      font-size: 28px;
+      margin: 25px 0;
+      font-size: 18px;
       font-family: 'Gotham light', sans-serif;
       word-break: break-word;
-      line-height: 36px;
+      line-height: 30px;
       @media screen and (max-width: 1000px) {
-        font-size: 22px;
+        font-size: 16px;
 
         &.center {
           text-align: center;
@@ -145,10 +145,10 @@ main {
 
     ol {
       padding-inline-start: unset;
-      margin-block-start: 60px;
+      margin-block-start: 40px;
 
       li {
-        margin-left: 20px;
+        margin-left: 25px;
 
         h2 {
           font-family: 'Six Caps', sans-serif;
@@ -169,11 +169,15 @@ main {
     }
 
     li {
-      font-size: 28px;
+      font-size: 22px;
       font-family: 'Gotham light', sans-serif;
       word-break: break-word;
       @media screen and (max-width: 580px) {
         font-size: 22px;
+      }
+
+      p {
+        margin: 0;
       }
 
       li {
@@ -208,7 +212,7 @@ main {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        padding: 30px 30px 30px 50px;
+        padding: 20px 20px 20px 50px;
         border-radius: 15px;
         background-color: #2e534f;
         margin: 5px 0;
