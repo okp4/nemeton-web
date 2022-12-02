@@ -205,7 +205,9 @@ main {
 
           > h3:first-of-type {
             font-style: italic;
-            font-family: 'Gotham bold', sans-serif;
+            font-family: 'Gotham', sans-serif;
+            font-weight: 700;
+            padding-top: 18px;
           }
 
           > svg {

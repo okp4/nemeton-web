@@ -72,7 +72,7 @@ const sidhTasks: SidhTask[] = [
       },
       {
         title: 'Rewards',
-        description: <p style={{ fontFamily: 'Gotham bold, sans-serif' }}>1000 points.</p>,
+        description: <p>1000 points.</p>,
         icon: <MoneyIcon />
       },
       {
@@ -120,7 +120,7 @@ const sidhTasks: SidhTask[] = [
       },
       {
         title: 'Rewards',
-        description: <p style={{ fontFamily: 'Gotham bold, sans-serif' }}>2000 points.</p>,
+        description: <p>2000 points.</p>,
         icon: <MoneyIcon />
       },
       {
@@ -152,9 +152,7 @@ const sidhTasks: SidhTask[] = [
       {
         title: 'Rewards',
         description: (
-          <p style={{ fontFamily: 'Gotham bold, sans-serif' }}>
-            Up to 2500 points with the following formula: 2501^0,01x - 1 with x = %uptime.
-          </p>
+          <p>Up to 2500 points with the following formula: 2501^0,01x - 1 with x = %uptime.</p>
         ),
         icon: <MoneyIcon />
       },
@@ -197,7 +195,7 @@ const sidhTasks: SidhTask[] = [
       },
       {
         title: 'Rewards',
-        description: <p style={{ fontFamily: 'Gotham bold, sans-serif' }}>500 points.</p>,
+        description: <p>500 points.</p>,
         icon: <MoneyIcon />
       },
       {
@@ -250,7 +248,7 @@ const sidhTasks: SidhTask[] = [
       {
         title: 'Rewards',
         description: (
-          <p style={{ fontFamily: 'Gotham bold, sans-serif' }}>
+          <p>
             Up to 10 000 points per druid will be attributed, capped at 150 000 points in total.
           </p>
         ),
