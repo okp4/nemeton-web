@@ -25,7 +25,7 @@ import {
   mapValidatorEdgeDTOToDruid,
   mapPodiumValidatorEdgeDTOToPodiumDruid
 } from '../graphql/dto/mapper'
-import client from "../graphql/apolloClient";
+import client from '../graphql/apolloClient'
 
 export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
@@ -38,7 +38,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
   const [isSearchMode, setSearchMode] = useState<boolean>(false)
   const { urls } = props
   const { typeformUrl, graphqlUri } = urls
-  const gqlClient = useMemo(() => client(graphqlUri), [])
+  const gqlClient = useMemo(() => client(graphqlUri), [graphqlUri])
 
   const { error: boardPodiumError } = useQBoardPodiumQuery({
     fetchPolicy: 'network-only',
