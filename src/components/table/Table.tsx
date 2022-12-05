@@ -78,7 +78,7 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
           label: 'Completed tasks',
           width: '22%',
           renderCell: (druid: Druid) => (
-            <span>{`${druid.tasks.completed.toString()}/${druid.tasks.finished.toString()}`}</span>
+            <span>{`${druid.tasks.completed.toString()}/${druid.tasks.started.toString()}`}</span>
           ),
           hidden: isMobileScreen
         },
