@@ -23,6 +23,8 @@ export type Scalars = {
    * e.g. `1jS3rqHqNoGdj6nJ2VN3UvJvqnz`
    */
   Cursor: string;
+  /** Represents a Javascript Object Notation format. */
+  JSON: any;
   /**
    * Represents a Keybase Key ID.
    * e.g. `547DBC6F536D3AD2`
@@ -33,6 +35,7 @@ export type Scalars = {
    * e.g. `2006-01-02T15:04:05.999999999Z07:00`
    */
   Time: string;
+  /** Represents an 8 bytes unsigned integer. */
   UInt64: any;
   /**
    * Represents an [Uniform Resource Identifier](https://fr.wikipedia.org/wiki/Uniform_Resource_Identifier) to permanently identify a resource.
@@ -44,6 +47,8 @@ export type Scalars = {
    * e.g. `okp4valoper1jse8senm9hcvydhl8v9x47kfe5z82zmwtw8jvj`
    */
   ValoperAddress: string;
+  /** Represents a void return type, carrying no value. */
+  Void: any;
 };
 
 /** Represents the state of a basic task. */
@@ -100,6 +105,24 @@ export type Link = {
   readonly href: Scalars['URI'];
 };
 
+export type Mutation = {
+  readonly __typename?: 'Mutation';
+  /**
+   * Emit a `GenTXSubmittedEvent` in the system carrying information related to a druid participating to the Nemeton program, this contain the combination of technical validator information & application information.
+   *
+   * Through the event handling logic, the validator will be added to the board and the corresponding task completed with points attribution if still in progress.
+   */
+  readonly submitValidatorGenTX?: Maybe<Scalars['Void']>;
+};
+
+
+export type MutationSubmitValidatorGenTxArgs = {
+  country: Scalars['String'];
+  discord: Scalars['String'];
+  gentx: Scalars['JSON'];
+  twitter?: InputMaybe<Scalars['String']>;
+};
+
 /** Contains information on a connection page. */
 export type PageInfo = {
   readonly __typename?: 'PageInfo';
@@ -122,6 +145,8 @@ export type PerPhaseTasks = {
   readonly finishedCount: Scalars['Int'];
   /** The phase we're talking about. */
   readonly phase: Phase;
+  /** The total number of started tasks the validator is supposed to perform. */
+  readonly startedCount: Scalars['Int'];
   /** The current status of the phase's tasks for a validator. */
   readonly tasks: ReadonlyArray<TaskState>;
 };
@@ -255,6 +280,8 @@ export type Tasks = {
   readonly forPhase?: Maybe<PerPhaseTasks>;
   /** Details the tasks state a validator is supposed to perform per phase. */
   readonly perPhase: ReadonlyArray<PerPhaseTasks>;
+  /** The total number of started tasks the validator is supposed to perform. */
+  readonly startedCount: Scalars['Int'];
 };
 
 
@@ -289,6 +316,8 @@ export type Validator = {
   readonly country: Scalars['String'];
   /** The address of the validator node delegator. */
   readonly delegator: Scalars['AccAddress'];
+  /** The validator details. */
+  readonly details?: Maybe<Scalars['String']>;
   /** The validator discord account. */
   readonly discord: Scalars['String'];
   /** The validator identity on https://keybase.io/, can be used to retrieve its picture. */
@@ -336,7 +365,7 @@ export type QBoardQueryVariables = Exact<{
 }>;
 
 
-export type QBoardQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly pageInfo: { readonly __typename?: 'PageInfo', readonly startCursor?: string | null, readonly endCursor?: string | null, readonly hasNextPage: boolean, readonly count: number }, readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly cursor: string, readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly kid: any, readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly completedCount: number, readonly finishedCount: number } } }> } };
+export type QBoardQuery = { readonly __typename?: 'Query', readonly board: { readonly __typename?: 'BoardConnection', readonly pageInfo: { readonly __typename?: 'PageInfo', readonly startCursor?: string | null, readonly endCursor?: string | null, readonly hasNextPage: boolean, readonly count: number }, readonly edges: ReadonlyArray<{ readonly __typename?: 'ValidatorEdge', readonly cursor: string, readonly node: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly kid: any, readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly completedCount: number, readonly startedCount: number } } }> } };
 
 export type QBoardPodiumQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']>;
@@ -380,7 +409,7 @@ export const QBoardDocument = gql`
         points
         tasks {
           completedCount
-          finishedCount
+          startedCount
         }
       }
     }
