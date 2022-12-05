@@ -5,7 +5,7 @@ export type ValidatorDTO = Pick<
   'rank' | 'valoper' | 'points' | 'moniker' | 'identity'
 > & { tasks: DTOTasks }
 
-export type DTOTasks = Omit<Tasks, 'perPhase'>
+export type DTOTasks = Omit<Tasks, 'perPhase' | 'finishedCount'>
 
 export type ValidatorEdgeDTO = Pick<ValidatorEdge, 'cursor'> & { node: ValidatorDTO }
 

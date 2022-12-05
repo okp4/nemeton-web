@@ -11,7 +11,7 @@ export const mapValidatorEdgeDTOToDruid = (dto: ValidatorEdgeDTO): Druid => ({
   points: dto.node.points,
   tasks: {
     completed: dto.node.tasks.completedCount,
-    finished: dto.node.tasks.finishedCount
+    started: dto.node.tasks.startedCount
   }
 })
 

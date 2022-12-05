@@ -7,7 +7,7 @@ export type Druid = Readonly<{
   valoper: string
   tasks: {
     completed: number
-    finished: number
+    started: number
   }
   points: number
 }>
