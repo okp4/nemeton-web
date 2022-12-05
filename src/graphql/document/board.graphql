@@ -21,7 +21,7 @@ query QBoard($search: String, $first: Int, $after: Cursor) {
         points
         tasks {
           completedCount
-          finishedCount
+          startedCount
         }
       }
     }
