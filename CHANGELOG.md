@@ -1,5 +1,17 @@
 # ØKP4 Nemeton web changelog
 
+## [1.3.0](https://github.com/okp4/nemeton-web/compare/v1.2.0...v1.3.0) (2022-12-06)
+
+
+### Features
+
+* **entity:** update druid entity and dto files ([4f2802b](https://github.com/okp4/nemeton-web/commit/4f2802b639a31764c68b93e505a55629d5a13130))
+* **graphql:** replace finishedCount by startedCount in board query ([0a0f03c](https://github.com/okp4/nemeton-web/commit/0a0f03cd1761639f9b97d7f6e5f16549587563b0))
+* **graphql:** update generated types with new board tasks payload ([e104714](https://github.com/okp4/nemeton-web/commit/e104714164b113f373c9b0d64e9c18fd4c2ed3ac))
+* **ui:** add gotham bold for description titles ([d0c188c](https://github.com/okp4/nemeton-web/commit/d0c188cfc063f21112d4f0fc6c8dad13bcddbf75))
+* **ui:** pull every task in a styled card & bold h3 elements ([7bdb496](https://github.com/okp4/nemeton-web/commit/7bdb496c4f659d8c4efcf07050458a3a11033a35))
+* **ui:** update renderCell for completed tasks in table ([3d4997b](https://github.com/okp4/nemeton-web/commit/3d4997b8a1a8e74b5557f387bc1109b9038da3dd))
+
 ## [1.2.0](https://github.com/okp4/nemeton-web/compare/v1.1.1...v1.2.0) (2022-12-02)
 
 
