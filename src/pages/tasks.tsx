@@ -4,12 +4,12 @@ import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import ArticleIcon from '@mui/icons-material/Article'
 import GavelIcon from '@mui/icons-material/Gavel'
 import HelpIcon from '@mui/icons-material/Help'
 import MoneyIcon from '@mui/icons-material/Money'
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image'
 
 export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
@@ -19,11 +19,12 @@ type ContentBlockProps = Readonly<{
   icon?: JSX.Element
 }>
 
-type SidhTaskContent = ContentBlockProps
+type PhaseTaskContent = ContentBlockProps
 
-type SidhTask = {
+type PhaseTask = {
   name: string
-  content: SidhTaskContent[]
+  period: JSX.Element
+  content: PhaseTaskContent[]
 }
 
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
@@ -36,15 +37,11 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon })
   </div>
 )
 
-const sidhTasks: SidhTask[] = [
+const sidhTasks: PhaseTask[] = [
   {
     name: 'Submit your gentx',
+    period: <p>1/12 - 12/12</p>,
     content: [
-      {
-        title: 'When',
-        description: <p>From Dec 1st to Dec 12th.</p>,
-        icon: <AccessTimeIcon />
-      },
       {
         title: 'Description',
         description: (
@@ -94,12 +91,13 @@ const sidhTasks: SidhTask[] = [
   },
   {
     name: 'Setup your node',
+    period: (
+      <div>
+        <p>14/12 - 1/01</p>
+        <p>15pm UTC</p>
+      </div>
+    ),
     content: [
-      {
-        title: 'When',
-        description: <p>From Dec 14th at 15pm UTC to Jan 1st.</p>,
-        icon: <AccessTimeIcon />
-      },
       {
         title: 'Description',
         description: (
@@ -138,12 +136,13 @@ const sidhTasks: SidhTask[] = [
   },
   {
     name: 'Uptime challenge',
+    period: (
+      <div>
+        <p>14/12 - 1/01</p>
+        <p>15pm UTC</p>
+      </div>
+    ),
     content: [
-      {
-        title: 'When',
-        description: <p>From Dec 14th at 15pm UTC to Jan 1st.</p>,
-        icon: <AccessTimeIcon />
-      },
       {
         title: 'Description',
         description: <p>Maintain the best uptime with your validator.</p>,
@@ -171,25 +170,21 @@ const sidhTasks: SidhTask[] = [
   },
   {
     name: 'Tweet about the OKP4 testnet',
+    period: <p>12/12 - 1/01</p>,
     content: [
-      {
-        title: 'When',
-        description: (
-          <p>
-            From Dec 12th to Jan 1st. <br />
-            No rush to tweet about it when the task opens – it is better to spread them across that
-            period..
-          </p>
-        ),
-        icon: <AccessTimeIcon />
-      },
       {
         title: 'Description',
         description: (
-          <p>
-            Publish a tweet about the Nemeton testnet while including the @okp4_protocol tag using
-            your validator twitter account. Feel free to share your excitement!
-          </p>
+          <>
+            <p>
+              Publish a tweet about the Nemeton testnet while including the @okp4_protocol tag using
+              your validator twitter account. Feel free to share your excitement!
+            </p>
+            <p>
+              PS: No rush to tweet about it when the task opens – it is better to spread them across
+              that period..
+            </p>
+          </>
         ),
         icon: <ArticleIcon />
       },
@@ -213,12 +208,8 @@ const sidhTasks: SidhTask[] = [
   },
   {
     name: 'Submit an original content related to validation',
+    period: <p>12/12 - 1/01</p>,
     content: [
-      {
-        title: 'When',
-        description: <p>From Dec 12th to Jan 1st</p>,
-        icon: <AccessTimeIcon />
-      },
       {
         title: 'Description',
         description: (
@@ -287,9 +278,18 @@ const sidhTasks: SidhTask[] = [
   }
 ]
 
+const tasks = [{ phase: 'Sidh', phaseTasks: sidhTasks }]
+
 const Tasks: NextPage<TasksProps> = props => {
   const { urls } = props
   const { typeformUrl } = urls
+  const [activeTask, setActiveTask] = useState<Array<string | number> | null>(null)
+
+  const handleClick = (phase: string, index: number) => () => {
+    activeTask && activeTask[0] === phase && activeTask[1] === index
+      ? setActiveTask(null)
+      : setActiveTask([phase, index])
+  }
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -297,18 +297,49 @@ const Tasks: NextPage<TasksProps> = props => {
       <main>
         <Header typeformUrl={typeformUrl} />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
-          <h1>Sidh - Tasks</h1>
+          <h1>Tasks</h1>
           <ol style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-            {sidhTasks.map((sidhTask: SidhTask, index: number) => (
-              <div className="okp4-nemeton-web-page-content-card-container" key={index}>
-                <li>
-                  <h2>{sidhTask.name}</h2>
-                </li>
-                {sidhTask.content.map(
-                  ({ title, description, icon }: SidhTaskContent, index: number) => (
-                    <ContentBlock description={description} icon={icon} key={index} title={title} />
+            {tasks.map(({ phase, phaseTasks }) => (
+              <div className="okp4-nemeton-web-page-content-wrapper" key={phase}>
+                <h2>{phase}</h2>
+                {phaseTasks.map(({ name, period, content }, index) => {
+                  const active = activeTask && activeTask[0] === phase && activeTask[1] === index
+
+                  return (
+                    <div key={index}>
+                      <div className="okp4-nemeton-web-page-content-accordion-container">
+                        <h3>{name}</h3>
+                        <div className="okp4-nemeton-web-date-icon">
+                          {period}
+                          <Image
+                            alt="arrow-down"
+                            className={`okp4-nemeton-web-icon ${
+                              active ? 'rotate-up' : 'rotate-down'
+                            }`}
+                            height={30}
+                            onClick={handleClick(phase, index)}
+                            src="/icons/arrow.svg"
+                            width={48}
+                          />
+                        </div>
+                      </div>
+                      {active && (
+                        <div className="okp4-nemeton-web-page-content-accordion-answer-container">
+                          {content.map(
+                            ({ title, description, icon }: PhaseTaskContent, index: number) => (
+                              <ContentBlock
+                                description={description}
+                                icon={icon}
+                                key={index}
+                                title={title}
+                              />
+                            )
+                          )}
+                        </div>
+                      )}
+                    </div>
                   )
-                )}
+                })}
               </div>
             ))}
           </ol>
