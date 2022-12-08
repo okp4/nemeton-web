@@ -4,25 +4,30 @@ import Image from 'next/image'
 type AccordionProps = {
   title: JSX.Element
   content: JSX.Element
-  onClick: () => void
-  active: boolean
+  onToggle: () => void
+  isExpanded: boolean
 }
 
-export const Accordion = ({ title, content, onClick, active }: AccordionProps): JSX.Element => (
+export const Accordion = ({
+  title,
+  content,
+  onToggle,
+  isExpanded
+}: AccordionProps): JSX.Element => (
   <div className="okp4-accordion-main">
     <div className="okp4-accordion-title">
       {title}
       <div>
         <Image
           alt="arrow-down"
-          className={`okp4-nemeton-web-icon ${active ? 'rotate-up' : 'rotate-down'}`}
+          className={`okp4-nemeton-web-icon ${isExpanded ? 'rotate-up' : 'rotate-down'}`}
           height={30}
-          onClick={onClick}
+          onClick={onToggle}
           src="/icons/arrow.svg"
           width={48}
         />
       </div>
     </div>
-    {active && <div className="okp4-accordion-content">{content}</div>}
+    {isExpanded && <div className="okp4-accordion-content">{content}</div>}
   </div>
 )

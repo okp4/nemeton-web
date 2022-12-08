@@ -367,9 +367,9 @@ const Faq: NextPage<FAQProps> = props => {
                 <div key={index}>
                   {mustDisplayPart && <h2>{part}</h2>}
                   <Accordion
-                    active={active}
                     content={answer}
-                    onClick={handleClick(index)}
+                    isExpanded={active}
+                    onToggle={handleClick(index)}
                     title={question}
                   />
                 </div>
