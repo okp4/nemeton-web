@@ -292,7 +292,6 @@ const phaseTasks: PhaseTask[] = [
 
 const Tasks: NextPage<TasksProps> = props => {
   const { urls } = props
-  const { typeformUrl } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
 
   const handleClick = (index: number) => () => {
@@ -303,7 +302,7 @@ const Tasks: NextPage<TasksProps> = props => {
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
           <div className="okp4-nemeton-web-page-content-wrapper">

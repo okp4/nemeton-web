@@ -7,10 +7,6 @@ import { useMediaType } from '../../../hook/useMediaType'
 import type { Route } from '../../../routes'
 import { headerRoutes } from '../../../routes'
 
-type HeaderProps = {
-  typeformUrl: string
-}
-
 type MenuProps = Readonly<{
   routerPath: string | null
 }>
@@ -68,7 +64,7 @@ const DesktopMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
   )
 }
 
-export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
+export const Header: React.FC = () => {
   const [routerPath, setRouterPath] = useState<string | null>(null)
   const isLargeScreen = useMediaType('(min-width: 1441px)')
   const isMobileScreen = useMediaType('(max-width: 580px)')
@@ -82,11 +78,6 @@ export const Header: React.FC<HeaderProps> = ({ typeformUrl }) => {
     <div className="okp4-nemeton-web-header-main">
       <div className="okp4-nemeton-web-header-title-container">
         <h1>Nemeton Program</h1>
-      </div>
-      <div className="okp4-nemeton-web-header-join-button-container">
-        <a href={typeformUrl} rel="noreferrer" target="_blank">
-          <button>Join the program</button>
-        </a>
       </div>
       <div className="okp4-nemeton-web-header-logo-container">
         {isLargeScreen ? (

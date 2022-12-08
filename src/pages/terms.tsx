@@ -12,7 +12,6 @@ export type TermsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'ur
 const Terms: NextPage<TermsProps> = props => {
   const { urls } = props
   const {
-    typeformUrl,
     socialMediaUrls: { discordUrl },
     mailAddresses: { contact },
     licenceUrls: { blockchainLicenceUrl, codeLicenceUrl, assetsLicenceUrl },
@@ -25,7 +24,7 @@ const Terms: NextPage<TermsProps> = props => {
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">
           <h1>Terms & conditions</h1>
           <p>

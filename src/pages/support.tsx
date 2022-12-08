@@ -12,7 +12,6 @@ export type SupportProps = Pick<Config, 'title' | 'keywords' | 'description' | '
 const Support: NextPage<SupportProps> = props => {
   const { urls } = props
   const {
-    typeformUrl,
     supportUrls: { discordNemetonUrl, discordTicketUrl },
     docsUrls: { nodesUrl }
   } = urls
@@ -23,7 +22,7 @@ const Support: NextPage<SupportProps> = props => {
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="support-page">
           <h1>Support page</h1>
           <p>For any help please consult these links for answers:</p>

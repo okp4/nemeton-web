@@ -10,7 +10,6 @@ export type PrivacyProps = Pick<Config, 'title' | 'keywords' | 'description' | '
 const Privacy: NextPage<PrivacyProps> = props => {
   const { urls } = props
   const {
-    typeformUrl,
     privacyUrls: { cookiePolicyUrl },
     supportUrls: { discordNemetonUrl },
     mailAddresses: { contact }
@@ -20,7 +19,7 @@ const Privacy: NextPage<PrivacyProps> = props => {
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="privacy-cookie-policy">
           <h1>Privacy & Cookie policy</h1>
           <p>Last updated: October 19, 2022</p>
