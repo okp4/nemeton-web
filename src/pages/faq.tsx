@@ -1,15 +1,15 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import Image from 'next/image'
-import { useState } from 'react'
 import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
+import { Accordion } from '../components/accordion/Accordion'
+import { useAccordion } from '../hook/useAccordion'
 
 type FAQ = {
   part: string
-  question: string
+  question: JSX.Element
   answer: JSX.Element
 }
 
@@ -23,7 +23,11 @@ export type FAQProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls
 const faqs = (urls: FAQUrls): FAQ[] => [
   {
     part: 'General Concepts',
-    question: 'What is the Nemeton Program?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>What is the Nemeton Program?</h3>
+      </div>
+    ),
     answer: (
       <>
         <p>
@@ -51,7 +55,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'General Concepts',
-    question: 'Who are the druids in OKP4 ecosystem?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Who are the druids in OKP4 ecosystem?</h3>
+      </div>
+    ),
     answer: (
       <p>
         The word « druid » corresponds to the name of the validators who participate in the
@@ -61,7 +69,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'General Concepts',
-    question: 'What does it mean to be an OKP4 Druid?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>What does it mean to be an OKP4 Druid?</h3>
+      </div>
+    ),
     answer: (
       <p>
         The OKP4 blockchain is a Layer 1 PoS (proof of stake). To secure its network, we need a set
@@ -74,7 +86,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'General Concepts',
-    question: 'What is staking?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>What is staking?</h3>
+      </div>
+    ),
     answer: (
       <p>
         Staking is immobilizing one&#39;s crypto-asset to participate in the blockchain consensus
@@ -87,7 +103,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question: 'Who can participate in the Nemeton program?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Who can participate in the Nemeton program?</h3>
+      </div>
+    ),
     answer: (
       <p>
         We have limited the Nemeton Incentivized Program to 150 druids. You must register via{' '}
@@ -101,7 +121,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question: 'Why 150 druids?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Why 150 druids?</h3>
+      </div>
+    ),
     answer: (
       <p>
         We will choose only 150 druids for various reasons such as logistics, tokenomics, technical,
@@ -113,7 +137,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question: 'How do I sign up for the Nemeton program?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How do I sign up for the Nemeton program?</h3>
+      </div>
+    ),
     answer: (
       <p>
         To register for the Nemeton Program, complete the{' '}
@@ -127,7 +155,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question: 'Do I need technical skills to participate in the Nemeton Program?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Do I need technical skills to participate in the Nemeton Program?</h3>
+      </div>
+    ),
     answer: (
       <p>
         Yes, a minimum of technical skills is required to participate in the Nemeton Program. You
@@ -138,8 +170,14 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question:
-      'I filled out the form but did not receive a response. Does this mean I was not accepted to participate in the testnet?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>
+          I filled out the form but did not receive a response. Does this mean I was not accepted to
+          participate in the testnet?
+        </h3>
+      </div>
+    ),
     answer: (
       <p>
         We will inform all people who have registered for the Nemeton Program by email. Whether you
@@ -150,7 +188,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'How to participate in the Nemeton Program',
-    question: 'What are the selection criteria for participating in the program?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>What are the selection criteria for participating in the program?</h3>
+      </div>
+    ),
     answer: (
       <>
         <p>
@@ -182,7 +224,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'Phases, tasks, and rewards',
-    question: 'How many phases does the Nemeton program have?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How many phases does the Nemeton program have?</h3>
+      </div>
+    ),
     answer: (
       <p>
         The Nemeton Program will be divided into 5 phases over several months, allowing for testing
@@ -193,7 +239,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'Phases, tasks, and rewards',
-    question: 'How long does the program last?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How long does the program last?</h3>
+      </div>
+    ),
     answer: (
       <p>
         We can&#39;t give you a definite end date right now. However, we can tell you that the first
@@ -205,7 +255,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'Phases, tasks, and rewards',
-    question: 'What are the rewards associated with the Nemeton program',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>What are the rewards associated with the Nemeton program</h3>
+      </div>
+    ),
     answer: (
       <>
         <p>During the program, there will be two types of ways to earn points:</p>
@@ -230,7 +284,11 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   },
   {
     part: 'Support and contact',
-    question: 'How can I get in touch with the OKP4 team?',
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How can I get in touch with the OKP4 team?</h3>
+      </div>
+    ),
     answer: (
       <p>
         Please have a look at all the links at the top of this page. If you don&#39;t find the
@@ -246,14 +304,15 @@ const faqs = (urls: FAQUrls): FAQ[] => [
 
 const Faq: NextPage<FAQProps> = props => {
   const { urls } = props
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const { socialMediaUrls, docsUrls, typeformUrl } = urls
   const { discordUrl } = socialMediaUrls
   const { whitepaperUrl, nodesUrl, faqUrl } = docsUrls
+  const [activeIndex, setActiveIndex] = useAccordion()
 
   const handleClick = (index: number) => () => {
     activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
   }
+
   return (
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
@@ -299,29 +358,20 @@ const Faq: NextPage<FAQProps> = props => {
             </p>
           </div>
           <div className="okp4-nemeton-web-page-content-wrapper">
-            {faqs({ discordUrl, typeformUrl }).map((faq, index, arr) => {
-              const previous: FAQ | null = index > 0 ? arr[index - 1] : null
+            {faqs({ discordUrl, typeformUrl }).map(({ part, question, answer }, index, array) => {
+              const previous: FAQ | null = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
-              const mustDisplayPart = !previous || previous.part !== faq.part
+              const mustDisplayPart = !previous || previous.part !== part
+
               return (
                 <div key={index}>
-                  {mustDisplayPart && <h2>{faq.part}</h2>}
-                  <div className="okp4-nemeton-web-page-content-accordion-container">
-                    <h3>{faq.question}</h3>
-                    <Image
-                      alt="arrow-down"
-                      className={`okp4-nemeton-web-icon ${active ? 'rotate-up' : 'rotate-down'}`}
-                      height={30}
-                      onClick={handleClick(index)}
-                      src="/icons/arrow.svg"
-                      width={48}
-                    />
-                  </div>
-                  {active && (
-                    <div className="okp4-nemeton-web-page-content-accordion-answer-container">
-                      {faq.answer}
-                    </div>
-                  )}
+                  {mustDisplayPart && <h2>{part}</h2>}
+                  <Accordion
+                    active={active}
+                    content={answer}
+                    onClick={handleClick(index)}
+                    title={question}
+                  />
                 </div>
               )
             })}
