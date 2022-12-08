@@ -15,7 +15,6 @@ type FAQ = {
 
 type FAQUrls = {
   discordUrl: string
-  typeformUrl: string
 }
 
 export type FAQProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
@@ -102,7 +101,7 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Who can participate in the Nemeton program?</h3>
@@ -110,17 +109,15 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     ),
     answer: (
       <p>
-        We have limited the Nemeton Incentivized Program to 150 druids. You must register via{' '}
-        <a href={urls.typeformUrl} rel="noreferrer" target="_blank">
-          our form
-        </a>{' '}
-        to be part of these 150 druids. Our team will review your application and contact you if you
-        are selected to join the Nemeton Program.
+        We have limited the Nemeton Incentivized Program to 150 druids. You must register via our
+        form <span className="okp4-nemeton-web-bold-text">(closed)</span> to be part of these 150
+        druids. Our team will review your application and contact you if you are selected to join
+        the Nemeton Program.
       </p>
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Why 150 druids?</h3>
@@ -136,7 +133,7 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>How do I sign up for the Nemeton program?</h3>
@@ -144,17 +141,14 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     ),
     answer: (
       <p>
-        To register for the Nemeton Program, complete the{' '}
-        <a href={urls.typeformUrl} rel="noreferrer" target="_blank">
-          registration form
-        </a>
-        . We will review your application and inform you if you have been accepted or not to our
-        program.
+        To register for the Nemeton Program, complete the [registration form]{' '}
+        <span className="okp4-nemeton-web-bold-text">(closed)</span> . We will review your
+        application and inform you if you have been accepted or not to our program.
       </p>
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Do I need technical skills to participate in the Nemeton Program?</h3>
@@ -169,7 +163,7 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>
@@ -187,7 +181,7 @@ const faqs = (urls: FAQUrls): FAQ[] => [
     )
   },
   {
-    part: 'How to participate in the Nemeton Program',
+    part: 'How to participate in the Nemeton Program (CLOSED)',
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>What are the selection criteria for participating in the program?</h3>
@@ -304,7 +298,7 @@ const faqs = (urls: FAQUrls): FAQ[] => [
 
 const Faq: NextPage<FAQProps> = props => {
   const { urls } = props
-  const { socialMediaUrls, docsUrls, typeformUrl } = urls
+  const { socialMediaUrls, docsUrls } = urls
   const { discordUrl } = socialMediaUrls
   const { whitepaperUrl, nodesUrl, faqUrl } = docsUrls
   const [activeIndex, setActiveIndex] = useAccordion()
@@ -358,7 +352,7 @@ const Faq: NextPage<FAQProps> = props => {
             </p>
           </div>
           <div className="okp4-nemeton-web-page-content-wrapper">
-            {faqs({ discordUrl, typeformUrl }).map(({ part, question, answer }, index, array) => {
+            {faqs({ discordUrl }).map(({ part, question, answer }, index, array) => {
               const previous: FAQ | null = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
               const mustDisplayPart = !previous || previous.part !== part
