@@ -1,0 +1,20 @@
+.okp4-accordion-main {
+  .okp4-accordion-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 20px 20px 50px;
+    border-radius: 15px;
+    background-color: #2e534f;
+    margin: 5px 0;
+    align-items: center;
+    @media screen and (max-width: 580px) {
+      padding: 20px;
+    }
+
+    .okp4-accordion-content {
+      width: 88%;
+      margin: auto;
+    }
+  }
+}
