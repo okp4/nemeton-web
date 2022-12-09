@@ -17,7 +17,7 @@ const Home: NextPage<HomeProps> = props => {
     <div>
       <Head {...props} />
       <main>
-        <Header typeformUrl={urls.typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-phases-main" id="home">
           <Sidh />
           <Imbolc />

@@ -20,7 +20,6 @@ export const config: Config = {
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
       faqUrl: process.env.OKP4_DOCS_FAQ_URL
     },
-    typeformUrl: process.env.OKP4_TYPEFORM_URL,
     supportUrls: {
       discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
       discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL

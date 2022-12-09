@@ -9,13 +9,12 @@ export type RewardsProps = Pick<Config, 'title' | 'keywords' | 'description' | '
 
 const Rewards: NextPage<RewardsProps> = props => {
   const { urls } = props
-  const { typeformUrl } = urls
 
   return (
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="rewards">
           <h1>Rewards</h1>
           <p>Druids will be rewarded with a mix of token rewards + delegation commitment.</p>

@@ -37,7 +37,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [isSearchMode, setSearchMode] = useState<boolean>(false)
   const { urls } = props
-  const { typeformUrl, graphqlUri } = urls
+  const { graphqlUri } = urls
   const gqlClient = useMemo(() => client(graphqlUri), [graphqlUri])
 
   const { error: boardPodiumError } = useQBoardPodiumQuery({
@@ -176,7 +176,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
     <div className="okp4-nemeton-web-page-main">
       <Head {...props} />
       <main>
-        <Header typeformUrl={typeformUrl} />
+        <Header />
         <div className="okp4-nemeton-web-page-content-container" id="leaderboard">
           <h1>Leaderboard</h1>
           <div className="okp4-nemeton-web-page-divider" />

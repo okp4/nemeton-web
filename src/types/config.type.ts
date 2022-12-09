@@ -18,7 +18,6 @@ export type Config = {
       nodesUrl: string
       faqUrl: string
     }
-    typeformUrl: string
     supportUrls: {
       discordNemetonUrl: string
       discordTicketUrl: string
