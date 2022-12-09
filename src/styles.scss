@@ -10,6 +10,7 @@
 @import 'src/components/search/search.scss';
 @import 'src/components/table/table.scss';
 @import 'src/components/countdown/countdown.scss';
+@import 'src/components/accordion/accordion.scss';
 
 html,
 body {
@@ -190,29 +191,36 @@ main {
       }
     }
 
-    .okp4-nemeton-web-page-content-card-container {
-      background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0));
-      padding: 10px 30px;
-      border-radius: 16px;
+    .okp4-nemeton-web-tasks-accordion-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+      justify-content: space-between;
 
-      .content-block-main {
-        margin: 50px 0;
+      p {
+        opacity: 0.6;
+        margin: 0;
+      }
+    }
 
-        .content-block-title-container {
-          display: flex;
-          align-items: center;
-          gap: 5px;
+    .content-block-main {
+      margin: 50px 0;
 
-          > h3:first-of-type {
-            font-style: italic;
-            font-family: 'Gotham', sans-serif;
-            font-weight: 700;
-            padding-top: 18px;
-          }
+      .content-block-title-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
 
-          > svg {
-            font-size: 30px;
-          }
+        > h3:first-of-type {
+          font-style: italic;
+          font-family: 'Gotham', sans-serif;
+          font-weight: 700;
+          padding-top: 18px;
+        }
+
+        > svg {
+          font-size: 30px;
         }
       }
     }
@@ -221,28 +229,6 @@ main {
       display: flex;
       flex-direction: column;
       gap: 10px;
-
-      .okp4-nemeton-web-page-content-accordion-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 20px 20px 20px 50px;
-        border-radius: 15px;
-        background-color: #2e534f;
-        margin: 5px 0;
-
-        h3 {
-          max-width: 85%;
-          @media screen and (max-width: 580px) {
-            max-width: 75%;
-          }
-        }
-      }
-
-      .okp4-nemeton-web-page-content-accordion-answer-container {
-        width: 88%;
-        margin: auto;
-      }
     }
   }
 }
