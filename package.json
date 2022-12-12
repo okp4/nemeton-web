@@ -28,7 +28,7 @@
     "sharp": "^0.31.2"
   },
   "devDependencies": {
-    "@apollo/client": "^3.7.1",
+    "@apollo/client": "^3.7.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@graphql-codegen/cli": "^2.13.12",
