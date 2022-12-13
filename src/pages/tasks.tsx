@@ -36,7 +36,7 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon })
   </div>
 )
 
-const phaseTasks: PhaseTask[] = [
+const phaseTasks = (originalContentUrl: string): PhaseTask[] => [
   {
     phase: 'Sidh',
     title: (
@@ -280,8 +280,11 @@ const phaseTasks: PhaseTask[] = [
         title: 'How to submit',
         description: (
           <p>
-            Share the content links to Anik#9282 on Discord. Only one submission per druid will be
-            studied.
+            Share the content links on{' '}
+            <a href={originalContentUrl} rel="noreferrer" target="_blank">
+              this form
+            </a>
+            . Only one submission per druid will be studied.
           </p>
         ),
         icon: <HelpIcon />
@@ -291,7 +294,14 @@ const phaseTasks: PhaseTask[] = [
 ]
 
 const Tasks: NextPage<TasksProps> = props => {
-  const { urls } = props
+  const {
+    urls,
+    urls: {
+      tasksUrls: {
+        sidh: { originalContentUrl }
+      }
+    }
+  } = props
   const [activeIndex, setActiveIndex] = useAccordion()
 
   const handleClick = (index: number) => () => {
@@ -306,7 +316,7 @@ const Tasks: NextPage<TasksProps> = props => {
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
           <div className="okp4-nemeton-web-page-content-wrapper">
-            {phaseTasks.map(({ phase, title, content }, index, array) => {
+            {phaseTasks(originalContentUrl).map(({ phase, title, content }, index, array) => {
               const previous: PhaseTask | null = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
               const mustDisplayPart = !previous || previous.phase !== phase
