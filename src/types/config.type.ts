@@ -37,5 +37,10 @@ export type Config = {
     privacyUrls: {
       cookiePolicyUrl: string
     }
+    tasksUrls: {
+      sidh: {
+        originalContentUrl: string
+      }
+    }
   }
 }
