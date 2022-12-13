@@ -1,5 +1,26 @@
 # ØKP4 Nemeton web changelog
 
+## [1.4.0](https://github.com/okp4/nemeton-web/compare/v1.3.0...v1.4.0) (2022-12-13)
+
+
+### Features
+
+* add accordion to task page & correct grammaire ([f598130](https://github.com/okp4/nemeton-web/commit/f59813016cd6eb8d8b0f7720afccfa1c19290e5d))
+* add link env variable ([d25b17a](https://github.com/okp4/nemeton-web/commit/d25b17a8302c250046a8b6bc13b4f6f448bd31b6))
+* add link to task content ([1d0512a](https://github.com/okp4/nemeton-web/commit/1d0512aec894f68e5811f53ac04425d532b8bf74))
+* change date format ([c22eaa7](https://github.com/okp4/nemeton-web/commit/c22eaa72bc7cae2326ad03da71702cc516fe0594))
+* create accordion component ([3f41f65](https://github.com/okp4/nemeton-web/commit/3f41f65c7bc1e565b713ecb82e3ae5efe3ca3024))
+* create accordion hook ([0d8398f](https://github.com/okp4/nemeton-web/commit/0d8398fe2b70a44c474edf2b87c649e35fcbb617))
+* remove button style & adjust style ([b95c0da](https://github.com/okp4/nemeton-web/commit/b95c0daa55b1fd4d1a908626c4233fd177a945d3))
+* remove env variable & add closed description ([eb9f561](https://github.com/okp4/nemeton-web/commit/eb9f5616bb3e5f40b9807f374f03fbc763867d53))
+* remove join the program button ([e8c8e9e](https://github.com/okp4/nemeton-web/commit/e8c8e9e07908bea2560bd30d93dc48cabc298b1c))
+* remove points white space wrap ([c347bc6](https://github.com/okp4/nemeton-web/commit/c347bc66df446224472007d5c6d792e62188ecec))
+
+
+### Bug Fixes
+
+* remove font family for web stat key ([3c4e20e](https://github.com/okp4/nemeton-web/commit/3c4e20ebe01b6a12f2fcc49bd6ccef526f17d8c2))
+
 ## [1.3.0](https://github.com/okp4/nemeton-web/compare/v1.2.0...v1.3.0) (2022-12-06)
 
 
