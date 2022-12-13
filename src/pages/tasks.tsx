@@ -42,7 +42,7 @@ const phaseTasks: PhaseTask[] = [
     title: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Submit your gentx</h3>
-        <p>1/12 - 12/12</p>
+        <p>Dec 1st - Dec 12th</p>
       </div>
     ),
     content: [
@@ -98,7 +98,7 @@ const phaseTasks: PhaseTask[] = [
     title: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Setup your node</h3>
-        <p>14/12 - 1/01, 3pm UTC</p>
+        <p>Dec 14th - Jan 1st, 3pm UTC</p>
       </div>
     ),
     content: [
@@ -145,7 +145,7 @@ const phaseTasks: PhaseTask[] = [
     title: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Uptime challenge</h3>
-        <p>14/12 - 1/01, 3pm UTC</p>
+        <p>Dec 14th - Jan 1st, 3pm UTC</p>
       </div>
     ),
     content: [
@@ -179,7 +179,7 @@ const phaseTasks: PhaseTask[] = [
     title: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Tweet about the OKP4 testnet</h3>
-        <p>12/12 - 1/01</p>
+        <p>Dec 12th - Jan 1st</p>
       </div>
     ),
     content: [
@@ -216,7 +216,7 @@ const phaseTasks: PhaseTask[] = [
     title: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
         <h3>Submit original content related to validation</h3>
-        <p>12/12 - 1/01</p>
+        <p>Dec 12th - Jan 1st</p>
       </div>
     ),
     content: [
