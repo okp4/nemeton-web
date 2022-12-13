@@ -23,6 +23,7 @@ declare namespace NodeJS {
     OKP4_ARBITRAGE_RULES_URL: string
     OKP4_COOKIE_POLICY_URL: string
     GRAPHQL_URI: string
+    OKP4_TASKS_SIDH_5_TYPEFORM_URL: string
   }
 }
 

@@ -38,6 +38,11 @@ export const config: Config = {
     },
     privacyUrls: {
       cookiePolicyUrl: process.env.OKP4_COOKIE_POLICY_URL
+    },
+    tasksUrls: {
+      sidh: {
+        originalContentUrl: process.env.OKP4_TASKS_SIDH_5_TYPEFORM_URL
+      }
     }
   }
 }
