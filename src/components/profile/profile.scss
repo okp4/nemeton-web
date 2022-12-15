@@ -1,0 +1,76 @@
+$action-buttons: ('website', 'explorer', 'twitter');
+
+.okp4-nemeton-web-profile-main {
+  @include with-gradient-container;
+  height: 204px;
+  margin-top: 54px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .okp4-nemeton-web-profile-avatar {
+    height: 209px;
+    width: 209px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid #1f403c;
+    border-radius: 16px;
+    margin-top: -28px;
+    box-shadow: 0 0 36px 0 rgba(31, 64, 60, 0.7);
+  }
+
+  .okp4-nemeton-web-profile-identity-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    > h2:first-of-type {
+      text-transform: capitalize;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .okp4-nemeton-web-profile-identity-address-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(255, 255, 255, 0.6);
+
+      > p {
+        font-size: 16px;
+        margin: 0;
+
+        &:first-of-type {
+          font-family: 'Gotham', sans-serif;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .okp4-nemeton-web-profile-actions-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 29px;
+
+    .okp4-nemeton-web-profile-action-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      @each $action-button in $action-buttons {
+        &.#{$action-button} {
+          background: no-repeat
+            center
+            url('/icons/#{$action-button}.svg')
+            rgba(255, 255, 255, 0.12);
+        }
+      }
+
+      &.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    }
+  }
+}
