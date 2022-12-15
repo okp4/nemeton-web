@@ -1,5 +1,18 @@
-.okp4-accordion-main {
-  .okp4-accordion-title {
+.okp4-nemeton-web-accordion-main {
+  &.secondary {
+    width: calc(100% - 60px);
+    background: #1f403c;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px 30px;
+  }
+
+  &.disabled {
+    background: rgba(31, 64, 60, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .okp4-nemeton-web-accordion-title-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -12,7 +25,20 @@
       padding: 20px;
     }
 
-    .okp4-accordion-content {
+    &.secondary {
+      width: 100%;
+      gap: 41px;
+      padding: 0;
+      border-radius: 0;
+      background-color: unset;
+      margin: 0;
+
+      @media screen and (max-width: 580px) {
+        padding: 0;
+      }
+    }
+
+    .okp4-nemeton-web-accordion-content {
       width: 88%;
       margin: auto;
     }

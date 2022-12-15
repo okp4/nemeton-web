@@ -1,33 +1,53 @@
 import React from 'react'
 import Image from 'next/image'
+import classNames from 'classnames'
 
 type AccordionProps = {
   title: JSX.Element
   content: JSX.Element
   onToggle: () => void
   isExpanded: boolean
+  iconProps?: {
+    width?: number
+    height?: number
+  }
+  variant?: 'primary' | 'secondary'
+  disabled?: boolean
 }
 
 export const Accordion = ({
   title,
   content,
   onToggle,
-  isExpanded
+  isExpanded,
+  iconProps,
+  variant = 'primary',
+  disabled = false
 }: AccordionProps): JSX.Element => (
-  <div className="okp4-accordion-main">
-    <div className="okp4-accordion-title">
+  <div
+    className={classNames(`okp4-nemeton-web-accordion-main ${variant}`, {
+      disabled
+    })}
+  >
+    <div
+      className={classNames(`okp4-nemeton-web-accordion-title-container ${variant}`, {
+        disabled
+      })}
+    >
       {title}
-      <div>
-        <Image
-          alt="arrow-down"
-          className={`okp4-nemeton-web-icon ${isExpanded ? 'rotate-up' : 'rotate-down'}`}
-          height={30}
-          onClick={onToggle}
-          src="/icons/arrow.svg"
-          width={48}
-        />
-      </div>
+      {!disabled && (
+        <div>
+          <Image
+            alt="arrow-down"
+            className={`okp4-nemeton-web-icon ${isExpanded ? 'rotate-up' : 'rotate-down'}`}
+            height={iconProps?.height ?? 30}
+            onClick={onToggle}
+            src="/icons/arrow.svg"
+            width={iconProps?.width ?? 48}
+          />
+        </div>
+      )}
     </div>
-    {isExpanded && <div className="okp4-accordion-content">{content}</div>}
+    {isExpanded && <div className="okp4-nemeton-web-accordion-content">{content}</div>}
   </div>
 )
