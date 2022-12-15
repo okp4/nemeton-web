@@ -4,32 +4,38 @@ import Image from 'next/image'
 import hatDruidAnimationData from '../../../public/json/hat-druid.json'
 import React, { useCallback, useMemo, useState } from 'react'
 import { useMediaType } from '../../hook/useMediaType'
-import type { Druid } from '../../entity/druid'
+import type { DruidDescriptor } from '../../entity/druid'
 import { Search } from '../search/Search'
 import { Snackbar } from '../snackbar/Snackbar'
 import { LottieLoader } from '../loader/LottieLoader'
+import Link from 'next/link'
+import { Copy } from '../copy/Copy'
 
 export type Column = {
   label: string
-  renderCell: (druid: Druid) => JSX.Element
+  renderCell: (druid: DruidDescriptor) => JSX.Element
   width?: string
   hidden?: boolean
 }
 
-export type TableProps = {
-  data: Druid[]
+export type LeaderboardTableProps = {
+  data: DruidDescriptor[]
   onSearchChange: (value: string) => void
   loading: boolean
   loadingMore?: boolean
 }
 
-export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loadingMore }) => {
+export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
+  data,
+  onSearchChange,
+  loading,
+  loadingMore
+}) => {
   const [address, setAddress] = useState<string>('')
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const handleCopyAddress = useCallback(
-    (address: string) => () => {
-      navigator.clipboard.writeText(address)
+    (address: string) => {
       setAddress(address)
     },
     [setAddress]
@@ -40,13 +46,13 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
       [
         {
           label: 'Rank',
-          renderCell: (druid: Druid) => <span>{druid.rank.toLocaleString()}</span>,
+          renderCell: (druid: DruidDescriptor) => <span>{druid.rank.toLocaleString()}</span>,
           width: isMobileScreen ? '18%' : '9%'
         },
         {
           label: 'Name',
-          renderCell: (druid: Druid) => (
-            <div className="flex-cell">
+          renderCell: (druid: DruidDescriptor) => (
+            <Link href={`/druid/${druid.valoper}#profile`}>
               <Image
                 alt="validator-avatar"
                 className="avatar-bg"
@@ -55,21 +61,17 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
                 width={21}
               />
               <span>{druid.identity.name}</span>
-            </div>
+            </Link>
           ),
           width: isMobileScreen ? '56%' : '29%'
         },
         {
           label: 'Address',
           width: '25%',
-          renderCell: (druid: Druid) => (
+          renderCell: (druid: DruidDescriptor) => (
             <div className="flex-cell">
               <span>{druid.valoper}</span>
-              <span
-                className="okp4-nemeton-web-table-copy-logo"
-                onClick={handleCopyAddress(druid.valoper)}
-                title="Copy on clipboard"
-              />
+              <Copy item={druid.valoper} onCopied={handleCopyAddress} />
             </div>
           ),
           hidden: isMobileScreen
@@ -77,7 +79,7 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
         {
           label: 'Completed tasks',
           width: '22%',
-          renderCell: (druid: Druid) => (
+          renderCell: (druid: DruidDescriptor) => (
             <span>{`${druid.tasks.completed.toString()}/${druid.tasks.started.toString()}`}</span>
           ),
           hidden: isMobileScreen
@@ -85,7 +87,7 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
         {
           label: 'Total points',
           width: isMobileScreen ? '26%' : '15%',
-          renderCell: (druid: Druid) => <span>{druid.points.toLocaleString()}</span>
+          renderCell: (druid: DruidDescriptor) => <span>{druid.points.toLocaleString()}</span>
         }
       ].filter(column => !column.hidden),
     [handleCopyAddress, isMobileScreen]
@@ -141,12 +143,12 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
 
   return (
     <>
-      <div className="okp4-nemeton-web-table-main">
-        <div className="okp4-nemeton-web-table-header-container">
+      <div className="okp4-nemeton-web-leaderboard-table-main">
+        <div className="okp4-nemeton-web-leaderboard-table-header-container">
           <h2>RANKING</h2>
           <Search onChange={handleSearchChange} />
         </div>
-        <div className="okp4-nemeton-web-table-content-container">
+        <div className="okp4-nemeton-web-leaderboard-table-content-container">
           <table>
             <thead>
               <tr>
@@ -174,7 +176,9 @@ export const Table: React.FC<TableProps> = ({ data, onSearchChange, loading, loa
                           return <td key={index}>{renderCell(row)}</td>
                         })}
                         {!isMobileScreen && index <= 2 && (
-                          <td className={`okp4-nemeton-web-table-podium-logo ${podiumClassname}`} />
+                          <td
+                            className={`okp4-nemeton-web-leaderboard-table-podium-logo ${podiumClassname}`}
+                          />
                         )}
                       </tr>
                     )
