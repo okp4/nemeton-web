@@ -1,7 +1,7 @@
-import type { Druid, PodiumDruid } from '../../entity/druid'
+import type { DruidDescriptor, PodiumDruid } from '../../entity/druid'
 import type { PodiumValidatorEdgeDTO, ValidatorEdgeDTO } from './dto.types'
 
-export const mapValidatorEdgeDTOToDruid = (dto: ValidatorEdgeDTO): Druid => ({
+export const mapValidatorEdgeDTOToDruid = (dto: ValidatorEdgeDTO): DruidDescriptor => ({
   rank: dto.node.rank,
   identity: {
     name: dto.node.moniker,

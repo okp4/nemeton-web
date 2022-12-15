@@ -9,10 +9,10 @@ import type { PodiumStep } from '../components/podium/Podium'
 import { Podium } from '../components/podium/Podium'
 import { config } from '../lib/config'
 import type { Config } from '../types/config.type'
-import { Table } from '../components/table/Table'
+import { LeaderboardTable } from '../components/table/LeaderboardTable'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import type { Druid, PodiumDruid } from '../entity/druid'
-import type { Phase } from '../entity/phase'
+import type { DruidDescriptor, PodiumDruid } from '../entity/druid'
+import type { PhaseDescriptor } from '../entity/phase'
 import {
   useQBoardPodiumQuery,
   useQBoardQuery,
@@ -30,10 +30,10 @@ import client from '../graphql/apolloClient'
 export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
 const Leaderboard: NextPage<LeaderboardProps> = props => {
-  const [druids, setDruids] = useState<Druid[]>([])
+  const [druids, setDruids] = useState<DruidDescriptor[]>([])
   const [podium, setPodium] = useState<PodiumDruid[]>([])
   const [druidCount, setDruidCount] = useState<number>(0)
-  const [activePhase, setActivePhase] = useState<Phase | null>(null)
+  const [activePhase, setActivePhase] = useState<PhaseDescriptor | null>(null)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [isSearchMode, setSearchMode] = useState<boolean>(false)
   const { urls } = props
@@ -212,7 +212,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
                 scrollThreshold={0.91}
                 style={{ overflow: 'unset' }}
               >
-                <Table
+                <LeaderboardTable
                   data={druids}
                   loading={boardLoading && !variables?.after}
                   loadingMore={boardLoading && !!variables?.after}
