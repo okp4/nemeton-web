@@ -11,6 +11,8 @@
 @import 'src/components/table/table.scss';
 @import 'src/components/countdown/countdown.scss';
 @import 'src/components/accordion/accordion.scss';
+@import 'src/components/profile/profile.scss';
+@import 'src/components/tasks/tasksSummary.scss';
 
 html,
 body {
@@ -607,4 +609,41 @@ main {
       }
     }
   }
+}
+
+.okp4-nemeton-web-go-back-button-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+
+  > span {
+    font-family: 'Gotham light', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: capitalize;
+  }
+
+  > svg {
+    font-size: 20px;
+  }
+}
+
+.okp4-nemeton-web-copy-logo {
+  width: 18px;
+  height: 18px;
+  background-image: url('/icons/copy.svg');
+  background-repeat: no-repeat;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.okp4-nemeton-web-page-druid-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  background: #1f403c;
+  border-radius: 20px 20px 0 0;
+  margin-top: -110px;
+  padding: 45px 89px;
 }
