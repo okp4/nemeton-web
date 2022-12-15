@@ -69,7 +69,7 @@ export type BlockRange = {
   readonly count: Scalars['Int'];
   /** The block height the range begin, inclusive. */
   readonly from: Scalars['Int'];
-  /** The block height the range end, inclusive. */
+  /** The block height the range end, exclusive. */
   readonly to: Scalars['Int'];
 };
 
@@ -145,6 +145,8 @@ export type PerPhaseTasks = {
   readonly finishedCount: Scalars['Int'];
   /** The phase we're talking about. */
   readonly phase: Phase;
+  /** The current points earned by the validator in this phase. */
+  readonly points: Scalars['UInt64'];
   /** The total number of started tasks the validator is supposed to perform. */
   readonly startedCount: Scalars['Int'];
   /** The current status of the phase's tasks for a validator. */
@@ -154,8 +156,8 @@ export type PerPhaseTasks = {
 /** Represents a Phase of the Nemeton Program */
 export type Phase = {
   readonly __typename?: 'Phase';
-  /** The current block range of the phase. In the case the phase hasn't started its size is 0, for a phase in progress the range will evolve. */
-  readonly blocks: BlockRange;
+  /** The current block range of the phase, if any. */
+  readonly blocks?: Maybe<BlockRange>;
   /** The description of the phase. */
   readonly description: Scalars['String'];
   /** The date the phase ends. */
@@ -379,6 +381,13 @@ export type QPhasesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type QPhasesQuery = { readonly __typename?: 'Query', readonly phases: { readonly __typename?: 'Phases', readonly current?: { readonly __typename?: 'Phase', readonly number: number, readonly name: string, readonly startDate: string, readonly endDate: string } | null } };
 
+export type QValidatorQueryVariables = Exact<{
+  valoper?: InputMaybe<Scalars['ValoperAddress']>;
+}>;
+
+
+export type QValidatorQuery = { readonly __typename?: 'Query', readonly validator?: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly twitter?: string | null, readonly website?: string | null, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly perPhase: ReadonlyArray<{ readonly __typename?: 'PerPhaseTasks', readonly points: any, readonly phase: { readonly __typename?: 'Phase', readonly number: number, readonly started: boolean }, readonly tasks: ReadonlyArray<{ readonly __typename?: 'BasicTaskState', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } } | { readonly __typename?: 'SubmissionTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } } | { readonly __typename?: 'UptimeTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } }> }> } } | null };
+
 export type QValidatorCountQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -531,6 +540,67 @@ export function useQPhasesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QP
 export type QPhasesQueryHookResult = ReturnType<typeof useQPhasesQuery>;
 export type QPhasesLazyQueryHookResult = ReturnType<typeof useQPhasesLazyQuery>;
 export type QPhasesQueryResult = Apollo.QueryResult<QPhasesQuery, QPhasesQueryVariables>;
+export const QValidatorDocument = gql`
+    query QValidator($valoper: ValoperAddress) {
+  validator(valoper: $valoper) {
+    rank
+    moniker
+    identity {
+      picture {
+        href
+      }
+    }
+    valoper
+    twitter
+    website
+    points
+    tasks {
+      perPhase {
+        points
+        phase {
+          number
+          started
+        }
+        tasks {
+          completed
+          earnedPoints
+          task {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useQValidatorQuery__
+ *
+ * To run a query within a React component, call `useQValidatorQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQValidatorQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useQValidatorQuery({
+ *   variables: {
+ *      valoper: // value for 'valoper'
+ *   },
+ * });
+ */
+export function useQValidatorQuery(baseOptions?: Apollo.QueryHookOptions<QValidatorQuery, QValidatorQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<QValidatorQuery, QValidatorQueryVariables>(QValidatorDocument, options);
+      }
+export function useQValidatorLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QValidatorQuery, QValidatorQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<QValidatorQuery, QValidatorQueryVariables>(QValidatorDocument, options);
+        }
+export type QValidatorQueryHookResult = ReturnType<typeof useQValidatorQuery>;
+export type QValidatorLazyQueryHookResult = ReturnType<typeof useQValidatorLazyQuery>;
+export type QValidatorQueryResult = Apollo.QueryResult<QValidatorQuery, QValidatorQueryVariables>;
 export const QValidatorCountDocument = gql`
     query QValidatorCount {
   validatorCount

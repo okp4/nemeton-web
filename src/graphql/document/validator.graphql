@@ -1,0 +1,31 @@
+query QValidator($valoper: ValoperAddress) {
+  validator(valoper: $valoper) {
+    rank
+    moniker
+    identity {
+      picture {
+        href
+      }
+    }
+    valoper
+    twitter
+    website
+    points
+    tasks {
+      perPhase {
+        points
+        phase {
+          number
+          started
+        }
+        tasks {
+          completed
+          earnedPoints
+          task {
+            name
+          }
+        }
+      }
+    }
+  }
+}
