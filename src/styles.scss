@@ -409,6 +409,7 @@ main {
           }
 
           > p:first-of-type {
+            max-height: 201px;
             max-width: 420px;
             font-size: 20px;
             font-family: 'Gotham light', sans-serif;
@@ -429,6 +430,8 @@ main {
 
           > h1:first-of-type {
             font-size: 140px;
+            line-height: 1em;
+            word-break: keep-all;
             @media screen and (max-width: 580px) {
               font-size: 100px;
             }
@@ -437,6 +440,7 @@ main {
           > h2:first-of-type {
             padding-right: 22px;
             font-size: 40px;
+            white-space: nowrap;
             @media screen and (max-width: 580px) {
               font-size: 30px;
             }
@@ -468,6 +472,7 @@ main {
       }
 
       @media screen and (max-width: 580px) {
+        white-space: nowrap;
         max-width: unset;
         font-size: 38px;
         margin-top: 26px;
