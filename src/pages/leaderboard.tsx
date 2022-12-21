@@ -12,7 +12,7 @@ import type { Config } from '../types/config.type'
 import { LeaderboardTable } from '../components/table/LeaderboardTable'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { DruidDescriptor, PodiumDruid } from '../entity/druid'
-import type { PhaseDescriptor } from '../entity/phase'
+import type { PhaseDescriptor } from '../entity/phases/types'
 import {
   useQBoardPodiumQuery,
   useQBoardQuery,
