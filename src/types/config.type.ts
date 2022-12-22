@@ -2,6 +2,11 @@ export type TasksUrls = {
   sidh: {
     originalContentUrl: string
   }
+  imbolc: {
+    exposeRPCUrl: string
+    provideSnapshotUrl: string
+    provideDashboardUrl: string
+  }
 }
 
 export type Config = {

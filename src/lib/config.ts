@@ -42,6 +42,11 @@ export const config: Config = {
     tasksUrls: {
       sidh: {
         originalContentUrl: process.env.OKP4_TASKS_SIDH_5_TYPEFORM_URL
+      },
+      imbolc: {
+        exposeRPCUrl: process.env.OKP4_TASKS_IMBOLC_1_TYPEFORM_URL,
+        provideSnapshotUrl: process.env.OKP4_TASKS_IMBOLC_2_TYPEFORM_URL,
+        provideDashboardUrl: process.env.OKP4_TASKS_IMBOLC_3_TYPEFORM_URL
       }
     }
   }
