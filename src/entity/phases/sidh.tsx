@@ -193,5 +193,5 @@ export const sidh: Phase = {
       }
     ]
   },
-  status: 'active'
+  status: 'closed'
 }
