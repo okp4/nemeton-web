@@ -34,7 +34,7 @@
     "@graphql-codegen/cli": "^2.16.1",
     "@graphql-codegen/typescript": "^2.8.5",
     "@graphql-codegen/typescript-operations": "^2.5.7",
-    "@graphql-codegen/typescript-react-apollo": "^3.3.6",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.11.1",
     "@okp4/eslint-config": "^1.1.0",
