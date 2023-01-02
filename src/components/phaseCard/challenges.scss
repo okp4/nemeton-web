@@ -1,14 +1,11 @@
 .okp4-nemeton-web-challenges-container {
   display: flex;
   width: 100%;
-  height: 874px;
+  height: 100%;
   background-color: #2e534f;
   margin-top: 84px;
-  @media screen and (max-width: 1440px) {
-    height: 628px;
-  }
+
   @media screen and (max-width: 1100px) {
-    height: 100%;
     padding: 20px 30px;
     width: calc(100% - 60px);
     margin-top: 40px;
@@ -52,7 +49,7 @@
       }
     }
 
-    .okp4-nemeton-web-challenges-summary {
+    .okp4-nemeton-web-challenges-task {
       display: flex;
       flex-direction: column;
 
@@ -80,15 +77,10 @@
       }
 
       .okp4-nemeton-web-challenge-subject {
-        padding-bottom: 36px;
-
-        @media screen and (max-width: 1440px) {
-          padding-bottom: 10px;
-        }
-
         > h3 {
           font-size: 50px;
           letter-spacing: 2px;
+          padding: 20px 0 40px 0;
 
           @media screen and (max-width: 1440px) {
             font-size: 40px;
@@ -102,15 +94,11 @@
         }
 
         .okp4-nemeton-web-challenges-rewards {
-          padding: 40px 0 0 40px;
+          padding-left: 40px;
           line-height: 32px;
 
           @media screen and (max-width: 580px) {
-            padding: 20px 0;
-          }
-
-          @media screen and (min-width: 581px) and (max-width: 1440px) {
-            padding: 20px 0 0 20px;
+            padding: unset;
           }
         }
 
@@ -118,6 +106,7 @@
           display: flex;
           justify-content: space-between;
           gap: 20px;
+          padding: 0;
 
           > p {
             font-family: 'Gotham light', sans-serif;
