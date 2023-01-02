@@ -1,4 +1,4 @@
-import type { TasksPerPhase } from './phases/types'
+import type { TasksPerPhase } from './phase'
 
 type Valoper = string
 
