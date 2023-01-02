@@ -2,15 +2,16 @@ import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useMediaType } from '../../hook/useMediaType'
 import { Challenges } from './Challenges'
-import type { Phase } from '../../entity/phases/types'
+import type { PhaseDTO } from '../../data/phase/dto.type'
 
-export type PhaseCardProps = Phase
+export type PhaseCardProps = PhaseDTO
 
 export const PhaseCard = ({
   number,
-  name,
-  description,
-  challenges,
+  phaseName,
+  phaseDescription,
+  tasks,
+  phaseDuration,
   status
 }: PhaseCardProps): JSX.Element => {
   const [isChallengesOpen, setIsChallengesOpen] = useState<boolean>(false)
@@ -18,7 +19,7 @@ export const PhaseCard = ({
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const toggleChallengesOpen = useCallback(() => {
-    status === 'active' && setIsChallengesOpen(!isChallengesOpen)
+    status !== 'coming' && setIsChallengesOpen(!isChallengesOpen)
   }, [isChallengesOpen, status])
 
   useEffect(() => {
@@ -35,37 +36,38 @@ export const PhaseCard = ({
 
   return (
     <div className="okp4-nemeton-web-phase-main">
-      <div className={classNames('okp4-nemeton-web-phase-container', name)}>
+      <div className={classNames('okp4-nemeton-web-phase-container', phaseName)}>
         <div
           className={classNames(
             'okp4-nemeton-web-phase-content-container',
-            { 'no-border': status !== 'active' },
-            name
+            { 'no-border': status === 'coming' },
+            phaseName
           )}
         >
-          {status !== 'active' && (
+          {status === 'coming' && (
             <div className="okp4-nemeton-web-phase-mask-container">
               <div className="okp4-nemeton-web-phase-mask-divider" />
-              <h2>{status === 'coming' ? 'Coming Soon' : 'Closed'}</h2>
+              <h2>Coming Soon</h2>
               <div className="okp4-nemeton-web-phase-mask-divider" />
             </div>
           )}
-          <div className={classNames('okp4-nemeton-web-phase-content-details', name)}>
+          <div className={classNames('okp4-nemeton-web-phase-content-details', phaseName)}>
             <div className="okp4-nemeton-web-phase-content-title">
               <h2>Phase {number}</h2>
-              <h1>{name}</h1>
+              <h1>{phaseName}</h1>
             </div>
-            <p>{description}</p>
-            {status === 'active' || !isMobileScreen ? buttonChallenges : null}
+            <p>{phaseDescription}</p>
+            {status !== 'coming' || !isMobileScreen ? buttonChallenges : null}
           </div>
         </div>
       </div>
-      {isChallengesOpen && challenges && name && (
+      {isChallengesOpen && phaseDuration && (
         <Challenges
-          challenges={challenges}
           onClose={toggleChallengesOpen}
-          phase={name}
+          phaseDuration={phaseDuration}
+          phaseName={phaseName}
           refObj={challengeContainerRef}
+          tasks={tasks}
         />
       )}
     </div>

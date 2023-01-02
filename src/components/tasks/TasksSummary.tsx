@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { useCallback } from 'react'
-import type { TasksPerPhase } from '../../entity/phases/types'
+import type { TasksPerPhase } from '../../entity/phase'
 import { useAccordion } from '../../hook/useAccordion'
 import { Accordion } from '../accordion/Accordion'
 
