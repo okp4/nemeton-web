@@ -8,9 +8,14 @@ import ArticleIcon from '@mui/icons-material/Article'
 import GavelIcon from '@mui/icons-material/Gavel'
 import HelpIcon from '@mui/icons-material/Help'
 import MoneyIcon from '@mui/icons-material/Money'
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useAccordion } from '../hook/useAccordion'
+import type { AccordionState } from '../hook/useAccordion'
 import { Accordion } from '../components/accordion/Accordion'
+import Phases from '../data/phase/index'
+import type { PhaseDTO, Task, TaskContent, TaskContentId } from '../data/phase/dto.type'
+import { useRouter } from 'next/router'
+import moment from 'moment'
 
 export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
@@ -20,11 +25,13 @@ type ContentBlockProps = Readonly<{
   icon?: JSX.Element
 }>
 
-type PhaseTask = {
-  phase: string
-  title: JSX.Element
-  content: ContentBlockProps[]
-}
+type PhaseAccordionProps = Readonly<{
+  activeAccordion: AccordionState
+  name: string
+  onClick: (challenge: string) => () => void
+  status: 'coming' | 'active' | 'closed'
+  tasks: Task[]
+}>
 
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
   <div className="content-block-main">
@@ -36,277 +43,94 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon })
   </div>
 )
 
-const phaseTasks = (originalContentUrl: string): PhaseTask[] => [
-  {
-    phase: 'Sidh',
-    title: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Submit your gentx</h3>
-        <p>Dec 1st - Dec 12th</p>
-      </div>
-    ),
-    content: [
-      {
-        title: 'Description',
-        description: (
-          <p>
-            Before starting the network, we must to register your validator in the genesis.json.{' '}
-            <br />
-            The gentx creation and registration procedure are detailed here:{' '}
-            <a
-              href="https://github.com/okp4/networks/tree/main/chains/nemeton-1"
-              rel="noreferrer"
-              target="_blank"
-            >
-              https://github.com/okp4/networks/tree/main/chains/nemeton-1.
-            </a>{' '}
-            <br />
-            Your gentx shall be submitted through an issue on the{' '}
-            <a href=" https://github.com/okp4/networks/" rel="noreferrer" target="_blank">
-              https://github.com/okp4/networks/
-            </a>{' '}
-            GitHub repository. <br />
-            This task is required to make you visible on the Leaderboard.
-          </p>
-        ),
-        icon: <ArticleIcon />
-      },
-      {
-        title: 'Rewards',
-        description: <p>1000 points.</p>,
-        icon: <MoneyIcon />
-      },
-      {
-        title: 'Judging Criteria',
-        description: (
-          <p>
-            You will receive the points once the OKP4 team has integrated your gentx in the genesis.
-          </p>
-        ),
-        icon: <GavelIcon />
-      },
-
-      {
-        title: 'How to submit',
-        description: <p>Send the issue number in a private message to Anik#9282 on Discord.</p>,
-        icon: <HelpIcon />
-      }
-    ]
-  },
-  {
-    phase: 'Sidh',
-    title: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Setup your node</h3>
-        <p>Dec 14th - Jan 1st, 3pm UTC</p>
-      </div>
-    ),
-    content: [
-      {
-        title: 'Description',
-        description: (
-          <p>
-            It is time to make the okp4-nemeton-1 network alive; you have to set up your node and
-            join the network. The technical documentation regarding node setup and network join
-            information is here:{' '}
-            <a
-              href=" https://docs.okp4.network/nodes/introduction"
-              rel="noreferrer"
-              target="_blank"
-            >
-              https://docs.okp4.network/nodes/introduction.
-            </a>
-          </p>
-        ),
-        icon: <ArticleIcon />
-      },
-      {
-        title: 'Rewards',
-        description: <p>2000 points.</p>,
-        icon: <MoneyIcon />
-      },
-      {
-        title: 'Judging Criteria',
-        description: <p>Your validator is up and running.</p>,
-        icon: <GavelIcon />
-      },
-
-      {
-        title: 'How to submit',
-        description: (
-          <p>The validator&apos;s presence in the consensus will be automatically checked.</p>
-        ),
-        icon: <HelpIcon />
-      }
-    ]
-  },
-  {
-    phase: 'Sidh',
-    title: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Uptime challenge</h3>
-        <p>Dec 14th - Jan 1st, 3pm UTC</p>
-      </div>
-    ),
-    content: [
-      {
-        title: 'Description',
-        description: <p>Maintain the best uptime with your validator.</p>,
-        icon: <ArticleIcon />
-      },
-      {
-        title: 'Rewards',
-        description: (
-          <p>Up to 2500 points with the following formula: 2501^0,01x - 1 with x = %uptime.</p>
-        ),
-        icon: <MoneyIcon />
-      },
-      {
-        title: 'Judging Criteria',
-        description: <p>The less blocks your validator miss, the more points you get.</p>,
-        icon: <GavelIcon />
-      },
-
-      {
-        title: 'How to submit',
-        description: <p>Missed blocks are automatically tracked.</p>,
-        icon: <HelpIcon />
-      }
-    ]
-  },
-  {
-    phase: 'Sidh',
-    title: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Tweet about the OKP4 testnet</h3>
-        <p>Dec 12th - Jan 1st</p>
-      </div>
-    ),
-    content: [
-      {
-        title: 'Description',
-        description: (
-          <p>
-            Publish a tweet about the Nemeton testnet while including the @okp4_protocol tag using
-            your validator Twitter account. Feel free to share your excitement!
-          </p>
-        ),
-        icon: <ArticleIcon />
-      },
-      {
-        title: 'Rewards',
-        description: <p>500 points.</p>,
-        icon: <MoneyIcon />
-      },
-      {
-        title: 'Judging Criteria',
-        description: <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>,
-        icon: <GavelIcon />
-      },
-
-      {
-        title: 'How to submit',
-        description: <p>Tweets are automatically tracked.</p>,
-        icon: <HelpIcon />
-      }
-    ]
-  },
-  {
-    phase: 'Sidh',
-    title: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Submit original content related to validation</h3>
-        <p>Dec 12th - Jan 1st</p>
-      </div>
-    ),
-    content: [
-      {
-        title: 'Description',
-        description: (
-          <p>
-            Based on your experience as a validator, write an original article, twitter thread or
-            video content providing value to other validators and the community in general. Content
-            must be in English. <br />
-            The content may be used later to bring improvements to the node (
-            <a
-              href=" https://docs.okp4.network/nodes/introduction"
-              rel="noreferrer"
-              target="_blank"
-            >
-              https://docs.okp4.network/nodes/introduction
-            </a>
-            ), be referenced in OKP4&#39;s Medium ({' '}
-            <a href="  https://blog.okp4.network/" rel="noreferrer" target="_blank">
-              https://blog.okp4.network/
-            </a>
-            ), or shared in social networks. <br />
-            If you’ve seen great documentation, articles or content ideas elsewhere, help us bring
-            something similar to OKP4. Feel free to be creative if you’re in the right mood!
-          </p>
-        ),
-        icon: <ArticleIcon />
-      },
-      {
-        title: 'Rewards',
-        description: (
-          <p>
-            Up to 10 000 points per druid will be attributed, capped at 150 000 points in total.
-          </p>
-        ),
-        icon: <MoneyIcon />
-      },
-      {
-        title: 'Judging Criteria',
-        description: (
-          <>
-            <p>
-              OKP4 team will judge if any submission deserves points or not based on the following:
-            </p>
-            <ul>
-              <li>Overall relevance</li>
-              <li>Originality</li>
-              <li>Completeness</li>
-              <li>Readability</li>
-              <li>Useful tips</li>
-              <li>Good surprises…</li>
-            </ul>
-            <p>Non-relevant submissions or low-value ones will earn 0 points.</p>
-          </>
-        ),
-        icon: <GavelIcon />
-      },
-
-      {
-        title: 'How to submit',
-        description: (
-          <p>
-            Share the content links on{' '}
-            <a href={originalContentUrl} rel="noreferrer" target="_blank">
-              this form
-            </a>
-            . Only one submission per druid will be studied.
-          </p>
-        ),
-        icon: <HelpIcon />
-      }
-    ]
+const taskContentIcon = (id: TaskContentId): JSX.Element => {
+  switch (id) {
+    case 'description':
+      return <ArticleIcon />
+    case 'rewards':
+      return <MoneyIcon />
+    case 'criteria':
+      return <GavelIcon />
+    case 'submit':
+      return <HelpIcon />
   }
-]
+}
+
+const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
+  activeAccordion,
+  name,
+  status,
+  tasks,
+  onClick
+}): JSX.Element => {
+  return (
+    <div className="okp4-nemeton-web-page-content-wrapper">
+      <h2 id={name.toLowerCase()}>
+        {name}
+        {status === 'closed' && <span> (closed)</span>}
+      </h2>
+      {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
+        const { from, to } = taskDuration
+        const title = (
+          <div className="okp4-nemeton-web-tasks-accordion-title">
+            <h3>{taskName}</h3>
+            <p>{`${moment(from).utc().format('MMM. Do, H:mm ')} UTC - ${moment(to)
+              .utc()
+              .format('MMM. Do, H:mm ')} UTC`}</p>
+          </div>
+        )
+        const active = activeAccordion === taskName
+
+        return (
+          <div id={`${name}-${index + 1}`} key={index}>
+            <Accordion
+              content={
+                <>
+                  {taskContent.map(
+                    ({ id, name, content }: TaskContent): JSX.Element => (
+                      <div key={id}>
+                        <ContentBlock
+                          description={content}
+                          icon={taskContentIcon(id)}
+                          title={name}
+                        />
+                      </div>
+                    )
+                  )}
+                </>
+              }
+              isExpanded={active}
+              onToggle={onClick(taskName)}
+              title={title}
+            />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 const Tasks: NextPage<TasksProps> = props => {
   const {
     urls,
-    urls: {
-      tasksUrls: {
-        sidh: { originalContentUrl }
-      }
-    }
+    urls: { tasksUrls }
   } = props
-  const [activeIndex, setActiveIndex] = useAccordion()
+  const { query } = useRouter()
+  const [activeChallenge, setActiveChallenge] = useAccordion()
 
-  const handleClick = (index: number) => () => {
-    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
-  }
+  const handleClick = useCallback(
+    (challenge: string) => () => {
+      activeChallenge === challenge ? setActiveChallenge(null) : setActiveChallenge(challenge)
+    },
+    [activeChallenge, setActiveChallenge]
+  )
+
+  useEffect(() => {
+    const { task } = query
+    if (typeof task === 'string') {
+      setActiveChallenge(task)
+    }
+  }, [query, setActiveChallenge])
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -315,31 +139,20 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          <div className="okp4-nemeton-web-page-content-wrapper">
-            {phaseTasks(originalContentUrl).map(({ phase, title, content }, index, array) => {
-              const previous: PhaseTask | null = index > 0 ? array[index - 1] : null
-              const active = activeIndex === index
-              const mustDisplayPart = !previous || previous.phase !== phase
-              const accordionContent = (
-                <>
-                  {content.map(({ title, description, icon }, index) => (
-                    <ContentBlock description={description} icon={icon} key={index} title={title} />
-                  ))}
-                </>
-              )
-              return (
+          {Object.values(Phases(tasksUrls)).map(
+            ({ phaseName, tasks, status }: PhaseDTO, index) =>
+              status !== 'coming' && (
                 <div key={index}>
-                  {mustDisplayPart && <h2>{phase}</h2>}
-                  <Accordion
-                    content={accordionContent}
-                    isExpanded={active}
-                    onToggle={handleClick(index)}
-                    title={title}
+                  <PhaseAccordions
+                    activeAccordion={activeChallenge}
+                    name={phaseName}
+                    onClick={handleClick}
+                    status={status}
+                    tasks={tasks}
                   />
                 </div>
               )
-            })}
-          </div>
+          )}
         </div>
         <Footer urls={urls} />
       </main>

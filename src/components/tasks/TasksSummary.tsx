@@ -29,10 +29,10 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
         </div>
       </div>
       <div className="okp4-nemeton-web-tasks-summary-content-container">
-        {tasksPerPhase.map((taskPerPhase, index) => (
+        {tasksPerPhase.map(({ phase }, index) => (
           <Accordion
             content={<p>Test</p>}
-            disabled={!taskPerPhase.phase.started}
+            disabled={!phase.started}
             iconProps={{ width: 30, height: 30 }}
             isExpanded={activeIndex === index}
             key={index}
@@ -40,14 +40,12 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
             title={
               <div
                 className={classNames('okp4-nemeton-web-tasks-summary-accordion-title-wrapper', {
-                  disabled: !taskPerPhase.phase.started
+                  disabled: !phase.started
                 })}
               >
-                <h2>{`phase ${taskPerPhase.phase.number}`}</h2>
-                {taskPerPhase.phase.started && (
-                  <p>
-                    {taskPerPhase.phase.points > 0 ? taskPerPhase.phase.points.toLocaleString() : 0}
-                  </p>
+                <h2>{`phase ${phase.number}`}</h2>
+                {phase.started && phase.points && (
+                  <p>{phase.points > 0 ? phase.points.toLocaleString() : 0}</p>
                 )}
               </div>
             }

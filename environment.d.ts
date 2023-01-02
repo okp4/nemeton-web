@@ -24,6 +24,9 @@ declare namespace NodeJS {
     OKP4_COOKIE_POLICY_URL: string
     GRAPHQL_URI: string
     OKP4_TASKS_SIDH_5_TYPEFORM_URL: string
+    OKP4_TASKS_IMBOLC_1_TYPEFORM_URL: string
+    OKP4_TASKS_IMBOLC_2_TYPEFORM_URL: string
+    OKP4_TASKS_IMBOLC_3_TYPEFORM_URL: string
   }
 }
 

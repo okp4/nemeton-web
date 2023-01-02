@@ -1,3 +1,14 @@
+export type TasksUrls = {
+  sidh: {
+    originalContentUrl: string
+  }
+  imbolc: {
+    exposeRPCUrl: string
+    provideSnapshotUrl: string
+    provideDashboardUrl: string
+  }
+}
+
 export type Config = {
   title: string
   keywords: string
@@ -37,10 +48,6 @@ export type Config = {
     privacyUrls: {
       cookiePolicyUrl: string
     }
-    tasksUrls: {
-      sidh: {
-        originalContentUrl: string
-      }
-    }
+    tasksUrls: TasksUrls
   }
 }

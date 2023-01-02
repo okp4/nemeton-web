@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-export type UseAccordionTuple = [number | null, (value: number | null) => void]
+export type AccordionState = string | number | null
+export type UseAccordionTuple = [AccordionState, (value: AccordionState) => void]
 
 export const useAccordion = (): UseAccordionTuple => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<AccordionState>(null)
   return [activeIndex, setActiveIndex]
 }
