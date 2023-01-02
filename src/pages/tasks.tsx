@@ -3,7 +3,7 @@ import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import { config } from '../lib/config'
-import type { Config, TasksUrls } from '../types/config.type'
+import type { Config } from '../types/config.type'
 import ArticleIcon from '@mui/icons-material/Article'
 import GavelIcon from '@mui/icons-material/Gavel'
 import HelpIcon from '@mui/icons-material/Help'
@@ -12,8 +12,8 @@ import React, { useCallback, useEffect } from 'react'
 import { useAccordion } from '../hook/useAccordion'
 import type { AccordionState } from '../hook/useAccordion'
 import { Accordion } from '../components/accordion/Accordion'
-import Phases from '../entity/phases/index'
-import type { Phase, TaskCategory } from '../entity/phases/types'
+import Phases from '../data/phase/index'
+import type { PhaseDTO, Task, TaskContent, TaskContentId } from '../data/phase/dto.type'
 import { useRouter } from 'next/router'
 import moment from 'moment'
 
@@ -30,8 +30,7 @@ type PhaseAccordionProps = Readonly<{
   name: string
   onClick: (challenge: string) => () => void
   status: 'coming' | 'active' | 'closed'
-  taskCategories: TaskCategory[]
-  urls: TasksUrls
+  tasks: Task[]
 }>
 
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
@@ -44,71 +43,69 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon })
   </div>
 )
 
+const taskContentIcon = (id: TaskContentId): JSX.Element => {
+  switch (id) {
+    case 'description':
+      return <ArticleIcon />
+    case 'rewards':
+      return <MoneyIcon />
+    case 'criteria':
+      return <GavelIcon />
+    case 'submit':
+      return <HelpIcon />
+  }
+}
+
 const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
   activeAccordion,
   name,
   status,
-  taskCategories,
-  urls,
+  tasks,
   onClick
 }): JSX.Element => {
-  const tasks = taskCategories.map(({ tasks }) => tasks).flat()
   return (
     <div className="okp4-nemeton-web-page-content-wrapper">
       <h2 id={name.toLowerCase()}>
         {name}
         {status === 'closed' && <span> (closed)</span>}
       </h2>
-      {tasks.map(
-        ({ summary, description, rewards, judgingCriteria, submit, duration, points }, index) => {
-          if (duration && description && judgingCriteria && rewards && submit) {
-            const { from, to } = duration
-            const title = (
-              <div className="okp4-nemeton-web-tasks-accordion-title">
-                <h3>{summary}</h3>
-                <p>{`${moment(from).utc().format('MMM. Do, H:mm ')} UTC - ${moment(to)
-                  .utc()
-                  .format('MMM. Do, H:mm ')} UTC`}</p>
-              </div>
-            )
-            const active = activeAccordion === summary
+      {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
+        const { from, to } = taskDuration
+        const title = (
+          <div className="okp4-nemeton-web-tasks-accordion-title">
+            <h3>{taskName}</h3>
+            <p>{`${moment(from).utc().format('MMM. Do, H:mm ')} UTC - ${moment(to)
+              .utc()
+              .format('MMM. Do, H:mm ')} UTC`}</p>
+          </div>
+        )
+        const active = activeAccordion === taskName
 
-            return (
-              <div id={`${name}-${index + 1}`} key={index}>
-                <Accordion
-                  content={
-                    <>
-                      <ContentBlock
-                        description={description}
-                        icon={<ArticleIcon />}
-                        title={'Description'}
-                      />
-                      <ContentBlock
-                        description={rewards(points)}
-                        icon={<MoneyIcon />}
-                        title={'Rewards'}
-                      />
-                      <ContentBlock
-                        description={judgingCriteria}
-                        icon={<GavelIcon />}
-                        title={'Judging Criteria'}
-                      />
-                      <ContentBlock
-                        description={submit(urls)}
-                        icon={<HelpIcon />}
-                        title={'How to submit'}
-                      />
-                    </>
-                  }
-                  isExpanded={active}
-                  onToggle={onClick(summary)}
-                  title={title}
-                />
-              </div>
-            )
-          }
-        }
-      )}
+        return (
+          <div id={`${name}-${index + 1}`} key={index}>
+            <Accordion
+              content={
+                <>
+                  {taskContent.map(
+                    ({ id, name, content }: TaskContent): JSX.Element => (
+                      <div key={id}>
+                        <ContentBlock
+                          description={content}
+                          icon={taskContentIcon(id)}
+                          title={name}
+                        />
+                      </div>
+                    )
+                  )}
+                </>
+              }
+              isExpanded={active}
+              onToggle={onClick(taskName)}
+              title={title}
+            />
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -142,20 +139,16 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          {Object.values(Phases).map(
-            ({ name, challenges, status }: Phase, index) =>
-              status !== 'coming' &&
-              challenges &&
-              name &&
-              status && (
+          {Object.values(Phases(tasksUrls)).map(
+            ({ phaseName, tasks, status }: PhaseDTO, index) =>
+              status !== 'coming' && (
                 <div key={index}>
                   <PhaseAccordions
                     activeAccordion={activeChallenge}
-                    name={name}
+                    name={phaseName}
                     onClick={handleClick}
                     status={status}
-                    taskCategories={challenges.taskCategories}
-                    urls={tasksUrls}
+                    tasks={tasks}
                   />
                 </div>
               )
