@@ -18,7 +18,7 @@ export const PhaseCard = ({
   const challengeContainerRef = useRef<HTMLDivElement | null>(null)
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
-  const toggleChallengesOpen = useCallback(() => {
+  const toggleChallenges = useCallback(() => {
     status !== 'coming' && setIsChallengesOpen(!isChallengesOpen)
   }, [isChallengesOpen, status])
 
@@ -29,7 +29,7 @@ export const PhaseCard = ({
   }, [isChallengesOpen])
 
   const buttonChallenges = (
-    <div className="okp4-nemeton-web-phase-content-button-container" onClick={toggleChallengesOpen}>
+    <div className="okp4-nemeton-web-phase-content-button-container" onClick={toggleChallenges}>
       <span className="okp4-nemeton-web-challenge-button right">Challenges & Rewards</span>
     </div>
   )
@@ -63,7 +63,7 @@ export const PhaseCard = ({
       </div>
       {isChallengesOpen && phaseDuration && (
         <Challenges
-          onClose={toggleChallengesOpen}
+          onClose={toggleChallenges}
           phaseDuration={phaseDuration}
           phaseName={phaseName}
           refObj={challengeContainerRef}
