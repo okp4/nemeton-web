@@ -57,10 +57,11 @@ export const PhaseCard = ({
               <h1>{phaseName}</h1>
             </div>
             <p>{phaseDescription}</p>
-            {status !== 'coming' || !isMobileScreen ? buttonChallenges : null}
+            {!isMobileScreen && status !== 'coming' && buttonChallenges}
           </div>
         </div>
       </div>
+      {isMobileScreen && status !== 'coming' && buttonChallenges}
       {isChallengesOpen && phaseDuration && (
         <Challenges
           onClose={toggleChallenges}
