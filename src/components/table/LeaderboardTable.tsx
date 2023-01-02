@@ -8,7 +8,6 @@ import type { DruidDescriptor } from '../../entity/druid'
 import { Search } from '../search/Search'
 import { Snackbar } from '../snackbar/Snackbar'
 import { LottieLoader } from '../loader/LottieLoader'
-import Link from 'next/link'
 import { Copy } from '../copy/Copy'
 
 export type Column = {
@@ -52,7 +51,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
         {
           label: 'Name',
           renderCell: (druid: DruidDescriptor) => (
-            <Link href={`/druid/${druid.valoper}#profile`}>
+            <div className="flex-cell">
               <Image
                 alt="validator-avatar"
                 className="avatar-bg"
@@ -61,7 +60,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
                 width={21}
               />
               <span>{druid.identity.name}</span>
-            </Link>
+            </div>
           ),
           width: isMobileScreen ? '56%' : '29%'
         },
