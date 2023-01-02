@@ -1,5 +1,31 @@
 # ØKP4 Nemeton web changelog
 
+## [1.5.0](https://github.com/okp4/nemeton-web/compare/v1.4.0...v1.5.0) (2023-01-02)
+
+
+### Features
+
+* add imbolc challenges & make imbolc the active phase ([309462f](https://github.com/okp4/nemeton-web/commit/309462f980ffde794951fb96bd104c921382ac12))
+* add imbolc urls ([f3cb932](https://github.com/okp4/nemeton-web/commit/f3cb932f5763c32afa4e1e71d5bc528c9bb023be))
+* **assets:** add profile icons ([2a19eda](https://github.com/okp4/nemeton-web/commit/2a19edad60e77318aa9ae84efd4640b84bee79ac))
+* **entity:** update druid and phase entities ([01ca0ee](https://github.com/okp4/nemeton-web/commit/01ca0ee80009fc56ef4821b6e9af6d136a596cba))
+* **graphql:** update generated types with new validator query ([c5d0028](https://github.com/okp4/nemeton-web/commit/c5d0028811f9e9c3b465486f0d2832bdc319f62e))
+* prevent overflow of phasecard ([2695e1e](https://github.com/okp4/nemeton-web/commit/2695e1e6fb563eb9941136e31c08e3dce35067ed))
+* replace sidh, imbolc & beltaine components & create phase entities ([42c4e52](https://github.com/okp4/nemeton-web/commit/42c4e5204c44ee7cc399015d79d1c458b48a58d9))
+* simplify task page ([ffd8c3c](https://github.com/okp4/nemeton-web/commit/ffd8c3c17672faa9aa1e1fdd7f6cf251b6aff27a))
+* **ui:** add druid profile page ([4bc3209](https://github.com/okp4/nemeton-web/commit/4bc32097608d8bad5a24b0f788b63fc324da7fe3))
+* **ui:** enhance accordion component ([4810c2e](https://github.com/okp4/nemeton-web/commit/4810c2efbfbb04704ee9e5123375d0ede828c484))
+* **ui:** implement Copy component ([35a28b7](https://github.com/okp4/nemeton-web/commit/35a28b756f8473d47ac568c5fd108506dc398cdf))
+* **ui:** implement goBackButton ([0ec31be](https://github.com/okp4/nemeton-web/commit/0ec31be86ffbd88c7e6a03f222424c2dfd170dc4))
+* **ui:** implement new entities ([5f8cdc1](https://github.com/okp4/nemeton-web/commit/5f8cdc1d8376ec7dc8885f6c884ffe482c91d2c3))
+* **ui:** implement styled profile component ([490ab72](https://github.com/okp4/nemeton-web/commit/490ab72bcdcee76c8061e999d5700af774b54e43))
+* **ui:** implement styled TasksSummary component ([617f188](https://github.com/okp4/nemeton-web/commit/617f188b2fe07c9d7e3cf7a14ec2c4ea7a635e2b))
+
+
+### Bug Fixes
+
+* **ui:** challenge button in mobile device ([b598a12](https://github.com/okp4/nemeton-web/commit/b598a128edefa5f5c6ae41e35b7d69fcc2582cb8))
+
 ## [1.4.0](https://github.com/okp4/nemeton-web/compare/v1.3.0...v1.4.0) (2022-12-13)
 
 
