@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import moment from 'moment'
 
 export type CountdownStats = {
@@ -8,16 +8,17 @@ export type CountdownStats = {
 }
 
 export const useCountdown = (end: moment.Moment): CountdownStats => {
-  const duration = moment.duration(end.diff(moment()))
-  const [countdown, setCountDown] = useState<moment.Duration>(duration)
+  const duration = useCallback(() => moment.duration(end.diff(moment())), [end])
+  const [countdown, setCountDown] = useState<moment.Duration>(duration())
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCountDown(duration)
+      setCountDown(duration())
     }, 1000)
 
     return () => clearInterval(interval)
   }, [duration, end])
+
   return {
     days: Math.floor(countdown.asDays()),
     hours: countdown.hours(),
