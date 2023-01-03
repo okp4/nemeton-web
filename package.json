@@ -2,7 +2,7 @@
   "name": "@okp4/nemeton-web",
   "description": "OKP4 Nemeton program landing page",
   "repository": "git@github.com:okp4/nemeton-web.git",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "author": {
     "name": "OKP4",
     "web": "https://okp4.network"

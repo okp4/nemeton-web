@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.5.1](https://github.com/okp4/nemeton-web/compare/v1.5.0...v1.5.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* **hook:** modify duration to prevent stale closure ([cd9e426](https://github.com/okp4/nemeton-web/commit/cd9e426cf75899d6b7500c299e18a6fd706d02db))
+
 ## [1.5.0](https://github.com/okp4/nemeton-web/compare/v1.4.0...v1.5.0) (2023-01-02)
 
 
