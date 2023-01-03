@@ -8,6 +8,7 @@ export const imbolc = ({
   phaseName: 'imbolc',
   phaseDescription:
     "The second phase is focused on testing Druids' performance and uptime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.",
+  status: 'active',
   phaseDuration: {
     from: '2023-01-02T00:00:00Z',
     to: '2023-01-31T23:59:59Z'
@@ -19,18 +20,18 @@ export const imbolc = ({
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: <p>Provide a public RPC endpoint.</p>
+          title: 'Description',
+          contentDescription: <p>Provide a public RPC endpoint.</p>
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>1 500 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>1 500 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: (
+          title: 'Judging Criteria',
+          contentDescription: (
             <p>
               You will receive the points once the OKP4 team has checked your RPC endpoint
               availability.
@@ -39,8 +40,8 @@ export const imbolc = ({
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: (
+          title: 'How to Submit',
+          contentDescription: (
             <p>
               Share the RPC endpoint on{' '}
               <a href={exposeRPCUrl} rel="noreferrer" target="_blank">
@@ -63,18 +64,18 @@ export const imbolc = ({
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: <p>Provide network snapshots.</p>
+          title: 'Description',
+          contentDescription: <p>Provide network snapshots.</p>
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>2 000 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>2 000 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: (
+          title: 'Judging Criteria',
+          contentDescription: (
             <p>
               You will receive the points once the OKP4 team has checked your snapshots
               availability.
@@ -83,8 +84,8 @@ export const imbolc = ({
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: (
+          title: 'How to Submit',
+          contentDescription: (
             <p>
               Share the link to your snapshots on{' '}
               <a href={provideSnapshotUrl} rel="noreferrer" target="_blank">
@@ -107,8 +108,8 @@ export const imbolc = ({
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               Observability is a key element for monitoring network behavior and usage and detect
               possible anomalies, and as a validator you have access to a lot of information and
@@ -118,13 +119,13 @@ export const imbolc = ({
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>2 000 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>2 000 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: (
+          title: 'Judging Criteria',
+          contentDescription: (
             <>
               <p>
                 OKP4 team will judge if any submission deserves points or not based on the
@@ -141,8 +142,8 @@ export const imbolc = ({
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: (
+          title: 'How to Submit',
+          contentDescription: (
             <p>
               Share the link to your dashboard on{' '}
               <a href={provideDashboardUrl} rel="noreferrer" target="_blank">
@@ -165,8 +166,8 @@ export const imbolc = ({
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               Publish a tweet about the Uptime challenge while including the @OKP4_PROTOCOL tag
               using your validator Twitter account. Feel free to share your excitement!
@@ -175,18 +176,20 @@ export const imbolc = ({
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>500 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>500 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          title: 'Judging Criteria',
+          contentDescription: (
+            <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          )
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: <p>Tweets are automatically tracked.</p>
+          title: 'How to Submit',
+          contentDescription: <p>Tweets are automatically tracked.</p>
         }
       ],
       taskDuration: {
@@ -201,8 +204,8 @@ export const imbolc = ({
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <>
               <p>
                 Maintain the best uptime with your validator. This is war, we may intentionally
@@ -214,8 +217,8 @@ export const imbolc = ({
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: (
+          title: 'Rewards',
+          contentDescription: (
             <>
               <p>
                 Up to 15 000 points with the following formula: 15 001 ^0,01x - 1 with x = %uptime.
@@ -226,13 +229,13 @@ export const imbolc = ({
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: <p>The less blocks your validator miss, the more points you get.</p>
+          title: 'Judging Criteria',
+          contentDescription: <p>The less blocks your validator miss, the more points you get.</p>
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: <p>Missed blocks are automatically tracked.</p>
+          title: 'How to Submit',
+          contentDescription: <p>Missed blocks are automatically tracked.</p>
         }
       ],
       taskDuration: {
@@ -241,6 +244,5 @@ export const imbolc = ({
       },
       points: 15000
     }
-  ],
-  status: 'active'
+  ]
 })
