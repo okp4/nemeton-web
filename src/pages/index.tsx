@@ -4,7 +4,7 @@ import { Header } from '../components/layout/header/Header'
 import { Footer } from '../components/layout/footer/Footer'
 import type { Config } from '../types/config.type'
 import { config } from '../lib/config'
-import { PhaseCard } from '../components/phaseCard/PhaseCard'
+import { PhaseCard } from '../components/card/phase/PhaseCard'
 import Phases from '../data/phase/index'
 import type { PhaseDTO } from '../data/phase/dto.type'
 
@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = props => {
       <Head {...props} />
       <main>
         <Header />
-        <div className="okp4-nemeton-web-phases-main" id="home">
+        <div className="okp4-nemeton-web-home-main" id="home">
           {Object.values(Phases(urls.tasksUrls)).map(
             ({ tasks, phaseDescription, phaseName, status, number, phaseDuration }: PhaseDTO) => (
               <div key={number}>
