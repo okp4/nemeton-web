@@ -157,3 +157,46 @@ $podium-colors: ('gold', 'silver', 'bronze');
     }
   }
 }
+
+.okp4-nemeton-web-tasks-table-main {
+  margin-top: 37px;
+
+  table {
+    width: 100%;
+
+    tr {
+      height: 48px;
+    }
+
+    th {
+      font-family: 'Gotham';
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      font-size: 14px;
+      opacity: 0.6;
+      color: $primary-white;
+      text-transform: uppercase;
+      text-align: start;
+    }
+
+    tbody {
+      tr {
+        font-family: 'Gotham';
+        font-style: normal;
+        font-weight: 700;
+        background: none;
+        border-radius: 6px;
+        position: relative;
+        transform: scale(1, 1);
+        font-size: 14px;
+
+        td {
+          &:nth-child(3) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
