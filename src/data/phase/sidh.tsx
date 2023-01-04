@@ -13,7 +13,7 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
   tasks: [
     {
       group: 'Nodes',
-      taskName: 'Submit your gentx on time',
+      taskName: 'Submit your gentx',
       taskContent: [
         {
           id: 'description',
@@ -151,7 +151,7 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
     },
     {
       group: 'Challenges',
-      taskName: 'Uptime challenge',
+      taskName: 'Uptime',
       taskContent: [
         {
           id: 'description',
