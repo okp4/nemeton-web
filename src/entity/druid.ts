@@ -22,7 +22,6 @@ export type DruidProfile = Readonly<
   Pick<DruidDescriptor, 'identity' | 'valoper' | 'points'> & {
     website: string | null
     twitter: string | null
-    explorer: string | null
   }
 >
 
