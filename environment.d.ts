@@ -10,6 +10,7 @@ declare namespace NodeJS {
     OKP4_TELEGRAM_URL: string
     OKP4_TWITTER_URL: string
     OKP4_WEBSITE_URL: string
+    OKP4_EXPLORER_URL: string
     OKP4_DOCS_URL: string
     OKP4_DOCS_NODES_URL: string
     OKP4_DOCS_FAQ_URL: string

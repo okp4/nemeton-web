@@ -7,6 +7,7 @@ export const config: Config = {
   urls: {
     graphqlUri: process.env.GRAPHQL_URI,
     websiteUrl: process.env.OKP4_WEBSITE_URL,
+    explorerUrl: process.env.OKP4_EXPLORER_URL,
     socialMediaUrls: {
       discordUrl: process.env.OKP4_DISCORD_URL,
       githubUrl: process.env.OKP4_GITHUB_URL,
