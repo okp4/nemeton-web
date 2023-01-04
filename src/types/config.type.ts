@@ -16,6 +16,7 @@ export type Config = {
   urls: {
     graphqlUri: string
     websiteUrl: string
+    explorerUrl: string
     socialMediaUrls: {
       discordUrl: string
       githubUrl: string
