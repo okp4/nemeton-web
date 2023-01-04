@@ -15,6 +15,8 @@ export type Phase = Readonly<{
 export type Task = Readonly<{
   name: string
   completed: boolean
+  started: boolean
+  finished: boolean
   points: number
 }>
 
