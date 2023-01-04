@@ -1,8 +1,8 @@
 .okp4-nemeton-web-tasks-summary-main {
   @include with-gradient-container;
-  height: 800px;
   align-items: flex-start;
   flex-direction: column;
+  padding: 55px 62px;
 
   .okp4-nemeton-web-tasks-summary-header-container {
     display: flex;

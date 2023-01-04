@@ -3,6 +3,7 @@ import React, { useCallback } from 'react'
 import type { TasksPerPhase } from '../../entity/phase'
 import { useAccordion } from '../../hook/useAccordion'
 import { Accordion } from '../accordion/Accordion'
+import { TasksTable } from '../table/TasksTable'
 
 type TasksSummaryProps = Readonly<{
   tasksPerPhase: TasksPerPhase[]
@@ -24,14 +25,14 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
       <div className="okp4-nemeton-web-tasks-summary-header-container">
         <h2>tasks and challenges</h2>
         <div className="okp4-nemeton-web-tasks-summary-header-points-wrapper">
-          <p>{points.toLocaleString()}</p>
+          <p>{points > 0 ? points.toLocaleString() : 0}</p>
           <p>points earned</p>
         </div>
       </div>
       <div className="okp4-nemeton-web-tasks-summary-content-container">
         {tasksPerPhase.map(({ phase }, index) => (
           <Accordion
-            content={<p>Test</p>}
+            content={<TasksTable data={phase.tasks} />}
             disabled={!phase.started}
             iconProps={{ width: 30, height: 30 }}
             isExpanded={activeIndex === index}
@@ -44,8 +45,10 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
                 })}
               >
                 <h2>{`phase ${phase.number}`}</h2>
-                {phase.started && phase.points && (
-                  <p>{phase.points > 0 ? phase.points.toLocaleString() : 0}</p>
+                {phase.started && (
+                  <p style={{ opacity: !phase.points ? 0.2 : 1 }}>
+                    {phase.points > 0 ? phase.points.toLocaleString() : '0'}
+                  </p>
                 )}
               </div>
             }
