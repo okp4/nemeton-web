@@ -9,13 +9,8 @@ import { Search } from '../search/Search'
 import { Snackbar } from '../snackbar/Snackbar'
 import { LottieLoader } from '../loader/LottieLoader'
 import { Copy } from '../copy/Copy'
-
-export type Column = {
-  label: string
-  renderCell: (druid: DruidDescriptor) => JSX.Element
-  width?: string
-  hidden?: boolean
-}
+import Link from 'next/link'
+import type { Column } from './table.type'
 
 export type LeaderboardTableProps = {
   data: DruidDescriptor[]
@@ -40,7 +35,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
     [setAddress]
   )
 
-  const columns: Column[] = useMemo(
+  const columns: Column<DruidDescriptor>[] = useMemo(
     () =>
       [
         {
@@ -51,7 +46,8 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
         {
           label: 'Name',
           renderCell: (druid: DruidDescriptor) => (
-            <div className="flex-cell">
+            <Link href={`/druid/${druid.valoper}#profile`}>
+              {' '}
               <Image
                 alt="validator-avatar"
                 className="avatar-bg"
@@ -60,7 +56,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
                 width={21}
               />
               <span>{druid.identity.name}</span>
-            </div>
+            </Link>
           ),
           width: isMobileScreen ? '56%' : '29%'
         },
