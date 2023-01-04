@@ -56,6 +56,8 @@ const taskContentIcon = (id: TaskContentId): JSX.Element => {
   }
 }
 
+const formatString = (text: string): string => text.trim().toLowerCase()
+
 const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
   activeAccordion,
   name,
@@ -79,10 +81,10 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
               .format('MMM. Do, H:mm ')} UTC`}</p>
           </div>
         )
-        const active = activeAccordion === taskName
-
+        const accordionId = formatString(`${name}-${taskName}`)
+        const active = activeAccordion === accordionId
         return (
-          <div id={`${name}-${index + 1}`} key={index}>
+          <div key={index}>
             <Accordion
               content={
                 <>
@@ -100,7 +102,7 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
                 </>
               }
               isExpanded={active}
-              onToggle={onClick(taskName)}
+              onToggle={onClick(accordionId)}
               title={title}
             />
           </div>
@@ -126,9 +128,9 @@ const Tasks: NextPage<TasksProps> = props => {
   )
 
   useEffect(() => {
-    const { task } = query
-    if (typeof task === 'string') {
-      setActiveChallenge(task)
+    const { phase, task } = query
+    if (typeof task === 'string' && typeof phase === 'string') {
+      setActiveChallenge(decodeURI(`${phase}-${task}`))
     }
   }, [query, setActiveChallenge])
 
