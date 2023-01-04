@@ -13,12 +13,17 @@ import { Profile } from '../../components/profile/profile'
 import { Druid } from '../../entity/druid'
 import { Snackbar } from '../../components/snackbar/Snackbar'
 import { TasksSummary } from '../../components/tasks/TasksSummary'
+import { LottieLoader } from '../../components/loader/LottieLoader'
+import hatDruidAnimationData from '../../../public/json/hat-druid.json'
+import { useMediaType } from '../../hook/useMediaType'
+import { mapValidatorDTOToDruid } from '../../graphql/dto/mapper'
 
 export type DruidProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
 const Druid: NextPage<DruidProps> = props => {
   const [druid, setDruid] = useState<Druid | null>(null)
   const [address, setAddress] = useState<string>('')
+  const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const router = useRouter()
   const { urls } = props
@@ -26,39 +31,12 @@ const Druid: NextPage<DruidProps> = props => {
   const { id } = router.query
   const gqlClient = useMemo(() => client(graphqlUri), [graphqlUri])
 
-  useQValidatorQuery({
+  const { loading } = useQValidatorQuery({
     variables: { valoper: id as string },
     skip: !id,
     client: gqlClient,
     fetchPolicy: 'network-only',
-    onCompleted: data =>
-      data.validator &&
-      setDruid({
-        profile: {
-          identity: {
-            name: data.validator.moniker,
-            avatar: data.validator.identity?.picture?.href ?? '/image/avatar-fallback.webp'
-          },
-          valoper: data.validator.valoper,
-          website: data.validator.website ?? null,
-          twitter: data.validator.twitter ?? null,
-          explorer: null,
-          points: data.validator.points
-        },
-
-        tasksPerPhase: data.validator.tasks.perPhase.map(perPhase => ({
-          phase: {
-            number: perPhase.phase.number,
-            started: perPhase.phase.started,
-            tasks: perPhase.tasks.map(t => ({
-              name: t.task.name,
-              completed: t.completed,
-              points: t.earnedPoints
-            })),
-            points: perPhase.points
-          }
-        }))
-      })
+    onCompleted: data => data.validator && setDruid(mapValidatorDTOToDruid(data.validator))
   })
 
   const handleCopyAddress = useCallback(
@@ -81,7 +59,16 @@ const Druid: NextPage<DruidProps> = props => {
           <div className="okp4-nemeton-web-page-content-container" id="profile">
             <div className="okp4-nemeton-web-page-druid-main-container">
               <GoBackButton />
-              {druid && (
+              {loading && (
+                <div className="okp4-nemeton-web-loader-container">
+                  <LottieLoader
+                    animationData={hatDruidAnimationData}
+                    width={isMobileScreen ? 80 : 160}
+                  />
+                  <span>Loading druid...</span>
+                </div>
+              )}
+              {druid && !loading && (
                 <>
                   <Profile druidProfile={druid.profile} onValoperCopied={handleCopyAddress} />
                   <TasksSummary points={druid.profile.points} tasksPerPhase={druid.tasksPerPhase} />
