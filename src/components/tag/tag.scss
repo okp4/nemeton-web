@@ -1,0 +1,54 @@
+$background-colors: (
+  'done': #95c1bb,
+  'progress': #ff8b3e,
+  'idle': #febca8,
+  'error': #ff3648
+);
+
+$icons: (
+  'done': 'check',
+  'progress': 'hourglass',
+  'idle': 'rocket',
+  'error': 'alarm'
+);
+
+.okp4-nemeton-web-tag-main {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  width: fit-content;
+
+  @each $name, $color in $background-colors {
+    &.#{$name} {
+      background: rgba($color, 0.2);
+    }
+  }
+
+  .okp4-nemeton-web-tag-content {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+
+    @each $name, $color in $background-colors {
+      &.#{$name} {
+        color: rgba($color, 1);
+      }
+    }
+  }
+
+  .okp4-nemeton-web-tag-icon {
+    height: 18px;
+    width: 18px;
+    background-repeat: no-repeat;
+
+    @each $name, $icon in $icons {
+      &.#{$name} {
+        background-image: url('/icons/#{$icon}.svg');
+      }
+    }
+  }
+}
