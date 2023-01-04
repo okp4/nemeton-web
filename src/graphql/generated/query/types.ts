@@ -386,7 +386,7 @@ export type QValidatorQueryVariables = Exact<{
 }>;
 
 
-export type QValidatorQuery = { readonly __typename?: 'Query', readonly validator?: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly twitter?: string | null, readonly website?: string | null, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly perPhase: ReadonlyArray<{ readonly __typename?: 'PerPhaseTasks', readonly points: any, readonly phase: { readonly __typename?: 'Phase', readonly number: number, readonly started: boolean }, readonly tasks: ReadonlyArray<{ readonly __typename?: 'BasicTaskState', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } } | { readonly __typename?: 'SubmissionTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } } | { readonly __typename?: 'UptimeTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string } }> }> } } | null };
+export type QValidatorQuery = { readonly __typename?: 'Query', readonly validator?: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly twitter?: string | null, readonly website?: string | null, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly perPhase: ReadonlyArray<{ readonly __typename?: 'PerPhaseTasks', readonly points: any, readonly phase: { readonly __typename?: 'Phase', readonly number: number, readonly started: boolean }, readonly tasks: ReadonlyArray<{ readonly __typename?: 'BasicTaskState', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } } | { readonly __typename?: 'SubmissionTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } } | { readonly __typename?: 'UptimeTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } }> }> } } | null };
 
 export type QValidatorCountQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -566,6 +566,8 @@ export const QValidatorDocument = gql`
           earnedPoints
           task {
             name
+            started
+            finished
           }
         }
       }

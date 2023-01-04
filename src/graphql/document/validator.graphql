@@ -23,6 +23,8 @@ query QValidator($valoper: ValoperAddress) {
           earnedPoints
           task {
             name
+            started
+            finished
           }
         }
       }
