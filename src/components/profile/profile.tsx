@@ -5,6 +5,7 @@ import { Copy } from '../copy/Copy'
 
 export type ProfileProps = Readonly<{
   druidProfile: DruidProfile
+  explorerUrl: string
   onValoperCopied: (valoper: string) => void
 }>
 
@@ -14,7 +15,7 @@ type ActionButton = Readonly<{
   disabled?: boolean
 }>
 
-export const Profile: React.FC<ProfileProps> = ({ druidProfile, onValoperCopied }) => {
+export const Profile: React.FC<ProfileProps> = ({ druidProfile, explorerUrl, onValoperCopied }) => {
   const actionButtons: ActionButton[] = useMemo(
     () => [
       {
@@ -24,8 +25,8 @@ export const Profile: React.FC<ProfileProps> = ({ druidProfile, onValoperCopied 
       },
       {
         label: 'explorer',
-        href: null,
-        disabled: true
+        href: `${explorerUrl}${druidProfile.valoper}`,
+        disabled: false
       },
       {
         label: 'twitter',
@@ -33,7 +34,7 @@ export const Profile: React.FC<ProfileProps> = ({ druidProfile, onValoperCopied 
         disabled: !druidProfile.twitter
       }
     ],
-    [druidProfile.twitter, druidProfile.website]
+    [druidProfile.twitter, druidProfile.valoper, druidProfile.website, explorerUrl]
   )
 
   const openInNewTab = useCallback(

@@ -82,7 +82,11 @@ const Druid: NextPage<DruidProps> = props => {
               )}
               {druid && !loading && (
                 <>
-                  <Profile druidProfile={druid.profile} onValoperCopied={handleCopyAddress} />
+                  <Profile
+                    druidProfile={druid.profile}
+                    explorerUrl={urls.explorerUrl}
+                    onValoperCopied={handleCopyAddress}
+                  />
                   <TasksSummary points={druid.profile.points} tasksPerPhase={druid.tasksPerPhase} />
                 </>
               )}
