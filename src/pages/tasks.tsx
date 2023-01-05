@@ -34,6 +34,7 @@ type ContentBlockProps = Readonly<{
 type PhaseAccordionProps = Readonly<{
   activeAccordion: AccordionState
   onClick: (taskName: string) => () => void
+  number: number
   phaseName: string
   status: PhaseStatus
   tasks: TaskDTO[]
@@ -69,13 +70,17 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
   phaseName,
   status,
   tasks,
-  onClick
+  onClick,
+  number
 }): JSX.Element => (
-  <div className="okp4-nemeton-web-page-content-wrapper">
-    <h2 id={phaseName.toLowerCase()}>
-      {phaseName}
-      {status === 'closed' && <span> (closed)</span>}
-    </h2>
+  <div className="okp4-nemeton-web-page-accordions-wrapper">
+    <div className="okp4-nemeton-web-page-accordions-title-container">
+      <h3>Phase {number}</h3>
+      <h2 id={phaseName.toLowerCase()}>
+        {phaseName}
+        {status === 'closed' && <span> (closed)</span>}
+      </h2>
+    </div>
     {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
       const { from, to } = taskDuration
       const title = (
@@ -146,12 +151,13 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          {Phases(tasksUrls).map(
-            ({ phaseName, tasks, status }: PhaseDTO, index) =>
+          {[...Phases(tasksUrls)].reverse().map(
+            ({ number, phaseName, tasks, status }: PhaseDTO, index) =>
               status !== 'coming' && (
                 <div key={index}>
                   <PhaseAccordions
                     activeAccordion={activeTask}
+                    number={number}
                     onClick={handleClick}
                     phaseName={phaseName}
                     status={status}
