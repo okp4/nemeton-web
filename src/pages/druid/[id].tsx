@@ -23,6 +23,8 @@ export type DruidProps = Pick<Config, 'title' | 'keywords' | 'description' | 'ur
 const Druid: NextPage<DruidProps> = props => {
   const [druid, setDruid] = useState<Druid | null>(null)
   const [address, setAddress] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const router = useRouter()
@@ -36,7 +38,13 @@ const Druid: NextPage<DruidProps> = props => {
     skip: !id,
     client: gqlClient,
     fetchPolicy: 'network-only',
-    onCompleted: data => data.validator && setDruid(mapValidatorDTOToDruid(data.validator))
+    onCompleted: data => data.validator && setDruid(mapValidatorDTOToDruid(data.validator)),
+    onError: error => {
+      console.error(error)
+      setErrorMessage(
+        'Oops... Druid profile could not be properly retrieved... Please try again later.'
+      )
+    }
   })
 
   const handleCopyAddress = useCallback(
@@ -49,6 +57,10 @@ const Druid: NextPage<DruidProps> = props => {
   const handleSnackbarClose = useCallback(() => {
     setAddress('')
   }, [setAddress])
+
+  const resetErrorMessage = useCallback(() => {
+    setErrorMessage(null)
+  }, [setErrorMessage])
 
   return (
     <>
@@ -84,6 +96,12 @@ const Druid: NextPage<DruidProps> = props => {
         message="Address copied to clipboard!"
         onClose={handleSnackbarClose}
         severityLevel="success"
+      />
+      <Snackbar
+        isOpen={!!errorMessage}
+        message={errorMessage ?? ''}
+        onClose={resetErrorMessage}
+        severityLevel="error"
       />
     </>
   )
