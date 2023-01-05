@@ -130,7 +130,7 @@ const Tasks: NextPage<TasksProps> = props => {
   useEffect(() => {
     const { phase, task } = query
     if (typeof task === 'string' && typeof phase === 'string') {
-      setActiveChallenge(decodeURI(`${phase}-${task}`))
+      setActiveChallenge(formatString(decodeURI(`${phase}-${task}`)))
     }
   }, [query, setActiveChallenge])
 
