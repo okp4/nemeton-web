@@ -34,8 +34,8 @@ export const PhaseDropDown: React.FC<DropDownProps> = ({
         </div>
 
         <div className="okp4-nemeton-web-phase-dropdown-tasks">
-          {tasks.map(({ group, taskName, points }, index: number, array) => {
-            const previous: TaskDTO | null = index > 0 ? array[index - 1] : null
+          {tasks.map(({ group, taskName, points }, index, array) => {
+            const previous = index > 0 ? array[index - 1] : null
             const mustDisplayGroup = !previous || previous.group !== group
             return (
               <div className="okp4-nemeton-web-phase-dropdown-task" key={index}>

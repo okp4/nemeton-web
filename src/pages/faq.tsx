@@ -353,7 +353,7 @@ const Faq: NextPage<FAQProps> = props => {
           </div>
           <div className="okp4-nemeton-web-page-content-wrapper">
             {faqs({ discordUrl }).map(({ part, question, answer }, index, array) => {
-              const previous: FAQ | null = index > 0 ? array[index - 1] : null
+              const previous = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
               const mustDisplayPart = !previous || previous.part !== part
 
