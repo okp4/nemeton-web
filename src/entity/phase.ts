@@ -9,6 +9,7 @@ export type Phase = Readonly<{
   number: number
   started: boolean
   points: number
+  name: string
   tasks: Task[]
 }>
 
