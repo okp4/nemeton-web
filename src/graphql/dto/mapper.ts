@@ -44,6 +44,7 @@ export const mapValidatorDTOToDruid = (dto: QValidatorQuery['validator']): Druid
           phase: {
             number: perPhase.phase.number,
             started: perPhase.phase.started,
+            name: perPhase.phase.name,
             tasks: perPhase.tasks.map(t => ({
               name: t.task.name,
               completed: t.completed,

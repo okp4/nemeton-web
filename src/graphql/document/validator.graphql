@@ -17,6 +17,7 @@ query QValidator($valoper: ValoperAddress) {
         phase {
           number
           started
+          name
         }
         tasks {
           completed
