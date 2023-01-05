@@ -652,6 +652,12 @@ main {
   border-radius: 20px 20px 0 0;
   margin-top: -110px;
   padding: 45px 89px;
+
+  @media screen and (max-width: 1000px) {
+    padding: unset;
+    background: unset;
+    margin-top: 20px;
+  }
 }
 
 .okp4-nemeton-web-loader-container {

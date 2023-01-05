@@ -19,6 +19,7 @@ $icons: (
   border-radius: 8px;
   padding: 4px 8px;
   width: fit-content;
+  white-space: nowrap;
 
   @each $name, $color in $background-colors {
     &.#{$name} {

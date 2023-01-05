@@ -195,6 +195,15 @@ $podium-colors: ('gold', 'silver', 'bronze');
           &:nth-child(3) {
             font-size: 16px;
           }
+
+          &:nth-child(2) {
+            @media screen and (max-width: 580px) {
+              padding-bottom: 20px;
+            }
+          }
+          @media screen and (max-width: 580px) {
+            vertical-align: baseline;
+          }
         }
       }
     }
