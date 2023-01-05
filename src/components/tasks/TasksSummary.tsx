@@ -32,7 +32,7 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
       <div className="okp4-nemeton-web-tasks-summary-content-container">
         {tasksPerPhase.map(({ phase }, index) => (
           <Accordion
-            content={<TasksTable data={phase.tasks} />}
+            content={<TasksTable data={phase.tasks} phaseName={phase.name} />}
             disabled={!phase.started}
             iconProps={{ width: 30, height: 30 }}
             isExpanded={activeIndex === index}

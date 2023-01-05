@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useCallback, useMemo } from 'react'
 import type { Task } from '../../entity/phase'
 import { Tag } from '../tag/Tag'
@@ -5,6 +6,7 @@ import type { Column } from './table.type'
 
 export type TasksTableProps = Readonly<{
   data: Task[]
+  phaseName: string
 }>
 
 type TagElementProps = Readonly<{
@@ -25,12 +27,16 @@ const TagElement: React.FC<TagElementProps> = ({ task }) => {
   return <Tag {...props()} />
 }
 
-export const TasksTable: React.FC<TasksTableProps> = ({ data }) => {
+export const TasksTable: React.FC<TasksTableProps> = ({ data, phaseName }) => {
   const columns: Column<Task>[] = useMemo(
     () => [
       {
         label: 'Name',
-        renderCell: (task: Task) => <span>{task.name}</span>
+        renderCell: (task: Task) => (
+          <Link href={`/tasks?phase=${phaseName}&task=${task.name}`}>
+            <span>{task.name}</span>
+          </Link>
+        )
       },
       {
         label: 'Status',
@@ -43,7 +49,7 @@ export const TasksTable: React.FC<TasksTableProps> = ({ data }) => {
         )
       }
     ],
-    []
+    [phaseName]
   )
 
   return (
