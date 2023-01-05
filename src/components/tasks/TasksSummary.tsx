@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import React, { useCallback } from 'react'
 import type { TasksPerPhase } from '../../entity/phase'
 import { useAccordion } from '../../hook/useAccordion'
+import { useMediaType } from '../../hook/useMediaType'
 import { Accordion } from '../accordion/Accordion'
 import { TasksTable } from '../table/TasksTable'
 
@@ -12,6 +13,7 @@ type TasksSummaryProps = Readonly<{
 
 export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, points }) => {
   const [activeIndex, setActiveIndex] = useAccordion()
+  const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const handleClick = useCallback(
     (index: number) => () => {
@@ -34,7 +36,7 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
           <Accordion
             content={<TasksTable data={phase.tasks} phaseName={phase.name} />}
             disabled={!phase.started}
-            iconProps={{ width: 30, height: 30 }}
+            iconProps={{ width: isMobileScreen ? 20 : 30, height: isMobileScreen ? 20 : 30 }}
             isExpanded={activeIndex === index}
             key={index}
             onToggle={handleClick(index)}

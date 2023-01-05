@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useCallback, useMemo } from 'react'
 import type { Task } from '../../entity/phase'
+import { useMediaType } from '../../hook/useMediaType'
 import { Tag } from '../tag/Tag'
 import type { Column } from './table.type'
 
@@ -28,28 +29,40 @@ const TagElement: React.FC<TagElementProps> = ({ task }) => {
 }
 
 export const TasksTable: React.FC<TasksTableProps> = ({ data, phaseName }) => {
+  const isMobileScreen = useMediaType('(max-width: 580px)')
+
   const columns: Column<Task>[] = useMemo(
-    () => [
-      {
-        label: 'Name',
-        renderCell: (task: Task) => (
-          <Link href={`/tasks?phase=${phaseName}&task=${task.name}`}>
-            <span>{task.name}</span>
-          </Link>
-        )
-      },
-      {
-        label: 'Status',
-        renderCell: (task: Task) => <TagElement task={task} />
-      },
-      {
-        label: 'Points',
-        renderCell: (task: Task) => (
-          <span style={{ opacity: !task.points ? 0.2 : 1 }}>{task.points.toLocaleString()}</span>
-        )
-      }
-    ],
-    [phaseName]
+    () =>
+      [
+        {
+          label: 'Tasks',
+          renderCell: (task: Task) => (
+            <Link href={`/tasks?phase=${phaseName}&task=${task.name}`}>
+              <span>{task.name}</span>
+            </Link>
+          )
+        },
+        {
+          label: 'Status',
+          renderCell: (task: Task) =>
+            isMobileScreen && task.points ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <TagElement task={task} />
+                <span style={{ opacity: 0.4 }}>{task.points.toLocaleString()} POINTS</span>
+              </div>
+            ) : (
+              <TagElement task={task} />
+            )
+        },
+        {
+          label: 'Points',
+          renderCell: (task: Task) => (
+            <span style={{ opacity: !task.points ? 0.2 : 1 }}>{task.points.toLocaleString()}</span>
+          ),
+          hidden: isMobileScreen
+        }
+      ].filter(column => !column.hidden),
+    [phaseName, isMobileScreen]
   )
 
   return (
