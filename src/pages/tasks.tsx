@@ -13,7 +13,13 @@ import { useAccordion } from '../hook/useAccordion'
 import type { AccordionState } from '../hook/useAccordion'
 import { Accordion } from '../components/accordion/Accordion'
 import Phases from '../data/phase/index'
-import type { PhaseDTO, Task, TaskContent, TaskContentId } from '../data/phase/dto.type'
+import type {
+  PhaseDTO,
+  PhaseStatus,
+  TaskDTO,
+  TaskContent,
+  TaskContentId
+} from '../data/phase/dto.type'
 import { useRouter } from 'next/router'
 import moment from 'moment'
 
@@ -22,15 +28,15 @@ export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'ur
 type ContentBlockProps = Readonly<{
   title: string
   description: JSX.Element
-  icon?: JSX.Element
+  icon: JSX.Element
 }>
 
 type PhaseAccordionProps = Readonly<{
   activeAccordion: AccordionState
-  name: string
-  onClick: (challenge: string) => () => void
-  status: 'coming' | 'active' | 'closed'
-  tasks: Task[]
+  onClick: (taskName: string) => () => void
+  phaseName: string
+  status: PhaseStatus
+  tasks: TaskDTO[]
 }>
 
 const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
@@ -60,57 +66,56 @@ const formatString = (text: string): string => text.trim().toLowerCase()
 
 const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
   activeAccordion,
-  name,
+  phaseName,
   status,
   tasks,
   onClick
-}): JSX.Element => {
-  return (
-    <div className="okp4-nemeton-web-page-content-wrapper">
-      <h2 id={name.toLowerCase()}>
-        {name}
-        {status === 'closed' && <span> (closed)</span>}
-      </h2>
-      {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
-        const { from, to } = taskDuration
-        const title = (
-          <div className="okp4-nemeton-web-tasks-accordion-title">
-            <h3>{taskName}</h3>
-            <p>{`${moment(from).utc().format('MMM. Do, H:mm ')} UTC - ${moment(to)
-              .utc()
-              .format('MMM. Do, H:mm ')} UTC`}</p>
-          </div>
-        )
-        const accordionId = formatString(`${name}-${taskName}`)
-        const active = activeAccordion === accordionId
-        return (
-          <div key={index}>
-            <Accordion
-              content={
-                <>
-                  {taskContent.map(
-                    ({ id, name, content }: TaskContent): JSX.Element => (
-                      <div key={id}>
-                        <ContentBlock
-                          description={content}
-                          icon={taskContentIcon(id)}
-                          title={name}
-                        />
-                      </div>
-                    )
-                  )}
-                </>
-              }
-              isExpanded={active}
-              onToggle={onClick(accordionId)}
-              title={title}
-            />
-          </div>
-        )
-      })}
-    </div>
-  )
-}
+}): JSX.Element => (
+  <div className="okp4-nemeton-web-page-content-wrapper">
+    <h2 id={phaseName.toLowerCase()}>
+      {phaseName}
+      {status === 'closed' && <span> (closed)</span>}
+    </h2>
+    {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
+      const { from, to } = taskDuration
+      const title = (
+        <div className="okp4-nemeton-web-tasks-accordion-title">
+          <h3>{taskName}</h3>
+          <p>{`${moment(from).utc().format('MMM. Do, H:mm ')} UTC - ${moment(to)
+            .utc()
+            .format('MMM. Do, H:mm ')} UTC`}</p>
+        </div>
+      )
+      const accordionId = formatString(`${phaseName}-${taskName}`)
+      const active = activeAccordion === accordionId
+
+      return (
+        <div key={index}>
+          <Accordion
+            content={
+              <>
+                {taskContent.map(
+                  ({ id, title, contentDescription }: TaskContent): JSX.Element => (
+                    <div key={id}>
+                      <ContentBlock
+                        description={contentDescription}
+                        icon={taskContentIcon(id)}
+                        title={title}
+                      />
+                    </div>
+                  )
+                )}
+              </>
+            }
+            isExpanded={active}
+            onToggle={onClick(accordionId)}
+            title={title}
+          />
+        </div>
+      )
+    })}
+  </div>
+)
 
 const Tasks: NextPage<TasksProps> = props => {
   const {
@@ -118,21 +123,21 @@ const Tasks: NextPage<TasksProps> = props => {
     urls: { tasksUrls }
   } = props
   const { query } = useRouter()
-  const [activeChallenge, setActiveChallenge] = useAccordion()
+  const [activeTask, setActiveTask] = useAccordion()
 
   const handleClick = useCallback(
-    (challenge: string) => () => {
-      activeChallenge === challenge ? setActiveChallenge(null) : setActiveChallenge(challenge)
+    (taskName: string) => () => {
+      activeTask === taskName ? setActiveTask(null) : setActiveTask(taskName)
     },
-    [activeChallenge, setActiveChallenge]
+    [activeTask, setActiveTask]
   )
 
   useEffect(() => {
     const { phase, task } = query
     if (typeof task === 'string' && typeof phase === 'string') {
-      setActiveChallenge(formatString(decodeURI(`${phase}-${task}`)))
+      setActiveTask(formatString(decodeURI(`${phase}-${task}`)))
     }
-  }, [query, setActiveChallenge])
+  }, [query, setActiveTask])
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -141,14 +146,14 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          {Object.values(Phases(tasksUrls)).map(
+          {Phases(tasksUrls).map(
             ({ phaseName, tasks, status }: PhaseDTO, index) =>
               status !== 'coming' && (
                 <div key={index}>
                   <PhaseAccordions
-                    activeAccordion={activeChallenge}
-                    name={phaseName}
+                    activeAccordion={activeTask}
                     onClick={handleClick}
+                    phaseName={phaseName}
                     status={status}
                     tasks={tasks}
                   />

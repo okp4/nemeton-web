@@ -6,6 +6,7 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
   phaseName: 'sidh',
   phaseDescription:
     " This first phase is pretty basic, it is dedicated to setting up Druids' validator environment, participating in the genesis, and getting familiar with the OKP4 testnet.",
+  status: 'closed',
   phaseDuration: {
     from: '2022-12-01T00:00:00Z',
     to: '2023-01-01T23:59:00Z'
@@ -17,8 +18,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               Before starting the network, we must to register your validator in the genesis.json.{' '}
               <br />
@@ -42,13 +43,13 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>1 000 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>1 000 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: (
+          title: 'Judging Criteria',
+          contentDescription: (
             <p>
               You will receive the points once the OKP4 team has integrated your gentx in the
               genesis.
@@ -57,8 +58,10 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: <p>Send the issue number in a private message to Anik#9282 on Discord.</p>
+          title: 'How to Submit',
+          contentDescription: (
+            <p>Send the issue number in a private message to Anik#9282 on Discord.</p>
+          )
         }
       ],
       taskDuration: {
@@ -73,8 +76,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               It is time to make the okp4-nemeton-1 network alive; you have to set up your node and
               join the network. The technical documentation regarding node setup and network join
@@ -91,18 +94,18 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>2 000 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>2 000 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: <p>Your validator is up and running.</p>
+          title: 'Judging Criteria',
+          contentDescription: <p>Your validator is up and running.</p>
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: (
+          title: 'How to Submit',
+          contentDescription: (
             <p>The validator&apos;s presence in the consensus will be automatically checked.</p>
           )
         }
@@ -119,8 +122,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               Publish a tweet about the Nemeton testnet while including the @okp4_protocol tag using
               your validator Twitter account. Feel free to share your excitement!
@@ -129,18 +132,20 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: <p>500 points.</p>
+          title: 'Rewards',
+          contentDescription: <p>500 points.</p>
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          title: 'Judging Criteria',
+          contentDescription: (
+            <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          )
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: <p>Tweets are automatically tracked.</p>
+          title: 'How to Submit',
+          contentDescription: <p>Tweets are automatically tracked.</p>
         }
       ],
       taskDuration: {
@@ -155,25 +160,27 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: <p>Maintain the best uptime with your validator.</p>
+          title: 'Description',
+          contentDescription: <p>Maintain the best uptime with your validator.</p>
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: (
+          title: 'Rewards',
+          contentDescription: (
             <p>Up to 2 500 points with the following formula: 2 501 ^0,01x - 1 with x = %uptime.</p>
           )
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          title: 'Judging Criteria',
+          contentDescription: (
+            <p>You will receive the points once the OKP4 team has reviewed your tweet.</p>
+          )
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: <p>Missed blocks are automatically tracked.</p>
+          title: 'How to Submit',
+          contentDescription: <p>Missed blocks are automatically tracked.</p>
         }
       ],
       taskDuration: {
@@ -188,8 +195,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       taskContent: [
         {
           id: 'description',
-          name: 'Description',
-          content: (
+          title: 'Description',
+          contentDescription: (
             <p>
               Based on your experience as a validator, write an original article, twitter thread or
               video content providing value to other validators and the community in general.
@@ -214,8 +221,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'rewards',
-          name: 'Rewards',
-          content: (
+          title: 'Rewards',
+          contentDescription: (
             <p>
               Up to 10 000 points per druid will be attributed, capped at 150 000 points in total.
             </p>
@@ -223,8 +230,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'criteria',
-          name: 'Judging Criteria',
-          content: (
+          title: 'Judging Criteria',
+          contentDescription: (
             <>
               <p>
                 OKP4 team will judge if any submission deserves points or not based on the
@@ -244,8 +251,8 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
         },
         {
           id: 'submit',
-          name: 'How to Submit',
-          content: (
+          title: 'How to Submit',
+          contentDescription: (
             <p>
               Share the content links on{' '}
               <a href={originalContentUrl} rel="noreferrer" target="_blank">
@@ -262,6 +269,5 @@ export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => (
       },
       points: 10000
     }
-  ],
-  status: 'closed'
+  ]
 })

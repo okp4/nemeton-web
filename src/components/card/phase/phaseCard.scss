@@ -1,0 +1,268 @@
+.okp4-nemeton-web-phase-card-main {
+  display: flex;
+  flex-direction: column;
+
+  .okp4-nemeton-web-phase-card-content-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 0 80px;
+
+    > p {
+      font-family: 'Gotham light', sans-serif;
+      align-self: center;
+    }
+
+    @media screen and (max-width: 900px) {
+      margin-left: unset;
+    }
+
+    .okp4-nemeton-web-phase-card-button {
+      max-width: 350px;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      font-family: 'Six Caps', sans-serif;
+      font-size: 42px;
+      letter-spacing: 2px;
+      padding: 0 28px;
+
+      &.right {
+        margin: 20px 80px 0 0;
+        @media screen and (max-width: 900px) {
+          margin-right: unset;
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+      }
+
+      @media screen and (max-width: 580px) {
+        white-space: nowrap;
+        max-width: unset;
+        font-size: 38px;
+        margin-top: 26px;
+        align-self: center;
+        margin-left: unset;
+      }
+    }
+  }
+
+  .okp4-nemeton-web-phase-card-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    @media screen and (min-width: 2125px) {
+      background-image: none;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 1440px) {
+      background-size: 802px 602px;
+    }
+
+    @media screen and (max-width: 580px) {
+      background-repeat: no-repeat;
+      background-position: center top 5%;
+      background-size: contain;
+    }
+
+    &.imbolc {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/imbolc-mobile.webp');
+      }
+    }
+
+    &.sidh {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/sidh-mobile.webp');
+      }
+    }
+
+    &.beltaine {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/beltaine-mobile.webp');
+      }
+    }
+
+    .okp4-nemeton-web-phase-card-content-container {
+      max-width: 1312px;
+      width: 100%;
+      min-width: 1170px;
+      height: 519px;
+      border: 1px solid white;
+      border-radius: 20px;
+      margin: 0 177px;
+      position: relative;
+      background-repeat: no-repeat;
+
+      &.no-border {
+        border: unset;
+      }
+
+      &.imbolc {
+        background-image: url('/image/imbolc-large.webp');
+        background-position: left;
+        background-size: contain;
+        @media screen and (min-width: 581px) and (max-width: 1920px) {
+          background-image: url('/image/imbolc-medium.webp');
+        }
+        @media screen and (max-width: 900px) {
+          background-size: cover;
+        }
+      }
+
+      &.beltaine {
+        background-image: url('/image/beltaine-large.webp');
+        background-position: right;
+        background-size: auto;
+        @media screen and (min-width: 581px) and (max-width: 1920px) {
+          background-image: url('/image/beltaine-medium.webp');
+        }
+        @media screen and (max-width: 900px) {
+          background-size: cover;
+        }
+      }
+
+      &.sidh {
+        background-image: url('/image/sidh-large.webp');
+        background-position: right;
+        background-size: contain;
+        @media screen and (min-width: 581px) and (max-width: 1920px) {
+          background-image: url('/image/sidh-medium.webp');
+        }
+        @media screen and (max-width: 900px) {
+          background-size: cover;
+        }
+      }
+
+      @media screen and (min-width: 2125px) {
+        background-image: url('/image/sidh.webp');
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+
+      @media screen and (max-width: 1440px) {
+        max-width: 1197px;
+        height: 470px;
+        margin: 0 122px;
+        min-width: unset;
+      }
+
+      @media screen and (max-width: 580px) {
+        background-image: none !important;
+        width: 100%;
+        height: 475px;
+        margin: 50px 26px 0;
+        min-width: unset;
+      }
+
+      .okp4-nemeton-web-phase-card-mask-container {
+        position: absolute;
+        background-color: #2e534f;
+        width: 100%;
+        height: 519px;
+        min-width: unset;
+        border-radius: 20px;
+        opacity: 0.95;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 580px) {
+          height: 475px;
+        }
+
+        @media screen and (min-width: 581px) and (max-width: 1440px) {
+          height: 470px;
+        }
+
+        > h2:first-of-type {
+          font-size: 80px;
+          padding: 0 40px;
+          @media screen and (max-width: 900px) {
+            font-size: 40px;
+          }
+        }
+
+        .okp4-nemeton-web-phase-card-mask-divider {
+          width: 100px;
+          border-top: 3px solid white;
+          @media screen and (max-width: 900px) {
+            width: 40px;
+          }
+        }
+      }
+
+      .okp4-nemeton-web-phase-card-content-details {
+        padding: 20px 0 0 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 15px;
+        height: 100%;
+
+        @media screen and (max-width: 900px) {
+          padding: 0 20px;
+          align-items: center;
+        }
+
+        &.imbolc {
+          @media screen and (min-width: 901px) {
+            align-items: flex-end;
+            padding: 20px 45px 0 0;
+          }
+        }
+        @media screen and (max-width: 580px) {
+          padding: 0 20px;
+          gap: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          max-height: inherit;
+        }
+
+        > p:first-of-type {
+          max-height: 201px;
+          max-width: 420px;
+          font-size: 20px;
+          font-family: 'Gotham light', sans-serif;
+          @media screen and (max-width: 580px) {
+            font-size: 18px;
+            height: unset;
+            padding-bottom: 20px;
+          }
+        }
+      }
+
+      .okp4-nemeton-web-phase-card-content-title {
+        display: flex;
+        align-items: baseline;
+        @media screen and (max-width: 580px) {
+          justify-content: center;
+        }
+
+        > h1:first-of-type {
+          font-size: 140px;
+          line-height: 1em;
+          word-break: keep-all;
+          @media screen and (max-width: 580px) {
+            font-size: 100px;
+          }
+        }
+
+        > h2:first-of-type {
+          padding-right: 22px;
+          font-size: 40px;
+          white-space: nowrap;
+          @media screen and (max-width: 580px) {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}
