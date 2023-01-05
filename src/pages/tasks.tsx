@@ -146,7 +146,7 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          {Phases(tasksUrls).map(
+          {[...Phases(tasksUrls)].reverse().map(
             ({ phaseName, tasks, status }: PhaseDTO, index) =>
               status !== 'coming' && (
                 <div key={index}>
