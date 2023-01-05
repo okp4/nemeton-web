@@ -71,7 +71,7 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
   tasks,
   onClick
 }): JSX.Element => (
-  <div className="okp4-nemeton-web-page-content-wrapper">
+  <div className="okp4-nemeton-web-page-accordions-wrapper">
     <h2 id={phaseName.toLowerCase()}>
       {phaseName}
       {status === 'closed' && <span> (closed)</span>}
