@@ -4,10 +4,11 @@ import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
-import { supportRoutes } from '../routes'
 import { config } from '../lib/config'
 
 export type SupportProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+
+const faqUrl = '/faq/#faq'
 
 const Support: NextPage<SupportProps> = props => {
   const { urls } = props
@@ -15,8 +16,6 @@ const Support: NextPage<SupportProps> = props => {
     supportUrls: { discordNemetonUrl, discordTicketUrl },
     docsUrls: { nodesUrl }
   } = urls
-
-  const [{ path: faqPath }] = supportRoutes
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -36,7 +35,7 @@ const Support: NextPage<SupportProps> = props => {
             </li>
             <li>
               <p>
-                <Link href={faqPath}>FAQ</Link>
+                <Link href={faqUrl}>FAQ</Link>
               </p>
             </li>
             <li>

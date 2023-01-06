@@ -4,10 +4,11 @@ import { Head } from '../components/head/Head'
 import { Footer } from '../components/layout/footer/Footer'
 import { Header } from '../components/layout/header/Header'
 import type { Config } from '../types/config.type'
-import { termsRoutes } from '../routes'
 import { config } from '../lib/config'
 
 export type TermsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+
+const privacyUrl = '/privacy#privacy-cookie-policy'
 
 const Terms: NextPage<TermsProps> = props => {
   const { urls } = props
@@ -17,8 +18,6 @@ const Terms: NextPage<TermsProps> = props => {
     licenceUrls: { blockchainLicenceUrl, codeLicenceUrl, assetsLicenceUrl },
     termsUrls: { arbitrageUrl, arbitrageRulesUrl }
   } = urls
-
-  const [{ path: privacyPath }] = termsRoutes
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -51,7 +50,7 @@ const Terms: NextPage<TermsProps> = props => {
             <p>
               By accessing or using our OKP4 Services, or by participating in our Testnet, you agree
               to these Terms and Conditions as well as our{' '}
-              <Link href={privacyPath}>Privacy Policy</Link> and any other agreements or terms set
+              <Link href={privacyUrl}>Privacy Policy</Link> and any other agreements or terms set
               forth by OKP4. These Terms constitute a binding obligation between you and OKP4. If
               you do not agree to these Terms, do not use our Services; if you do use our Services,
               you accept this Agreement. If you have any questions about these Terms, the Services
@@ -61,7 +60,7 @@ const Terms: NextPage<TermsProps> = props => {
               <h2>Privacy Policy</h2>
             </li>
             <p>
-              Please refer to our <Link href={privacyPath}>Privacy Policy</Link> for more details on
+              Please refer to our <Link href={privacyUrl}>Privacy Policy</Link> for more details on
               what information OKP4 may collect, use, or disclose and under what circumstances. You
               acknowledge and agree that your participation in Nemeton is subject to this Privacy
               Policy.
