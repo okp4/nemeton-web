@@ -65,10 +65,10 @@ export const Footer: React.FC<FooterProps> = ({ urls }): JSX.Element => {
           />
         </a>
         <div className="okp4-nemeton-web-footer-links-container">
-          {footerRoutes.map(({ name, path }: Route) => (
+          {footerRoutes.map(({ name, path, hash }: Route) => (
             <React.Fragment key={path}>
-              <Link href={path}>
-                <h2 className={classNames('link-label', { active: router.asPath === path })}>
+              <Link href={hash ? `${path}${hash}` : path}>
+                <h2 className={classNames('link-label', { active: router.pathname === path })}>
                   {name}
                 </h2>
               </Link>

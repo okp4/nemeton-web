@@ -55,8 +55,8 @@ const MobileMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
 const DesktopMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
   return (
     <div className="okp4-nemeton-web-header-links-container">
-      {headerRoutes.map(({ name, path }: Route) => (
-        <Link href={path} key={path}>
+      {headerRoutes.map(({ name, path, hash }: Route) => (
+        <Link href={hash ? `${path}${hash}` : path} key={path}>
           <h2 className={classNames('link-label', { active: path === routerPath })}>{name}</h2>
         </Link>
       ))}
@@ -71,8 +71,8 @@ export const Header: React.FC = () => {
   const router = useRouter()
 
   useEffect(() => {
-    setRouterPath(router.asPath)
-  }, [router.asPath])
+    setRouterPath(router.pathname)
+  }, [router.pathname])
 
   return (
     <div className="okp4-nemeton-web-header-main">
