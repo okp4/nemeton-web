@@ -1,55 +1,51 @@
 export type Route = {
   name: string
   path: string
+  hash?: string
 }
 
 export const headerRoutes: Route[] = [
   {
     name: 'Home',
-    path: '/#home'
+    path: '/',
+    hash: '#home'
   },
   {
     name: 'Leaderboard',
-    path: '/leaderboard#leaderboard'
+    path: '/leaderboard',
+    hash: '#leaderboard'
   },
   {
     name: 'Tasks',
-    path: '/tasks#tasks'
+    path: '/tasks',
+    hash: '#tasks'
   },
   {
     name: 'Rewards',
-    path: '/rewards#rewards'
+    path: '/rewards',
+    hash: '#rewards'
   },
   {
     name: 'F.A.Q.',
-    path: '/faq#faq'
+    path: '/faq',
+    hash: '#faq'
   },
   {
     name: 'Terms',
-    path: '/terms#terms-conditions'
+    path: '/terms',
+    hash: '#terms-conditions'
   }
 ]
 
 export const footerRoutes: Route[] = [
   {
     name: 'Support',
-    path: '/support#support-page'
+    path: '/support',
+    hash: '#support-page'
   },
   {
     name: 'Privacy Policy',
-    path: '/privacy#privacy-cookie-policy'
-  }
-]
-
-export const supportRoutes: Route[] = [
-  {
-    name: 'F.A.Q',
-    path: '/faq#faq'
-  }
-]
-export const termsRoutes: Route[] = [
-  {
-    name: 'Privacy Policy',
-    path: '/privacy#privacy-cookie-policy'
+    path: '/privacy',
+    hash: '#privacy-cookie-policy'
   }
 ]
