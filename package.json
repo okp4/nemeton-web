@@ -51,7 +51,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "graphql": "^16.6.0",
     "moment": "^2.29.4",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "react-infinite-scroll-component": "^6.1.0",
     "react-lottie": "^1.2.3",
     "sass": "^1.57.0",
