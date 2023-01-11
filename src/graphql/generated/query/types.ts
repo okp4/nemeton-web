@@ -51,10 +51,10 @@ export type Scalars = {
   Void: any;
 };
 
-/** Represents the state of a basic task. */
+/** Represents the progress/result of a basic task assigned to a validator. */
 export type BasicTaskState = TaskState & {
   readonly __typename?: 'BasicTaskState';
-  /** `true` if the validator  completed this task. */
+  /** `true` if the validator completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
   readonly earnedPoints: Scalars['UInt64'];
@@ -108,11 +108,107 @@ export type Link = {
 export type Mutation = {
   readonly __typename?: 'Mutation';
   /**
+   * Emit a `TaskCompletedEvent` in the system carrying information related to the completion of a task.
+   *
+   * The purpose is to manually attribute the points of a task, automated or not. This generic event doesn't carrying task specific context, prefer using more grained mutation to ensure any specific logic is executed, if applicable.
+   *
+   * The event handling is idempotent, it ensures the task is completed and the points attributed once.
+   */
+  readonly completeTask?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `RegisterDashboardEvent` in the system to register a dashboard url for the given druid validator.
+   *
+   * Through the event handling logic, the validator will be fulfilled with it's dashboard url and task completed with points
+   * attribution if still in progress. If event is submitted multiple time, dashboard url is updated.
+   */
+  readonly registerDashboardURL?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `RegisterRPCEndpointEvent` in the system to register RPC node url for the given druid validator.
+   *
+   * Through the event handling logic, the validator will be fulfilled with his RPC endpoint url and task completed with points
+   * attribution if still in progress. If event is submitted multiple time, RPC endpoint is updated.
+   */
+  readonly registerRPCEndpoint?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `RegisterSnapshotEvent` in the system to register a snapshot url for the given druid validator.
+   *
+   * Through the event handling logic, the validator will be fulfilled with it's snapshot url and task completed with points
+   * attribution if still in progress. If event is submitted multiple time, snapshot url is updated.
+   */
+  readonly registerSnapshotURL?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `ValidatorRegisteredEvent` in the system carrying information related to the integration of a validator post genesis.
+   *
+   * The validator will be integrated into the leaderboard with its on chain information, past tasks will be considered not done.
+   */
+  readonly registerValidator?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `ValidatorRemovedEvent` in the system carrying information related to remove a validator.
+   *
+   * The concerned validator will be completely removed from the system..
+   */
+  readonly removeValidator?: Maybe<Scalars['Void']>;
+  readonly submitTask?: Maybe<Scalars['Void']>;
+  /**
    * Emit a `GenTXSubmittedEvent` in the system carrying information related to a druid participating to the Nemeton program, this contain the combination of technical validator information & application information.
    *
    * Through the event handling logic, the validator will be added to the board and the corresponding task completed with points attribution if still in progress.
    */
   readonly submitValidatorGenTX?: Maybe<Scalars['Void']>;
+  /**
+   * Emit a `ValidatorUpdatedEvent` in the system carrying information related to the update of a validator.
+   *
+   * All the validator properties are updated. Regarding task completion, this is not retroactive (e.g. uptime tracking after consensus keys updated).
+   */
+  readonly updateValidator?: Maybe<Scalars['Void']>;
+};
+
+
+export type MutationCompleteTaskArgs = {
+  phase: Scalars['Int'];
+  points?: InputMaybe<Scalars['UInt64']>;
+  task: Scalars['ID'];
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationRegisterDashboardUrlArgs = {
+  points: Scalars['UInt64'];
+  url: Scalars['URI'];
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationRegisterRpcEndpointArgs = {
+  url: Scalars['URI'];
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationRegisterSnapshotUrlArgs = {
+  url: Scalars['URI'];
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationRegisterValidatorArgs = {
+  country: Scalars['String'];
+  delegator: Scalars['AccAddress'];
+  discord: Scalars['String'];
+  twitter?: InputMaybe<Scalars['String']>;
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationRemoveValidatorArgs = {
+  validator: Scalars['ValoperAddress'];
+};
+
+
+export type MutationSubmitTaskArgs = {
+  phase: Scalars['Int'];
+  task: Scalars['ID'];
+  validator: Scalars['ValoperAddress'];
 };
 
 
@@ -121,6 +217,15 @@ export type MutationSubmitValidatorGenTxArgs = {
   discord: Scalars['String'];
   gentx: Scalars['JSON'];
   twitter?: InputMaybe<Scalars['String']>;
+};
+
+
+export type MutationUpdateValidatorArgs = {
+  country: Scalars['String'];
+  delegator: Scalars['AccAddress'];
+  discord: Scalars['String'];
+  twitter?: InputMaybe<Scalars['String']>;
+  valoper: Scalars['ValoperAddress'];
 };
 
 /** Contains information on a connection page. */
@@ -225,14 +330,14 @@ export type QueryValidatorArgs = {
   valoper?: InputMaybe<Scalars['ValoperAddress']>;
 };
 
-/** Represents the state of a specific task requiring a manual submission from the validator. */
-export type SubmissionTask = TaskState & {
-  readonly __typename?: 'SubmissionTask';
-  /** `true` if the validator  completed this task. */
+/** Represents the progress/result of a task assigned to a validator expecting a submission from him. */
+export type SubmissionTaskState = TaskState & {
+  readonly __typename?: 'SubmissionTaskState';
+  /** `true` if the validator completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
   readonly earnedPoints: Scalars['UInt64'];
-  /** `true` if the validator has submitted the content expected for the task. */
+  /** `true` if the validator submitted the expected content. */
   readonly submitted: Scalars['Boolean'];
   /** The task we're talking about. */
   readonly task: Task;
@@ -257,13 +362,11 @@ export type Task = {
   readonly startDate: Scalars['Time'];
   /** `true` if the task is in progress. */
   readonly started: Scalars['Boolean'];
-  /** Tells whether a task require a manual submission from the druids to be evaluated. */
-  readonly withSubmission: Scalars['Boolean'];
 };
 
 /** Represents the progress/result of a task assigned to a validator. */
 export type TaskState = {
-  /** `true` if the validator  completed this task. */
+  /** `true` if the validator completed this task. */
   readonly completed: Scalars['Boolean'];
   /** The number of points earned by the validator on this task. */
   readonly earnedPoints: Scalars['UInt64'];
@@ -292,30 +395,13 @@ export type TasksForPhaseArgs = {
   number: Scalars['Int'];
 };
 
-/** Represents the state of a specific task of uptime. */
-export type UptimeTask = TaskState & {
-  readonly __typename?: 'UptimeTask';
-  /** The total number of blocks expected to be signed. */
-  readonly blockCount: Scalars['Int'];
-  /** `true` if the validator  completed this task. */
-  readonly completed: Scalars['Boolean'];
-  /** The number of points earned by the validator on this task. */
-  readonly earnedPoints: Scalars['UInt64'];
-  /** The number of missed blocks. */
-  readonly missedBlockCount: Scalars['Int'];
-  /** The missed block ranges. */
-  readonly missedBlocks: ReadonlyArray<BlockRange>;
-  /** The ratio of signed blocks. */
-  readonly ratio: Scalars['Int'];
-  /** The task we're talking about. */
-  readonly task: Task;
-};
-
 /** Represents a validator, a participant or a druid in the Nemeton program. */
 export type Validator = {
   readonly __typename?: 'Validator';
   /** The validator country. */
   readonly country: Scalars['String'];
+  /** The validator dashboard url. */
+  readonly dashboard?: Maybe<Scalars['URI']>;
   /** The address of the validator node delegator. */
   readonly delegator: Scalars['AccAddress'];
   /** The validator details. */
@@ -332,6 +418,10 @@ export type Validator = {
   readonly points: Scalars['UInt64'];
   /** The validator position in the board. */
   readonly rank: Scalars['Int'];
+  /** The validator rpc node endpoint. */
+  readonly rpcEndpoint?: Maybe<Scalars['URI']>;
+  /** The validator snapshots url. */
+  readonly snapshot?: Maybe<Scalars['URI']>;
   /** The validator current status. */
   readonly status: ValidatorStatus;
   /** The validator affected tasks, does not reference not tasks who has not started yet. */
@@ -386,7 +476,7 @@ export type QValidatorQueryVariables = Exact<{
 }>;
 
 
-export type QValidatorQuery = { readonly __typename?: 'Query', readonly validator?: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly twitter?: string | null, readonly website?: string | null, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly perPhase: ReadonlyArray<{ readonly __typename?: 'PerPhaseTasks', readonly points: any, readonly phase: { readonly __typename?: 'Phase', readonly number: number, readonly started: boolean, readonly name: string }, readonly tasks: ReadonlyArray<{ readonly __typename?: 'BasicTaskState', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } } | { readonly __typename?: 'SubmissionTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } } | { readonly __typename?: 'UptimeTask', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } }> }> } } | null };
+export type QValidatorQuery = { readonly __typename?: 'Query', readonly validator?: { readonly __typename?: 'Validator', readonly rank: number, readonly moniker: string, readonly valoper: string, readonly twitter?: string | null, readonly website?: string | null, readonly points: any, readonly identity?: { readonly __typename?: 'Identity', readonly picture?: { readonly __typename?: 'Link', readonly href: string } | null } | null, readonly tasks: { readonly __typename?: 'Tasks', readonly perPhase: ReadonlyArray<{ readonly __typename?: 'PerPhaseTasks', readonly points: any, readonly phase: { readonly __typename?: 'Phase', readonly number: number, readonly started: boolean, readonly name: string }, readonly tasks: ReadonlyArray<{ readonly __typename?: 'BasicTaskState', readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } } | { readonly __typename?: 'SubmissionTaskState', readonly submitted: boolean, readonly completed: boolean, readonly earnedPoints: any, readonly task: { readonly __typename?: 'Task', readonly name: string, readonly started: boolean, readonly finished: boolean } }> }> } } | null };
 
 export type QValidatorCountQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -569,6 +659,9 @@ export const QValidatorDocument = gql`
             name
             started
             finished
+          }
+          ... on SubmissionTaskState {
+            submitted
           }
         }
       }

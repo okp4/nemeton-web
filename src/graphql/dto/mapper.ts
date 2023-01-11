@@ -1,5 +1,5 @@
 import type { Druid, DruidDescriptor, PodiumDruid } from '../../entity/druid'
-import type { QValidatorQuery } from '../generated/query/types'
+import type { QValidatorQuery, SubmissionTaskState } from '../generated/query/types'
 import type { PodiumValidatorEdgeDTO, ValidatorEdgeDTO } from './dto.types'
 
 export const mapValidatorEdgeDTOToDruid = (dto: ValidatorEdgeDTO): DruidDescriptor => ({
@@ -50,7 +50,10 @@ export const mapValidatorDTOToDruid = (dto: QValidatorQuery['validator']): Druid
               completed: t.completed,
               points: t.earnedPoints,
               finished: t.task.finished,
-              started: t.task.started
+              started: t.task.started,
+              ...('submitted' in (t as SubmissionTaskState) && {
+                submitted: (t as SubmissionTaskState).submitted
+              })
             })),
             points: perPhase.points
           }

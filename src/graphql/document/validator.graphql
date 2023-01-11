@@ -27,6 +27,9 @@ query QValidator($valoper: ValoperAddress) {
             started
             finished
           }
+          ... on SubmissionTaskState {
+            submitted
+          }
         }
       }
     }
