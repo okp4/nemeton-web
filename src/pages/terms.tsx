@@ -48,11 +48,15 @@ const Terms: NextPage<TermsProps> = props => {
             </p>
             <p>
               If OKP4 decides to terminate a participant&apos;s participation, the participant will
-              be notified via Discord (and other relevant channels, if applicable) and will be given
-              a 72-hour grace period to validate at least one block using their validator node. This
-              grace period is intended to provide the participant with an opportunity to address any
-              issues that may have arisen with their node and to confirm their continued
-              participation in the program.
+              be notified via{' '}
+              <a href={discordUrl} rel="noreferrer" target="_blank">
+                Discord
+              </a>{' '}
+              (and other relevant channels, if applicable) and will be given a 72-hour grace period
+              to validate at least one block using their validator node. This grace period is
+              intended to provide the participant with an opportunity to address any issues that may
+              have arisen with their node and to confirm their continued participation in the
+              program.
             </p>
             <p>
               If the participant fails to validate a block within the 72-hour grace period, their
