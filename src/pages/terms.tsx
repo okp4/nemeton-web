@@ -26,6 +26,51 @@ const Terms: NextPage<TermsProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">
           <h1>Terms & conditions</h1>
+
+          <div className="okp4-nemeton-web-page-terms-update">
+            <div className="okp4-nemeton-web-page-terms-update-title" id="update-jan-11-2023">
+              <h2>Update</h2>
+              <h3>Jan 11th 2023</h3>
+            </div>
+            <p>
+              In order to maintain the integrity and efficiency of the Nemeton program, OKP4 has
+              implemented the following terms and conditions for validator nodes:
+            </p>
+            <p>
+              If a validator node fails to validate a block for a consecutive period of{' '}
+              <span className="okp4-nemeton-web-bold-text">
+                1,000,000 blocks (approximately 11.5 days), OKP4 reserves the right to terminate the
+                participant&apos;s participation
+              </span>{' '}
+              in the Nemeton program and remove them from the leaderboard. This is to ensure that
+              all validator nodes are actively contributing to the network and that the program is
+              operating in an optimal manner.
+            </p>
+            <p>
+              If OKP4 decides to terminate a participant&apos;s participation, the participant will
+              be notified via{' '}
+              <a href={discordUrl} rel="noreferrer" target="_blank">
+                Discord
+              </a>{' '}
+              (and other relevant channels, if applicable) and will be given a 72-hour grace period
+              to validate at least one block using their validator node. This grace period is
+              intended to provide the participant with an opportunity to address any issues that may
+              have arisen with their node and to confirm their continued participation in the
+              program.
+            </p>
+            <p>
+              If the participant fails to validate a block within the 72-hour grace period, their
+              participation in the program will be terminated, and they will forfeit any points
+              earned. The participant may still apply to rejoin the program in the future, however,
+              any points earned will not be restored.
+            </p>
+            <p>
+              It is important to note that this policy is designed to allow willing participants to
+              continue their participation and to provide an opportunity for willing candidates to
+              join.
+            </p>
+          </div>
+
           <p>
             These Nemeton Testnet participation Terms & Conditions (the &quot;Terms&quot;) apply to
             your access to and use of the websites, platform, software, technologies, features and
@@ -43,6 +88,7 @@ const Terms: NextPage<TermsProps> = props => {
             the experience of participants prior to the launch of the OKP4 mainnet and OKP4 DAO
             operation.
           </p>
+
           <ol>
             <li>
               <h2>Agreement on the conditions</h2>

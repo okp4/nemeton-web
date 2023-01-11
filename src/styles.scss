@@ -189,6 +189,43 @@ main {
       }
     }
 
+    .okp4-nemeton-web-page-terms-update {
+      background-color: #2e534f;
+      border-radius: 15px;
+      padding: 0 20px 5px;
+
+      .okp4-nemeton-web-page-terms-update-title {
+        display: flex;
+        gap: 10px;
+
+        h2 {
+          text-decoration: underline;
+        }
+
+        h3 {
+          margin: 20px 0;
+          display: flex;
+          align-items: flex-end;
+          line-height: 40px;
+        }
+      }
+
+      p:first-of-type {
+        margin-top: 5px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        padding: 5px 20px;
+
+        .okp4-nemeton-web-page-terms-update-title {
+          h3 {
+            margin: 10px 0;
+            line-height: 34px;
+          }
+        }
+      }
+    }
+
     .okp4-nemeton-web-tasks-accordion-title {
       display: flex;
       flex-wrap: wrap;
