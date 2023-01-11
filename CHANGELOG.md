@@ -1,5 +1,48 @@
 # ØKP4 Nemeton web changelog
 
+## [1.6.0](https://github.com/okp4/nemeton-web/compare/v1.5.1...v1.6.0) (2023-01-11)
+
+
+### Features
+
+* add autoscroll to accordion component ([4ef1d46](https://github.com/okp4/nemeton-web/commit/4ef1d467db37395b9986f47359fd203f36fcef03))
+* add explorer env variable ([f64d55f](https://github.com/okp4/nemeton-web/commit/f64d55f9feed507f4e8f197478d2f124173b3d9d))
+* add hyperlink to update text ([9183aa6](https://github.com/okp4/nemeton-web/commit/9183aa6cc901f8864a9218d22957ad2bb41b5804))
+* add phase number to phase accordions ([9e1d847](https://github.com/okp4/nemeton-web/commit/9e1d847e827c6e4ef26b9ad2b716dd357f513cdc))
+* add router query phase property ([3b1b788](https://github.com/okp4/nemeton-web/commit/3b1b788cddbea3dcbc9aea96145204ace35bb52c))
+* add terms validator node update ([be81505](https://github.com/okp4/nemeton-web/commit/be81505668a493955124eb90ec9c17d9376d5b37))
+* align sidh task names to api ([5d9e1c5](https://github.com/okp4/nemeton-web/commit/5d9e1c5be1293a95405be50c7562f3bf46924a9e))
+* **assets:** add email sent icon ([12655c0](https://github.com/okp4/nemeton-web/commit/12655c0b07c18d2a63e50ec7b53845f0ef7fe425))
+* **assets:** add tag icons ([c8dfae6](https://github.com/okp4/nemeton-web/commit/c8dfae68db74538f7122919b2ace705ca1c21b41))
+* **entity:** add name property to phase entity ([84ce498](https://github.com/okp4/nemeton-web/commit/84ce498450661440ff603a0e7aac0347f31da464))
+* **entity:** add optional submitted property to task ([e34f727](https://github.com/okp4/nemeton-web/commit/e34f727f03d06f6d23fa2b42454627a81ed1bf0a))
+* **entity:** remove useless explorer property from druid profile ([7a160f6](https://github.com/okp4/nemeton-web/commit/7a160f61a68a9c9db38517761f8962136133394f))
+* **entity:** update task entity ([f4e9d58](https://github.com/okp4/nemeton-web/commit/f4e9d58e702dad673c7fd9f02e76867d79ed314e))
+* **graphql:** add fragment in validator query & update mapper ([fe7c79c](https://github.com/okp4/nemeton-web/commit/fe7c79c6ee217718f0489dae36328f63b31f1528))
+* **graphql:** add mapper from validator query dto to druid entity ([a3d73b9](https://github.com/okp4/nemeton-web/commit/a3d73b937237e3503fbad70d852eb617bcddce3d))
+* **graphql:** add phase name to validator query ([a0d7a55](https://github.com/okp4/nemeton-web/commit/a0d7a55a9dc3e440d30c0fc4fe45b1a08b05c662))
+* **graphql:** update validator query and generated ([ceb5499](https://github.com/okp4/nemeton-web/commit/ceb54990061aecfb0fd02d749b2941a3c1746dc3))
+* reverse phase tasks order ([1ac79c0](https://github.com/okp4/nemeton-web/commit/1ac79c070d783fb19eea6573899ae224beda84ad))
+* **ui:** add behaviour for submitted task in tasks table ([b55d3ca](https://github.com/okp4/nemeton-web/commit/b55d3cae02d65bf8fae911a8ed9f504175041002))
+* **ui:** add error handling for validator query ([2f6ade2](https://github.com/okp4/nemeton-web/commit/2f6ade2d62f1fe5fdcc5a16d01739c93d0c6773d))
+* **ui:** add explorer button in profile page ([a4fcea4](https://github.com/okp4/nemeton-web/commit/a4fcea4b428e1648077179b9ff3041ee76c9fa7c))
+* **ui:** add loader to druid page & use mapper ([e61bfdf](https://github.com/okp4/nemeton-web/commit/e61bfdfc2ced7b3a66f6e98bb9ab1050b8d409ff))
+* **ui:** add phaseName prop to tasksTable & link to tasks page ([f68cdf6](https://github.com/okp4/nemeton-web/commit/f68cdf65ebb2ce7055a2d33d90f93ea797b002d7))
+* **ui:** add styled tasksTable component ([6ceac70](https://github.com/okp4/nemeton-web/commit/6ceac7099c20afcc626a4001ad3470bc308f81f4))
+* **ui:** add tag styled component ([eeea942](https://github.com/okp4/nemeton-web/commit/eeea9426c2db43316c92b69fe485efc4090fcdc5))
+* **ui:** adjust elements on mobile devices ([431f0ef](https://github.com/okp4/nemeton-web/commit/431f0ef7720b7cb43ac90daeba266395d1dcd3f4))
+* **ui:** enhance styled tag component with submitted prop ([c6fddfe](https://github.com/okp4/nemeton-web/commit/c6fddfea2ae4f3bd6b73790c634de6618cf6ea37))
+* **ui:** enhance taskSummary component ([7330b09](https://github.com/okp4/nemeton-web/commit/7330b091d56c3dbf395d3e27407c97a295c2f98a))
+
+
+### Bug Fixes
+
+* **router:** split route hash from route path in route object ([549b9f4](https://github.com/okp4/nemeton-web/commit/549b9f4eea3590bf4106fbda310e57171b29512b))
+* **router:** update router usage in footer & header components ([18ead11](https://github.com/okp4/nemeton-web/commit/18ead11437033ed214a6e4f150155e3b55aa228f))
+* **router:** update routes in some pages ([6de822b](https://github.com/okp4/nemeton-web/commit/6de822b4e5229dc43b5a16df786dffaf46f0f933))
+* **style:** update flex-end property ([765130b](https://github.com/okp4/nemeton-web/commit/765130ba4c9578147626fb953695363dd84fe8f7))
+* **ui:** format query parameters for accordion state ([0c46b03](https://github.com/okp4/nemeton-web/commit/0c46b03ee966c94e53d533861ad7042436e181b0))
+
 ## [1.5.1](https://github.com/okp4/nemeton-web/compare/v1.5.0...v1.5.1) (2023-01-03)
 
 
