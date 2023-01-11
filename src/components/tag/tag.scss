@@ -2,14 +2,16 @@ $background-colors: (
   'done': #95c1bb,
   'progress': #ff8b3e,
   'idle': #febca8,
-  'error': #ff3648
+  'error': #ff3648,
+  'submitted': #a4abbd
 );
 
 $icons: (
   'done': 'check',
   'progress': 'hourglass',
   'idle': 'rocket',
-  'error': 'alarm'
+  'error': 'alarm',
+  'submitted': 'letter'
 );
 
 .okp4-nemeton-web-tag-main {

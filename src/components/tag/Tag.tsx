@@ -1,7 +1,7 @@
 import React from 'react'
 
 type TagProps = Readonly<{
-  status: 'done' | 'idle' | 'progress' | 'error'
+  status: 'done' | 'idle' | 'progress' | 'error' | 'submitted'
   content: string
 }>
 
