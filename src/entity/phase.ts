@@ -19,6 +19,7 @@ export type Task = Readonly<{
   started: boolean
   finished: boolean
   points: number
+  submitted?: boolean
 }>
 
 export type TasksPerPhase = Readonly<{
