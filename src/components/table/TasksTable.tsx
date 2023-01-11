@@ -16,14 +16,15 @@ type TagElementProps = Readonly<{
 
 const TagElement: React.FC<TagElementProps> = ({ task }) => {
   const props = useCallback((): {
-    status: 'done' | 'idle' | 'progress' | 'error'
+    status: 'done' | 'idle' | 'progress' | 'error' | 'submitted'
     content: string
   } => {
     if (task.completed) return { status: 'done', content: 'Done' }
     if (!task.started) return { status: 'idle', content: 'Not started' }
+    if (task.submitted) return { status: 'submitted', content: 'Submitted' }
     if (task.finished) return { status: 'error', content: 'Not completed' }
     return { status: 'progress', content: 'In progress' }
-  }, [task.completed, task.finished, task.started])
+  }, [task.completed, task.finished, task.started, task.submitted])
 
   return <Tag {...props()} />
 }
