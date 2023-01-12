@@ -39,8 +39,8 @@ const Terms: NextPage<TermsProps> = props => {
             <p>
               If a validator node fails to validate a block for a consecutive period of{' '}
               <span className="okp4-nemeton-web-bold-text">
-                1,000,000 blocks (approximately 11.5 days), OKP4 reserves the right to terminate the
-                participant&apos;s participation
+                100,000 blocks, OKP4 reserves the right to terminate the participant&apos;s
+                participation
               </span>{' '}
               in the Nemeton program and remove them from the leaderboard. This is to ensure that
               all validator nodes are actively contributing to the network and that the program is
