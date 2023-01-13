@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.6.1](https://github.com/okp4/nemeton-web/compare/v1.6.0...v1.6.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* edit terms update text ([1f9c05a](https://github.com/okp4/nemeton-web/commit/1f9c05ab14b65366deb92fb5bbe041b93ca92902))
+
 ## [1.6.0](https://github.com/okp4/nemeton-web/compare/v1.5.1...v1.6.0) (2023-01-11)
 
 
