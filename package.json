@@ -38,7 +38,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@okp4/eslint-config": "^1.1.0",
-    "@types/node": "18.11.10",
+    "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "@types/react-lottie": "^1.2.6",
