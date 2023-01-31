@@ -1,11 +1,23 @@
-export type TasksUrls = {
+export type PhasesConfig = {
   sidh: {
-    originalContentUrl: string
+    startDate: string
+    endDate: string
+    urls: {
+      originalContentUrl: string
+    }
   }
   imbolc: {
-    exposeRPCUrl: string
-    provideSnapshotUrl: string
-    provideDashboardUrl: string
+    startDate: string
+    endDate: string
+    urls: {
+      exposeRPCUrl: string
+      provideSnapshotUrl: string
+      provideDashboardUrl: string
+    }
+  }
+  beltaine: {
+    startDate: string
+    endDate: string
   }
 }
 
@@ -49,6 +61,6 @@ export type Config = {
     privacyUrls: {
       cookiePolicyUrl: string
     }
-    tasksUrls: TasksUrls
   }
+  phases: PhasesConfig
 }

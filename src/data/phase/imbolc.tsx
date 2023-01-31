@@ -1,17 +1,22 @@
-import type { TasksUrls } from '../../types/config.type'
+import type { PhasesConfig } from '../../types/config.type'
+import { getPhaseStatus } from '../../utils'
 import type { PhaseDTO } from './dto.type'
 
 export const imbolc = ({
-  imbolc: { exposeRPCUrl, provideSnapshotUrl, provideDashboardUrl }
-}: TasksUrls): PhaseDTO => ({
+  imbolc: {
+    startDate,
+    endDate,
+    urls: { exposeRPCUrl, provideSnapshotUrl, provideDashboardUrl }
+  }
+}: PhasesConfig): PhaseDTO => ({
   number: 2,
   phaseName: 'imbolc',
   phaseDescription:
     "The second phase is focused on testing Druids' performance and uptime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.",
-  status: 'active',
+  status: getPhaseStatus(startDate, endDate),
   phaseDuration: {
-    from: '2023-01-02T00:00:00Z',
-    to: '2023-01-31T23:59:59Z'
+    from: startDate,
+    to: endDate
   },
   tasks: [
     {

@@ -52,6 +52,7 @@
         font-family: 'Gotham bold', sans-serif;
         font-size: 22px;
         align-self: center;
+        text-align: center;
 
         @media screen and (max-width: 1100px) {
           font-size: 20px;
@@ -118,9 +119,9 @@
           > p {
             font-family: 'Gotham light', sans-serif;
             font-size: 20px;
+            max-width: 500px;
 
             &:nth-child(2) {
-              margin: auto 0;
               white-space: nowrap;
               font-family: 'Gotham bold', sans-serif;
             }

@@ -1,15 +1,22 @@
-import type { TasksUrls } from '../../types/config.type'
+import type { PhasesConfig } from '../../types/config.type'
+import { getPhaseStatus } from '../../utils'
 import type { PhaseDTO } from './dto.type'
 
-export const sidh = ({ sidh: { originalContentUrl } }: TasksUrls): PhaseDTO => ({
+export const sidh = ({
+  sidh: {
+    startDate,
+    endDate,
+    urls: { originalContentUrl }
+  }
+}: PhasesConfig): PhaseDTO => ({
   number: 1,
   phaseName: 'sidh',
   phaseDescription:
     " This first phase is pretty basic, it is dedicated to setting up Druids' validator environment, participating in the genesis, and getting familiar with the OKP4 testnet.",
-  status: 'closed',
+  status: getPhaseStatus(startDate, endDate),
   phaseDuration: {
-    from: '2022-12-01T00:00:00Z',
-    to: '2023-01-01T23:59:00Z'
+    from: startDate,
+    to: endDate
   },
   tasks: [
     {

@@ -23,7 +23,7 @@ import type {
 import { useRouter } from 'next/router'
 import moment from 'moment'
 
-export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls' | 'phases'>
 
 type ContentBlockProps = Readonly<{
   title: string
@@ -123,10 +123,7 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
 )
 
 const Tasks: NextPage<TasksProps> = props => {
-  const {
-    urls,
-    urls: { tasksUrls }
-  } = props
+  const { urls, phases } = props
   const { query } = useRouter()
   const [activeTask, setActiveTask] = useAccordion()
 
@@ -151,7 +148,7 @@ const Tasks: NextPage<TasksProps> = props => {
         <Header />
         <div className="okp4-nemeton-web-page-content-container" id="tasks">
           <h1>Tasks</h1>
-          {[...Phases(tasksUrls)].reverse().map(
+          {[...Phases(phases)].reverse().map(
             ({ number, phaseName, tasks, status }: PhaseDTO, index) =>
               status !== 'coming' && (
                 <div key={index}>

@@ -125,6 +125,9 @@
         @media screen and (max-width: 900px) {
           background-size: cover;
         }
+        @media screen and (min-width: 580px) and (max-width: 700px) {
+          height: 520px;
+        }
       }
 
       &.sidh {
@@ -226,7 +229,6 @@
         }
 
         > p:first-of-type {
-          max-height: 201px;
           max-width: 420px;
           font-size: 20px;
           font-family: 'Gotham light', sans-serif;
