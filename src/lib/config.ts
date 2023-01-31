@@ -39,16 +39,28 @@ export const config: Config = {
     },
     privacyUrls: {
       cookiePolicyUrl: process.env.OKP4_COOKIE_POLICY_URL
-    },
-    tasksUrls: {
-      sidh: {
+    }
+  },
+  phases: {
+    sidh: {
+      startDate: process.env.OKP4_PHASE_SIDH_START_DATE,
+      endDate: process.env.OKP4_PHASE_SIDH_END_DATE,
+      urls: {
         originalContentUrl: process.env.OKP4_TASKS_SIDH_5_TYPEFORM_URL
-      },
-      imbolc: {
+      }
+    },
+    imbolc: {
+      startDate: process.env.OKP4_PHASE_IMBOLC_START_DATE,
+      endDate: process.env.OKP4_PHASE_IMBOLC_END_DATE,
+      urls: {
         exposeRPCUrl: process.env.OKP4_TASKS_IMBOLC_1_TYPEFORM_URL,
         provideSnapshotUrl: process.env.OKP4_TASKS_IMBOLC_2_TYPEFORM_URL,
         provideDashboardUrl: process.env.OKP4_TASKS_IMBOLC_3_TYPEFORM_URL
       }
+    },
+    beltaine: {
+      startDate: process.env.OKP4_PHASE_BELTAINE_START_DATE,
+      endDate: process.env.OKP4_PHASE_BELTAINE_END_DATE
     }
   }
 }

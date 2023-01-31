@@ -8,10 +8,10 @@ import { PhaseCard } from '../components/card/phase/PhaseCard'
 import Phases from '../data/phase/index'
 import type { PhaseDTO } from '../data/phase/dto.type'
 
-export type HomeProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+export type HomeProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls' | 'phases'>
 
 const Home: NextPage<HomeProps> = props => {
-  const { urls } = props
+  const { urls, phases } = props
 
   return (
     <div>
@@ -19,7 +19,7 @@ const Home: NextPage<HomeProps> = props => {
       <main>
         <Header />
         <div className="okp4-nemeton-web-home-main" id="home">
-          {Object.values(Phases(urls.tasksUrls)).map(
+          {Object.values(Phases(phases)).map(
             ({ tasks, phaseDescription, phaseName, status, number, phaseDuration }: PhaseDTO) => (
               <div key={number}>
                 <PhaseCard
