@@ -8,7 +8,7 @@ export const imbolc = ({
   phaseName: 'imbolc',
   phaseDescription:
     "The second phase is focused on testing Druids' performance and uptime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.",
-  status: 'active',
+  status: 'closed',
   phaseDuration: {
     from: '2023-01-02T00:00:00Z',
     to: '2023-01-31T23:59:59Z'

@@ -5,7 +5,7 @@ export const beltaine: PhaseDTO = {
   phaseName: 'beltaine',
   phaseDescription:
     'The third phase is all about token dynamics! Druids will engage in various node and community tasks with their precious tokens. Challenges will include some IBC-related tasks to open Nemeton to the interchain world...ime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.',
-  status: 'coming',
+  status: 'active',
   phaseDuration: {
     from: '2023-02-01T12:00:00Z',
     to: '2023-02-28T23:59:00Z'
