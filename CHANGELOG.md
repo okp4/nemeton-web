@@ -1,5 +1,18 @@
 # ØKP4 Nemeton web changelog
 
+## [1.7.0](https://github.com/okp4/nemeton-web/compare/v1.6.1...v1.7.0) (2023-02-01)
+
+
+### Features
+
+* add beltain tasks and duration ([6d05965](https://github.com/okp4/nemeton-web/commit/6d05965e2c938e862c5b5f07f04c9970e4da144e))
+* add phases environment variables ([0f46b21](https://github.com/okp4/nemeton-web/commit/0f46b21fe58e419c38956d91ce2e6ea5d125599c))
+* **data:** update phases statuses with utils method ([41ec07b](https://github.com/okp4/nemeton-web/commit/41ec07bc0c625f6faf45e12d6bbcbb8b087d7560))
+* handle dropdown duration style inconsistency ([edf8b37](https://github.com/okp4/nemeton-web/commit/edf8b3767f0deb93da0b21345793852c156d30f9))
+* make beltaine phase card contain its content ([bd657a4](https://github.com/okp4/nemeton-web/commit/bd657a47dbdcd21813b80a6961d6814a8462d3d0))
+* set imbolc as active phase ([fd7146d](https://github.com/okp4/nemeton-web/commit/fd7146d526eab7f27c4afd51298fa39fffd03eb4))
+* **utils:** getPhaseStatus by date bounds ([30a7ced](https://github.com/okp4/nemeton-web/commit/30a7cedaee036130baf86c8c1199de9c225686eb))
+
 ## [1.6.1](https://github.com/okp4/nemeton-web/compare/v1.6.0...v1.6.1) (2023-01-13)
 
 
