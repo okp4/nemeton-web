@@ -15,8 +15,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
   tasks: [
     {
       group: 'Nodes',
-      taskName:
-        'Vote for the governance proposal to whitelist addresses for smart contract deployment',
+      taskName: 'Governance vote to whitelist addresses',
       taskContent: [
         {
           id: 'description',
@@ -26,7 +25,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
               We&apos;ll submit a governance proposal concerning the{' '}
               <span className="okp4-nemeton-web-bold-text">wasm</span> module configuration to
               introduce some whitelist adresses allowed to deploy smart contracts. To achieve this
-              task you need to submit your vote in this proposal.
+              task you need to submit your vote on this proposal.
             </p>
           )
         },
@@ -64,8 +63,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
     },
     {
       group: 'Nodes',
-      taskName:
-        'Vote for the governance proposal to implement the logic module to the Nemeton testnet',
+      taskName: 'Governance vote for logic module',
       taskContent: [
         {
           id: 'description',
@@ -75,7 +73,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
               We&apos;ll submit a governance proposal to upgrade the chain software version which
               will introduce our new <span className="okp4-nemeton-web-bold-text">logic</span>{' '}
               module. The purpose of this module is to interpret the Data Space rules. To achieve
-              this task you need to submit your vote in this proposal.
+              this task you need to submit your vote on this proposal.
             </p>
           )
         },
