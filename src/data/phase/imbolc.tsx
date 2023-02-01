@@ -12,7 +12,7 @@ export const imbolc = ({
   number: 2,
   phaseName: 'imbolc',
   phaseDescription:
-    "The second phase is focused on testing Druids' performance and uptime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.",
+    "The second phase is focused on testing Druids' performance & security, even under stressed conditions… Only the stronger will survive. Good luck to all!",
   status: getPhaseStatus(startDate, endDate),
   phaseDuration: {
     from: startDate,

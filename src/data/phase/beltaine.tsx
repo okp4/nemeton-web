@@ -6,7 +6,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
   number: 3,
   phaseName: 'beltaine',
   phaseDescription:
-    'The third phase is all about token dynamics! Druids will engage in various node and community tasks with their precious tokens. Challenges will include some IBC-related tasks to open Nemeton to the interchain world...ime. Maintenance tasks and upgrades will be performed to test different kinds of state migrations.',
+    'The third phase is focused on governance and chain upgrade. The Druids will need to vote on governance proposals to implement the new OKP4 Logic Module that interprets any Data Space rules!',
   status: getPhaseStatus(startDate, endDate),
   phaseDuration: {
     from: startDate,
