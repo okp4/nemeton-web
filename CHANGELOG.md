@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.7.1](https://github.com/okp4/nemeton-web/compare/v1.7.0...v1.7.1) (2023-02-01)
+
+
+### Bug Fixes
+
+* **data:** improve phases description ([bd57fec](https://github.com/okp4/nemeton-web/commit/bd57fec43d6fc57b184cbcaa94e6ac3b42fa2fc6))
+
 ## [1.7.0](https://github.com/okp4/nemeton-web/compare/v1.6.1...v1.7.0) (2023-02-01)
 
 
