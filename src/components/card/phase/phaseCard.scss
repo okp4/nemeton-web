@@ -88,6 +88,12 @@
       }
     }
 
+    &.lughnasad {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/lughnasad-mobile.webp');
+      }
+    }
+
     .okp4-nemeton-web-phase-card-content-container {
       max-width: 1312px;
       width: 100%;
@@ -109,6 +115,18 @@
         background-size: contain;
         @media screen and (min-width: 581px) and (max-width: 1920px) {
           background-image: url('/image/imbolc-medium.webp');
+        }
+        @media screen and (max-width: 900px) {
+          background-size: cover;
+        }
+      }
+
+      &.lughnasad {
+        background-image: url('/image/lughnasad-large.webp');
+        background-position: left;
+        background-size: contain;
+        @media screen and (min-width: 581px) and (max-width: 1920px) {
+          background-image: url('/image/lughnasad-medium.webp');
         }
         @media screen and (max-width: 900px) {
           background-size: cover;
@@ -213,7 +231,8 @@
           align-items: center;
         }
 
-        &.imbolc {
+        &.imbolc,
+        &.lughnasad {
           @media screen and (min-width: 901px) {
             align-items: flex-end;
             padding: 20px 45px 0 0;
