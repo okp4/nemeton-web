@@ -1,5 +1,20 @@
 # ØKP4 Nemeton web changelog
 
+## [1.8.0](https://github.com/okp4/nemeton-web/compare/v1.7.1...v1.8.0) (2023-02-28)
+
+
+### Features
+
+* add lughnasad env variables ([78b1449](https://github.com/okp4/nemeton-web/commit/78b1449def9c6745fae888572c96521209faef84))
+* add lughnasad phase and export it ([4b98fad](https://github.com/okp4/nemeton-web/commit/4b98fad98aa10f2643f6d4f59d6e52b6cccea72a))
+* **assets:** add lughnasad illustrations ([3cd19d5](https://github.com/okp4/nemeton-web/commit/3cd19d5649216a42c6893959e11098ec47c227e4))
+* **style:** add lughnasad backgrounds for cards ([c8f5a73](https://github.com/okp4/nemeton-web/commit/c8f5a73edf9d243677d0161f7a5dda1bfa5c16fb))
+
+
+### Bug Fixes
+
+* modify env phases end dates ([62bc5b1](https://github.com/okp4/nemeton-web/commit/62bc5b1ba444cb3b95c7e781e75ebee597759651))
+
 ## [1.7.1](https://github.com/okp4/nemeton-web/compare/v1.7.0...v1.7.1) (2023-02-01)
 
 
