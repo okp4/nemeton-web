@@ -19,7 +19,8 @@ export const config: Config = {
     docsUrls: {
       whitepaperUrl: process.env.OKP4_DOCS_URL,
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
-      faqUrl: process.env.OKP4_DOCS_FAQ_URL
+      faqUrl: process.env.OKP4_DOCS_FAQ_URL,
+      logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL
     },
     supportUrls: {
       discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
@@ -61,6 +62,15 @@ export const config: Config = {
     beltaine: {
       startDate: process.env.OKP4_PHASE_BELTAINE_START_DATE,
       endDate: process.env.OKP4_PHASE_BELTAINE_END_DATE
+    },
+    lughnasad: {
+      startDate: process.env.OKP4_PHASE_LUGHNASAD_START_DATE,
+      endDate: process.env.OKP4_PHASE_LUGHNASAD_END_DATE,
+      urls: {
+        logicModuleDocsUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
+        gasConsumptionTypeformUrl: process.env.OKP4_TASKS_LUGHNASAD_5_TYPEFORM_URL,
+        logicModuleTypeformUrl: process.env.OKP4_TASKS_LUGHNASAD_6_TYPEFORM_URL
+      }
     }
   }
 }

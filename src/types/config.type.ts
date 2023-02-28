@@ -19,6 +19,15 @@ export type PhasesConfig = {
     startDate: string
     endDate: string
   }
+  lughnasad: {
+    startDate: string
+    endDate: string
+    urls: {
+      logicModuleDocsUrl: string
+      gasConsumptionTypeformUrl: string
+      logicModuleTypeformUrl: string
+    }
+  }
 }
 
 export type Config = {
@@ -41,6 +50,7 @@ export type Config = {
       whitepaperUrl: string
       nodesUrl: string
       faqUrl: string
+      logicModuleUrl: string
     }
     supportUrls: {
       discordNemetonUrl: string
