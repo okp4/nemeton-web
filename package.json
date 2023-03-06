@@ -54,7 +54,7 @@
     "prettier": "^2.8.4",
     "react-infinite-scroll-component": "^6.1.0",
     "react-lottie": "^1.2.3",
-    "sass": "^1.57.1",
+    "sass": "^1.58.3",
     "stylelint": "^14.16.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.3.0",
