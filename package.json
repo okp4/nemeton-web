@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.7.9",
-    "@emotion/react": "^11.10.5",
+    "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.5",
     "@graphql-codegen/cli": "^2.16.2",
     "@graphql-codegen/typescript": "^2.8.7",
