@@ -232,6 +232,18 @@ export const lughnasad = ({
                 contracts will be tested during this phase, we&apos;ll provide documentation to
                 interact with them.
               </p>
+              <p>
+                Here are some documentation and usage examples for{' '}
+                <a href="https://github.com/okp4/contracts/tree/main/contracts/cw-storage" rel="noreferrer" target="_blank">
+                  cw-storage
+                </a>
+                {' '}and {' '}
+                <a href="https://github.com/okp4/contracts/tree/main/contracts/cw-law-stone" rel="noreferrer" target="_blank">
+                  cw-law-stone
+                </a>
+                {' '}smart contracts. Only Druid&apos;s delegator addresses can instantiate those contracts, 
+                through the code id 2 for cw-storage and 3 for cw-law-stone.
+              </p>
             </>
           )
         },
