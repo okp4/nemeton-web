@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.9.0](https://github.com/okp4/nemeton-web/compare/v1.8.0...v1.9.0) (2023-03-31)
+
+
+### Features
+
+* **content:** improve phase 4 task 5 details ([85df4aa](https://github.com/okp4/nemeton-web/commit/85df4aa2eee10d38337cfef1d6775acaa713d773))
+
 ## [1.8.0](https://github.com/okp4/nemeton-web/compare/v1.7.1...v1.8.0) (2023-02-28)
 
 
