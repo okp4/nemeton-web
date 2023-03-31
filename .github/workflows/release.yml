@@ -24,6 +24,10 @@ jobs:
         with:
           token: ${{ secrets.OKP4_TOKEN }}
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
       - name: Release project
         uses: cycjimmy/semantic-release-action@v3
         with:
