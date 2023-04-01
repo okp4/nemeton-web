@@ -313,6 +313,7 @@ main {
 
   .okp4-nemeton-web-page-leaderboard-summary-card-title-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 10px;
 
@@ -321,11 +322,16 @@ main {
       margin: 0;
       letter-spacing: 0.04em;
       text-shadow: unset;
+      white-space: nowrap;
     }
   }
 
   .okp4-nemeton-web-page-leaderboard-summary-card-title {
     font-size: 61px !important;
+
+    &:is(h1) {
+      line-height: 57px;
+    }
 
     &.uppercase {
       text-transform: uppercase;
