@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.9.1](https://github.com/okp4/nemeton-web/compare/v1.9.0...v1.9.1) (2023-04-06)
+
+
+### Bug Fixes
+
+* **lughnasad:** update links ([ce3afed](https://github.com/okp4/nemeton-web/commit/ce3afed6425486216cf6c81c8825c2ef17c747fd))
+
 ## [1.9.0](https://github.com/okp4/nemeton-web/compare/v1.8.0...v1.9.0) (2023-03-31)
 
 
