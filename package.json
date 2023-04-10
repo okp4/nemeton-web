@@ -39,7 +39,7 @@
     "@mui/material": "^5.11.11",
     "@okp4/eslint-config": "^1.1.0",
     "@types/node": "18.15.3",
-    "@types/react": "18.0.32",
+    "@types/react": "18.0.34",
     "@types/react-dom": "18.0.10",
     "@types/react-lottie": "^1.2.6",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
