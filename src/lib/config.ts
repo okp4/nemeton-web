@@ -71,6 +71,10 @@ export const config: Config = {
         gasConsumptionTypeformUrl: process.env.OKP4_TASKS_LUGHNASAD_5_TYPEFORM_URL,
         logicModuleTypeformUrl: process.env.OKP4_TASKS_LUGHNASAD_6_TYPEFORM_URL
       }
+    },
+    samhain: {
+      startDate: process.env.OKP4_PHASE_SAMHAIN_START_DATE,
+      endDate: process.env.OKP4_PHASE_SAMHAIN_END_DATE
     }
   }
 }
