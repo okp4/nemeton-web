@@ -1,5 +1,6 @@
-import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import classNames from 'classnames'
 import { useMediaType } from '@/hook/useMediaType'
 import type { TaskDTO, Duration, PhaseStatus } from '@/data/phase/dto.type'
 import { PhaseDropDown } from '@/components/dropDown/phase/PhaseDropDown'
@@ -49,6 +50,24 @@ export const PhaseCard = ({
     </div>
   )
 
+  const linksChallenges = (
+    <>
+      <div className="okp4-nemeton-web-phase-card-content-link-container">
+        <Link className="okp4-nemeton-web-phase-card-link right" href="/validators/tasks#tasks">
+          Challenges for Validators
+        </Link>
+      </div>
+      <div className="okp4-nemeton-web-phase-card-content-link-container">
+        <Link
+          className="okp4-nemeton-web-phase-card-link right"
+          href="/builders/challenges#challenges"
+        >
+          Challenges for Builders
+        </Link>
+      </div>
+    </>
+  )
+
   return (
     <div className="okp4-nemeton-web-phase-card-main">
       <div className={classNames('okp4-nemeton-web-phase-card-container', phaseName)}>
@@ -66,11 +85,13 @@ export const PhaseCard = ({
               <h1>{phaseName}</h1>
             </div>
             <p>{phaseDescription}</p>
-            {!isMobileScreen && status !== 'coming' && buttonChallenges}
+            {!isMobileScreen &&
+              (status !== 'coming' && phaseName !== 'samhain' ? buttonChallenges : linksChallenges)}
           </div>
         </div>
       </div>
-      {isMobileScreen && status !== 'coming' && buttonChallenges}
+      {isMobileScreen &&
+        (status !== 'coming' && phaseName !== 'samhain' ? buttonChallenges : linksChallenges)}
       {isDropDownOpen && phaseDuration && (
         <PhaseDropDown
           onClose={toggleDropDown}
