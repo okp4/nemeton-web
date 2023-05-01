@@ -142,14 +142,15 @@
     display: flex;
     justify-self: center;
     justify-content: space-around;
-    max-width: 900px;
+    align-items: center;
+    max-width: 800px;
     width: 100%;
-    margin: 180px 0 218px;
+    margin: 164px 0 0;
     @media screen and (max-width: 1440px) {
       grid-area: 6 / 1 / 6 / 1;
-      max-width: 800px;
+      max-width: 700px;
       width: 100%;
-      margin-top: 100px;
+      margin-top: 80px;
     }
 
     .link-label {
@@ -161,9 +162,13 @@
 
       &.active {
         opacity: 1;
-        font-size: 70px;
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(2px);
+        padding: 20px 30px;
+        border-radius: 8px;
+
         @media screen and (max-width: 1440px) {
-          font-size: 60px;
           letter-spacing: 2px;
         }
       }
@@ -171,6 +176,43 @@
       @media screen and (max-width: 1440px) {
         font-size: 50px;
         letter-spacing: 2px;
+      }
+    }
+  }
+
+  .okp4-nemeton-web-header-sub-links-container {
+    grid-area: 4 / 1 / 4 / 3;
+    display: flex;
+    justify-self: center;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    visibility: hidden;
+    margin: 30px 0 170px;
+    @media screen and (max-width: 1440px) {
+      grid-area: 7 / 1 / 7 / 1;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      margin: 30px 0 105px;
+    }
+
+    .link-label {
+      font-size: 40px;
+      cursor: pointer;
+      opacity: 0.8;
+      line-height: 66px;
+      color: rgba(255, 255, 255, 0.6);
+      text-shadow: 3px 6px 4px rgba(0, 0, 0, 0.5);
+
+      &.active, &:hover {
+        opacity: 1;
+        color: white;
       }
     }
   }
