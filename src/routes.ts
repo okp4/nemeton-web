@@ -2,38 +2,72 @@ export type Route = {
   name: string
   path: string
   hash?: string
+  subMenu?: SubRoute[]
 }
 
-export const headerRoutes: Route[] = [
+export type SubRoute = Omit<Route, 'subMenu'>
+
+const subMenuLinks = (path: string): SubRoute[] => [
+  {
+    name: 'Rewards',
+    path: `/${path}/rewards`,
+    hash: '#rewards'
+  },
+  {
+    name: 'F.A.Q.',
+    path: `/${path}/faq`,
+    hash: '#faq'
+  },
+  {
+    name: 'Terms',
+    path: `/${path}/terms`,
+    hash: '#terms-conditions'
+  }
+]
+
+const validatorsProgramMenu: SubRoute[] = [
+  {
+    name: 'Leaderboard',
+    path: '/validators/leaderboard',
+    hash: '#leaderboard'
+  },
+  {
+    name: 'Tasks',
+    path: '/validators/tasks',
+    hash: '#tasks'
+  },
+  ...subMenuLinks('validators')
+]
+
+const buildersProgramMenu: SubRoute[] = [
+  {
+    name: 'Challenges',
+    path: '/builders/challenges',
+    hash: '#challenges'
+  },
+  {
+    name: 'Materials',
+    path: '/builders/materials',
+    hash: '#materials'
+  },
+  ...subMenuLinks('builders')
+]
+
+export const menu: Route[] = [
   {
     name: 'Home',
     path: '/',
     hash: '#home'
   },
   {
-    name: 'Leaderboard',
-    path: '/leaderboard',
-    hash: '#leaderboard'
+    name: 'Validators program',
+    path: '/validators',
+    subMenu: validatorsProgramMenu
   },
   {
-    name: 'Tasks',
-    path: '/tasks',
-    hash: '#tasks'
-  },
-  {
-    name: 'Rewards',
-    path: '/rewards',
-    hash: '#rewards'
-  },
-  {
-    name: 'F.A.Q.',
-    path: '/faq',
-    hash: '#faq'
-  },
-  {
-    name: 'Terms',
-    path: '/terms',
-    hash: '#terms-conditions'
+    name: 'Builders program',
+    path: '/builders',
+    subMenu: buildersProgramMenu
   }
 ]
 
