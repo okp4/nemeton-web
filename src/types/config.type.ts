@@ -27,7 +27,7 @@ export type PhasesConfig = {
       gasConsumptionTypeformUrl: string
       logicModuleTypeformUrl: string
     }
-  },
+  }
   samhain: {
     startDate: string
     endDate: string
@@ -50,15 +50,23 @@ export type Config = {
       telegramUrl: string
       twitterUrl: string
     }
+    githubUrls: {
+      githubOkp4dUrl: string
+      githubContractsUrl: string
+      githubAwesomeUrl: string
+    }
     docsUrls: {
       whitepaperUrl: string
       nodesUrl: string
       faqUrl: string
       logicModuleUrl: string
+      technicalDocsUrl: string
     }
     supportUrls: {
       discordNemetonUrl: string
       discordTicketUrl: string
+      discordChannelUrl: string
+      discordTicketChannelUrl: string
     }
     mailAddresses: {
       contact: string
