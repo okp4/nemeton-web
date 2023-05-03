@@ -1,14 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import classNames from 'classnames'
+import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+import classNames from 'classnames'
 import { useMediaType } from '../../../hook/useMediaType'
+import { menu } from '../../../routes'
 import type { Route } from '../../../routes'
-import { headerRoutes } from '../../../routes'
 
 type MenuProps = Readonly<{
   routerPath: string | null
+}>
+
+type SubMenuProps = MenuProps & Readonly<{
+  selectedMenu: Route | null
 }>
 
 const MobileMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
@@ -36,13 +40,13 @@ const MobileMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
         />
       </div>
       <div className={classNames('okp4-nemeton-web-header-mobile-menu-links', { open: menuOpen })}>
-        {headerRoutes.map(({ name, path }: Route, index: number) => (
+        {menu.map(({ name, path }: Route, index: number) => (
           <React.Fragment key={path}>
             {index >= 0 && <div className="okp4-nemeton-web-header-mobile-links-divider" />}
             <Link href={path}>
               <h2 className={classNames('link-label', { active: routerPath === path })}>{name}</h2>
             </Link>
-            {index === headerRoutes.length - 1 && (
+            {index === menu.length - 1 && (
               <div className="okp4-nemeton-web-header-mobile-links-divider" />
             )}
           </React.Fragment>
@@ -52,15 +56,82 @@ const MobileMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
   )
 }
 
+const SubMenuDesktop: React.FC<SubMenuProps> = ({ selectedMenu, routerPath }) => (
+  <div
+    className={classNames('okp4-nemeton-web-header-sub-links-container', {
+      open: selectedMenu
+    })}
+  >
+    {selectedMenu?.subMenu?.map(({ name, path, hash }) => (
+      <Link href={hash ? `${path}${hash}` : path} key={path}>
+        <h2 className={classNames('link-label', { active: routerPath?.includes(path) })}>{name}</h2>
+      </Link>
+    ))}
+  </div>
+)
+
 const DesktopMenu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
+  const [selectedMenu, setSelectedMenu] = useState<Route | null>(null)
+  
+  useEffect(() => {
+    const route = menu.find((route: Route) => routerPath?.startsWith(route.path) && route.subMenu?.length)
+    if (route) setSelectedMenu(route)
+  }, [routerPath])
+
+  const handleClick = useCallback(
+    (menuItem: Route) => () => {
+      const isMenuItemSelected = menuItem.name === selectedMenu?.name
+      menuItem.subMenu && setSelectedMenu(isMenuItemSelected ? null : menuItem)
+    },
+    [selectedMenu]
+  )
+
+  const isActiveMenu = useCallback(
+    (menuItem: Route) => (routerPath?.startsWith(menuItem.path) ?? '') || selectedMenu === menuItem,
+    [routerPath, selectedMenu]
+  )
+
   return (
-    <div className="okp4-nemeton-web-header-links-container">
-      {headerRoutes.map(({ name, path, hash }: Route) => (
-        <Link href={hash ? `${path}${hash}` : path} key={path}>
-          <h2 className={classNames('link-label', { active: path === routerPath })}>{name}</h2>
-        </Link>
-      ))}
-    </div>
+    <React.Fragment>
+      <div className="okp4-nemeton-web-header-links-container">
+        {menu.map((menuItem: Route) => (
+          <div
+            className="okp4-nemeton-web-header-menu-item"
+            key={menuItem.name}
+            onClick={handleClick(menuItem)}
+          >
+            {menuItem.hash ? (
+              <Link
+                href={`${menuItem.path}${menuItem.hash}`}
+              >
+                <h2
+                  className={classNames('link-label', {
+                    active:
+                      (routerPath === menuItem.path ||
+                        routerPath?.substring(1) === menuItem.hash) &&
+                      !selectedMenu
+                  })}
+                >
+                  {menuItem.name}
+                </h2>
+              </Link>
+            ) : (
+              <h2
+                className={classNames('link-label', {
+                  active: isActiveMenu(menuItem)
+                })}
+              >
+                {menuItem.name}
+              </h2>
+            )}
+          </div>
+        ))}
+      </div>
+      <SubMenuDesktop
+        routerPath={routerPath}
+        selectedMenu={selectedMenu}
+      />
+    </React.Fragment>
   )
 }
 
@@ -71,8 +142,8 @@ export const Header: React.FC = () => {
   const router = useRouter()
 
   useEffect(() => {
-    setRouterPath(router.pathname)
-  }, [router.pathname])
+    setRouterPath(router.asPath)
+  }, [router.asPath])
 
   return (
     <div className="okp4-nemeton-web-header-main">
