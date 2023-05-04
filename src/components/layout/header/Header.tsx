@@ -20,12 +20,12 @@ const SubMenuMobile: React.FC<SubMenuProps> = ({ selectedMenu, routerPath }): JS
   <div className="okp4-nemeton-web-header-mobile-sub-menu-links">
     <div className="okp4-nemeton-web-header-mobile-sub-menu-content">
       <div className="okp4-nemeton-web-header-menu-item-divider" />
-      {selectedMenu?.subMenu?.map(({ name, path }) => (
+      {selectedMenu?.subMenu?.map(({ name, path, hash }) => (
         <Link
           className={classNames('okp4-nemeton-web-header-mobile-sub-menu-item-name', {
             active: routerPath?.startsWith(path)
           })}
-          href={path}
+          href={`${path}${hash}`}
           key={path}
         >
           {name}
@@ -134,13 +134,14 @@ const Menu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
                   {menuItem.name}
                 </h2>
               )}
-              {isMobileScreen && selectedMenu?.name === menuItem.name && menuItem.subMenu && (
-                <SubMenuMobile routerPath={routerPath} selectedMenu={selectedMenu} />
-              )}
               {isMobileScreen &&
-                index === menu.length - 1 &&
-                selectedMenu?.name !== menuItem.name &&
-                separatorElement}
+                (selectedMenu?.name === menuItem.name && menuItem.subMenu ? (
+                  <SubMenuMobile routerPath={routerPath} selectedMenu={selectedMenu} />
+                ) : (
+                  index === menu.length - 1 &&
+                  selectedMenu?.name !== menuItem.name &&
+                  separatorElement
+                ))}
             </div>
           ))}
         </div>
