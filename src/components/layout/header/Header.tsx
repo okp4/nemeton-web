@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
-import { useMediaType } from '../../../hook/useMediaType'
-import { menu } from '../../../routes'
-import type { Route } from '../../../routes'
+import { useMediaType } from '@/hook/useMediaType'
+import { menu } from '@/routes'
+import type { Route } from '@/routes'
 
 type MenuProps = Readonly<{
   routerPath: string | null

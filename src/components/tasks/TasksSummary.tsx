@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import React, { useCallback } from 'react'
-import type { TasksPerPhase } from '../../entity/phase'
-import { useAccordion } from '../../hook/useAccordion'
-import { useMediaType } from '../../hook/useMediaType'
-import { Accordion } from '../accordion/Accordion'
-import { TasksTable } from '../table/TasksTable'
+import type { TasksPerPhase } from '@/entity/phase'
+import { useAccordion } from '@/hook/useAccordion'
+import { useMediaType } from '@/hook/useMediaType'
+import { Accordion } from '@/components/accordion/Accordion'
+import { TasksTable } from '@/components/table/TasksTable'
 
 type TasksSummaryProps = Readonly<{
   tasksPerPhase: TasksPerPhase[]

@@ -1,5 +1,5 @@
-import '../styles.scss'
 import type { AppProps } from 'next/app'
+import '@/styles.scss'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (

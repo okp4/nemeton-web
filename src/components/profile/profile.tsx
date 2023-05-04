@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useCallback, useMemo } from 'react'
-import type { DruidProfile } from '../../entity/druid'
-import { Copy } from '../copy/Copy'
+import type { DruidProfile } from '@/entity/druid'
+import { Copy } from '@/components/copy/Copy'
 
 export type ProfileProps = Readonly<{
   druidProfile: DruidProfile

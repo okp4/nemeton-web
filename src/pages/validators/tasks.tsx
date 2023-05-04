@@ -1,27 +1,27 @@
+import { useRouter } from 'next/router'
+import moment from 'moment'
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '../../components/head/Head'
-import { Footer } from '../../components/layout/footer/Footer'
-import { Header } from '../../components/layout/header/Header'
-import { config } from '../../lib/config'
-import type { Config } from '../../types/config.type'
+import { Head } from '@/components/head/Head'
+import { Footer } from '@/components/layout/footer/Footer'
+import { Header } from '@/components/layout/header/Header'
+import { config } from '@/lib/config'
+import type { Config } from '@/types/config.type'
 import ArticleIcon from '@mui/icons-material/Article'
 import GavelIcon from '@mui/icons-material/Gavel'
 import HelpIcon from '@mui/icons-material/Help'
 import MoneyIcon from '@mui/icons-material/Money'
 import React, { useCallback, useEffect } from 'react'
-import { useAccordion } from '../../hook/useAccordion'
-import type { AccordionState } from '../../hook/useAccordion'
-import { Accordion } from '../../components/accordion/Accordion'
-import Phases from '../../data/phase/index'
+import { useAccordion } from '@/hook/useAccordion'
+import type { AccordionState } from '@/hook/useAccordion'
+import { Accordion } from '@/components/accordion/Accordion'
+import Phases from '@/data/phase/index'
 import type {
   PhaseDTO,
   PhaseStatus,
   TaskDTO,
   TaskContent,
   TaskContentId
-} from '../../data/phase/dto.type'
-import { useRouter } from 'next/router'
-import moment from 'moment'
+} from '@/data/phase/dto.type'
 
 export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls' | 'phases'>
 

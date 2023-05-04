@@ -1,5 +1,5 @@
-import type { Druid, DruidDescriptor, PodiumDruid } from '../../entity/druid'
-import type { QValidatorQuery, SubmissionTaskState } from '../generated/query/types'
+import type { Druid, DruidDescriptor, PodiumDruid } from '@/entity/druid'
+import type { QValidatorQuery, SubmissionTaskState } from '@/graphql/generated/query/types'
 import type { PodiumValidatorEdgeDTO, ValidatorEdgeDTO } from './dto.types'
 
 export const mapValidatorEdgeDTOToDruid = (dto: ValidatorEdgeDTO): DruidDescriptor => ({

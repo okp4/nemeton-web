@@ -2,7 +2,7 @@ import ClearIcon from '@mui/icons-material/Clear'
 import LoupeIcon from '@mui/icons-material/Loupe'
 import moment from 'moment'
 import Link from 'next/link'
-import type { Duration, TaskDTO } from '../../../data/phase/dto.type'
+import type { Duration, TaskDTO } from '@/data/phase/dto.type'
 
 type DropDownProps = Readonly<{
   refObj: React.RefObject<HTMLDivElement> | null

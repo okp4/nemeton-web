@@ -1,12 +1,12 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '../components/head/Head'
-import { Header } from '../components/layout/header/Header'
-import { Footer } from '../components/layout/footer/Footer'
-import type { Config } from '../types/config.type'
-import { config } from '../lib/config'
-import { PhaseCard } from '../components/card/phase/PhaseCard'
-import Phases from '../data/phase/index'
-import type { PhaseDTO } from '../data/phase/dto.type'
+import { Head } from '@/components/head/Head'
+import { Header } from '@/components/layout/header/Header'
+import { Footer } from '@/components/layout/footer/Footer'
+import type { Config } from '@/types/config.type'
+import { config } from '@/lib/config'
+import { PhaseCard } from '@/components/card/phase/PhaseCard'
+import Phases from '@/data/phase/index'
+import type { PhaseDTO } from '@/data/phase/dto.type'
 
 export type HomeProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls' | 'phases'>
 

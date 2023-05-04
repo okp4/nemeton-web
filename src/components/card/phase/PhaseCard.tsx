@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useMediaType } from '../../../hook/useMediaType'
-import type { TaskDTO, Duration, PhaseStatus } from '../../../data/phase/dto.type'
-import { PhaseDropDown } from '../../dropDown/phase/PhaseDropDown'
+import { useMediaType } from '@/hook/useMediaType'
+import type { TaskDTO, Duration, PhaseStatus } from '@/data/phase/dto.type'
+import { PhaseDropDown } from '@/components/dropDown/phase/PhaseDropDown'
 
 export type PhaseCardProps = Readonly<{
   number: number
