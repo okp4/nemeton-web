@@ -1,9 +1,9 @@
-import { config } from '../../lib/config'
-import { Head } from '../../components/head/Head'
-import { Header } from '../../components/layout/header/Header'
-import { Footer } from '../../components/layout/footer/Footer'
+import { config } from '@/lib/config'
+import { Head } from '@/components/head/Head'
+import { Header } from '@/components/layout/header/Header'
+import { Footer } from '@/components/layout/footer/Footer'
 import type { GetServerSideProps, NextPage } from 'next'
-import type { Config } from '../../types/config.type'
+import type { Config } from '@/types/config.type'
 
 export type MaterialsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 

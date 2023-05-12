@@ -1,7 +1,7 @@
 import getConfig from 'next/config'
 import HtmlHead from 'next/head'
 import { useRouter } from 'next/router'
-import { getLastSegmentInPath } from '../../lib/path'
+import { getLastSegmentInPath } from '@/lib/path'
 
 export type HeadProps = {
   title: string

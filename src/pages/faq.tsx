@@ -1,11 +1,11 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '../components/head/Head'
-import { Footer } from '../components/layout/footer/Footer'
-import { Header } from '../components/layout/header/Header'
-import { config } from '../lib/config'
-import type { Config } from '../types/config.type'
-import { Accordion } from '../components/accordion/Accordion'
-import { useAccordion } from '../hook/useAccordion'
+import { Head } from '@/components/head/Head'
+import { Footer } from '@/components/layout/footer/Footer'
+import { Header } from '@/components/layout/header/Header'
+import { config } from '@/lib/config'
+import type { Config } from '@/types/config.type'
+import { Accordion } from '@/components/accordion/Accordion'
+import { useAccordion } from '@/hook/useAccordion'
 
 type FAQ = {
   part: string

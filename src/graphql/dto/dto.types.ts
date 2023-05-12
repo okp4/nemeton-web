@@ -1,4 +1,4 @@
-import type { Tasks, Validator, ValidatorEdge } from '../generated/query/types'
+import type { Tasks, Validator, ValidatorEdge } from '@/graphql/generated/query/types'
 
 export type ValidatorDTO = Pick<
   Validator,

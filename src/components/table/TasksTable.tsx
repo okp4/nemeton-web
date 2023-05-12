@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React, { useCallback, useMemo } from 'react'
-import type { Task } from '../../entity/phase'
-import { useMediaType } from '../../hook/useMediaType'
-import { Tag } from '../tag/Tag'
+import type { Task } from '@/entity/phase'
+import { useMediaType } from '@/hook/useMediaType'
+import { Tag } from '@/components/tag/Tag'
 import type { Column } from './table.type'
 
 export type TasksTableProps = Readonly<{

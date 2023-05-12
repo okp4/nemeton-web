@@ -1,31 +1,31 @@
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import type { BaseCardProps } from '../../components/card/base/BaseCard'
-import { BaseCard } from '../../components/card/base/BaseCard'
-import { Head } from '../../components/head/Head'
-import { Footer } from '../../components/layout/footer/Footer'
-import { Header } from '../../components/layout/header/Header'
-import type { PodiumStep } from '../../components/podium/Podium'
-import { Podium } from '../../components/podium/Podium'
-import { config } from '../../lib/config'
-import type { Config } from '../../types/config.type'
-import { LeaderboardTable } from '../../components/table/LeaderboardTable'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import type { DruidDescriptor, PodiumDruid } from '../../entity/druid'
-import type { PhaseDescriptor } from '../../entity/phase'
+import type { BaseCardProps } from '@/components/card/base/BaseCard'
+import { BaseCard } from '@/components/card/base/BaseCard'
+import { Head } from '@/components/head/Head'
+import { Footer } from '@/components/layout/footer/Footer'
+import { Header } from '@/components/layout/header/Header'
+import type { PodiumStep } from '@/components/podium/Podium'
+import { Podium } from '@/components/podium/Podium'
+import { config } from '@/lib/config'
+import type { Config } from '@/types/config.type'
+import { LeaderboardTable } from '@/components/table/LeaderboardTable'
+import type { DruidDescriptor, PodiumDruid } from '@/entity/druid'
+import type { PhaseDescriptor } from '@/entity/phase'
 import {
   useQBoardPodiumQuery,
   useQBoardQuery,
   useQPhasesQuery,
   useQValidatorCountQuery
-} from '../../graphql/generated/query/types'
-import { Snackbar } from '../../components/snackbar/Snackbar'
-import { Countdown } from '../../components/countdown/Countdown'
+} from '@/graphql/generated/query/types'
+import { Snackbar } from '@/components/snackbar/Snackbar'
+import { Countdown } from '@/components/countdown/Countdown'
 import {
   mapValidatorEdgeDTOToDruid,
   mapPodiumValidatorEdgeDTOToPodiumDruid
-} from '../../graphql/dto/mapper'
-import client from '../../graphql/apolloClient'
+} from '@/graphql/dto/mapper'
+import client from '@/graphql/apolloClient'
 
 export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 

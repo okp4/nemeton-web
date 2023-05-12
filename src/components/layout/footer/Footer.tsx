@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
-import { useMediaType } from '../../../hook/useMediaType'
-import type { Config } from '../../../types/config.type'
+import { useMediaType } from '@/hook/useMediaType'
+import type { Config } from '@/types/config.type'
 import Link from 'next/link'
-import type { Route } from '../../../routes'
-import { footerRoutes } from '../../../routes'
+import type { Route } from '@/routes'
+import { footerRoutes } from '@/routes'
 import classNames from 'classnames'
 
 type SocialMedia = {

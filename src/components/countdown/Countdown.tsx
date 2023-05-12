@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
-import type { CountdownStats } from '../../hook/useCountdown'
-import { useCountdown } from '../../hook/useCountdown'
+import type { CountdownStats } from '@/hook/useCountdown'
+import { useCountdown } from '@/hook/useCountdown'
 
 export type CountdownProps = {
   countdownEndDate: string

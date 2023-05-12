@@ -1,4 +1,4 @@
-import type { PhasesConfig } from '../../types/config.type'
+import type { PhasesConfig } from '@/types/config.type'
 import { beltaine } from './beltaine'
 import { imbolc } from './imbolc'
 import { sidh } from './sidh'

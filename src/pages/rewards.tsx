@@ -1,9 +1,9 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '../components/head/Head'
-import { Footer } from '../components/layout/footer/Footer'
-import { Header } from '../components/layout/header/Header'
-import { config } from '../lib/config'
-import type { Config } from '../types/config.type'
+import { Head } from '@/components/head/Head'
+import { Footer } from '@/components/layout/footer/Footer'
+import { Header } from '@/components/layout/header/Header'
+import { config } from '@/lib/config'
+import type { Config } from '@/types/config.type'
 
 export type RewardsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 

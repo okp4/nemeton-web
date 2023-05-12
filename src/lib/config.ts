@@ -1,4 +1,4 @@
-import type { Config } from '../types/config.type'
+import type { Config } from '@/types/config.type'
 
 export const config: Config = {
   title: process.env.APP_TITLE,

@@ -1,5 +1,5 @@
-import type { PhasesConfig } from '../../types/config.type'
-import { getPhaseStatus } from '../../utils'
+import type { PhasesConfig } from '@/types/config.type'
+import { getPhaseStatus } from '@/utils'
 import type { PhaseDTO } from './dto.type'
 
 export const imbolc = ({
