@@ -6,7 +6,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
   number: 5,
   phaseName: 'samhain',
   phaseDescription:
-    ' Samhain is no longer only for validators but for builders too and its main objective is the emergence of uses and applications of the OKP4 protocol.',
+    'Samhain is no longer only for validators but for builders too and its main objective is the emergence of uses and applications of the OKP4 protocol.',
   status: getPhaseStatus(startDate, endDate),
   phaseDuration: {
     from: startDate,

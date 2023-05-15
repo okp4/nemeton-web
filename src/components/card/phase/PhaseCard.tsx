@@ -44,22 +44,22 @@ export const PhaseCard = ({
     </div>
   )
 
-  const buttonChallenges = (
+  const validatorsChallengesButton = (
     <div className="okp4-nemeton-web-phase-card-content-button-container" onClick={toggleDropDown}>
       <span className="okp4-nemeton-web-phase-card-button right">Challenges & Rewards</span>
     </div>
   )
 
-  const linksChallenges = (
+  const buildersChallengesButton = (
     <>
-      <div className="okp4-nemeton-web-phase-card-content-link-container">
-        <Link className="okp4-nemeton-web-phase-card-link right" href="/validators/tasks#tasks">
+      <div className="okp4-nemeton-web-phase-card-content-button-container">
+        <Link className="okp4-nemeton-web-phase-card-button right" href="/validators/tasks#tasks">
           Challenges for Validators
         </Link>
       </div>
-      <div className="okp4-nemeton-web-phase-card-content-link-container">
+      <div className="okp4-nemeton-web-phase-card-content-button-container">
         <Link
-          className="okp4-nemeton-web-phase-card-link right"
+          className="okp4-nemeton-web-phase-card-button right"
           href="/builders/challenges#challenges"
         >
           Challenges for Builders
@@ -86,12 +86,16 @@ export const PhaseCard = ({
             </div>
             <p>{phaseDescription}</p>
             {!isMobileScreen &&
-              (status !== 'coming' && phaseName !== 'samhain' ? buttonChallenges : linksChallenges)}
+              (status !== 'coming' && phaseName !== 'samhain'
+                ? validatorsChallengesButton
+                : buildersChallengesButton)}
           </div>
         </div>
       </div>
       {isMobileScreen &&
-        (status !== 'coming' && phaseName !== 'samhain' ? buttonChallenges : linksChallenges)}
+        (status !== 'coming' && phaseName !== 'samhain'
+          ? validatorsChallengesButton
+          : buildersChallengesButton)}
       {isDropDownOpen && phaseDuration && (
         <PhaseDropDown
           onClose={toggleDropDown}
