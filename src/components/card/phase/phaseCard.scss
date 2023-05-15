@@ -13,6 +13,10 @@
       align-self: center;
     }
 
+    a {
+      text-decoration: unset;
+    }
+
     @media screen and (max-width: 900px) {
       margin-left: unset;
     }
@@ -27,6 +31,10 @@
       font-size: 42px;
       letter-spacing: 2px;
       padding: 0 28px;
+
+      @media screen and (min-width: 581px) and (max-width: 609px) {
+        font-size: 37px;
+      }
 
       &.right {
         margin: 20px 80px 0 0;
@@ -46,6 +54,16 @@
         margin-top: 26px;
         align-self: center;
         margin-left: unset;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .okp4-nemeton-web-phase-card-button {
+        margin-top: 0;
+      }
+
+      @media screen and (min-width: 581px) {
+        margin-top: 0;
       }
     }
   }
@@ -91,6 +109,12 @@
     &.lughnasad {
       @media screen and (max-width: 580px) {
         background-image: url('/image/lughnasad-mobile.webp');
+      }
+    }
+
+    &.samhain {
+      @media screen and (max-width: 580px) {
+        background-image: url('/image/samhain-mobile.webp');
       }
     }
 
@@ -154,6 +178,18 @@
         background-size: contain;
         @media screen and (min-width: 581px) and (max-width: 1920px) {
           background-image: url('/image/sidh-medium.webp');
+        }
+        @media screen and (max-width: 900px) {
+          background-size: cover;
+        }
+      }
+
+      &.samhain {
+        background-image: url('/image/samhain-large.webp');
+        background-position: right;
+        background-size: contain;
+        @media screen and (min-width: 581px) and (max-width: 1920px) {
+          background-image: url('/image/samhain-medium.webp');
         }
         @media screen and (max-width: 900px) {
           background-size: cover;

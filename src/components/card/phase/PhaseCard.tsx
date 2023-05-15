@@ -1,5 +1,6 @@
-import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import classNames from 'classnames'
 import { useMediaType } from '@/hook/useMediaType'
 import type { TaskDTO, Duration, PhaseStatus } from '@/data/phase/dto.type'
 import { PhaseDropDown } from '@/components/dropDown/phase/PhaseDropDown'
@@ -43,10 +44,28 @@ export const PhaseCard = ({
     </div>
   )
 
-  const buttonChallenges = (
+  const validatorsChallengesButton = (
     <div className="okp4-nemeton-web-phase-card-content-button-container" onClick={toggleDropDown}>
       <span className="okp4-nemeton-web-phase-card-button right">Challenges & Rewards</span>
     </div>
+  )
+
+  const buildersChallengesButton = (
+    <>
+      <div className="okp4-nemeton-web-phase-card-content-button-container">
+        <Link className="okp4-nemeton-web-phase-card-button right" href="/validators/tasks#tasks">
+          Challenges for Validators
+        </Link>
+      </div>
+      <div className="okp4-nemeton-web-phase-card-content-button-container">
+        <Link
+          className="okp4-nemeton-web-phase-card-button right"
+          href="/builders/challenges#challenges"
+        >
+          Challenges for Builders
+        </Link>
+      </div>
+    </>
   )
 
   return (
@@ -66,11 +85,17 @@ export const PhaseCard = ({
               <h1>{phaseName}</h1>
             </div>
             <p>{phaseDescription}</p>
-            {!isMobileScreen && status !== 'coming' && buttonChallenges}
+            {!isMobileScreen &&
+              (status !== 'coming' && phaseName !== 'samhain'
+                ? validatorsChallengesButton
+                : buildersChallengesButton)}
           </div>
         </div>
       </div>
-      {isMobileScreen && status !== 'coming' && buttonChallenges}
+      {isMobileScreen &&
+        (status !== 'coming' && phaseName !== 'samhain'
+          ? validatorsChallengesButton
+          : buildersChallengesButton)}
       {isDropDownOpen && phaseDuration && (
         <PhaseDropDown
           onClose={toggleDropDown}

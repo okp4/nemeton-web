@@ -27,6 +27,10 @@ export type PhasesConfig = {
       gasConsumptionTypeformUrl: string
       logicModuleTypeformUrl: string
     }
+  },
+  samhain: {
+    startDate: string
+    endDate: string
   }
 }
 
