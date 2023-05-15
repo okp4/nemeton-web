@@ -21,6 +21,10 @@
       margin-left: unset;
     }
 
+    @media screen and (max-width: 580px) {
+      margin: 20px 26px 0;
+    }
+
     .okp4-nemeton-web-phase-card-button {
       max-width: 350px;
       border: 2px solid white;
@@ -30,14 +34,15 @@
       font-family: 'Six Caps', sans-serif;
       font-size: 42px;
       letter-spacing: 2px;
-      padding: 0 28px;
+      padding: 0 50px;
 
-      @media screen and (min-width: 581px) and (max-width: 609px) {
+      @media screen and (min-width: 581px) and (max-width: 655px) {
         font-size: 37px;
+        padding: 0 20px !important;
       }
 
       &.right {
-        margin: 20px 80px 0 0;
+        margin: 20px 50px 0 0;
         @media screen and (max-width: 900px) {
           margin-right: unset;
         }
@@ -51,15 +56,15 @@
         white-space: nowrap;
         max-width: unset;
         font-size: 38px;
-        margin-top: 26px;
-        align-self: center;
-        margin-left: unset;
+        text-align: center;
+        padding: 0 !important;
       }
     }
 
     &:nth-of-type(3) {
       .okp4-nemeton-web-phase-card-button {
         margin-top: 0;
+        padding: 0 73px 0 50px;
       }
 
       @media screen and (min-width: 581px) {
@@ -329,30 +334,34 @@
           }
         }
       }
-    }
 
-    .okp4-nemeton-web-phase-card-content-state {
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      padding: 20px 40px;
-      background: rgba(31, 64, 60, 0.8);
-      backdrop-filter: blur(2px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0px 20px;
-      font-family: 'Gotham bold', sans-serif;
-      text-transform: uppercase;
-      font-size: 20px;
-      line-height: 24px;
+      .okp4-nemeton-web-phase-card-content-state {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 40px;
+        background: rgba(31, 64, 60, 0.8);
+        border-right: 1px solid #827e7e;
+        border-top: 1px solid #827e7e;
+        backdrop-filter: blur(2px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px 20px;
+        font-family: 'Gotham bold', sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 24px;
 
-      &.samhain {
-        background: rgba(255, 139, 62, 0.6);
-      }
+        &.samhain {
+          background: rgba(255, 139, 62, 0.6);
+          border-right: 1px solid white;
+          border-top: 1px solid white;
+        }
 
-      @media screen and (max-width: 580px) {
-        padding: 12px 28px;
+        @media screen and (max-width: 580px) {
+          padding: 12px 28px;
+        }
       }
     }
   }
