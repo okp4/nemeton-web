@@ -1,4 +1,5 @@
 import type { GetServerSideProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { Head } from '@/components/head/Head'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
@@ -8,18 +9,23 @@ import { Accordion } from '@/components/accordion/Accordion'
 import { useAccordion } from '@/hook/useAccordion'
 
 type FAQ = {
-  part: string
+  part?: string
   question: JSX.Element
   answer: JSX.Element
 }
 
-type FAQUrls = {
+type VALIDATORSFAQUrls = {
   discordUrl: string
+}
+
+type BUILDERSFAQUrls = {
+  discordChannelUrl: string
+  discordTicketChannelUrl: string
 }
 
 export type FAQProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const faqs = (urls: FAQUrls): FAQ[] => [
+const validatorsFaqs = (urls: VALIDATORSFAQUrls): FAQ[] => [
   {
     part: 'General Concepts',
     question: (
@@ -296,12 +302,75 @@ const faqs = (urls: FAQUrls): FAQ[] => [
   }
 ]
 
+const buildersFaqs = (urls: BUILDERSFAQUrls): FAQ[] => [
+  {
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Who can participate in the Builders Program?</h3>
+      </div>
+    ),
+    answer: <p>Anyone can participate, we have no limits of participants.</p>
+  },
+  {
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How do I sign up for the Builders Program?</h3>
+      </div>
+    ),
+    answer: (
+      <p>
+        While you can contribute directly to the code & documentation in the Github repos, we advise
+        you to complete the [registration form] to help you define your potential contribution and
+        to onboard you into the Builders Program.
+      </p>
+    )
+  },
+  {
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>Can I get any help from the OKP4 core team?</h3>
+      </div>
+    ),
+    answer: (
+      <p>
+        You can ask help to your fellow builders on{' '}
+        <a href={urls.discordChannelUrl} rel="noreferrer" target="_blank">
+          the Discord dedicated channel
+        </a>{' '}
+        or{' '}
+        <a href={urls.discordTicketChannelUrl} rel="noreferrer" target="_blank">
+          Open a ticket
+        </a>{' '}
+        to specify your need to the team.
+      </p>
+    )
+  },
+  {
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How do I submit my contribution?</h3>
+      </div>
+    ),
+    answer: (
+      <p>
+        When the submission period comes, we&apos;ll open a form to send a detailed presentation &
+        links to your contribution. It can be docs, code, proof of concepts... If it seems cool,
+        you&apos;ll be nominated by the judges and be invited to discuss your contribution with the
+        team.
+      </p>
+    )
+  }
+]
+
 const Faq: NextPage<FAQProps> = props => {
   const { urls } = props
-  const { socialMediaUrls, docsUrls } = urls
-  const { discordUrl } = socialMediaUrls
-  const { whitepaperUrl, nodesUrl, faqUrl } = docsUrls
+  const {
+    socialMediaUrls: { discordUrl },
+    docsUrls: { whitepaperUrl, nodesUrl, faqUrl },
+    supportUrls: { discordChannelUrl, discordTicketChannelUrl }
+  } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
+  const router = useRouter()
 
   const handleClick = (index: number) => () => {
     activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
@@ -316,9 +385,12 @@ const Faq: NextPage<FAQProps> = props => {
           <h1>F.A.Q.</h1>
           <div>
             <p>
-              You have questions about the Nemeton Program, our incentivized testnet, and did not
-              find your answer here? Then we invite you to visit the following links; you may find
-              the answer to your question!
+              You have questions about the{' '}
+              {router.asPath.startsWith('/builders')
+                ? 'Builders Program'
+                : 'Nemeton Program, our incentivized testnet,'}{' '}
+              and did not find your answer here? Then we invite you to visit the following links;
+              you may find the answer to your question!
             </p>
             <ul>
               <li>
@@ -352,7 +424,10 @@ const Faq: NextPage<FAQProps> = props => {
             </p>
           </div>
           <div className="okp4-nemeton-web-page-accordions-wrapper">
-            {faqs({ discordUrl }).map(({ part, question, answer }, index, array) => {
+            {(router.asPath.startsWith('/builders')
+              ? buildersFaqs({ discordChannelUrl, discordTicketChannelUrl })
+              : validatorsFaqs({ discordUrl })
+            ).map(({ part, question, answer }, index, array) => {
               const previous = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
               const mustDisplayPart = !previous || previous.part !== part
