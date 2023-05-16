@@ -27,8 +27,8 @@ export const PhaseCard = ({
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const toggleDropDown = useCallback(() => {
-    setIsDropDownOpen(!isDropDownOpen)
-  }, [isDropDownOpen])
+    status !== 'closed' && setIsDropDownOpen(!isDropDownOpen)
+  }, [isDropDownOpen, status])
 
   useEffect(() => {
     if (isDropDownOpen) {
@@ -96,7 +96,7 @@ export const PhaseCard = ({
             </div>
           </div>
           <div className={classNames('okp4-nemeton-web-phase-card-content-state', phaseName)}>
-            {phaseName === 'samhain' ? 'In progress' : 'Done'}
+            {status === 'closed' ? 'Done' : 'In progress'}
           </div>
         </div>
       </div>
