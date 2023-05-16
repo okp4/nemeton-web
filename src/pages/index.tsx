@@ -19,7 +19,7 @@ const Home: NextPage<HomeProps> = props => {
       <main>
         <Header />
         <div className="okp4-nemeton-web-home-main" id="home">
-          {Object.values(Phases(phases)).map(
+          {Object.values(Phases(phases)).reverse().map(
             ({ tasks, phaseDescription, phaseName, status, number, phaseDuration }: PhaseDTO) => (
               <div key={number}>
                 <PhaseCard
