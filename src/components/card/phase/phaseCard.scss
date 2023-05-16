@@ -8,6 +8,10 @@
     gap: 10px;
     margin: 20px 0 0 80px;
 
+    &.closed {
+      pointer-events: none;
+    }
+
     > p {
       font-family: 'Gotham light', sans-serif;
       align-self: center;

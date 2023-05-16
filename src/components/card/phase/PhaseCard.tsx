@@ -45,19 +45,22 @@ export const PhaseCard = ({
   )
 
   const validatorsChallengesButton = (
-    <div className="okp4-nemeton-web-phase-card-content-button-container" onClick={toggleDropDown}>
+    <div
+      className={classNames('okp4-nemeton-web-phase-card-content-button-container', status)}
+      onClick={toggleDropDown}
+    >
       <span className="okp4-nemeton-web-phase-card-button right">Challenges & Rewards</span>
     </div>
   )
 
   const buildersChallengesButton = (
     <>
-      <div className="okp4-nemeton-web-phase-card-content-button-container">
+      <div className={classNames('okp4-nemeton-web-phase-card-content-button-container', status)}>
         <Link className="okp4-nemeton-web-phase-card-button right" href="/validators/tasks#tasks">
           Challenges for Validators
         </Link>
       </div>
-      <div className="okp4-nemeton-web-phase-card-content-button-container">
+      <div className={classNames('okp4-nemeton-web-phase-card-content-button-container', status)}>
         <Link
           className="okp4-nemeton-web-phase-card-button right"
           href="/builders/challenges#challenges"
