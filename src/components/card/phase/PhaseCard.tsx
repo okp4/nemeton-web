@@ -71,6 +71,12 @@ export const PhaseCard = ({
     </>
   )
 
+  const phaseCardState = (
+    <div className={classNames('okp4-nemeton-web-phase-card-content-state', phaseName)}>
+      {status === 'closed' ? 'Done' : 'In progress'}
+    </div>
+  )
+
   return (
     <div className="okp4-nemeton-web-phase-card-main">
       <div className={classNames('okp4-nemeton-web-phase-card-container', phaseName)}>
@@ -95,11 +101,10 @@ export const PhaseCard = ({
                   : buildersChallengesButton)}
             </div>
           </div>
-          <div className={classNames('okp4-nemeton-web-phase-card-content-state', phaseName)}>
-            {status === 'closed' ? 'Done' : 'In progress'}
-          </div>
+          {!isMobileScreen && phaseCardState}
         </div>
       </div>
+      {isMobileScreen && phaseCardState}
       {isMobileScreen &&
         (status !== 'coming' && phaseName !== 'samhain'
           ? validatorsChallengesButton

@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-width: 580px) {
+    position: relative;
+  }
+
   .okp4-nemeton-web-phase-card-content-button-container {
     display: flex;
     flex-direction: column;
@@ -10,6 +14,7 @@
 
     &.closed {
       pointer-events: none;
+      opacity: 0.4;
     }
 
     > p {
@@ -95,6 +100,7 @@
       background-repeat: no-repeat;
       background-position: center top 5%;
       background-size: contain;
+      opacity: 0.4;
     }
 
     &.imbolc {
@@ -124,6 +130,7 @@
     &.samhain {
       @media screen and (max-width: 580px) {
         background-image: url('/image/samhain-mobile.webp');
+        opacity: 1;
       }
     }
 
@@ -338,35 +345,37 @@
           }
         }
       }
+    }
+  }
 
-      .okp4-nemeton-web-phase-card-content-state {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 20px 40px;
-        background: rgba(31, 64, 60, 0.8);
-        border-right: 1px solid #827e7e;
-        border-top: 1px solid #827e7e;
-        backdrop-filter: blur(2px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0px 20px;
-        font-family: 'Gotham bold', sans-serif;
-        text-transform: uppercase;
-        font-size: 20px;
-        line-height: 24px;
+  .okp4-nemeton-web-phase-card-content-state {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 40px;
+    background: rgba(31, 64, 60, 0.8);
+    border-right: 1px solid #827e7e;
+    border-top: 1px solid #827e7e;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 20px;
+    font-family: 'Gotham bold', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 24px;
 
-        &.samhain {
-          background: rgba(255, 139, 62, 0.6);
-          border-right: 1px solid white;
-          border-top: 1px solid white;
-        }
+    &.samhain {
+      background: rgba(255, 139, 62, 0.6);
+      border-right: 1px solid white;
+      border-top: 1px solid white;
+    }
 
-        @media screen and (max-width: 580px) {
-          padding: 12px 28px;
-        }
-      }
+    @media screen and (max-width: 580px) {
+      padding: 12px 28px;
+      top: 50px;
+      right: 26px;
     }
   }
 }
