@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Head } from '@/components/head/Head'
 import { Footer } from '@/components/layout/footer/Footer'
@@ -10,11 +9,8 @@ import { config } from '@/lib/config'
 export type TermsProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
 const privacyUrl = '/privacy#privacy-cookie-policy'
-const buildersProgramUrl = '/builders'
 
 const Terms: NextPage<TermsProps> = props => {
-  const router = useRouter()
-  const isBuildersSection = router.asPath.startsWith(buildersProgramUrl)
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
@@ -31,68 +27,66 @@ const Terms: NextPage<TermsProps> = props => {
         <div className="okp4-nemeton-web-page-content-container" id="terms-conditions">
           <h1>Terms & conditions</h1>
 
-          {!isBuildersSection && (
-            <div className="okp4-nemeton-web-page-terms-update">
-              <div className="okp4-nemeton-web-page-terms-update-title" id="update-jan-11-2023">
-                <h2>Update</h2>
-                <h3>Jan 11th 2023</h3>
-              </div>
-              <p>
-                In order to maintain the integrity and efficiency of the Nemeton program, OKP4 has
-                implemented the following terms and conditions for validator nodes:
-              </p>
-              <p>
-                If a validator node fails to validate a block for a consecutive period of{' '}
-                <span className="okp4-nemeton-web-bold-text">
-                  100,000 blocks, OKP4 reserves the right to terminate the participant&apos;s
-                  participation
-                </span>{' '}
-                in the Nemeton program and remove them from the leaderboard. This is to ensure that
-                all validator nodes are actively contributing to the network and that the program is
-                operating in an optimal manner.
-              </p>
-              <p>
-                If OKP4 decides to terminate a participant&apos;s participation, the participant
-                will be notified via{' '}
-                <a href={discordUrl} rel="noreferrer" target="_blank">
-                  Discord
-                </a>{' '}
-                (and other relevant channels, if applicable) and will be given a 72-hour grace
-                period to validate at least one block using their validator node. This grace period
-                is intended to provide the participant with an opportunity to address any issues
-                that may have arisen with their node and to confirm their continued participation in
-                the program.
-              </p>
-              <p>
-                If the participant fails to validate a block within the 72-hour grace period, their
-                participation in the program will be terminated, and they will forfeit any points
-                earned. The participant may still apply to rejoin the program in the future,
-                however, any points earned will not be restored.
-              </p>
-              <p>
-                It is important to note that this policy is designed to allow willing participants
-                to continue their participation and to provide an opportunity for willing candidates
-                to join.
-              </p>
+          <div className="okp4-nemeton-web-page-terms-update">
+            <div className="okp4-nemeton-web-page-terms-update-title" id="update-jan-11-2023">
+              <h2>Update</h2>
+              <h3>Jan 11th 2023</h3>
             </div>
-          )}
+            <p>
+              In order to maintain the integrity and efficiency of the Nemeton program, OKP4 has
+              implemented the following terms and conditions for validator nodes:
+            </p>
+            <p>
+              If a validator node fails to validate a block for a consecutive period of{' '}
+              <span className="okp4-nemeton-web-bold-text">
+                100,000 blocks, OKP4 reserves the right to terminate the participant&apos;s
+                participation
+              </span>{' '}
+              in the Nemeton program and remove them from the leaderboard. This is to ensure that
+              all validator nodes are actively contributing to the network and that the program is
+              operating in an optimal manner.
+            </p>
+            <p>
+              If OKP4 decides to terminate a participant&apos;s participation, the participant will
+              be notified via{' '}
+              <a href={discordUrl} rel="noreferrer" target="_blank">
+                Discord
+              </a>{' '}
+              (and other relevant channels, if applicable) and will be given a 72-hour grace period
+              to validate at least one block using their validator node. This grace period is
+              intended to provide the participant with an opportunity to address any issues that may
+              have arisen with their node and to confirm their continued participation in the
+              program.
+            </p>
+            <p>
+              If the participant fails to validate a block within the 72-hour grace period, their
+              participation in the program will be terminated, and they will forfeit any points
+              earned. The participant may still apply to rejoin the program in the future, however,
+              any points earned will not be restored.
+            </p>
+            <p>
+              It is important to note that this policy is designed to allow willing participants to
+              continue their participation and to provide an opportunity for willing candidates to
+              join.
+            </p>
+          </div>
 
           <p>
-            These {!isBuildersSection ? 'Nemeton Testnet' : 'Builders Program'} participation Terms
-            & Conditions (the &quot;Terms&quot;) apply to your access to and use of the websites,
-            platform, software, technologies, features and other online products and services
-            (collectively, the &quot;OKP4 Services&quot; or &quot;Services&quot;) provided or made
-            available by OKP4 SAS, a French company registered under number 842765356 and whose
-            registered office is located at 1 passage de l&apos;Europe - 31400 Toulouse - France
-            (the &quot;Company&quot;, &quot;OKP4&quot;, or &quot;we&quot;) in connection with the
-            {isBuildersSection && ' Builders Program (the "Program") limited to the Nemeton'}{' '}
-            Testnet (&quot;Testnet&quot;, or &quot;Nemeton&quot;).
+            These Nemeton Testnet participation Terms & Conditions (the &quot;Terms&quot;) apply to
+            your access to and use of the websites, platform, software, technologies, features and
+            other online products and services (collectively, the &quot;OKP4 Services&quot; or
+            &quot;Services&quot;) provided or made available by OKP4 SAS, a French company
+            registered under number 842765356 and whose registered office is located at 1 passage de
+            l&apos;Europe - 31400 Toulouse - France (the &quot;Company&quot;, &quot;OKP4&quot;, or
+            &quot;we&quot;) in connection with the Testnet (&quot;Testnet&quot;, or
+            &quot;Nemeton&quot;).
           </p>
 
           <p>
-            {!isBuildersSection
-              ? 'The Nemeton program is designed to improve the operational experience, security, and design of the OKP4 mainnet protocol as well as to expose potential issues and improve the experience of participants prior to the launch of the OKP4 mainnet and OKP4 DAO operation.'
-              : 'In addition to the Nemeton Program which was open for 150 validators, the Builders Program is open for new participants to develop open-source software that can integrate with the existing OKP4 tech stack, or leverage the OKP4 tech stack to create projets and applications that may be used or improved when mainnet launches.'}
+            The Nemeton program is designed to improve the operational experience, security, and
+            design of the OKP4 mainnet protocol as well as to expose potential issues and improve
+            the experience of participants prior to the launch of the OKP4 mainnet and OKP4 DAO
+            operation.
           </p>
 
           <ol>
@@ -130,78 +124,68 @@ const Terms: NextPage<TermsProps> = props => {
               Nemeton.
             </p>
             <li>
-              <h2>Duration of the {!isBuildersSection ? 'Testnet' : 'Builders Program'}</h2>
+              <h2>Duration of the Testnet</h2>
             </li>
             <p>
-              {!isBuildersSection ? 'Nemeton' : 'The program'} will begin on the date prescribed by
-              OKP4 and will continue until terminated by OKP4 in its sole discretion (&quot;
-              {!isBuildersSection ? 'Testnet' : 'Builders Program'} Period&quot;). Notwithstanding
-              any other information provided by OKP4 regarding the Testnet (including on its
-              website, blog posts or through other communications - forum, Discord, Telegram or
-              other channels), OKP4 may modify, suspend or terminate, temporarily or permanently,
-              all or any part of the {!isBuildersSection ? 'Testnet' : 'Builders Program'}, at any
-              time and without notice, in its sole discretion (including prior to providing any
-              incentives or rewards).
+              Nemeton will begin on the date prescribed by OKP4 and will continue until terminated
+              by OKP4 in its sole discretion (&quot;Testnet Period&quot;). Notwithstanding any other
+              information provided by OKP4 regarding the Testnet (including on its website, blog
+              posts or through other communications - forum, Discord, Telegram or other channels),
+              OKP4 may modify, suspend or terminate, temporarily or permanently, all or any part of
+              the Testnet, at any time and without notice, in its sole discretion (including prior
+              to providing any incentives or rewards).
             </p>
             <li>
-              <h2>{!isBuildersSection ? 'Testnet' : 'Builders Program'} Eligibility</h2>
+              <h2>Testnet Eligibility</h2>
             </li>
             <p>
-              You may participate in the {!isBuildersSection ? 'Testnet' : 'Program'} only if: (a)
-              you are 18 years of age or older and capable of entering into a binding contract with
-              OKP4 ; (b) you are not subject to any sanctions administered or enforced by any
-              country or government or otherwise designated on a list of prohibited or restricted
-              parties (including, but not limited to, lists maintained by the United Nations
-              Security Council, the United States Government, the European Union or member states or
-              any other applicable governmental authority) or a citizen or organization of, or
-              resident in, a country or territory subject to national or international sanctions
-              (including, without limitation, Cuba, the Democratic People&apos;s Republic of Korea,
-              the Crimean, Donetsk and Luhansk regions, Iran or Syria) ; and (c) you are not barred
-              from participating under applicable law. In addition, to be eligible for incentives or
-              rewards in the Testnet, you (i) must be an individual or entity, and (ii) must not be
-              an employee, consultant, or affiliate of OKP4.
+              You may participate in the Testnet only if: (a) you are 18 years of age or older and
+              capable of entering into a binding contract with OKP4 ; (b) you are not subject to any
+              sanctions administered or enforced by any country or government or otherwise
+              designated on a list of prohibited or restricted parties (including, but not limited
+              to, lists maintained by the United Nations Security Council, the United States
+              Government, the European Union or member states or any other applicable governmental
+              authority) or a citizen or organization of, or resident in, a country or territory
+              subject to national or international sanctions (including, without limitation, Cuba,
+              the Democratic People&apos;s Republic of Korea, the Crimean, Donetsk and Luhansk
+              regions, Iran or Syria) ; and (c) you are not barred from participating under
+              applicable law. In addition, to be eligible for incentives or rewards in the Testnet,
+              you (i) must be an individual or entity, and (ii) must not be an employee, consultant,
+              or affiliate of OKP4.
             </p>
 
             <p>
-              Moreover,{' '}
-              {!isBuildersSection
-                ? `to participate in Nemeton, participants must demonstrate their ability to configure and deploy an OKP4 node to OKP4's satisfaction, in its sole discretion, and`
-                : 'to claim rewards from the Program, you'}{' '}
-              will be required to provide certain identifying information (e.g., name, place of
+              Moreover, to participate in Nemeton, participants must demonstrate their ability to
+              configure and deploy an OKP4 node to OKP4&apos;s satisfaction, in its sole discretion,
+              and will be required to provide certain identifying information (e.g., name, place of
               residence or domicile, date of birth, etc.) and related documentation, and to pass the
               sanctions and watch list check. If you fail to provide such identifying information,
               fail to pass the sanctions and watch list check, and/or fail to demonstrate compliance
               with the requirements hereof, your participation may be terminated, you forfeit any
-              incentive or reward
-              {!isBuildersSection &&
-                ', you are not eligible to participate in future Testnet challenges, '}
+              incentive or reward, you are not eligible to participate in future Testnet challenges,
               and you are subject to further action or prosecution.
             </p>
 
             <p>
-              {!isBuildersSection
-                ? 'From among those applicants who register for the Testnet with incentive and meet all eligibility requirements, OKP4 will select Testnet participants in its sole discretion, based on criteria determined by OKP4 (including, but not limited to, geographic distribution and applicant reputation). By applying or registering, there is no promise or guarantee that you will be able to participate in the Testnet'
-                : 'While the Program is open to all to see and contribute, the acknowledgment of any contribution is only judged by OKP4. The participation or contribution does not, in any form, guarantee a retribution, service, or reward from OKP4'}
-              .
+              From among those applicants who register for the Testnet with incentive and meet all
+              eligibility requirements, OKP4 will select Testnet participants in its sole
+              discretion, based on criteria determined by OKP4 (including, but not limited to,
+              geographic distribution and applicant reputation). By applying or registering, there
+              is no promise or guarantee that you will be able to participate in the Testnet.
             </p>
 
             <p>
-              Based on information provided by OKP4 regarding the{' '}
-              {!isBuildersSection ? 'Testnet' : 'Program'} (including on its website, in blog posts
-              or through other communications (such as forums, Telegram, Discord or other channels),
-              OKP4 may change or modify at any time the number of participants who may participate
-              in the {!isBuildersSection ? 'Testnet' : 'Program'} or the requirements of the{' '}
-              {!isBuildersSection ? 'Testnet' : 'Program'} and may terminate the participation of
-              any participant at any time.
+              Based on information provided by OKP4 regarding the Testnet (including on its website,
+              in blog posts or through other communications (such as forums, Telegram, Discord or
+              other channels), OKP4 may change or modify at any time the number of participants who
+              may participate in the Testnet or the requirements of the Testnet and may terminate
+              the participation of any participant at any time.
             </p>
-
-            {!isBuildersSection && (
-              <p>
-                The Testnet operates in several phases. Your selection or participation in the first
-                phase automatically qualifies you for the following phases. If a participant leaves
-                the Testnet, we reserve the right to invite a new participant.
-              </p>
-            )}
+            <p>
+              The Testnet operates in several phases. Your selection or participation in the first
+              phase automatically qualifies you for the following phases. If a participant leaves
+              the Testnet, we reserve the right to invite a new participant.
+            </p>
             <li>
               <h2>Third Party Services</h2>
             </li>
@@ -227,54 +211,43 @@ const Terms: NextPage<TermsProps> = props => {
               <h2>Rewards & Incentives</h2>
             </li>
             <p>
-              As part of your participation in the {!isBuildersSection ? 'Testnet' : 'Program'},
-              OKP4 may choose, at its sole discretion, to provide certain incentives or rewards to
-              eligible participants for completing certain activities, including{' '}
-              {!isBuildersSection
-                ? 'executing a validation node and meeting certain performance criteria'
-                : 'contribution to the code, custom developments, documentation improvement'}{' '}
-              or other requirements set by OKP4. More details are available on the{' '}
-              {!isBuildersSection ? 'Nemeton' : 'Builders'} program website. Other contributions to
-              the
-              {!isBuildersSection ? ' Testnet' : ' Program'} may also be rewarded by OKP4, at its
-              discretion. These rewards may include OKP4 mainnet tokens; however, (i) such OKP4
-              mainnet tokens will only be provided after the successful launch of the mainnet and
-              all tokens provided will be subject to {!isBuildersSection ? 'an 18-month' : 'a'}{' '}
-              linear vesting period, {isBuildersSection && 'at OKP4 discretion'} (ii) to comply with
-              laws and regulations in accordance to the United States and Canada, miners operating
-              as U.S. or Canadian parties will be asked to prove their status as an accredited
-              investor prior to receiving any rewards. Notwithstanding any other information
-              provided by OKP4 regarding the {!isBuildersSection ? 'Testnet' : 'Program'} (including
-              on its website, blog posts or through other communications (such as forums, Telegram,
-              Discord or other channels)), OKP4 may, at its sole discretion, change or modify the
-              amounts or types of rewards or incentives and/or suspend or terminate, temporarily or
-              permanently, all or any part of the incentives or rewards program at any time without
-              notice, and OKP4 may remove or reassign any rewards or incentives earned by a
-              participant or choose not to provide rewards to a participant.
+              As part of your participation in the Testnet, OKP4 may choose, at its sole discretion,
+              to provide certain incentives or rewards to eligible participants for completing
+              certain activities, including executing a validation node and meeting certain
+              performance criteria or other requirements set by OKP4. More details are available on
+              the Nemeton program website. Other contributions to the Testnet may also be rewarded
+              by OKP4, at its discretion. These rewards may include OKP4 mainnet tokens; however,
+              (i) such OKP4 mainnet tokens will only be provided after the successful launch of the
+              mainnet and all tokens provided will be subject to an 18-month linear vesting period,
+              (ii) to comply with laws and regulations in accordance to the United States and
+              Canada, miners operating as U.S. or Canadian parties will be asked to prove their
+              status as an accredited investor prior to receiving any rewards. Notwithstanding any
+              other information provided by OKP4 regarding the Testnet (including on its website,
+              blog posts or through other communications (such as forums, Telegram, Discord or other
+              channels)), OKP4 may, at its sole discretion, change or modify the amounts or types of
+              rewards or incentives and/or suspend or terminate, temporarily or permanently, all or
+              any part of the incentives or rewards program at any time without notice, and OKP4 may
+              remove or reassign any rewards or incentives earned by a participant or choose not to
+              provide rewards to a participant.
             </p>
 
             <p>
-              OKP4 reserves the right to block your access to{' '}
-              {!isBuildersSection ? 'Testnet' : 'Builders program'} if you violate any of the terms
-              and conditions of the Terms (as determined solely by OKP4) or if you fail to complete
-              the required information or provide accurate information; you will not be eligible to
-              receive rewards.
+              OKP4 reserves the right to block your access to Testnet if you violate any of the
+              terms and conditions of the Terms (as determined solely by OKP4) or if you fail to
+              complete the required information or provide accurate information; you will not be
+              eligible to receive rewards.
             </p>
 
             <p>
               OKP4 reserves the right to request information about, review and investigate all
-              {!isBuildersSection && ' Testnet'} activities and to disqualify participants if it
-              believes that a participant has engaged in abusive, fraudulent, bad faith activity or
-              activity that does not comply with{' '}
-              {!isBuildersSection ? 'Nemeton' : 'the Builders Program'} standards and requirements.
+              Testnet activities and to disqualify participants if it believes that a participant
+              has engaged in abusive, fraudulent, bad faith activity or activity that does not
+              comply with Nemeton standards and requirements.
             </p>
 
             <p>
-              You agree that any rewards or incentives received are for your{' '}
-              {!isBuildersSection
-                ? 'Testnet OKP4 testing services'
-                : 'Builders program contributions'}
-              .
+              You agree that any rewards or incentives received are for your Testnet OKP4 testing
+              services.
             </p>
             <li>
               <h2>Taxes</h2>
@@ -298,11 +271,10 @@ const Terms: NextPage<TermsProps> = props => {
               <h2>Security & Wallet</h2>
             </li>
             <p>
-              {!isBuildersSection
-                ? 'You are responsible for maintaining adequate security and control of all identifiers, passwords, indicia, personal identification numbers (PINs) or other codes that you use to access the Testnet as part of your systems'
-                : 'To contribute during the Builders program, you may interact with wallets, applications and systems that may be subject to hacks'}
-              . OKP4 assumes no responsibility for any losses resulting from a compromise of your
-              systems or wallet(s).
+              You are responsible for maintaining adequate security and control of all identifiers,
+              passwords, indicia, personal identification numbers (PINs) or other codes that you use
+              to access the Testnet as part of your systems. OKP4 assumes no responsibility for any
+              losses resulting from a compromise of your systems or wallet(s).
             </p>
 
             <p>
@@ -331,7 +303,7 @@ const Terms: NextPage<TermsProps> = props => {
               requirements.
             </p>
             <li>
-              <h2>Testnet tokens {!isBuildersSection && '& Testnet'}</h2>
+              <h2>Testnet tokens Testnet</h2>
             </li>
             <p>
               No monetary value. As part of your use of Nemeton, you may accumulate &quot;Testnet
@@ -339,43 +311,35 @@ const Terms: NextPage<TermsProps> = props => {
               converted into or accumulated as Mainnet Tokens or any other virtual token or asset.
               Testnet Tokens are virtual objects with no monetary value. Testnet Tokens are not
               currency or property of any kind and are not exchangeable, redeemable, or eligible for
-              any fiat or virtual currency or other thing of value.{' '}
-              {!isBuildersSection
-                ? 'Testnet Tokens are not transferable between users outside of the Testnet, and you'
-                : 'You'}{' '}
-              may not attempt to sell, trade or transfer Testnet Tokens outside of the Testnet, or
-              obtain any credit using Testnet Tokens. Any attempt to sell, trade or transfer Testnet
-              Tokens outside of the Testnet will be null and void.
+              any fiat or virtual currency or other thing of value. Testnet Tokens are not
+              transferable between users outside of the Testnet, and you may not attempt to sell,
+              trade or transfer Testnet Tokens outside of the Testnet, or obtain any credit using
+              Testnet Tokens. Any attempt to sell, trade or transfer Testnet Tokens outside of the
+              Testnet will be null and void.
             </p>
             <li>
               <h2>Modification</h2>
             </li>
             <p>
-              OKP4 may, in its sole discretion, decide to delete{' '}
-              {!isBuildersSection
-                ? ', erase, or otherwise withdraw the Testnet'
-                : 'or terminate the Builders program'}{' '}
-              at any time without notice, including, without limitation, changing the presence,
-              amounts, or any other terms and conditions applicable{' '}
-              {!isBuildersSection && 'to Testnet Tokens,'} without any liability to you or other{' '}
-              {!isBuildersSection ? 'users of the Testnet' : 'participants of the program'}. OKP4
-              does not guarantee that Testnet Tokens will continue to be offered for any specific
-              period and you cannot rely on the continued availability of any Testnet Token. If the
-              Testnet expires or terminates, you acknowledge and agree that your access to and use
-              of your Testnet Tokens will be terminated, and that all accumulated Testnet Tokens
-              will be deleted from the Testnet system. Testnet Tokens will not be converted to
-              future rewards offered by OKP4.
+              OKP4 may, in its sole discretion, decide to delete, erase, or otherwise withdraw the
+              Testnet at any time without notice, including, without limitation, changing the
+              presence, amounts, or any other terms and conditions applicable to Testnet Tokens,
+              without any liability to you or other users of the Testnet. OKP4 does not guarantee
+              that Testnet Tokens will continue to be offered for any specific period and you cannot
+              rely on the continued availability of any Testnet Token. If the Testnet expires or
+              terminates, you acknowledge and agree that your access to and use of your Testnet
+              Tokens will be terminated, and that all accumulated Testnet Tokens will be deleted
+              from the Testnet system. Testnet Tokens will not be converted to future rewards
+              offered by OKP4.
             </p>
             <li>
               <h2>Intellectual Property Rights & Feedback</h2>
             </li>
             <p>
-              By participating in our {!isBuildersSection ? 'Testnet' : 'program'}, you agree to
-              abide by the various licenses under which our resources are licensed. All right,
-              title, and interest in and to our
-              {!isBuildersSection ? ' Testnet' : ' program'}, including all modifications,
-              enhancements, and improvements thereto, and all proprietary rights therein, are
-              subject to the following open-source licenses:
+              By participating in our Testnet, you agree to abide by the various licenses under
+              which our resources are licensed. All right, title, and interest in and to our
+              Testnet, including all modifications, enhancements, and improvements thereto, and all
+              proprietary rights therein, are subject to the following open-source licenses:
             </p>
             <ul>
               <li>
@@ -437,8 +401,7 @@ const Terms: NextPage<TermsProps> = props => {
               <li>
                 <p>
                   Unless specifically requested by OKP4 as part of a security or similar challenge,
-                  disrupt or launch attacks against users of OKP4 Services
-                  {!isBuildersSection && ' or the Testnet'};
+                  disrupt or launch attacks against users of OKP4 Services or the Testnet;
                 </p>
               </li>
               <li>
@@ -484,20 +447,18 @@ const Terms: NextPage<TermsProps> = props => {
               practices in the relevant jurisdictions (including laws regarding the export of data
               or software to and from France or other relevant countries and all applicable privacy
               and data collection laws and regulations) in connection with your participation in
-              {!isBuildersSection ? ' Nemeton' : ' the Program'}. To the extent required by law, you
-              are solely responsible for obtaining or filing any regulatory approval, authorization,
-              registration, permit or other authorization and must comply with the requirements of
-              such authorization.
+              Nemeton. To the extent required by law, you are solely responsible for obtaining or
+              filing any regulatory approval, authorization, registration, permit or other
+              authorization and must comply with the requirements of such authorization.
             </p>
             <li>
               <h2>Warranty Disclaimer</h2>
             </li>
             <p>
-              OKP4 makes no representations or warranties of any kind with respect to{' '}
-              {!isBuildersSection ? 'our Testnet. The Testnet' : 'the Program. The Program'} is
-              provided &quot;as is&quot; with all faults and without warranty of any kind. Without
-              limiting the foregoing, OKP4 expressly disclaims any implied warranties of
-              merchantability, fitness for a particular purpose, value, quiet enjoyment, and
+              OKP4 makes no representations or warranties of any kind with respect to our Testnet.
+              The Testnet is provided &quot;as is&quot; with all faults and without warranty of any
+              kind. Without limiting the foregoing, OKP4 expressly disclaims any implied warranties
+              of merchantability, fitness for a particular purpose, value, quiet enjoyment, and
               non-infringement, as well as any warranties arising out of the ordinary course of
               business or usage of trade. OKP4 has made no promises or warranties regarding the
               delivery of any future features or functions. Any discussion of future features or
@@ -509,41 +470,39 @@ const Terms: NextPage<TermsProps> = props => {
 
             <p>
               You agree and acknowledge that there are risks associated with participating in
-              {!isBuildersSection
-                ? ' Nemeton, including, but not limited to, the risk of failure of hardware, software and internet connections, the risk of introduction of malware, loss of rewards and security risks. You agree and acknowledge that OKP4 will not be responsible for any loss, failure, interruption, error, distortion, or delay that you may experience while participating in the Testnet, however caused. '
-                : ' the Program and that '}
-              OKP4 will not be responsible for any loss and assumes no responsibility for and will
-              not be liable to you for your participation in{' '}
-              {!isBuildersSection ? 'Nemeton' : 'the Program'}.
+              Nemeton, including, but not limited to, the risk of failure of hardware, software and
+              internet connections, the risk of introduction of malware, loss of rewards and
+              security risks. You agree and acknowledge that OKP4 will not be responsible for any
+              loss, failure, interruption, error, distortion, or delay that you may experience while
+              participating in the Testnet, however caused. OKP4 will not be responsible for any
+              loss and assumes no responsibility for and will not be liable to you for your
+              participation in Nemeton.
             </p>
 
             <p>
-              OKP4 does not warrant that {!isBuildersSection ? 'Nemeton' : 'the Program'} will meet
-              your requirements or be available on an uninterrupted, secure, error-free, or
-              virus-free basis. OKP4 does not warrant the quality, accuracy, timeliness,
-              truthfulness, completeness or reliability of any information or materials offered in
-              connection with the {!isBuildersSection ? 'Testnet' : 'Program'}. Any rewards or
-              incentives you receive (including tokens) in connection with the{' '}
-              {!isBuildersSection ? 'Testnet' : 'Program'} may be worthless.
+              OKP4 does not warrant that Nemeton will meet your requirements or be available on an
+              uninterrupted, secure, error-free, or virus-free basis. OKP4 does not warrant the
+              quality, accuracy, timeliness, truthfulness, completeness or reliability of any
+              information or materials offered in connection with the Testnet. Any rewards or
+              incentives you receive (including tokens) in connection with the Testnet may be
+              worthless.
             </p>
 
             <p>You further understand that:</p>
             <ul>
               <li>
                 <p>
-                  Access to {!isBuildersSection ? 'Nemeton' : 'the Program'} may require the use of
-                  your personal computer and/or mobile devices, as well as communications with or
-                  use of data and storage on such devices. You are responsible for any Internet or
-                  cell phone connection charges you may incur in connection with your voluntary
-                  participation in {!isBuildersSection ? 'Testnet' : 'the Program'}.
+                  Access to Nemeton may require the use of your personal computer and/or mobile
+                  devices, as well as communications with or use of data and storage on such
+                  devices. You are responsible for any Internet or cell phone connection charges you
+                  may incur in connection with your voluntary participation in Testnet.
                 </p>
               </li>
               <li>
                 <p>
-                  Certain information, including your transaction records on the blockchain and code
-                  published on public repositories are all public information and may be viewed by
-                  anyone, including {!isBuildersSection ? 'Testnet' : 'the Program'} participants
-                  and non-participants.
+                  Certain information, including your transaction records on the blockchain, are all
+                  public information and may be viewed by anyone, including Testnet participants and
+                  non-participants.
                 </p>
               </li>
               <li>
@@ -561,15 +520,14 @@ const Terms: NextPage<TermsProps> = props => {
               To the maximum extent permitted by law, in no event will we or our affiliates,
               suppliers or licensors be liable to you or any third party for any indirect,
               incidental, special or consequential damages, or for any loss of use, loss of profits
-              or loss of data arising out of or in connection with these Terms or the{' '}
-              {!isBuildersSection ? 'Testnet program' : 'Program'}, however caused and regardless of
-              the form of action, whether in contract, tort, strict liability or otherwise, even if
-              we or our suppliers or licensors have been advised of the possibility of such damages.
-              To the maximum extent permitted by law, in no event shall our combined liability, or
-              that of our suppliers and licensors, for any claim arising out of or relating to these
-              Terms or the {!isBuildersSection ? 'Testnet' : 'Program'} exceed one hundred dollars
-              ($100). Some jurisdictions do not allow limitations of liability, so the foregoing
-              limitation may not apply to you.
+              or loss of data arising out of or in connection with these Terms or the Testnet
+              program, however caused and regardless of the form of action, whether in contract,
+              tort, strict liability or otherwise, even if we or our suppliers or licensors have
+              been advised of the possibility of such damages. To the maximum extent permitted by
+              law, in no event shall our combined liability, or that of our suppliers and licensors,
+              for any claim arising out of or relating to these Terms or the Testnet exceed one
+              hundred dollars ($100). Some jurisdictions do not allow limitations of liability, so
+              the foregoing limitation may not apply to you.
             </p>
 
             <p>
@@ -589,24 +547,23 @@ const Terms: NextPage<TermsProps> = props => {
               violation of these Terms; (iii) your violation, misappropriation or infringement of
               any rights of others (including intellectual property rights or privacy rights); or
               (iv) your conduct in connection with the OKP4 Services or your participation in the
-              {!isBuildersSection ? ' Testnet' : ' Program'}. You agree to promptly notify the OKP4
-              Parties of any third party claims, to cooperate with the OKP4 Parties in the defence
-              of such Claims, and to pay all fees, costs and expenses associated with the defence of
-              such Claims (including attorneys&apos; fees). You also agree that the OKP4 Parties
-              shall have control over the defence or settlement, in OKP4&apos;s sole discretion, of
-              any third party claims.
+              Testnet. You agree to promptly notify the OKP4 Parties of any third party claims, to
+              cooperate with the OKP4 Parties in the defence of such Claims, and to pay all fees,
+              costs and expenses associated with the defence of such Claims (including
+              attorneys&apos; fees). You also agree that the OKP4 Parties shall have control over
+              the defence or settlement, in OKP4&apos;s sole discretion, of any third party claims.
             </p>
             <li>
               <h2>Privacy</h2>
             </li>
             <p>
-              As part of the {!isBuildersSection ? ' Testnet' : ' Program'}, you may be entrusted
-              with so-called Confidential Information, which will be clearly identified and notified
-              as such. Accordingly, you may not reveal, publish, or otherwise disclose the
-              Confidential Information to any third party without OKP4&apos;s prior written consent,
-              and you must protect the Confidential Information from disclosure using the same
-              degree of care that you use to protect your own Confidential Information of the same
-              nature, but in no event using less than reasonable care.
+              As part of the Testnet, you may be entrusted with so-called Confidential Information,
+              which will be clearly identified and notified as such. Accordingly, you may not
+              reveal, publish, or otherwise disclose the Confidential Information to any third party
+              without OKP4&apos;s prior written consent, and you must protect the Confidential
+              Information from disclosure using the same degree of care that you use to protect your
+              own Confidential Information of the same nature, but in no event using less than
+              reasonable care.
             </p>
             <li>
               <h2>Applicable Law</h2>
@@ -630,9 +587,8 @@ const Terms: NextPage<TermsProps> = props => {
 
             <p>
               (a) Binding Arbitration of Disputes. We both agree that any dispute, claim, or
-              controversy arising out of your participation in the{' '}
-              {!isBuildersSection ? ' Testnet' : ' Builders Program'}, use of the OKP4 Services or
-              these Terms or the breach, termination, performance, interpretation, or validity
+              controversy arising out of your participation in the Testnet, use of the OKP4 Services
+              or these Terms or the breach, termination, performance, interpretation, or validity
               thereof (collectively, &apos;Disputes&apos;) shall be resolved solely by binding
               individual arbitration and not by any class, representative or consolidated action or
               proceeding. You and OKP4 agree that the Chambre Arbitrale Internationale de Paris,
@@ -752,9 +708,8 @@ const Terms: NextPage<TermsProps> = props => {
             </p>
 
             <p>
-              Contact Information. If you have any questions regarding these Terms
-              {isBuildersSection && ', the Builders Program'} or Nemeton, please contact{' '}
-              <a href={`mailto:${contact}`}>{contact}</a> or join us on our{' '}
+              Contact Information. If you have any questions regarding these Terms or Nemeton,
+              please contact <a href={`mailto:${contact}`}>{contact}</a> or join us on our{' '}
               <a href={discordUrl} rel="noreferrer" target="_blank">
                 OKP4 Discord server
               </a>
