@@ -62,7 +62,7 @@ export const PhaseCard = ({
       </div>
       <div className={classNames('okp4-nemeton-web-phase-card-content-button-container', status)}>
         <Link
-          className="okp4-nemeton-web-phase-card-button right"
+          className="okp4-nemeton-web-phase-card-button right disabled"
           href="/builders/challenges#challenges"
         >
           Challenges for Builders
