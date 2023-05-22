@@ -55,13 +55,10 @@ export type Config = {
       nodesUrl: string
       faqUrl: string
       logicModuleUrl: string
-      registrationFormUrl: string
     }
     supportUrls: {
       discordNemetonUrl: string
       discordTicketUrl: string
-      discordChannelUrl: string
-      discordTicketChannelUrl: string
     }
     mailAddresses: {
       contact: string

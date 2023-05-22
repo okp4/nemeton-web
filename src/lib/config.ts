@@ -21,13 +21,10 @@ export const config: Config = {
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
       faqUrl: process.env.OKP4_DOCS_FAQ_URL,
       logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
-      registrationFormUrl: process.env.OKP4_REGISTRATION_FORM_URL
     },
     supportUrls: {
       discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
-      discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL,
-      discordChannelUrl: process.env.OKP4_DISCORD_CHANNEL_URL,
-      discordTicketChannelUrl: process.env.OKP4_DISCORD_TICKET_CHANNEL_URL
+      discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL
     },
     mailAddresses: {
       contact: process.env.OKP4_MAIL_CONTACT_ADDRESS
