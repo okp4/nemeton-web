@@ -71,16 +71,12 @@ const Menu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
 
   const handleClick = useCallback(
     (menuItem: Route) => () => {
-      const isMenuItemSelected = menuItem.name === selectedMenu?.name
-      setSelectedMenu(menuItem.subMenu ? (isMenuItemSelected ? null : menuItem) : null)
+      setSelectedMenu(menuItem.subMenu ? menuItem : null)
     },
-    [selectedMenu]
+    []
   )
 
-  const isActiveMenu = useCallback(
-    (menuItem: Route) => (routerPath?.startsWith(menuItem.path) ?? '') || selectedMenu === menuItem,
-    [routerPath, selectedMenu]
-  )
+  const isActiveMenu = useCallback((menuItem: Route) => selectedMenu === menuItem, [selectedMenu])
 
   return (
     <React.Fragment>
