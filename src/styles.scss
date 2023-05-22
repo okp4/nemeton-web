@@ -77,6 +77,13 @@ main {
     }
   }
 
+  .challenges {
+    @media screen and (min-width: 1000px) and (max-width: 1440px) {
+      width: inherit !important;
+      padding: 10px 0 30px !important;
+    }
+  }
+
   .okp4-nemeton-web-page-content-container {
     max-width: 1600px;
     padding: 10px 115px 30px;
@@ -340,6 +347,116 @@ main {
 
     a {
       font-family: Gotham bold, sans-serif;
+    }
+  }
+
+  .okp4-nemeton-web-page-challenges-container {
+    @media screen and (min-width: 1000px) and (max-width: 1440px) {
+      position: relative;
+      background-image: url('/image/challenges-druid-teacher.webp');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-size: 100% 900px;
+      padding-bottom: 250px;
+    }
+
+    .okp4-nemeton-web-page-challenges-content {
+      padding: 0 83px;
+
+      @media screen and (max-width: 1000px) {
+        padding: 0;
+
+        h2,
+        p {
+          text-align: center;
+        }
+
+        h2 {
+          font-size: 61px;
+          margin: 60px 0 20px;
+        }
+      }
+
+      .okp4-nemeton-web-page-challenges-categorys-tabs {
+        display: flex;
+        list-style: none;
+        line-height: 24px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+
+        @media screen and (max-width: 715px) {
+          overflow: auto;
+          padding: 20px 20px 20px 10px;
+        }
+
+        .okp4-nemeton-web-page-challenges-category-tab {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+          padding: 18px 20px;
+          font-family: 'Gotham light', sans-serif;
+
+          @media screen and (max-width: 1000px) {
+            font-size: 16px !important;
+          }
+
+          &.active {
+            background: #d1c193;
+            border: 1px solid #d1c193;
+            box-shadow: 0 0 20px #d9b57d;
+            border-radius: 12px;
+            font-family: 'Gotham', sans-serif;
+            font-weight: 700;
+          }
+
+          &:first-child {
+            padding-left: 0;
+
+            &.active {
+              padding-left: 20px;
+            }
+          }
+
+          &:last-child {
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .okp4-nemeton-web-page-challenges-categorys-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 34px;
+        row-gap: 16px;
+        margin-top: 40px;
+
+        @media screen and (max-width: 1000px) {
+          grid-template-columns: auto;
+        }
+
+        @media screen and (max-width: 715px) {
+          padding-left: 5px;
+          margin-top: 20px;
+        }
+
+         p {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 12px;
+          height: 80px;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          font-family: 'Gotham', sans-serif;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
     }
   }
 }
