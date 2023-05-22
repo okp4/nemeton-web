@@ -7,25 +7,26 @@ import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
 import { Accordion } from '@/components/accordion/Accordion'
 import { useAccordion } from '@/hook/useAccordion'
+import { useMemo } from 'react'
 
-type FAQ = {
+type FaqContent = {
   part?: string
   question: JSX.Element
   answer: JSX.Element
 }
 
-type VALIDATORSFAQUrls = {
+type ValidatorsFaqUrls = {
   discordUrl: string
 }
 
-type BUILDERSFAQUrls = {
+type BuildersFaqUrls = {
   discordChannelUrl: string
   discordTicketChannelUrl: string
 }
 
-export type FAQProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+export type FaqProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
 
-const validatorsFaqs = (urls: VALIDATORSFAQUrls): FAQ[] => [
+const validatorsFaqContent = (urls: ValidatorsFaqUrls): FaqContent[] => [
   {
     part: 'General Concepts',
     question: (
@@ -302,7 +303,7 @@ const validatorsFaqs = (urls: VALIDATORSFAQUrls): FAQ[] => [
   }
 ]
 
-const buildersFaqs = (urls: BUILDERSFAQUrls): FAQ[] => [
+const buildersFaqContent = (urls: BuildersFaqUrls): FaqContent[] => [
   {
     question: (
       <div className="okp4-nemeton-web-tasks-accordion-title">
@@ -362,7 +363,7 @@ const buildersFaqs = (urls: BUILDERSFAQUrls): FAQ[] => [
   }
 ]
 
-const Faq: NextPage<FAQProps> = props => {
+const Faq: NextPage<FaqProps> = props => {
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
@@ -371,6 +372,15 @@ const Faq: NextPage<FAQProps> = props => {
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
   const router = useRouter()
+  const isBuilderPage = router.asPath.startsWith('/builders')
+
+  const faqContent = useMemo(
+    () =>
+      isBuilderPage
+        ? buildersFaqContent({ discordChannelUrl, discordTicketChannelUrl })
+        : validatorsFaqContent({ discordUrl }),
+    [discordChannelUrl, discordTicketChannelUrl, discordUrl, isBuilderPage]
+  )
 
   const handleClick = (index: number) => () => {
     activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
@@ -386,9 +396,7 @@ const Faq: NextPage<FAQProps> = props => {
           <div>
             <p>
               You have questions about the{' '}
-              {router.asPath.startsWith('/builders')
-                ? 'Builders Program'
-                : 'Nemeton Program, our incentivized testnet,'}{' '}
+              {isBuilderPage ? 'Builders Program' : 'Nemeton Program, our incentivized testnet,'}{' '}
               and did not find your answer here? Then we invite you to visit the following links;
               you may find the answer to your question!
             </p>
@@ -424,13 +432,10 @@ const Faq: NextPage<FAQProps> = props => {
             </p>
           </div>
           <div className="okp4-nemeton-web-page-accordions-wrapper">
-            {(router.asPath.startsWith('/builders')
-              ? buildersFaqs({ discordChannelUrl, discordTicketChannelUrl })
-              : validatorsFaqs({ discordUrl })
-            ).map(({ part, question, answer }, index, array) => {
+            {faqContent.map(({ part, question, answer }, index, array) => {
               const previous = index > 0 ? array[index - 1] : null
               const active = activeIndex === index
-              const mustDisplayPart = !previous || previous.part !== part
+              const mustDisplayPart = part && (!previous || previous.part !== part)
 
               return (
                 <div key={index}>
@@ -452,7 +457,7 @@ const Faq: NextPage<FAQProps> = props => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps<FAQProps> = async () => ({
+export const getServerSideProps: GetServerSideProps<FaqProps> = async () => ({
   props: {
     ...config
   }
