@@ -22,6 +22,7 @@ type ValidatorsFaqUrls = {
 type BuildersFaqUrls = {
   discordChannelUrl: string
   discordTicketChannelUrl: string
+  registrationFormUrl: string
 }
 
 export type FaqProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
@@ -321,8 +322,11 @@ const buildersFaqContent = (urls: BuildersFaqUrls): FaqContent[] => [
     answer: (
       <p>
         While you can contribute directly to the code & documentation in the Github repos, we advise
-        you to complete the [registration form] to help you define your potential contribution and
-        to onboard you into the Builders Program.
+        you to complete the{' '}
+        <a href={urls.registrationFormUrl} rel="noreferrer" target="_blank">
+          registration form
+        </a>{' '}
+        to help you define your potential contribution and to onboard you into the Builders Program.
       </p>
     )
   },
@@ -367,7 +371,7 @@ const Faq: NextPage<FaqProps> = props => {
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
-    docsUrls: { whitepaperUrl, nodesUrl, faqUrl },
+    docsUrls: { whitepaperUrl, nodesUrl, faqUrl, registrationFormUrl },
     supportUrls: { discordChannelUrl, discordTicketChannelUrl }
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
@@ -377,9 +381,9 @@ const Faq: NextPage<FaqProps> = props => {
   const faqContent = useMemo(
     () =>
       isBuilderPage
-        ? buildersFaqContent({ discordChannelUrl, discordTicketChannelUrl })
+        ? buildersFaqContent({ discordChannelUrl, discordTicketChannelUrl, registrationFormUrl })
         : validatorsFaqContent({ discordUrl }),
-    [discordChannelUrl, discordTicketChannelUrl, discordUrl, isBuilderPage]
+    [discordChannelUrl, discordTicketChannelUrl, discordUrl, isBuilderPage, registrationFormUrl]
   )
 
   const handleClick = (index: number) => () => {

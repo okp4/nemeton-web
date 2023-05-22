@@ -61,6 +61,7 @@ export type Config = {
       faqUrl: string
       logicModuleUrl: string
       technicalDocsUrl: string
+      registrationFormUrl: string
     }
     supportUrls: {
       discordNemetonUrl: string
