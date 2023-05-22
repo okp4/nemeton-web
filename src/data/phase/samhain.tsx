@@ -52,7 +52,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
       ],
       taskDuration: {
         from: '2023-05-24T12:00:00Z',
-        to: '2023-09-15T12:00:00Z'
+        to: '2023-10-31T23:59:59Z'
       },
       points: 500
     },
@@ -100,7 +100,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
       ],
       taskDuration: {
         from: '2023-05-24T12:00:00Z',
-        to: '2023-09-15T12:00:00Z'
+        to: '2023-10-31T23:59:59Z'
       },
       points: 1000
     },
@@ -113,9 +113,10 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           title: 'Description',
           contentDescription: (
             <p>
-              Publish a tweet including the @OKP4_Protocol tag using your validator Twitter account.
-              Feel free to share an original content! Be creative to reach out to the OKP4
-              community.
+              Publish a tweet including the{' '}
+              <span className="okp4-nemeton-web-bold-text">@OKP4_Protocol</span> tag using your
+              validator Twitter account. Feel free to share an original content! Be creative to
+              reach out to the OKP4 community.
             </p>
           )
         },
@@ -152,7 +153,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
       ],
       taskDuration: {
         from: '2023-05-24T12:00:00Z',
-        to: '2023-09-15T12:00:00Z'
+        to: '2023-10-31T23:59:59Z'
       },
       points: 3000
     },
@@ -188,7 +189,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
       ],
       taskDuration: {
         from: '2023-05-24T12:00:00Z',
-        to: '2023-09-15T12:00:00Z'
+        to: '2023-10-31T23:59:59Z'
       },
       points: 8000
     },
@@ -216,7 +217,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
       ],
       taskDuration: {
         from: '2023-05-24T12:00:00Z',
-        to: '2023-09-15T12:00:00Z'
+        to: '2023-10-31T23:59:59Z'
       },
       points: 8000
     }
