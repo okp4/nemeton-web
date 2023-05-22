@@ -18,30 +18,26 @@ type CategoryChallengesProps = {
 const CategoryChallenges: React.FC<CategoryChallengesProps> = ({
   challengeContent
 }): JSX.Element => {
-  const [activeTab, setActiveTab] = useState<number>(challengeContent[0].challengeId)
-  const [selectedCategory, setSelectedCategory] = useState<number>(0)
+  const [activeTab, setActiveTab] = useState<number>(0)
 
-  const handleTabClick = (challengeId: number, index: number) => () => {
-    setActiveTab(challengeId)
-    setSelectedCategory(index)
+  const handleTabClick = (index: number) => () => {
+    setActiveTab(index)
   }
 
   return (
     <div>
       <ul className="okp4-nemeton-web-page-challenges-categorys-tabs">
-        {challengeContent.map(({ challengeCategory, challengeId }, index) => (
+        {challengeContent.map(({ title: challengeCategory }, index) => (
           <CategoryTab
             challengeCategory={challengeCategory}
-            isActive={activeTab === challengeId}
-            key={challengeId}
-            onToggle={handleTabClick(challengeId, index)}
+            isActive={activeTab === index}
+            key={index}
+            onToggle={handleTabClick(index)}
           />
         ))}
       </ul>
       <div className="okp4-nemeton-web-page-challenges-categorys-content">
-        {challengeContent[selectedCategory].challenges.map(({ description }, index) => (
-          <div key={index}>{description}</div>
-        ))}
+        {challengeContent[activeTab].contentDescription}
       </div>
     </div>
   )
@@ -64,13 +60,15 @@ const Challenges: NextPage<ChallengesProps> = props => {
             <div className="okp4-nemeton-web-page-challenges-content">
               <h1>Challenges</h1>
               <div className="okp4-nemeton-web-page-divider" />
-              {challenges.map(({ challengePart, challengeDescription, challengeContent }) => (
-                <div key={challengePart}>
-                  <h2>{challengePart}</h2>
-                  {challengeDescription}
-                  <CategoryChallenges challengeContent={challengeContent} />
-                </div>
-              ))}
+              {challenges.map(
+                ({ group: challengePart, challengeDescription, challengeContent }) => (
+                  <div key={challengePart}>
+                    <h2>{challengePart}</h2>
+                    {challengeDescription}
+                    <CategoryChallenges challengeContent={challengeContent} />
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
