@@ -20,18 +20,13 @@ export type TaskDTO = Readonly<{
   points: number
 }>
 
-export type Challenges = Readonly<{
-  description: JSX.Element
-}>
-
 export type ChallengeContent = Readonly<{
-  challengeId: number
-  challengeCategory: string
-  challenges: Challenges[]
+  title: string
+  contentDescription: JSX.Element
 }>
 
 export type ChallengeDTO = Readonly<{
-  challengePart: string
+  group: string
   challengeDescription: JSX.Element
   challengeContent: ChallengeContent[]
 }>
