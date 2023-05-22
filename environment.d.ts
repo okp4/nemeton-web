@@ -14,7 +14,6 @@ declare namespace NodeJS {
     OKP4_DOCS_URL: string
     OKP4_DOCS_NODES_URL: string
     OKP4_DOCS_FAQ_URL: string
-    OKP4_TECHNICAL_DOCS_URL: string
     OKP4_REGISTRATION_FORM_URL: string
     OKP4_DISCORD_NEMETON_URL: string
     OKP4_DISCORD_TICKET_URL: string
@@ -27,9 +26,6 @@ declare namespace NodeJS {
     OKP4_ARBITRAGE_URL: string
     OKP4_ARBITRAGE_RULES_URL: string
     OKP4_COOKIE_POLICY_URL: string
-    OKP4_GITHUB_OKP4D_URL: string
-    OKP4_GITHUB_CONTRACTS_URL: string
-    OKP4_GITHUB_AWESOME_URL: string
     GRAPHQL_URI: string
     OKP4_TASKS_SIDH_5_TYPEFORM_URL: string
     OKP4_TASKS_IMBOLC_1_TYPEFORM_URL: string

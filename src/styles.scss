@@ -297,65 +297,6 @@ main {
     }
   }
 
-  .okp4-nemeton-web-page-materials-container {
-    padding: 0 83px;
-
-    @media screen and (max-width: 1000px) {
-      padding: 0;
-
-      p {
-        text-align: center;
-      }
-    }
-
-    .okp4-nemeton-web-page-materials-links-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 34px;
-      row-gap: 34px;
-      margin: 90px 0;
-
-      @media screen and (max-width: 1000px) {
-        grid-template-columns: 1fr 1fr;
-        margin: 40px 0;
-        row-gap: 16px;
-        column-gap: 16px;
-      }
-
-      @media screen and (max-width: 580px) {
-        grid-template-columns: auto;
-      }
-
-      .okp4-nemeton-web-page-materials-link {
-        height: 64px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        font-size: 16px;
-        line-height: 24px;
-        text-decoration: none;
-
-        .okp4-nemeton-web-page-materials-link-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 100%;
-          padding-left: 22px;
-          padding-right: 26px;
-
-          .okp4-nemeton-web-page-materials-link-icon {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-          }
-        }
-      }
-    }
-
-    a {
-      font-family: Gotham bold, sans-serif;
-    }
-  }
-
   .okp4-nemeton-web-page-challenges-container {
     @media screen and (min-width: 1000px) and (max-width: 1440px) {
       position: relative;
