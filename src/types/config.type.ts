@@ -54,7 +54,6 @@ export type Config = {
       whitepaperUrl: string
       nodesUrl: string
       faqUrl: string
-      logicModuleUrl: string
     }
     supportUrls: {
       discordNemetonUrl: string

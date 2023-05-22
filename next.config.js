@@ -21,34 +21,6 @@ module.exports = {
       }
     ]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/validators/rewards',
-        destination: '/rewards'
-      },
-      {
-        source: '/builders/rewards',
-        destination: '/rewards'
-      },
-      {
-        source: '/validators/faq',
-        destination: '/faq'
-      },
-      {
-        source: '/builders/faq',
-        destination: '/faq'
-      },
-      {
-        source: '/validators/terms',
-        destination: '/terms'
-      },
-      {
-        source: '/builders/terms',
-        destination: '/terms'
-      }
-    ]
-  },
   webpack(config) {
     config.experiments = { ...config.experiments, ...{ topLevelAwait: true } }
     config.module.rules[2].oneOf?.forEach(one => {

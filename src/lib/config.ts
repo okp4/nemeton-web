@@ -19,8 +19,7 @@ export const config: Config = {
     docsUrls: {
       whitepaperUrl: process.env.OKP4_DOCS_URL,
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
-      faqUrl: process.env.OKP4_DOCS_FAQ_URL,
-      logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
+      faqUrl: process.env.OKP4_DOCS_FAQ_URL
     },
     supportUrls: {
       discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
