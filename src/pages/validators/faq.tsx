@@ -357,7 +357,7 @@ const Faq: NextPage<FaqProps> = props => {
               ({ part, question, answer }, index, array) => {
                 const previous = index > 0 ? array[index - 1] : null
                 const active = activeIndex === index
-                const mustDisplayPart = part && (!previous || previous.part !== part)
+                const mustDisplayPart = !previous || previous.part !== part
 
                 return (
                   <div key={index}>
