@@ -21,34 +21,6 @@ module.exports = {
       }
     ]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/validators/rewards',
-        destination: '/rewards'
-      },
-      {
-        source: '/builders/rewards',
-        destination: '/rewards'
-      },
-      {
-        source: '/validators/faq',
-        destination: '/faq'
-      },
-      {
-        source: '/builders/faq',
-        destination: '/faq'
-      },
-      {
-        source: '/validators/terms',
-        destination: '/terms'
-      },
-      {
-        source: '/builders/terms',
-        destination: '/terms'
-      }
-    ]
-  },
   webpack(config) {
     config.experiments = { ...config.experiments, ...{ topLevelAwait: true } }
     config.module.rules[2].oneOf?.forEach(one => {
@@ -56,5 +28,19 @@ module.exports = {
       one.issuer.and = [path.resolve()]
     })
     return config
+  },
+  async redirects() {
+    return [
+      {
+        source: '/tasks',
+        destination: '/validators/tasks#tasks',
+        permanent: true
+      },
+      {
+        source: '/leaderboard',
+        destination: '/validators/leaderboard#leaderboard',
+        permanent: true
+      }
+    ]
   }
 }

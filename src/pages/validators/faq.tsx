@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { useRouter } from 'next/router'
 import { Head } from '@/components/head/Head'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
@@ -7,22 +6,15 @@ import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
 import { Accordion } from '@/components/accordion/Accordion'
 import { useAccordion } from '@/hook/useAccordion'
-import { useMemo } from 'react'
 
 type FaqContent = {
-  part?: string
+  part: string
   question: JSX.Element
   answer: JSX.Element
 }
 
 type ValidatorsFaqUrls = {
   discordUrl: string
-}
-
-type BuildersFaqUrls = {
-  discordChannelUrl: string
-  discordTicketChannelUrl: string
-  registrationFormUrl: string
 }
 
 export type FaqProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
@@ -304,87 +296,13 @@ const validatorsFaqContent = (urls: ValidatorsFaqUrls): FaqContent[] => [
   }
 ]
 
-const buildersFaqContent = (urls: BuildersFaqUrls): FaqContent[] => [
-  {
-    question: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Who can participate in the Builders Program?</h3>
-      </div>
-    ),
-    answer: <p>Anyone can participate, we have no limits of participants.</p>
-  },
-  {
-    question: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>How do I sign up for the Builders Program?</h3>
-      </div>
-    ),
-    answer: (
-      <p>
-        While you can contribute directly to the code & documentation in the Github repos, we advise
-        you to complete the{' '}
-        <a href={urls.registrationFormUrl} rel="noreferrer" target="_blank">
-          registration form
-        </a>{' '}
-        to help you define your potential contribution and to onboard you into the Builders Program.
-      </p>
-    )
-  },
-  {
-    question: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>Can I get any help from the OKP4 core team?</h3>
-      </div>
-    ),
-    answer: (
-      <p>
-        You can ask help to your fellow builders on{' '}
-        <a href={urls.discordChannelUrl} rel="noreferrer" target="_blank">
-          the Discord dedicated channel
-        </a>{' '}
-        or{' '}
-        <a href={urls.discordTicketChannelUrl} rel="noreferrer" target="_blank">
-          Open a ticket
-        </a>{' '}
-        to specify your need to the team.
-      </p>
-    )
-  },
-  {
-    question: (
-      <div className="okp4-nemeton-web-tasks-accordion-title">
-        <h3>How do I submit my contribution?</h3>
-      </div>
-    ),
-    answer: (
-      <p>
-        When the submission period comes, we&apos;ll open a form to send a detailed presentation &
-        links to your contribution. It can be docs, code, proof of concepts... If it seems cool,
-        you&apos;ll be nominated by the judges and be invited to discuss your contribution with the
-        team.
-      </p>
-    )
-  }
-]
-
 const Faq: NextPage<FaqProps> = props => {
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
-    docsUrls: { whitepaperUrl, nodesUrl, faqUrl, registrationFormUrl },
-    supportUrls: { discordChannelUrl, discordTicketChannelUrl }
+    docsUrls: { whitepaperUrl, nodesUrl, faqUrl }
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
-  const router = useRouter()
-  const isBuilderPage = router.asPath.startsWith('/builders')
-
-  const faqContent = useMemo(
-    () =>
-      isBuilderPage
-        ? buildersFaqContent({ discordChannelUrl, discordTicketChannelUrl, registrationFormUrl })
-        : validatorsFaqContent({ discordUrl }),
-    [discordChannelUrl, discordTicketChannelUrl, discordUrl, isBuilderPage, registrationFormUrl]
-  )
 
   const handleClick = (index: number) => () => {
     activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
@@ -399,10 +317,9 @@ const Faq: NextPage<FaqProps> = props => {
           <h1>F.A.Q.</h1>
           <div>
             <p>
-              You have questions about the{' '}
-              {isBuilderPage ? 'Builders Program' : 'Nemeton Program, our incentivized testnet,'}{' '}
-              and did not find your answer here? Then we invite you to visit the following links;
-              you may find the answer to your question!
+              You have questions about the Nemeton Program, our incentivized testnet, and did not
+              find your answer here? Then we invite you to visit the following links; you may find
+              the answer to your question!
             </p>
             <ul>
               <li>
@@ -436,23 +353,25 @@ const Faq: NextPage<FaqProps> = props => {
             </p>
           </div>
           <div className="okp4-nemeton-web-page-accordions-wrapper">
-            {faqContent.map(({ part, question, answer }, index, array) => {
-              const previous = index > 0 ? array[index - 1] : null
-              const active = activeIndex === index
-              const mustDisplayPart = part && (!previous || previous.part !== part)
+            {validatorsFaqContent({ discordUrl }).map(
+              ({ part, question, answer }, index, array) => {
+                const previous = index > 0 ? array[index - 1] : null
+                const active = activeIndex === index
+                const mustDisplayPart = !previous || previous.part !== part
 
-              return (
-                <div key={index}>
-                  {mustDisplayPart && <h2>{part}</h2>}
-                  <Accordion
-                    content={answer}
-                    isExpanded={active}
-                    onToggle={handleClick(index)}
-                    title={question}
-                  />
-                </div>
-              )
-            })}
+                return (
+                  <div key={index}>
+                    {mustDisplayPart && <h2>{part}</h2>}
+                    <Accordion
+                      content={answer}
+                      isExpanded={active}
+                      onToggle={handleClick(index)}
+                      title={question}
+                    />
+                  </div>
+                )
+              }
+            )}
           </div>
         </div>
         <Footer urls={urls} />
