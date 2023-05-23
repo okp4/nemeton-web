@@ -28,5 +28,19 @@ module.exports = {
       one.issuer.and = [path.resolve()]
     })
     return config
+  },
+  async redirects() {
+    return [
+      {
+        source: '/tasks',
+        destination: '/validators/tasks#tasks',
+        permanent: true
+      },
+      {
+        source: '/leaderboard',
+        destination: '/validators/leaderboard#leaderboard',
+        permanent: true
+      }
+    ]
   }
 }
