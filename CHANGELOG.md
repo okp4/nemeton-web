@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.10.2](https://github.com/okp4/nemeton-web/compare/v1.10.1...v1.10.2) (2023-05-24)
+
+
+### Bug Fixes
+
+* **ui:** remove card status badge for incoming phases ([5d678a1](https://github.com/okp4/nemeton-web/commit/5d678a1a7417ddd42d221e348fd900612de9e026))
+
 ## [1.10.1](https://github.com/okp4/nemeton-web/compare/v1.10.0...v1.10.1) (2023-05-24)
 
 
