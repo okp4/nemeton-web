@@ -65,9 +65,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           title: 'Description',
           contentDescription: (
             <p>
-              Once the software upgrade governance proposals are accepted, Druids need to perform
-              the update. To achieve this task you need to make sure your node is updated on time
-              and doesn&apos;t miss blocks. The upgrade plan will be detailed in the governance
+              Once the software upgrade governance proposals are accepted, Druids must perform the
+              update. To achieve this task, you must ensure your node is updated on time and
+              doesn&apos;t miss blocks. The upgrade plan will be detailed in the governance
               proposals.
             </p>
           )
