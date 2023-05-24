@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.10.4](https://github.com/okp4/nemeton-web/compare/v1.10.3...v1.10.4) (2023-05-24)
+
+
+### Bug Fixes
+
+* fix margin phase card buttons ([537e69d](https://github.com/okp4/nemeton-web/commit/537e69dabd44ef783f36ea9962e6268788041d5e))
+
 ## [1.10.3](https://github.com/okp4/nemeton-web/compare/v1.10.2...v1.10.3) (2023-05-24)
 
 
