@@ -32,6 +32,12 @@
 
     @media screen and (max-width: 580px) {
       margin: 20px 26px 0;
+
+      &:nth-of-type(4) {
+        .okp4-nemeton-web-phase-card-button {
+            margin-top: 0 !important;
+        }
+      }
     }
 
     .okp4-nemeton-web-phase-card-button {
@@ -73,8 +79,11 @@
 
     &:nth-of-type(3) {
       .okp4-nemeton-web-phase-card-button {
-        margin-top: 0;
         padding: 0 73px 0 50px;
+
+        @media screen and (min-width: 581px) {
+          margin-top: 0;
+        }
       }
 
       @media screen and (min-width: 581px) {
