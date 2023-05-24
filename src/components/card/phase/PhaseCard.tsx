@@ -98,10 +98,10 @@ export const PhaseCard = ({
                   : buildersChallengesButton)}
             </div>
           </div>
-          {!isMobileScreen && phaseCardState}
+          {!isMobileScreen && status !== 'coming' && phaseCardState}
         </div>
       </div>
-      {isMobileScreen && phaseCardState}
+      {isMobileScreen && status !== 'coming' && phaseCardState}
       {isMobileScreen &&
         (status !== 'coming' && phaseName !== 'samhain'
           ? validatorsChallengesButton
