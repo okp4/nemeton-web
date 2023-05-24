@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.10.3](https://github.com/okp4/nemeton-web/compare/v1.10.2...v1.10.3) (2023-05-24)
+
+
+### Bug Fixes
+
+* **ui:** buttons for coming soon card ([c2fb80c](https://github.com/okp4/nemeton-web/commit/c2fb80cccbc853f8a55bbfe22d199ae8c2dee0f5))
+
 ## [1.10.2](https://github.com/okp4/nemeton-web/compare/v1.10.1...v1.10.2) (2023-05-24)
 
 
