@@ -216,7 +216,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
         }
       ],
       taskDuration: {
-        from: '2023-05-24T12:00:00Z',
+        from: '2023-06-14T12:00:00Z',
         to: '2023-10-31T23:59:59Z'
       },
       points: 8000
