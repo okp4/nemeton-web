@@ -204,7 +204,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
             <p>
               Have a look on the{' '}
               <a
-                href="https://nemeton.staging.okp4.network/builders/challenges#challenges"
+                href="https://nemeton.staging.okp4.network/builders"
                 rel="noreferrer"
                 target="_blank"
               >
