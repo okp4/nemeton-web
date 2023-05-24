@@ -1,5 +1,13 @@
 # ØKP4 Nemeton web changelog
 
+## [1.10.1](https://github.com/okp4/nemeton-web/compare/v1.10.0...v1.10.1) (2023-05-24)
+
+
+### Bug Fixes
+
+* **data:** modify wrong url for builders page ([ba933d0](https://github.com/okp4/nemeton-web/commit/ba933d014960f75305c61a732aa8170fb97b7f84))
+* **style:** remove width rule for countdown ([405a6d6](https://github.com/okp4/nemeton-web/commit/405a6d66bea68282c6b0365ba9fe2821ab6f14dd))
+
 ## [1.10.0](https://github.com/okp4/nemeton-web/compare/v1.9.1...v1.10.0) (2023-05-24)
 
 
