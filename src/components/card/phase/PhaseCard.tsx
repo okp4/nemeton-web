@@ -102,10 +102,9 @@ export const PhaseCard = ({
         </div>
       </div>
       {isMobileScreen && status !== 'coming' && phaseCardState}
-      {isMobileScreen &&
-        (status !== 'coming' && phaseName !== 'samhain'
-          ? validatorsChallengesButton
-          : buildersChallengesButton)}
+      {isMobileScreen && status !== 'coming' && (
+        <div>{phaseName !== 'samhain' ? validatorsChallengesButton : buildersChallengesButton}</div>
+      )}
       {isDropDownOpen && phaseDuration && (
         <PhaseDropDown
           onClose={toggleDropDown}
