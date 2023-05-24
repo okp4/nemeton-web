@@ -40,6 +40,21 @@ module.exports = {
         source: '/leaderboard',
         destination: '/validators/leaderboard#leaderboard',
         permanent: true
+      },
+      {
+        source: '/rewards',
+        destination: '/validators/rewards#rewards',
+        permanent: true
+      },
+      {
+        source: '/faq',
+        destination: '/validators/faq#faq',
+        permanent: true
+      },
+      {
+        source: '/terms',
+        destination: '/validators/terms#terms-conditions',
+        permanent: true
       }
     ]
   }
