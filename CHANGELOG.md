@@ -1,5 +1,37 @@
 # ØKP4 Nemeton web changelog
 
+## [1.10.0](https://github.com/okp4/nemeton-web/compare/v1.9.1...v1.10.0) (2023-05-24)
+
+
+### Features
+
+* add builders page ([9f91604](https://github.com/okp4/nemeton-web/commit/9f916040de8876ef6e22f0b23c9315ff7f4e0c4d))
+* add challenges page ([70545c2](https://github.com/okp4/nemeton-web/commit/70545c29d6d17628d2a219c83ca570ad7644312e))
+* add env variables ([3205c5a](https://github.com/okp4/nemeton-web/commit/3205c5a39ede8d446a683417de4a520dd1eab8bb))
+* add faq page ([d325940](https://github.com/okp4/nemeton-web/commit/d325940b31cbf4f4ffc5efc92fd1569290795764))
+* add hash for url path ([f365bcf](https://github.com/okp4/nemeton-web/commit/f365bcfc37d2379db1e29ce3ed5c7233a8cfb535))
+* add header mobile subsections ([8954450](https://github.com/okp4/nemeton-web/commit/895445089d77b9e8beb45034db0d5cf2e55d8336))
+* add header sections && subsections ([f55a6eb](https://github.com/okp4/nemeton-web/commit/f55a6eb9596c9e4b5203b0a2e3a4f4254cfed80b))
+* add phase 5 environment variables ([7828317](https://github.com/okp4/nemeton-web/commit/7828317dddf6f5eabda4684ec5972ba38bd843f8))
+* add phase card status ([f8f1ec2](https://github.com/okp4/nemeton-web/commit/f8f1ec25247a46b15d63c8fe5b55efd7aaf78d4f))
+* add registration form url ([749042e](https://github.com/okp4/nemeton-web/commit/749042e4339cb48064e0c2433f7d0ac850abbfcc))
+* add rewards content for builders program ([08d2924](https://github.com/okp4/nemeton-web/commit/08d2924649c96d1c55d186a6e3f2a48eb70469d2))
+* add samhain tasks and duration ([bb8614a](https://github.com/okp4/nemeton-web/commit/bb8614a713617e4ef5e5a08d078e956ba82d89f7))
+* **config:** map incoming request path to destination path ([c84b399](https://github.com/okp4/nemeton-web/commit/c84b3994c80ec3979fd4f4e64e6d3e8ef01be1aa))
+* create phase data entity ([7bcf02a](https://github.com/okp4/nemeton-web/commit/7bcf02aa973b66939d47af977a8e872f507d83ae))
+* implement materials page content ([9af1e89](https://github.com/okp4/nemeton-web/commit/9af1e892f9ee1b668e780d90d5ea77eb3239cfc6))
+* implement phase 5 card ([6f76de0](https://github.com/okp4/nemeton-web/commit/6f76de0d9a3c0d2914a72a626f941c71e48b3c18))
+* implement terms page for builders program ([cbaa1c6](https://github.com/okp4/nemeton-web/commit/cbaa1c6c74755f041f2ca1f7a9a051f880dd3989))
+* **router:** add redirections for validators routes ([2762ff5](https://github.com/okp4/nemeton-web/commit/2762ff52d5db8438d0bf6689703f02bda7a75aba))
+
+
+### Bug Fixes
+
+* add github icon ([66af9ca](https://github.com/okp4/nemeton-web/commit/66af9ca49c449cf159d033b6d863a312effbce56))
+* **data:** modify builders challenges link ([c89fd8d](https://github.com/okp4/nemeton-web/commit/c89fd8def94daae9eb629b4b9868d922da1ac41c))
+* **data:** modify second task description ([8ae4db4](https://github.com/okp4/nemeton-web/commit/8ae4db41febd14e93ae93cfde3f4ceca6657e6cb))
+* **data:** modify start date for builders challenges ([f105420](https://github.com/okp4/nemeton-web/commit/f1054201e64cd56882cb83eee209a1257fc45c42))
+
 ## [1.9.1](https://github.com/okp4/nemeton-web/compare/v1.9.0...v1.9.1) (2023-04-06)
 
 
