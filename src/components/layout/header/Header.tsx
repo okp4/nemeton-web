@@ -65,6 +65,8 @@ const Menu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
     if (route) setSelectedMenu(route)
   }, [routerPath])
 
+  useEffect(() => setMenuOpen(!routerPath), [routerPath])
+
   const toggleMenu = useCallback(() => {
     setMenuOpen(!menuOpen)
   }, [menuOpen])
