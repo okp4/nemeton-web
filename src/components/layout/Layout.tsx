@@ -12,7 +12,7 @@ type LayoutProps = {
   urls: Config['urls']
 }
 
-export const Layout: React.FC<LayoutProps> = ({
+const Layout: React.FC<LayoutProps> = ({
   children,
   title,
   description,
@@ -28,3 +28,5 @@ export const Layout: React.FC<LayoutProps> = ({
     </main>
   </div>
 )
+
+export default Layout

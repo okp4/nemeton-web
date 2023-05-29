@@ -7,7 +7,7 @@ export type CountdownProps = {
   countdownEndDate: string
 }
 
-export const Countdown: React.FC<CountdownProps> = ({ countdownEndDate }) => {
+const Countdown: React.FC<CountdownProps> = ({ countdownEndDate }) => {
   const countdownStats = useCountdown(moment(countdownEndDate))
   return (
     <div className="okp4-nemeton-web-countdown-main">
@@ -29,3 +29,5 @@ export const Countdown: React.FC<CountdownProps> = ({ countdownEndDate }) => {
     </div>
   )
 }
+
+export default Countdown

@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import type { Config } from '@/types/config.type'
 import { config } from '@/lib/config'
-import { PhaseCard } from '@/components/card/phase/PhaseCard'
+import { PhaseCard } from '@/components/index'
 import Phases from '@/data/phase/index'
 import type { PhaseDTO } from '@/data/phase/dto.type'
 

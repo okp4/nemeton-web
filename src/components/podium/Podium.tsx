@@ -12,7 +12,7 @@ export type PodiumStep = {
   rank: number
 }
 
-export const Podium: React.FC<PodiumProps> = ({ steps }) => (
+const Podium: React.FC<PodiumProps> = ({ steps }) => (
   <div className="okp4-nemeton-web-podium-main">
     <h2>Podium</h2>
     <div className="okp4-nemeton-web-podium-steps-container">
@@ -43,3 +43,5 @@ export const Podium: React.FC<PodiumProps> = ({ steps }) => (
     </div>
   </div>
 )
+
+export default Podium

@@ -8,7 +8,7 @@ export type LottieLoaderProps = {
   autoplay?: boolean
 }
 
-export const LottieLoader: React.FC<LottieLoaderProps> = ({
+const LottieLoader: React.FC<LottieLoaderProps> = ({
   animationData,
   width = 150,
   loop = true,
@@ -26,3 +26,5 @@ export const LottieLoader: React.FC<LottieLoaderProps> = ({
     width={width}
   />
 )
+
+export default LottieLoader

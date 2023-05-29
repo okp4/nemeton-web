@@ -12,7 +12,7 @@ export type BaseCardProps = {
   disabledBackgroundImageUrl?: string
 }
 
-export const BaseCard: React.FC<BaseCardProps> = ({
+const BaseCard: React.FC<BaseCardProps> = ({
   title,
   description,
   loading,
@@ -68,3 +68,5 @@ export const BaseCard: React.FC<BaseCardProps> = ({
       </div>
     </div>
   )
+
+  export default BaseCard

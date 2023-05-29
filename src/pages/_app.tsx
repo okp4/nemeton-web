@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { Layout } from '@/components/layout/Layout'
+import { Layout } from '@/components/index'
 import '@/styles.scss'
 
 const errorPagesUrls = '/_error'
