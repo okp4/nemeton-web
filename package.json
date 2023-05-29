@@ -31,7 +31,7 @@
     "@apollo/client": "^3.7.14",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.10.6",
-    "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/cli": "^4.0.0",
     "@graphql-codegen/typescript": "^3.0.4",
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
