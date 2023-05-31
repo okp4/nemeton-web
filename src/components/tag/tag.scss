@@ -1,9 +1,9 @@
 $background-colors: (
-  'done': #95c1bb,
-  'progress': #ff8b3e,
-  'idle': #febca8,
-  'error': #ff3648,
-  'submitted': #a4abbd
+  'done': $success,
+  'progress': $progress,
+  'idle': $idle,
+  'error': $error,
+  'submitted': $info
 );
 
 $icons: (
@@ -15,9 +15,8 @@ $icons: (
 );
 
 .okp4-nemeton-web-tag-main {
-  display: flex;
+  @include flex-rows-with-gap(4px);
   align-items: center;
-  gap: 4px;
   border-radius: 8px;
   padding: 4px 8px;
   width: fit-content;

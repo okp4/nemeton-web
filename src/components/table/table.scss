@@ -42,7 +42,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
         line-height: 24px;
         font-size: 14px;
         opacity: 0.6;
-        color: $primary-white;
+        color: $white;
         text-transform: uppercase;
         text-align: start;
 
@@ -64,21 +64,29 @@ $podium-colors: ('gold', 'silver', 'bronze');
           transform: scale(1, 1);
 
           &.gold {
-            background: linear-gradient(90deg, #d1c193 0%, rgba(209, 193, 147, 0) 100%);
+            background: linear-gradient(
+              90deg,
+              $choco-100 0%,
+              rgba(209, 193, 147, 0) 100%
+            );
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
             background-attachment: fixed;
           }
 
           &.silver {
-            background: linear-gradient(90deg, #b4b8bb 0%, rgba(180, 184, 187, 0) 100%);
+            background: linear-gradient(
+              90deg,
+              $white-200 0%,
+              rgba(180, 184, 187, 0) 100%
+            );
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
             background-attachment: fixed;
           }
 
           &.bronze {
-            background: linear-gradient(90deg, #b49689 0%, rgba(180, 150, 137, 0) 100%);
+            background: linear-gradient(90deg, $choco 0%, rgba(180, 150, 137, 0) 100%);
             font-family: 'Gotham', sans-serif;
             font-weight: 700;
             background-attachment: fixed;
@@ -102,9 +110,8 @@ $podium-colors: ('gold', 'silver', 'bronze');
 
           .flex-cell,
           a {
-            display: flex;
+            @include flex-rows-with-gap(8px);
             align-items: center;
-            gap: 8px;
             max-width: 95%;
 
             > img:first-of-type {
@@ -118,7 +125,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
 
           td {
             font-size: 16px;
-            color: $primary-white;
+            color: $white;
             border: unset;
 
             &:nth-child(2) {
@@ -175,7 +182,7 @@ $podium-colors: ('gold', 'silver', 'bronze');
       line-height: 24px;
       font-size: 14px;
       opacity: 0.6;
-      color: $primary-white;
+      color: $white;
       text-transform: uppercase;
       text-align: start;
     }

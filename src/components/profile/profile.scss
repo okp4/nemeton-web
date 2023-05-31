@@ -22,7 +22,7 @@ $action-buttons: ('website', 'explorer', 'twitter');
     width: 209px;
     background-size: contain;
     background-repeat: no-repeat;
-    border: 2px solid #1f403c;
+    border: 2px solid $green;
     border-radius: 16px;
     margin-top: -28px;
     box-shadow: 0 0 36px 0 rgba(31, 64, 60, 0.7);
@@ -45,10 +45,9 @@ $action-buttons: ('website', 'explorer', 'twitter');
     }
 
     .okp4-nemeton-web-profile-identity-address-wrapper {
-      display: flex;
+      @include flex-rows-with-gap(5px);
       align-items: center;
-      gap: 5px;
-      color: rgba(255, 255, 255, 0.6);
+      color: $white-100;
 
       @media screen and (max-width: 1340px) {
         width: 100%;
@@ -81,8 +80,7 @@ $action-buttons: ('website', 'explorer', 'twitter');
   }
 
   .okp4-nemeton-web-profile-actions-container {
-    display: flex;
-    gap: 12px;
+    @include flex-rows-with-gap(12px);
     margin-top: 29px;
 
     @media screen and (max-width: 1340px) {
@@ -100,7 +98,7 @@ $action-buttons: ('website', 'explorer', 'twitter');
           background: no-repeat
             center
             url('/icons/#{$action-button}.svg')
-            rgba(255, 255, 255, 0.12);
+            $black-200;
         }
       }
 

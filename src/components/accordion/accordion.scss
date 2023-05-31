@@ -1,8 +1,8 @@
 .okp4-nemeton-web-accordion-main {
   &.secondary {
     width: calc(100% - 60px);
-    background: #1f403c;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: $green;
+    border: 1px solid $black-100;
     border-radius: 20px;
     padding: 20px 30px;
 
@@ -14,18 +14,18 @@
 
   &.disabled {
     background: rgba(31, 64, 60, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid $black-200;
   }
 
   .okp4-nemeton-web-accordion-title-container {
-    display: flex;
+    @include flex-rows-with-gap(20px);
     justify-content: space-between;
-    gap: 20px;
     padding: 20px 20px 20px 50px;
     border-radius: 15px;
-    background-color: #2e534f;
+    background-color: $green-100;
     margin: 5px 0;
     align-items: center;
+
     @media screen and (max-width: 580px) {
       padding: 20px;
     }

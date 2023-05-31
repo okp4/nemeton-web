@@ -1,7 +1,6 @@
 .okp4-nemeton-web-countdown-main {
-  display: flex;
+  @include flex-rows-with-gap(6px);
   justify-content: center;
-  gap: 6px;
 
   .okp4-nemeton-web-countdown-stats-container {
     display: flex;
@@ -19,7 +18,7 @@
       font-size: 61px;
       line-height: 80px;
       font-family: 'Six Caps', sans-serif;
-      color: $primary-white;
+      color: $white;
       letter-spacing: 0.04em;
     }
 

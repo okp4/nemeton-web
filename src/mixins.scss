@@ -1,6 +1,6 @@
 @mixin with-gradient-container {
   width: calc(100% - 124px);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, $black 100%);
   filter: drop-shadow(4px 0 20px rgba(0, 0, 0, 0.12));
   border-radius: 16px;
   display: flex;
@@ -8,7 +8,7 @@
   padding: 0 62px;
   border: 1px solid;
   box-shadow: 4px 0 20px 0 rgba(0, 0, 0, 0.12);
-  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  border-image: linear-gradient(90deg, $black-100 0%, $black 100%);
 
   h2 {
     font-size: 61px !important;
@@ -28,4 +28,20 @@
     width: auto;
     gap: 70px;
   }
+}
+
+@mixin flex-rows-with-gap($gap) {
+  display: flex;
+  gap: $gap;
+}
+
+@mixin flex-columns-with-gap($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin rotation-animation($degrees) {
+  transform: rotate($degrees);
+  transition: transform 0.1s linear;
 }

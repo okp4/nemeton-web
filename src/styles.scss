@@ -42,22 +42,20 @@ h3 {
 }
 
 main {
-  background-color: $primary-green;
+  background-color: $green;
   min-height: 100vh;
-  color: $primary-white;
+  color: $white;
 }
 
 .okp4-nemeton-web-icon {
   cursor: pointer;
 
   &.rotate-down {
-    transform: rotate(180deg);
-    transition: transform 0.1s linear;
+    @include rotation-animation(180deg);
   }
 
   &.rotate-up {
-    transform: rotate(0deg);
-    transition: transform 0.1s linear;
+    @include rotation-animation(0deg);
   }
 }
 
@@ -68,7 +66,7 @@ main {
 
 .okp4-nemeton-web-page-main {
   .okp4-nemeton-web-page-divider {
-    border: 2px solid $primary-white;
+    border: 2px solid $white;
     width: 371px;
 
     @media screen and (max-width: 1000px) {
@@ -103,7 +101,7 @@ main {
     h2 {
       font-size: 50px;
       margin: 20px 0;
-      text-shadow: 0 2px 4px #00000080;
+      text-shadow: 0 2px 4px $shadow-dark;
       letter-spacing: 2.4px;
 
       @media screen and (max-width: 1000px) {
@@ -196,13 +194,12 @@ main {
     }
 
     .okp4-nemeton-web-page-terms-update {
-      background-color: #2e534f;
+      background-color: $green-100;
       border-radius: 15px;
       padding: 0 20px 5px;
 
       .okp4-nemeton-web-page-terms-update-title {
-        display: flex;
-        gap: 10px;
+        @include flex-rows-with-gap(10px);
 
         h2 {
           text-decoration: underline;
@@ -233,11 +230,10 @@ main {
     }
 
     .okp4-nemeton-web-tasks-accordion-title {
-      display: flex;
+      @include flex-rows-with-gap(10px);
       flex-wrap: wrap;
-      gap: 10px;
-      width: 100%;
       justify-content: space-between;
+      width: 100%;
 
       p {
         opacity: 0.6;
@@ -249,9 +245,8 @@ main {
       margin: 50px 0;
 
       .content-block-title-container {
-        display: flex;
+        @include flex-rows-with-gap(5px);
         align-items: center;
-        gap: 5px;
 
         > h3:first-of-type {
           font-style: italic;
@@ -267,13 +262,10 @@ main {
     }
 
     .okp4-nemeton-web-page-accordions-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      @include flex-columns-with-gap(10px);
 
       .okp4-nemeton-web-page-accordions-title-container {
-        display: flex;
-        gap: 10px;
+        @include flex-rows-with-gap(10px);
 
         h3 {
           margin: 20px 0;
@@ -288,137 +280,157 @@ main {
         }
       }
     }
-  }
-}
 
-.okp4-nemeton-web-home-main {
-  display: flex;
-  flex-direction: column;
-  gap: 90px;
-  padding-top: 80px;
-  @media screen and (max-width: 580px) {
-    gap: 30px;
-    padding-top: 20px;
-  }
-}
-
-.okp4-nemeton-web-page-leaderboard-summary-container {
-  display: flex;
-  gap: 60px;
-  letter-spacing: 0.04em;
-  margin-top: 62px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 23px;
-  }
-
-  .okp4-nemeton-web-page-leaderboard-summary-card-title-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 10px;
-
-    > h2:first-of-type {
-      font-size: 28px !important;
-      margin: 0;
+    .okp4-nemeton-web-page-leaderboard-summary-container {
+      @include flex-rows-with-gap(60px);
       letter-spacing: 0.04em;
-      text-shadow: unset;
-      white-space: nowrap;
-    }
-  }
-
-  .okp4-nemeton-web-page-leaderboard-summary-card-title {
-    font-size: 61px !important;
-
-    &:is(h1) {
-      line-height: 57px;
-    }
-
-    &.uppercase {
-      text-transform: uppercase;
-    }
-  }
-
-  .okp4-nemeton-web-page-leaderboard-summary-card-description {
-    font-size: 16px !important;
-    margin: 0 !important;
-    line-height: unset !important;
-  }
-}
-
-.okp4-nemeton-web-page-leaderboard-main-container {
-  padding-top: 62px;
-
-  @media screen and (max-width: 1000px) {
-    padding-top: unset;
-  }
-
-  @media screen and (min-width: 1000px) {
-    &::before {
-      content: '';
-      position: absolute;
-      height: 100%;
+      margin-top: 62px;
       width: 100%;
-      background-image: url('/image/nemeton-medium-reversed.webp');
-      background-repeat: no-repeat;
-      background-size: cover;
-      left: 0;
-    }
-  }
-
-  .okp4-nemeton-web-page-leaderboard-main-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: #1f403c;
-    border-radius: 20px 20px 0 0;
-    margin-top: 100px;
-    padding: 68px 89px;
-
-    @media screen and (max-width: 1000px) {
-      margin-top: 44px;
-      background: none;
-      padding: unset;
       align-items: center;
-    }
-
-    @media screen and (min-width: 581px) and (max-width: 1440px) {
-      padding: 40px 20px;
-    }
-
-    .okp4-nemeton-web-page-leaderboard-main-description {
-      font-size: 16px;
-      line-height: 20px;
-      margin: 0;
-      max-width: 446px;
+      justify-content: center;
 
       @media screen and (max-width: 1000px) {
-        text-align: center;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 23px;
+      }
+
+      .okp4-nemeton-web-page-leaderboard-summary-card-title-container {
+        @include flex-rows-with-gap(10px);
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        > h2:first-of-type {
+          font-size: 28px !important;
+          margin: 0;
+          letter-spacing: 0.04em;
+          text-shadow: unset;
+          white-space: nowrap;
+        }
+      }
+
+      .okp4-nemeton-web-page-leaderboard-summary-card-title {
+        font-size: 61px !important;
+
+        &:is(h1) {
+          line-height: 57px;
+        }
+
+        &.uppercase {
+          text-transform: uppercase;
+        }
+      }
+
+      .okp4-nemeton-web-page-leaderboard-summary-card-description {
+        font-size: 16px !important;
+        margin: 0 !important;
+        line-height: unset !important;
+      }
+    }
+
+    .okp4-nemeton-web-page-leaderboard-main-container {
+      padding-top: 62px;
+
+      @media screen and (max-width: 1000px) {
+        padding-top: unset;
+      }
+
+      @media screen and (min-width: 1000px) {
+        &::before {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-image: url('/image/nemeton-medium-reversed.webp');
+          background-repeat: no-repeat;
+          background-size: cover;
+          left: 0;
+        }
+      }
+
+      .okp4-nemeton-web-page-leaderboard-main-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $green;
+        border-radius: 20px 20px 0 0;
+        margin-top: 100px;
+        padding: 68px 89px;
+
+        @media screen and (max-width: 1000px) {
+          margin-top: 44px;
+          background: none;
+          padding: unset;
+          align-items: center;
+        }
+
+        @media screen and (min-width: 581px) and (max-width: 1440px) {
+          padding: 40px 20px;
+        }
+
+        .okp4-nemeton-web-page-leaderboard-main-description {
+          font-size: 16px;
+          line-height: 20px;
+          margin: 0;
+          max-width: 446px;
+
+          @media screen and (max-width: 1000px) {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .okp4-nemeton-web-page-druid-main-container {
+      @include flex-columns-with-gap(31px);
+      background: $green;
+      border-radius: 20px 20px 0 0;
+      margin-top: -110px;
+      padding: 45px 89px;
+    
+      @media screen and (max-width: 1000px) {
+        padding: unset;
+        background: unset;
+        margin-top: 20px;
+      }
+    
+      .okp4-nemeton-web-go-back-button-container {
+        @include flex-rows-with-gap(7px);
+        align-items: center;
+        cursor: pointer;
+    
+        > span {
+          font-family: 'Gotham light', sans-serif;
+          font-size: 14px;
+          line-height: 24px;
+          text-transform: capitalize;
+        }
+    
+        > svg {
+          font-size: 20px;
+        }
+      }
+    
+      .okp4-nemeton-web-loader-container {
+        @include flex-columns-with-gap(10px);
+        align-items: center;
+    
+        > span:first-of-type {
+          font-family: 'Gotham light', sans-serif;
+          font-size: 14px;
+        }
       }
     }
   }
 }
 
-.okp4-nemeton-web-go-back-button-container {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  cursor: pointer;
-
-  > span {
-    font-family: 'Gotham light', sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    text-transform: capitalize;
-  }
-
-  > svg {
-    font-size: 20px;
+.okp4-nemeton-web-home-main {
+  @include flex-columns-with-gap(90px);
+  padding-top: 80px;
+  
+  @media screen and (max-width: 580px) {
+    gap: 30px;
+    padding-top: 20px;
   }
 }
 
@@ -429,32 +441,4 @@ main {
   background-repeat: no-repeat;
   margin-left: 4px;
   cursor: pointer;
-}
-
-.okp4-nemeton-web-page-druid-main-container {
-  display: flex;
-  flex-direction: column;
-  gap: 31px;
-  background: #1f403c;
-  border-radius: 20px 20px 0 0;
-  margin-top: -110px;
-  padding: 45px 89px;
-
-  @media screen and (max-width: 1000px) {
-    padding: unset;
-    background: unset;
-    margin-top: 20px;
-  }
-}
-
-.okp4-nemeton-web-loader-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-  > span:first-of-type {
-    font-family: 'Gotham light', sans-serif;
-    font-size: 14px;
-  }
 }
