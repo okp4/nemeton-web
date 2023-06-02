@@ -1,9 +1,6 @@
 import { useRouter } from 'next/router'
 import moment from 'moment'
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '@/components/head/Head'
-import { Footer } from '@/components/layout/footer/Footer'
-import { Header } from '@/components/layout/header/Header'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
 import ArticleIcon from '@mui/icons-material/Article'
@@ -23,7 +20,7 @@ import type {
   TaskContentId
 } from '@/data/phase/dto.type'
 
-export type TasksProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls' | 'phases'>
+export type TasksProps = Pick<Config, 'phases'>
 
 type ContentBlockProps = Readonly<{
   title: string
@@ -123,7 +120,7 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
 )
 
 const Tasks: NextPage<TasksProps> = props => {
-  const { urls, phases } = props
+  const { phases } = props
   const { query } = useRouter()
   const [activeTask, setActiveTask] = useAccordion()
 
@@ -143,29 +140,24 @@ const Tasks: NextPage<TasksProps> = props => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head {...props} />
-      <main>
-        <Header />
-        <div className="okp4-nemeton-web-page-content-container" id="tasks">
-          <h1>Tasks</h1>
-          {[...Phases(phases)].reverse().map(
-            ({ number, phaseName, tasks, status }: PhaseDTO, index) =>
-              status !== 'coming' && (
-                <div key={index}>
-                  <PhaseAccordions
-                    activeAccordion={activeTask}
-                    number={number}
-                    onClick={handleClick}
-                    phaseName={phaseName}
-                    status={status}
-                    tasks={tasks}
-                  />
-                </div>
-              )
-          )}
-        </div>
-        <Footer urls={urls} />
-      </main>
+      <div className="okp4-nemeton-web-page-content-container" id="tasks">
+        <h1>Tasks</h1>
+        {[...Phases(phases)].reverse().map(
+          ({ number, phaseName, tasks, status }: PhaseDTO, index) =>
+            status !== 'coming' && (
+              <div key={index}>
+                <PhaseAccordions
+                  activeAccordion={activeTask}
+                  number={number}
+                  onClick={handleClick}
+                  phaseName={phaseName}
+                  status={status}
+                  tasks={tasks}
+                />
+              </div>
+            )
+        )}
+      </div>
     </div>
   )
 }

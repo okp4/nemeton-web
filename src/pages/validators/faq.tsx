@@ -1,7 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { Head } from '@/components/head/Head'
-import { Footer } from '@/components/layout/footer/Footer'
-import { Header } from '@/components/layout/header/Header'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
 import { Accordion } from '@/components/accordion/Accordion'
@@ -17,7 +14,7 @@ type ValidatorsFaqUrls = {
   discordUrl: string
 }
 
-export type FaqProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+export type FaqProps = Pick<Config, 'urls'>
 
 const validatorsFaqContent = (urls: ValidatorsFaqUrls): FaqContent[] => [
   {
@@ -310,72 +307,65 @@ const Faq: NextPage<FaqProps> = props => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head {...props} />
-      <main>
-        <Header />
-        <div className="okp4-nemeton-web-page-content-container" id="faq">
-          <h1>F.A.Q.</h1>
-          <div>
-            <p>
-              You have questions about the Nemeton Program, our incentivized testnet, and did not
-              find your answer here? Then we invite you to visit the following links; you may find
-              the answer to your question!
-            </p>
-            <ul>
-              <li>
-                <p>
-                  <a href={whitepaperUrl} rel="noreferrer" target="_blank">
-                    Whitepaper
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href={nodesUrl} rel="noreferrer" target="_blank">
-                    Node & Validators Guide
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href={faqUrl} rel="noreferrer" target="_blank">
-                    FAQ
-                  </a>
-                </p>
-              </li>
-            </ul>
-            <p>
-              If you have not found the answer to your question, go to{' '}
-              <a href={discordUrl} rel="noreferrer" target="_blank">
-                our discord server
-              </a>{' '}
-              to get in touch with the OKP4 team & community.
-            </p>
-          </div>
-          <div className="okp4-nemeton-web-page-accordions-wrapper">
-            {validatorsFaqContent({ discordUrl }).map(
-              ({ part, question, answer }, index, array) => {
-                const previous = index > 0 ? array[index - 1] : null
-                const active = activeIndex === index
-                const mustDisplayPart = !previous || previous.part !== part
-
-                return (
-                  <div key={index}>
-                    {mustDisplayPart && <h2>{part}</h2>}
-                    <Accordion
-                      content={answer}
-                      isExpanded={active}
-                      onToggle={handleClick(index)}
-                      title={question}
-                    />
-                  </div>
-                )
-              }
-            )}
-          </div>
+      <div className="okp4-nemeton-web-page-content-container" id="faq">
+        <h1>F.A.Q.</h1>
+        <div>
+          <p>
+            You have questions about the Nemeton Program, our incentivized testnet, and did not find
+            your answer here? Then we invite you to visit the following links; you may find the
+            answer to your question!
+          </p>
+          <ul>
+            <li>
+              <p>
+                <a href={whitepaperUrl} rel="noreferrer" target="_blank">
+                  Whitepaper
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href={nodesUrl} rel="noreferrer" target="_blank">
+                  Node & Validators Guide
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href={faqUrl} rel="noreferrer" target="_blank">
+                  FAQ
+                </a>
+              </p>
+            </li>
+          </ul>
+          <p>
+            If you have not found the answer to your question, go to{' '}
+            <a href={discordUrl} rel="noreferrer" target="_blank">
+              our discord server
+            </a>{' '}
+            to get in touch with the OKP4 team & community.
+          </p>
         </div>
-        <Footer urls={urls} />
-      </main>
+        <div className="okp4-nemeton-web-page-accordions-wrapper">
+          {validatorsFaqContent({ discordUrl }).map(({ part, question, answer }, index, array) => {
+            const previous = index > 0 ? array[index - 1] : null
+            const active = activeIndex === index
+            const mustDisplayPart = !previous || previous.part !== part
+
+            return (
+              <div key={index}>
+                {mustDisplayPart && <h2>{part}</h2>}
+                <Accordion
+                  content={answer}
+                  isExpanded={active}
+                  onToggle={handleClick(index)}
+                  title={question}
+                />
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }

@@ -3,9 +3,6 @@ import type { GetServerSideProps, NextPage } from 'next'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import type { BaseCardProps } from '@/components/card/base/BaseCard'
 import { BaseCard } from '@/components/card/base/BaseCard'
-import { Head } from '@/components/head/Head'
-import { Footer } from '@/components/layout/footer/Footer'
-import { Header } from '@/components/layout/header/Header'
 import type { PodiumStep } from '@/components/podium/Podium'
 import { Podium } from '@/components/podium/Podium'
 import { config } from '@/lib/config'
@@ -27,7 +24,7 @@ import {
 } from '@/graphql/dto/mapper'
 import client from '@/graphql/apolloClient'
 
-export type LeaderboardProps = Pick<Config, 'title' | 'keywords' | 'description' | 'urls'>
+export type LeaderboardProps = Pick<Config, 'urls'>
 
 const Leaderboard: NextPage<LeaderboardProps> = props => {
   const [druids, setDruids] = useState<DruidDescriptor[]>([])
@@ -174,56 +171,51 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
 
   return (
     <div className="okp4-nemeton-web-page-main">
-      <Head {...props} />
-      <main>
-        <Header />
-        <div className="okp4-nemeton-web-page-content-container" id="leaderboard">
-          <h1>Leaderboard</h1>
-          <div className="okp4-nemeton-web-page-divider" />
-          <p className="center">Welcome to the Nemeton Leaderboard!</p>
-          <div className="okp4-nemeton-web-page-leaderboard-summary-container">
-            {validatorCountLoading || phaseLoading
-              ? [...Array(3)].map((_elt, index) => <BaseCard key={index} loading />)
-              : summaryCards
-                  .filter(Boolean)
-                  .map((card, index) => (
-                    <BaseCard
-                      backgroundImageUrl={card?.backgroundImageUrl}
-                      description={card?.description}
-                      disabled={card?.disabled}
-                      disabledBackgroundImageUrl={card?.disabledBackgroundImageUrl}
-                      key={index}
-                      title={card?.title}
-                    />
-                  ))}
-          </div>
-          <div className="okp4-nemeton-web-page-leaderboard-main-container">
-            <div className="okp4-nemeton-web-page-leaderboard-main-wrapper">
-              <p className="okp4-nemeton-web-page-leaderboard-main-description">
-                Here you can check the points earned by all the druids. Complete more tasks to
-                become the leader!
-              </p>
-              {podium.length > 0 && <Podium steps={podiumSteps} />}
-              <InfiniteScroll
-                dataLength={druids.length}
-                hasMore={!boardLoading && !!boardData?.board.pageInfo.hasNextPage}
-                loader={null}
-                next={fetchMoreDruids}
-                scrollThreshold={0.91}
-                style={{ overflow: 'unset' }}
-              >
-                <LeaderboardTable
-                  data={druids}
-                  loading={boardLoading && !variables?.after}
-                  loadingMore={boardLoading && !!variables?.after}
-                  onSearchChange={handleSearchChange}
-                />
-              </InfiniteScroll>
-            </div>
+      <div className="okp4-nemeton-web-page-content-container" id="leaderboard">
+        <h1>Leaderboard</h1>
+        <div className="okp4-nemeton-web-page-divider" />
+        <p className="center">Welcome to the Nemeton Leaderboard!</p>
+        <div className="okp4-nemeton-web-page-leaderboard-summary-container">
+          {validatorCountLoading || phaseLoading
+            ? [...Array(3)].map((_elt, index) => <BaseCard key={index} loading />)
+            : summaryCards
+                .filter(Boolean)
+                .map((card, index) => (
+                  <BaseCard
+                    backgroundImageUrl={card?.backgroundImageUrl}
+                    description={card?.description}
+                    disabled={card?.disabled}
+                    disabledBackgroundImageUrl={card?.disabledBackgroundImageUrl}
+                    key={index}
+                    title={card?.title}
+                  />
+                ))}
+        </div>
+        <div className="okp4-nemeton-web-page-leaderboard-main-container">
+          <div className="okp4-nemeton-web-page-leaderboard-main-wrapper">
+            <p className="okp4-nemeton-web-page-leaderboard-main-description">
+              Here you can check the points earned by all the druids. Complete more tasks to become
+              the leader!
+            </p>
+            {podium.length > 0 && <Podium steps={podiumSteps} />}
+            <InfiniteScroll
+              dataLength={druids.length}
+              hasMore={!boardLoading && !!boardData?.board.pageInfo.hasNextPage}
+              loader={null}
+              next={fetchMoreDruids}
+              scrollThreshold={0.91}
+              style={{ overflow: 'unset' }}
+            >
+              <LeaderboardTable
+                data={druids}
+                loading={boardLoading && !variables?.after}
+                loadingMore={boardLoading && !!variables?.after}
+                onSearchChange={handleSearchChange}
+              />
+            </InfiniteScroll>
           </div>
         </div>
-        <Footer urls={urls} />
-      </main>
+      </div>
       <Snackbar
         isOpen={!!errorMessage}
         message={errorMessage ?? ''}
