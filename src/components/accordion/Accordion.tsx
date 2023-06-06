@@ -15,7 +15,7 @@ type AccordionProps = {
   disabled?: boolean
 }
 
-export const Accordion = ({
+const Accordion = ({
   title,
   content,
   onToggle,
@@ -64,3 +64,5 @@ export const Accordion = ({
     </div>
   )
 }
+
+export default Accordion

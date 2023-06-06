@@ -3,7 +3,7 @@ import React, { useCallback } from 'react'
 import type { TasksPerPhase } from '@/entity/phase'
 import { useAccordion } from '@/hook/useAccordion'
 import { useMediaType } from '@/hook/useMediaType'
-import { Accordion } from '@/components/accordion/Accordion'
+import Accordion from '@/components/accordion/Accordion'
 import { TasksTable } from '@/components/table/TasksTable'
 
 type TasksSummaryProps = Readonly<{
@@ -11,7 +11,7 @@ type TasksSummaryProps = Readonly<{
   points: number
 }>
 
-export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, points }) => {
+const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, points }) => {
   const [activeIndex, setActiveIndex] = useAccordion()
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
@@ -61,3 +61,5 @@ export const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, point
     </div>
   )
 }
+
+export default TasksSummary

@@ -14,7 +14,7 @@ export type PhaseCardProps = Readonly<{
   status: PhaseStatus
 }>
 
-export const PhaseCard = ({
+const PhaseCard = ({
   number,
   phaseName,
   phaseDescription,
@@ -117,3 +117,5 @@ export const PhaseCard = ({
     </div>
   )
 }
+
+export default PhaseCard

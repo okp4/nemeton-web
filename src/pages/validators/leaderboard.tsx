@@ -2,12 +2,10 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import type { BaseCardProps } from '@/components/card/base/BaseCard'
-import { BaseCard } from '@/components/card/base/BaseCard'
+import { BaseCard, Podium, LeaderboardTable, Countdown, Snackbar } from '@/components/index'
 import type { PodiumStep } from '@/components/podium/Podium'
-import { Podium } from '@/components/podium/Podium'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
-import { LeaderboardTable } from '@/components/table/LeaderboardTable'
 import type { DruidDescriptor, PodiumDruid } from '@/entity/druid'
 import type { PhaseDescriptor } from '@/entity/phase'
 import {
@@ -16,8 +14,6 @@ import {
   useQPhasesQuery,
   useQValidatorCountQuery
 } from '@/graphql/generated/query/types'
-import { Snackbar } from '@/components/snackbar/Snackbar'
-import { Countdown } from '@/components/countdown/Countdown'
 import {
   mapValidatorEdgeDTOToDruid,
   mapPodiumValidatorEdgeDTOToPodiumDruid

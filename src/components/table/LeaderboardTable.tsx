@@ -7,8 +7,8 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { useMediaType } from '@/hook/useMediaType'
 import type { DruidDescriptor } from '@/entity/druid'
 import { Search } from '@/components/search/Search'
-import { Snackbar } from '@/components/snackbar/Snackbar'
-import { LottieLoader } from '@/components/loader/LottieLoader'
+import Snackbar from '@/components/snackbar/Snackbar'
+import LottieLoader from '@/components/loader/LottieLoader'
 import { Copy } from '@/components/copy/Copy'
 import type { Column } from './table.type'
 
@@ -19,7 +19,7 @@ export type LeaderboardTableProps = {
   loadingMore?: boolean
 }
 
-export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
+const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
   data,
   onSearchChange,
   loading,
@@ -201,3 +201,5 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
     </>
   )
 }
+
+export default LeaderboardTable

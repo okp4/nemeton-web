@@ -15,7 +15,7 @@ type ActionButton = Readonly<{
   disabled?: boolean
 }>
 
-export const Profile: React.FC<ProfileProps> = ({ druidProfile, explorerUrl, onValoperCopied }) => {
+const Profile: React.FC<ProfileProps> = ({ druidProfile, explorerUrl, onValoperCopied }) => {
   const actionButtons: ActionButton[] = useMemo(
     () => [
       {
@@ -76,3 +76,5 @@ export const Profile: React.FC<ProfileProps> = ({ druidProfile, explorerUrl, onV
     </div>
   )
 }
+
+export default Profile

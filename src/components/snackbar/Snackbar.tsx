@@ -15,7 +15,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props,
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 })
 
-export const Snackbar: React.FC<SnackbarProps> = ({
+const Snackbar: React.FC<SnackbarProps> = ({
   severityLevel,
   onClose,
   autoduration = 3000,
@@ -33,3 +33,5 @@ export const Snackbar: React.FC<SnackbarProps> = ({
     </MUISnackbar>
   )
 }
+
+export default Snackbar

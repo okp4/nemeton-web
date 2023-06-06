@@ -10,7 +10,7 @@ import MoneyIcon from '@mui/icons-material/Money'
 import React, { useCallback, useEffect } from 'react'
 import { useAccordion } from '@/hook/useAccordion'
 import type { AccordionState } from '@/hook/useAccordion'
-import { Accordion } from '@/components/accordion/Accordion'
+import { Accordion } from '@/components/index'
 import Phases from '@/data/phase/index'
 import type {
   PhaseDTO,

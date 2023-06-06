@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
-import { Accordion } from '@/components/accordion/Accordion'
+import { Accordion } from '@/components/index'
 import { useAccordion } from '@/hook/useAccordion'
 
 type FaqContent = {

@@ -3,7 +3,7 @@ import type { NextRouter } from 'next/router'
 import { useCallback } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
-export const GoBackButton = (): JSX.Element => {
+const GoBackButton = (): JSX.Element => {
   const router: NextRouter = useRouter()
 
   const handleGoBack = useCallback((): void => {
@@ -17,3 +17,5 @@ export const GoBackButton = (): JSX.Element => {
     </div>
   )
 }
+
+export default GoBackButton
