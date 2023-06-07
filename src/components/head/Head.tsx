@@ -9,7 +9,6 @@ export type HeadProps = {
   description: string
 }
 
-// eslint-disable-next-line @typescript-eslint/typedef
 const { publicRuntimeConfig } = getConfig()
 
 export const Head: React.FC<HeadProps> = ({ description, title, keywords }): JSX.Element => {
