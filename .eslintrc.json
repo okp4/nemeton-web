@@ -4,11 +4,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "functional/immutable-data": 0,
-    "functional/prefer-readonly-type": 0,
-    "functional/no-let": 1,
     "max-lines-per-function": 0,
-    "@typescript-eslint/prefer-readonly-parameter-types": 0,
     "@typescript-eslint/typedef": 0
   }
 }
