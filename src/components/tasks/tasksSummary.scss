@@ -41,7 +41,7 @@
         letter-spacing: 0.04em;
 
         &:nth-child(2) {
-          color: rgba(255, 255, 255, 0.6);
+          color: $white-100;
           font-size: 22px;
         }
       }
@@ -49,11 +49,9 @@
   }
 
   .okp4-nemeton-web-tasks-summary-content-container {
+    @include flex-columns-with-gap(20px);
     width: 100%;
     margin-top: 41px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 
     @media screen and (max-width: 1000px) {
       margin-top: unset;

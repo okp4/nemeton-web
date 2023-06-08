@@ -67,13 +67,12 @@
       }
 
       .okp4-nemeton-web-footer-links-divider {
-        border-left: 1px solid white;
+        border-left: 1px solid $white;
       }
     }
 
     .okp4-nemeton-web-footer-socials-media-container {
-      display: flex;
-      gap: 8px;
+      @include flex-rows-with-gap(8px);
 
       .okp4-nemeton-web-footer-socials-media-icon {
         cursor: pointer;
