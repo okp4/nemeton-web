@@ -16,14 +16,24 @@ export const config: Config = {
       telegramUrl: process.env.OKP4_TELEGRAM_URL,
       twitterUrl: process.env.OKP4_TWITTER_URL
     },
+    githubUrls: {
+      githubOkp4dUrl: process.env.OKP4_GITHUB_OKP4D_URL,
+      githubContractsUrl: process.env.OKP4_GITHUB_CONTRACTS_URL,
+      githubAwesomeUrl: process.env.OKP4_GITHUB_AWESOME_URL
+    },
     docsUrls: {
       whitepaperUrl: process.env.OKP4_DOCS_URL,
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
-      faqUrl: process.env.OKP4_DOCS_FAQ_URL
+      faqUrl: process.env.OKP4_DOCS_FAQ_URL,
+      logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
+      technicalDocsUrl: process.env.OKP4_TECHNICAL_DOCS_URL,
+      registrationFormUrl: process.env.OKP4_REGISTRATION_FORM_URL
     },
     supportUrls: {
       discordNemetonUrl: process.env.OKP4_DISCORD_NEMETON_URL,
-      discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL
+      discordTicketUrl: process.env.OKP4_DISCORD_TICKET_URL,
+      discordChannelUrl: process.env.OKP4_DISCORD_CHANNEL_URL,
+      discordTicketChannelUrl: process.env.OKP4_DISCORD_TICKET_CHANNEL_URL
     },
     mailAddresses: {
       contact: process.env.OKP4_MAIL_CONTACT_ADDRESS
