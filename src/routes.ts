@@ -39,6 +39,20 @@ const validatorsProgramMenu: SubRoute[] = [
   ...subMenuLinks('validators')
 ]
 
+const buildersProgramMenu: SubRoute[] = [
+  {
+    name: 'Challenges',
+    path: '/builders/challenges',
+    hash: '#challenges'
+  },
+  {
+    name: 'Materials',
+    path: '/builders/materials',
+    hash: '#materials'
+  },
+  ...subMenuLinks('builders')
+]
+
 export const menu: Route[] = [
   {
     name: 'Home',
@@ -53,7 +67,7 @@ export const menu: Route[] = [
   {
     name: 'Builders program',
     path: '/builders',
-    hash: '#builders'
+    subMenu: buildersProgramMenu
   }
 ]
 

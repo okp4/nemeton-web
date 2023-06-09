@@ -1,11 +1,11 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
-import { Accordion } from '@/components/index'
+import Accordion from '@/components/accordion/Accordion'
 import { useAccordion } from '@/hook/useAccordion'
 
 type FaqContent = {
-  part: string
+  part?: string
   question: JSX.Element
   answer: JSX.Element
 }
@@ -350,7 +350,7 @@ const Faq: NextPage<FaqProps> = props => {
           {validatorsFaqContent({ discordUrl }).map(({ part, question, answer }, index, array) => {
             const previous = index > 0 ? array[index - 1] : null
             const active = activeIndex === index
-            const mustDisplayPart = !previous || previous.part !== part
+            const mustDisplayPart = part && (!previous || previous.part !== part)
 
             return (
               <div key={index}>

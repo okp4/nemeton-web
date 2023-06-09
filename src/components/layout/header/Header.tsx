@@ -116,7 +116,7 @@ const Menu: React.FC<MenuProps> = ({ routerPath }): JSX.Element => {
                     className={classNames('link-label', {
                       active:
                         (routerPath === menuItem.path ||
-                          routerPath?.substring(routerPath.lastIndexOf('#')) === menuItem.hash) &&
+                          routerPath?.substring(1) === menuItem.hash) &&
                         !selectedMenu
                     })}
                   >

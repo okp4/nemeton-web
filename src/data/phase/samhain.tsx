@@ -203,7 +203,11 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           contentDescription: (
             <p>
               Have a look on the{' '}
-              <a href="/builders" rel="noreferrer" target="_blank">
+              <a
+                href="/builders/challenges#challenges"
+                rel="noreferrer"
+                target="_blank"
+              >
                 Builders Program challenges
               </a>{' '}
               to get a chance to earn more rewards.

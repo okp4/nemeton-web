@@ -187,12 +187,6 @@ main {
       }
     }
 
-    .okp4-nemeton-web-page-builders-container {
-      h1 {
-        text-align: center;
-      }
-    }
-
     .okp4-nemeton-web-page-terms-update {
       background-color: $green-100;
       border-radius: 15px;
@@ -387,38 +381,96 @@ main {
       border-radius: 20px 20px 0 0;
       margin-top: -110px;
       padding: 45px 89px;
-    
+
       @media screen and (max-width: 1000px) {
         padding: unset;
         background: unset;
         margin-top: 20px;
       }
-    
+
       .okp4-nemeton-web-go-back-button-container {
         @include flex-rows-with-gap(7px);
         align-items: center;
         cursor: pointer;
-    
+
         > span {
           font-family: 'Gotham light', sans-serif;
           font-size: 14px;
           line-height: 24px;
           text-transform: capitalize;
         }
-    
+
         > svg {
           font-size: 20px;
         }
       }
-    
+
       .okp4-nemeton-web-loader-container {
         @include flex-columns-with-gap(10px);
         align-items: center;
-    
+
         > span:first-of-type {
           font-family: 'Gotham light', sans-serif;
           font-size: 14px;
         }
+      }
+    }
+
+    .okp4-nemeton-web-page-materials-container {
+      padding: 0 83px;
+
+      @media screen and (max-width: 1000px) {
+        padding: 0;
+
+        p {
+          text-align: center;
+        }
+      }
+
+      .okp4-nemeton-web-page-materials-links-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 34px;
+        row-gap: 34px;
+        margin: 90px 0;
+
+        @media screen and (max-width: 1000px) {
+          grid-template-columns: 1fr 1fr;
+          margin: 40px 0;
+          row-gap: 16px;
+          column-gap: 16px;
+        }
+
+        @media screen and (max-width: 580px) {
+          grid-template-columns: auto;
+        }
+
+        .okp4-nemeton-web-page-materials-link {
+          height: 64px;
+          background: $black-100;
+          border-radius: 12px;
+          font-size: 16px;
+          line-height: 24px;
+          text-decoration: none;
+
+          .okp4-nemeton-web-page-materials-link-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding-left: 22px;
+            padding-right: 26px;
+
+            .okp4-nemeton-web-page-materials-link-icon {
+              @include flex-rows-with-gap(12px);
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      a {
+        font-family: Gotham bold, sans-serif;
       }
     }
   }
@@ -427,7 +479,7 @@ main {
 .okp4-nemeton-web-home-main {
   @include flex-columns-with-gap(90px);
   padding-top: 80px;
-  
+
   @media screen and (max-width: 580px) {
     gap: 30px;
     padding-top: 20px;
