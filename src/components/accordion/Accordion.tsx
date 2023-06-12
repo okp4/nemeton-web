@@ -11,7 +11,7 @@ type AccordionProps = {
     width?: number
     height?: number
   }
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
   disabled?: boolean
 }
 
@@ -33,14 +33,20 @@ const Accordion = ({
 
   return (
     <div
-      className={classNames(`okp4-nemeton-web-accordion-main ${variant}`, {
-        disabled
-      })}
+      className={classNames(
+        `okp4-nemeton-web-accordion-main ${variant} ${isExpanded ? 'active' : ''}`,
+        {
+          disabled
+        }
+      )}
     >
       <div
-        className={classNames(`okp4-nemeton-web-accordion-title-container ${variant}`, {
-          disabled
-        })}
+        className={classNames(
+          `okp4-nemeton-web-accordion-title-container ${variant} ${isExpanded ? 'active' : ''}`,
+          {
+            disabled
+          }
+        )}
       >
         {title}
         {!disabled && (

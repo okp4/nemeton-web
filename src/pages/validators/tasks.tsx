@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import moment from 'moment'
+import Image from 'next/image'
 import type { GetServerSideProps, NextPage } from 'next'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
@@ -37,7 +38,11 @@ type PhaseAccordionProps = Readonly<{
   tasks: TaskDTO[]
 }>
 
-const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
+export const ContentBlock: React.FC<ContentBlockProps> = ({
+  title,
+  description,
+  icon
+}): JSX.Element => (
   <div className="content-block-main">
     <div className="content-block-title-container">
       {icon}
@@ -47,7 +52,7 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon })
   </div>
 )
 
-const taskContentIcon = (id: TaskContentId): JSX.Element => {
+export const taskContentIcon = (id: TaskContentId): JSX.Element => {
   switch (id) {
     case 'description':
       return <ArticleIcon />
@@ -57,6 +62,8 @@ const taskContentIcon = (id: TaskContentId): JSX.Element => {
       return <GavelIcon />
     case 'submit':
       return <HelpIcon />
+    case 'documentation':
+      return <Image alt="useful-links" height={18} src={`/icons/useful_links.svg`} width={22} />
   }
 }
 
