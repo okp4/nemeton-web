@@ -12,6 +12,23 @@
     }
   }
 
+  &.tertiary {
+    padding: 0 30px;
+    border-radius: 15px;
+    background-color: $black-200;
+    margin: 16px 0;
+
+    @media screen and (max-width: 769px) {
+      padding: 28px 30px;
+    }
+
+    &.active {
+      @media screen and (min-width: 769px) {
+        padding: 28px 30px;
+      }
+    }
+  }
+
   &.disabled {
     background: rgba(31, 64, 60, 0.2);
     border: 1px solid $black-200;
@@ -40,6 +57,23 @@
 
       @media screen and (max-width: 580px) {
         padding: 0;
+      }
+    }
+
+    &.tertiary {
+      width: 100%;
+      gap: 20px;
+      justify-content: space-between;
+      background-color: unset;
+      margin: 0;
+      padding: 0;
+
+      @media screen and (min-width: 769px) {
+        height: 80px;
+      }
+
+      &.active {
+        height: inherit;
       }
     }
 
