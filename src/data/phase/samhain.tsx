@@ -2,7 +2,31 @@ import { getPhaseStatus } from '@/utils'
 import type { PhasesConfig } from '@/types/config.type'
 import type { PhaseDTO } from './dto.type'
 
-export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): PhaseDTO => ({
+export const samhain = ({
+  samhain: {
+    startDate,
+    endDate,
+    urls: {
+      keplrWalletExtensionUrl,
+      explorerWalletUrl,
+      faucetUrl,
+      githubOkp4dReleasesUrl,
+      okp4dDocsCommandsUrl,
+      githubObjectariumUrl,
+      githubCognitariumMessagesUrl,
+      githubLawStoneUrl,
+      githubPredicateBlockUrl,
+      githubPredicateAddressUrl,
+      githubLogicModulePredicatesUrl,
+      githubPrologTemplateUrl,
+      githubOntologyRhizomeUrl,
+      ontologyDescriptionUrl,
+      swiPrologUrl,
+      swiPrologFunctionsUrl,
+      objectariumAddress
+    }
+  }
+}: PhasesConfig): PhaseDTO => ({
   number: 5,
   phaseName: 'samhain',
   phaseDescription:
@@ -276,28 +300,20 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     Keplr:{' '}
-                    <a
-                      href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap
+                    <a href={keplrWalletExtensionUrl} rel="noreferrer" target="_blank">
+                      {keplrWalletExtensionUrl}
                     </a>
                   </li>
                   <li>
                     Explorer:{' '}
-                    <a
-                      href="https://explore.okp4.network/wallet/import"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://explore.okp4.network/wallet/import
+                    <a href={explorerWalletUrl} rel="noreferrer" target="_blank">
+                      {explorerWalletUrl}
                     </a>
                   </li>
                   <li>
                     Faucet:{' '}
-                    <a href="https://faucet.okp4.network/" rel="noreferrer" target="_blank">
-                      https://faucet.okp4.network/
+                    <a href={faucetUrl} rel="noreferrer" target="_blank">
+                      {faucetUrl}
                     </a>
                   </li>
                   <li>”Get started with OKP4 protocol: Your first transaction” tutorial</li>
@@ -322,8 +338,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                   (Difficulty: 2/5)
                   <br /> Install the CLI with your terminal, and import the wallet seed you created
                   for the previous task. Fetch object from the <span>objectarium</span> instance
-                  deployed at the{' '}
-                  <span>okp416zrd20eqwx0nv05pu45na6jq345r6ggqrgx2sh79ln5z8vqvztgsqsfr4p</span>
+                  deployed at the <span>{objectariumAddress}</span>
                   address, with the id …. Decode the base64 message, replace the okp4 address in it
                   by yours. Store this new message in base64. You&apos;ll have to execute a
                   transaction to the <span>objectarium</span> smart contract. The object should be
@@ -367,32 +382,20 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     OKP4 daemon CLI releases:{' '}
-                    <a
-                      href="https://github.com/okp4/okp4d/releases"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/okp4d/releases
+                    <a href={githubOkp4dReleasesUrl} rel="noreferrer" target="_blank">
+                      {githubOkp4dReleasesUrl}
                     </a>
                   </li>
                   <li>
                     <span>okp4d</span> commands documentation:{' '}
-                    <a
-                      href="https://docs.okp4.network/commands/okp4d"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://docs.okp4.network/commands/okp4d
+                    <a href={okp4dDocsCommandsUrl} rel="noreferrer" target="_blank">
+                      {okp4dDocsCommandsUrl}
                     </a>
                   </li>
                   <li>
                     <span>objectarium</span> smart contract Github Repo:{' '}
-                    <a
-                      href="https://github.com/okp4/contracts/tree/main/contracts/okp4-objectarium"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/contracts/tree/main/contracts/okp4-objectarium
+                    <a href={githubObjectariumUrl} rel="noreferrer" target="_blank">
+                      {githubObjectariumUrl}
                     </a>
                   </li>
                   <li>”Get started with OKP4 protocol: how to use the CLI” tutorial</li>
@@ -472,18 +475,14 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     Prolog - Learn the basics:{' '}
-                    <a href="https://www.swi-prolog.org/" rel="noreferrer" target="_blank">
-                      https://www.swi-prolog.org/
+                    <a href={swiPrologUrl} rel="noreferrer" target="_blank">
+                      {swiPrologUrl}
                     </a>
                   </li>
                   <li>
                     <span>law stone</span> smart contract Github Repo:{' '}
-                    <a
-                      href="https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone/examples/single-source"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone/examples/single-source
+                    <a href={githubLawStoneUrl} rel="noreferrer" target="_blank">
+                      {githubLawStoneUrl}
                     </a>
                   </li>
                   <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
@@ -561,22 +560,14 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     <span>block_time/1</span> predicate:{' '}
-                    <a
-                      href="https://github.com/okp4/okp4d/blob/main/x/logic/predicate/block.go"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/okp4d/blob/main/x/logic/predicate/block.go
+                    <a href={githubPredicateBlockUrl} rel="noreferrer" target="_blank">
+                      {githubPredicateBlockUrl}
                     </a>
                   </li>
                   <li>
                     Prolog arithmetic functions:{' '}
-                    <a
-                      href="https://www.swi-prolog.org/pldoc/man?section=functions"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://www.swi-prolog.org/pldoc/man?section=functions
+                    <a href={swiPrologFunctionsUrl} rel="noreferrer" target="_blank">
+                      {swiPrologFunctionsUrl}
                     </a>
                   </li>
                 </ul>
@@ -623,11 +614,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                     <ul>
                       <li>
                         addresses from others Cosmos chains (use{' '}
-                        <a
-                          href="https://github.com/okp4/okp4d/blob/main/x/logic/predicate/address.go"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
+                        <a href={githubPredicateAddressUrl} rel="noreferrer" target="_blank">
                           bech32_address/2 predicate
                         </a>
                         )
@@ -682,22 +669,14 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     Custom predicates in the OKP4 logic module:{' '}
-                    <a
-                      href="https://github.com/okp4/okp4d/tree/main/x/logic/predicate"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/okp4d/tree/main/x/logic/predicate
+                    <a href={githubLogicModulePredicatesUrl} rel="noreferrer" target="_blank">
+                      {githubLogicModulePredicatesUrl}
                     </a>
                   </li>
                   <li>
                     Prolog template example:{' '}
-                    <a
-                      href="https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone/examples/multiple-sources"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone/examples/multiple-sources
+                    <a href={githubPrologTemplateUrl} rel="noreferrer" target="_blank">
+                      {githubPrologTemplateUrl}
                     </a>
                   </li>
                   <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
@@ -722,13 +701,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                   <p>
                     (Difficulty: 2/5)
                     <br /> Get the ontology file of a shared resource from Rhizome (available here:
-                    <a
-                      href="https://github.com/okp4/ontology/blob/main/example/rhizome/dataset/0ea1fc7a-dd97-4adc-a10e-169c6597bcde.ttl"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
+                    <a href={githubOntologyRhizomeUrl} rel="noreferrer" target="_blank">
                       {' '}
-                      https://github.com/okp4/ontology/blob/main/example/rhizome/dataset/0ea1fc7a-dd97-4adc-a10e-169c6597bcde.ttl
+                      {githubOntologyRhizomeUrl}
                     </a>
                     ).
                   </p>
@@ -784,22 +759,14 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
                 <ul>
                   <li>
                     OKP4 Ontology, the approach to knowledge description:{' '}
-                    <a
-                      href="https://blog.okp4.network/okp4-knowledge-sharing-through-ontology-driven-dataverse-a-new-approach-to-knowledge-description-f9b81d4484c8"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://blog.okp4.network/okp4-knowledge-sharing-through-ontology-driven-dataverse-a-new-approach-to-knowledge-description-f9b81d4484c8
+                    <a href={ontologyDescriptionUrl} rel="noreferrer" target="_blank">
+                      {ontologyDescriptionUrl}
                     </a>
                   </li>
                   <li>
                     <span>cognitarium</span> smart contract messages:{' '}
-                    <a
-                      href="https://github.com/okp4/contracts/blob/main/contracts/okp4-cognitarium/src/msg.rs"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      https://github.com/okp4/contracts/blob/main/contracts/okp4-cognitarium/src/msg.rs
+                    <a href={githubCognitariumMessagesUrl} rel="noreferrer" target="_blank">
+                      {githubCognitariumMessagesUrl}
                     </a>
                   </li>
                   <li>

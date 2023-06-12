@@ -84,7 +84,26 @@ export const config: Config = {
     },
     samhain: {
       startDate: process.env.OKP4_PHASE_SAMHAIN_START_DATE,
-      endDate: process.env.OKP4_PHASE_SAMHAIN_END_DATE
+      endDate: process.env.OKP4_PHASE_SAMHAIN_END_DATE,
+      urls: {
+        keplrWalletExtensionUrl: process.env.OKP4_KEPLR_WALLET_EXTENSION_URL,
+        explorerWalletUrl: process.env.OKP4_EXPLORER_WALLET_URL,
+        faucetUrl: process.env.OKP4_FAUCET_URL,
+        githubOkp4dReleasesUrl: process.env.OKP4_GITHUB_OKP4D_RELEASES_URL,
+        githubObjectariumUrl: process.env.OKP4_GITHUB_OBJECTARIUM_URL,
+        githubCognitariumMessagesUrl:  process.env.OKP4_GITHUB_COGNITARIUM_MESSAGES_URL,
+        githubLawStoneUrl: process.env.OKP4_GITHUB_LAW_STONE_URL,
+        githubPredicateBlockUrl: process.env.OKP4_GITHUB_PREDICATE_BLOCK_URL,
+        githubPredicateAddressUrl: process.env.OKP4_GITHUB_PREDICATE_ADDRESS_URL,
+        githubLogicModulePredicatesUrl: process.env.OKP4_GITHUB_LOGIC_MODULE_PREDICATES_URL,
+        githubPrologTemplateUrl: process.env.OKP4_GITHUB_PROLOG_TEMPLATE_URL,
+        githubOntologyRhizomeUrl: process.env.OKP4_GITHUB_ONTOLOGY_RHIZOME_URL,
+        okp4dDocsCommandsUrl: process.env.OKP4_OKP4D_DOCS_COMMANDS_URL,
+        ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
+        swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
+        swiPrologFunctionsUrl: process.env.OKP4_SWI_PROLOG_FUNCTIONS_URL,
+        objectariumAddress: process.env.OKP4_OBJECTARIUM_ADDRESS
+      }
     }
   }
 }
