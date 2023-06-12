@@ -3,7 +3,7 @@ export type Duration = Readonly<{
   to: string
 }>
 
-export type TaskContentId = 'rewards' | 'criteria' | 'submit' | 'description'
+export type TaskContentId = 'rewards' | 'criteria' | 'submit' | 'description' | 'documentation'
 export type PhaseStatus = 'coming' | 'active' | 'closed'
 
 export type TaskContent = Readonly<{
@@ -20,6 +20,12 @@ export type TaskDTO = Readonly<{
   points: number
 }>
 
+export type ChallengeDTO = Readonly<{
+  group: string
+  challengeDescription: JSX.Element
+  tasks: TaskDTO[]
+}>
+
 export type PhaseDTO = Readonly<{
   number: number
   phaseName: string
@@ -27,4 +33,5 @@ export type PhaseDTO = Readonly<{
   status: PhaseStatus
   phaseDuration?: Duration
   tasks: TaskDTO[]
+  challenges?: ChallengeDTO[]
 }>
