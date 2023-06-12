@@ -24,6 +24,12 @@ const TasksSummary = dynamic(async () => await import('@/components/tasks/TasksS
 
 const LottieLoader = dynamic(async () => await import('@/components/loader/LottieLoader'))
 
+const ContentBlock = dynamic(async () => await import('@/components/contentBlock/ContentBlock'))
+
+const TaskContentIcon = dynamic(
+  async () => await import('@/components/taskContentIcon/TaskContentIcon')
+)
+
 export {
   PhaseCard,
   Layout,
@@ -36,5 +42,7 @@ export {
   GoBackButton,
   Profile,
   TasksSummary,
-  LottieLoader
+  LottieLoader,
+  ContentBlock,
+  TaskContentIcon
 }

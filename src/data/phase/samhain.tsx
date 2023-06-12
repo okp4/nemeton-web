@@ -220,16 +220,15 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
   ],
   challenges: [
     {
-      group: 'The first fire of Tlachtga- From June, 14th to June, 28th',
+      challengeName: 'The first fire of Tlachtga- From June, 14th to June, 28th',
       challengeDescription: (
         <p>
           Enter in the Nemeton world with the first task that a druid should master before getting
           to the heart of the matter.
         </p>
       ),
-      tasks: [
+      challengeTasks: [
         {
-          group: 'Nodes',
           taskName: 'Starter task: Send your first transaction to the OKP4 blockchain',
           taskContent: [
             {
@@ -309,11 +308,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         },
         {
-          group: 'Nodes',
           taskName:
             'Use the okp4d CLI to fetch and store messages in a storage-oriented smart contract',
           taskContent: [
@@ -406,11 +403,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         },
         {
-          group: 'Nodes',
           taskName:
             'Create a Prolog program to allowlist account addresses, add it to the OKP4 blockchain as governance rules',
           taskContent: [
@@ -499,11 +494,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         },
         {
-          group: 'Nodes',
           taskName: 'Create a Prolog program to allow access only on a time slot',
           taskContent: [
             {
@@ -593,11 +586,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         },
         {
-          group: 'Nodes',
           taskName:
             'Purpose a governance template (Prolog code), tweet a thread to explain its relevance',
           taskContent: [
@@ -717,11 +708,9 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         },
         {
-          group: 'Nodes',
           taskName:
             'Add a formal and structured representation of a resource to share with the OKP4 blockchain',
           taskContent: [
@@ -824,8 +813,7 @@ export const samhain = ({ samhain: { startDate, endDate } }: PhasesConfig): Phas
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
-          },
-          points: 500
+          }
         }
       ]
     }

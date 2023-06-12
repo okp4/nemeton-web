@@ -56,7 +56,7 @@ const Accordion = ({
               className={`okp4-nemeton-web-icon ${isExpanded ? 'rotate-up' : 'rotate-down'}`}
               height={iconProps?.height ?? 30}
               onClick={onToggle}
-              src="/icons/arrow.svg"
+              src={`/icons/${variant === 'tertiary' ? 'arrow-bold' : 'arrow'}.svg`}
               width={iconProps?.width ?? 48}
             />
           </div>

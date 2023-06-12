@@ -12,6 +12,7 @@
 @import 'src/components/table/table.scss';
 @import 'src/components/countdown/countdown.scss';
 @import 'src/components/accordion/accordion.scss';
+@import 'src/components/contentBlock/contentBlock.scss';
 @import 'src/components/profile/profile.scss';
 @import 'src/components/tasks/tasksSummary.scss';
 @import 'src/components/tag/tag.scss';
@@ -350,26 +351,6 @@ main {
       p {
         opacity: 0.6;
         margin: 0;
-      }
-    }
-
-    .content-block-main {
-      margin: 50px 0;
-
-      .content-block-title-container {
-        @include flex-rows-with-gap(5px);
-        align-items: center;
-
-        > h3:first-of-type {
-          font-style: italic;
-          font-family: 'Gotham', sans-serif;
-          font-weight: 700;
-          padding-top: 18px;
-        }
-
-        > svg {
-          font-size: 30px;
-        }
       }
     }
 

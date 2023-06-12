@@ -2,12 +2,11 @@ import React, { useMemo } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import moment from 'moment'
 import Phases from '@/data/phase'
-import { Accordion } from '@/components/index'
+import { Accordion, ContentBlock, TaskContentIcon } from '@/components/index'
 import { useAccordion } from '@/hook/useAccordion'
-import { ContentBlock, taskContentIcon } from '../validators/tasks'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
-import type { TaskContent } from '@/data/phase/dto.type'
+import type { ChallengeTaskContent } from '@/data/phase/dto.type'
 
 export type ChallengesProps = Pick<Config, 'urls' | 'phases'>
 
@@ -30,11 +29,11 @@ const Challenges: NextPage<ChallengesProps> = props => {
           <div className="okp4-nemeton-web-page-challenges-content">
             <h1>Challenges</h1>
             <div className="okp4-nemeton-web-page-divider" />
-            {challenges.map(({ group: challengePart, challengeDescription, tasks }) => (
-              <div key={challengePart}>
-                <h2>{challengePart}</h2>
+            {challenges.map(({ challengeName, challengeDescription, challengeTasks }) => (
+              <div key={challengeName}>
+                <h2>{challengeName}</h2>
                 {challengeDescription}
-                {tasks.map(({ taskName, taskContent, taskDuration }, index) => {
+                {challengeTasks.map(({ taskName, taskContent, taskDuration }, index) => {
                   const { from, to } = taskDuration
                   const title = (
                     <div className="okp4-nemeton-web-challenges-accordion-title-wrapper">
@@ -53,11 +52,15 @@ const Challenges: NextPage<ChallengesProps> = props => {
                         content={
                           <>
                             {taskContent.map(
-                              ({ id, title, contentDescription }: TaskContent): JSX.Element => (
-                                <div key={id}>
+                              ({
+                                id,
+                                title,
+                                contentDescription
+                              }: ChallengeTaskContent): JSX.Element => (
+                                <div key={title}>
                                   <ContentBlock
                                     description={contentDescription}
-                                    icon={taskContentIcon(id)}
+                                    icon={<TaskContentIcon id={id} />}
                                     title={title}
                                   />
                                 </div>
