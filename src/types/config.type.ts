@@ -49,6 +49,7 @@ export type PhasesConfig = {
       swiPrologUrl: string
       swiPrologFunctionsUrl: string
       objectariumAddress: string
+      smartContractCodeID: string
     }
     challenges: Array<{
       startDate: string

@@ -23,7 +23,8 @@ export const samhain = ({
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
-      objectariumAddress
+      objectariumAddress,
+      smartContractCodeID
     },
     challenges
   }
@@ -424,7 +425,8 @@ export const samhain = ({
                   <span>okp4rocks</span> as a<span>wesome_addresses</span>. Authorize{' '}
                   <span>get_vip_access</span>
                   for these addresses only. Add these governance rules on-chain; instantiate from a
-                  <span>law stone</span> smart contract (<span>CODE_ID = …</span>).
+                  <span>law stone</span> smart contract (
+                  <span>CODE_ID = {smartContractCodeID}</span>).
                 </p>
               )
             },
@@ -509,7 +511,7 @@ export const samhain = ({
                   <br /> Add an additional condition to the Prolog program from task 2 to authorize
                   VIP access only during the day (07:00 - 22:00 UTC). Add these governance rules
                   on-chain; instantiate from a <span>law stone</span> smart contract (
-                  <span>CODE_ID = …</span>).
+                  <span>CODE_ID = {smartContractCodeID}</span>).
                 </p>
               )
             },
@@ -715,7 +717,7 @@ export const samhain = ({
                   </p>
                   <p>
                     Then, instantiate a <span>cognitarium</span> smart contract (
-                    <span>CODE_ID = …</span>).
+                    <span>CODE_ID = {smartContractCodeID}</span>).
                   </p>
                   <p>
                     Finally, store the updated semantic data on-chain; you should execute an
