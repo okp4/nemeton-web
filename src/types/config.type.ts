@@ -60,7 +60,7 @@ export type Config = {
       nodesUrl: string
       faqUrl: string
       logicModuleUrl: string
-      technicalDocsUrl: string
+      tutorialsUrl: string
       registrationFormUrl: string
     }
     supportUrls: {
