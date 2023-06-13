@@ -1,5 +1,5 @@
 import type { PhasesConfig } from '@/types/config.type'
-import { getPhaseStatus } from '@/utils'
+import { getStatusByDuration } from '@/utils'
 import type { PhaseDTO } from './dto.type'
 
 export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): PhaseDTO => ({
@@ -7,7 +7,7 @@ export const beltaine = ({ beltaine: { startDate, endDate } }: PhasesConfig): Ph
   phaseName: 'beltaine',
   phaseDescription:
     'The third phase is focused on governance and chain upgrade. The Druids will need to vote on governance proposals to implement the new OKP4 Logic Module that interprets any Data Space rules!',
-  status: getPhaseStatus(startDate, endDate),
+  status: getStatusByDuration(startDate, endDate),
   phaseDuration: {
     from: startDate,
     to: endDate

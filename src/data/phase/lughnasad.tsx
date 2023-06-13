@@ -1,5 +1,5 @@
 import type { PhasesConfig } from '@/types/config.type'
-import { getPhaseStatus } from '@/utils'
+import { getStatusByDuration } from '@/utils'
 import type { PhaseDTO } from './dto.type'
 
 export const lughnasad = ({
@@ -13,7 +13,7 @@ export const lughnasad = ({
   phaseName: 'lughnasad',
   phaseDescription:
     'The fourth phase tests modules and smart contract performance. It will enable OKP4 to fine-tune the many custom developments and find inefficiencies and vulnerabilities to improve the code.',
-  status: getPhaseStatus(startDate, endDate),
+  status: getStatusByDuration(startDate, endDate),
   phaseDuration: {
     from: startDate,
     to: endDate
@@ -234,15 +234,23 @@ export const lughnasad = ({
               </p>
               <p>
                 Here are some documentation and usage examples for{' '}
-                <a href="https://github.com/okp4/contracts/tree/main/contracts/okp4-objectarium" rel="noreferrer" target="_blank">
+                <a
+                  href="https://github.com/okp4/contracts/tree/main/contracts/okp4-objectarium"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   okp4-objectarium
-                </a>
-                {' '}and {' '}
-                <a href="https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone" rel="noreferrer" target="_blank">
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://github.com/okp4/contracts/tree/main/contracts/okp4-law-stone"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   okp4-law-stone
-                </a>
-                {' '}smart contracts. Only Druid&apos;s delegator addresses can instantiate those contracts, 
-                through the code id 2 for cw-storage and 3 for cw-law-stone.
+                </a>{' '}
+                smart contracts. Only Druid&apos;s delegator addresses can instantiate those
+                contracts, through the code id 2 for cw-storage and 3 for cw-law-stone.
               </p>
             </>
           )

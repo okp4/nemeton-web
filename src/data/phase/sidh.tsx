@@ -1,5 +1,5 @@
 import type { PhasesConfig } from '@/types/config.type'
-import { getPhaseStatus } from '@/utils'
+import { getStatusByDuration } from '@/utils'
 import type { PhaseDTO } from './dto.type'
 
 export const sidh = ({
@@ -13,7 +13,7 @@ export const sidh = ({
   phaseName: 'sidh',
   phaseDescription:
     " This first phase is pretty basic, it is dedicated to setting up Druids' validator environment, participating in the genesis, and getting familiar with the OKP4 testnet.",
-  status: getPhaseStatus(startDate, endDate),
+  status: getStatusByDuration(startDate, endDate),
   phaseDuration: {
     from: startDate,
     to: endDate
