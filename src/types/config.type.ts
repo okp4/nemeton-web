@@ -52,6 +52,7 @@ export type PhasesConfig = {
       objectariumID: string
       smartContractLawStoneCodeID: string
       smartContractCognitariumCodeID: string
+      chainAddress: string
     }
     challenges: Array<{
       startDate: string

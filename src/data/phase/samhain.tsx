@@ -26,7 +26,8 @@ export const samhain = ({
       objectariumAddress,
       objectariumID,
       smartContractLawStoneCodeID,
-      smartContractCognitariumCodeID
+      smartContractCognitariumCodeID,
+      chainAddress
     },
     challenges
   }
@@ -268,7 +269,7 @@ export const samhain = ({
                   (Difficulty: 1/5)
                   <br /> Setup with Keplr or another wallet, connect to the OKP4 testnet network,
                   claim $KNOW tokens from the faucet and send 0.01 KNOW to this address:
-                  okp41r0pf2d78w8w29sm9a6qm8x6yqshezm0k6vwcrg
+                  <span>{chainAddress}</span>
                 </p>
               )
             },
