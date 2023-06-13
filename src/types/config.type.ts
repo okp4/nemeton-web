@@ -50,6 +50,10 @@ export type PhasesConfig = {
       swiPrologFunctionsUrl: string
       objectariumAddress: string
     }
+    challenges: Array<{
+      startDate: string
+      endDate: string
+    }>
   }
 }
 

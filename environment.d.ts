@@ -66,6 +66,8 @@ declare namespace NodeJS {
     OKP4_DOCS_LOGIC_MODULE_URL: string
     OKP4_TASKS_LUGHNASAD_5_TYPEFORM_URL: string
     OKP4_TASKS_LUGHNASAD_6_TYPEFORM_URL: string
+    OKP4_CHALLENGE_1_START_DATE: string
+    OKP4_CHALLENGE_1_END_DATE: string
   }
 }
 

@@ -91,7 +91,7 @@ export const config: Config = {
         faucetUrl: process.env.OKP4_FAUCET_URL,
         githubOkp4dReleasesUrl: process.env.OKP4_GITHUB_OKP4D_RELEASES_URL,
         githubObjectariumUrl: process.env.OKP4_GITHUB_OBJECTARIUM_URL,
-        githubCognitariumMessagesUrl:  process.env.OKP4_GITHUB_COGNITARIUM_MESSAGES_URL,
+        githubCognitariumMessagesUrl: process.env.OKP4_GITHUB_COGNITARIUM_MESSAGES_URL,
         githubLawStoneUrl: process.env.OKP4_GITHUB_LAW_STONE_URL,
         githubPredicateBlockUrl: process.env.OKP4_GITHUB_PREDICATE_BLOCK_URL,
         githubPredicateAddressUrl: process.env.OKP4_GITHUB_PREDICATE_ADDRESS_URL,
@@ -103,7 +103,13 @@ export const config: Config = {
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
         swiPrologFunctionsUrl: process.env.OKP4_SWI_PROLOG_FUNCTIONS_URL,
         objectariumAddress: process.env.OKP4_OBJECTARIUM_ADDRESS
-      }
+      },
+      challenges: [
+        {
+          startDate: process.env.OKP4_CHALLENGE_1_START_DATE,
+          endDate: process.env.OKP4_CHALLENGE_1_END_DATE
+        }
+      ]
     }
   }
 }
