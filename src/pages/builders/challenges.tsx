@@ -29,56 +29,68 @@ const Challenges: NextPage<ChallengesProps> = props => {
           <div className="okp4-nemeton-web-page-challenges-content">
             <h1>Challenges</h1>
             <div className="okp4-nemeton-web-page-divider" />
-            {challenges.map(({ challengeName, challengeDescription, challengeTasks }) => (
-              <div key={challengeName}>
-                <h2>{challengeName}</h2>
-                {challengeDescription}
-                {challengeTasks.map(({ taskName, taskContent, taskDuration }, index) => {
-                  const { from, to } = taskDuration
-                  const title = (
-                    <div className="okp4-nemeton-web-challenges-accordion-title-wrapper">
-                      <h3>{taskName}</h3>
-                      <div className="okp4-nemeton-web-challenges-accordion-duration-wrapper">
-                        <p>{`${moment(from).utc().format('MMMM Do H:mm ')} UTC -`}</p>
-                        <p>{`${moment(to).utc().format('MMMM Do H:mm ')} UTC`}</p>
-                      </div>
-                    </div>
-                  )
-                  const active = activeIndex === index
+            {challenges.map(
+              ({ challengeName, challengeDescription, challengeTasks, challengeStatus }) => (
+                <div key={challengeName}>
+                  {challengeStatus === 'coming' ? (
+                    <h2>Coming soon</h2>
+                  ) : (
+                    <>
+                      <h2>
+                        {challengeName}
+                        {challengeStatus === 'closed' && <span> (closed)</span>}
+                      </h2>
 
-                  return (
-                    <div key={index}>
-                      <Accordion
-                        content={
-                          <>
-                            {taskContent.map(
-                              ({
-                                id,
-                                title,
-                                contentDescription
-                              }: ChallengeTaskContent): JSX.Element => (
-                                <div key={title}>
-                                  <ContentBlock
-                                    description={contentDescription}
-                                    icon={<TaskContentIcon id={id} />}
-                                    title={title}
-                                  />
-                                </div>
-                              )
-                            )}
-                          </>
-                        }
-                        iconProps={{ width: 21, height: 13 }}
-                        isExpanded={active}
-                        onToggle={handleClick(index)}
-                        title={title}
-                        variant="tertiary"
-                      />
-                    </div>
-                  )
-                })}
-              </div>
-            ))}
+                      {challengeDescription}
+                      {challengeTasks.map(({ taskName, taskContent, taskDuration }, index) => {
+                        const { from, to } = taskDuration
+                        const title = (
+                          <div className="okp4-nemeton-web-challenges-accordion-title-wrapper">
+                            <h3>{taskName}</h3>
+                            <div className="okp4-nemeton-web-challenges-accordion-duration-wrapper">
+                              <p>{`${moment(from).utc().format('MMMM Do H:mm ')} UTC -`}</p>
+                              <p>{`${moment(to).utc().format('MMMM Do H:mm ')} UTC`}</p>
+                            </div>
+                          </div>
+                        )
+                        const active = activeIndex === index
+
+                        return (
+                          <div key={index}>
+                            <Accordion
+                              content={
+                                <>
+                                  {taskContent.map(
+                                    ({
+                                      id,
+                                      title,
+                                      contentDescription
+                                    }: ChallengeTaskContent): JSX.Element => (
+                                      <div key={title}>
+                                        <ContentBlock
+                                          description={contentDescription}
+                                          icon={<TaskContentIcon id={id} />}
+                                          title={title}
+                                        />
+                                      </div>
+                                    )
+                                  )}
+                                </>
+                              }
+                              iconProps={{ width: 21, height: 13 }}
+                              isExpanded={active}
+                              onToggle={handleClick(index)}
+                              title={title}
+                              variant="tertiary"
+                            />
+                          </div>
+                        )
+                      })}
+                    </>
+                  )}
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
