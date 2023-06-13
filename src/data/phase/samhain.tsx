@@ -10,7 +10,7 @@ export const samhain = ({
       keplrWalletExtensionUrl,
       explorerWalletUrl,
       faucetUrl,
-      githubOkp4dReleasesUrl,
+      githubContractReleasesUrl,
       okp4dDocsCommandsUrl,
       githubObjectariumUrl,
       githubCognitariumMessagesUrl,
@@ -388,8 +388,8 @@ export const samhain = ({
                 <ul>
                   <li>
                     OKP4 daemon CLI releases:{' '}
-                    <a href={githubOkp4dReleasesUrl} rel="noreferrer" target="_blank">
-                      {githubOkp4dReleasesUrl}
+                    <a href={githubContractReleasesUrl} rel="noreferrer" target="_blank">
+                      {githubContractReleasesUrl}
                     </a>
                   </li>
                   <li>

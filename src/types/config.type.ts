@@ -35,7 +35,7 @@ export type PhasesConfig = {
       keplrWalletExtensionUrl: string
       explorerWalletUrl: string
       faucetUrl: string
-      githubOkp4dReleasesUrl: string
+      githubContractReleasesUrl: string
       githubObjectariumUrl: string
       githubCognitariumMessagesUrl: string
       githubLawStoneUrl: string
