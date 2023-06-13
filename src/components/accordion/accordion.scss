@@ -75,6 +75,14 @@
       &.active {
         height: inherit;
       }
+
+      .rotate-down {
+        transform: rotate(0deg);
+      }
+
+      .rotate-up {
+        transform: rotate(180deg) scaleX(-1);
+      }
     }
 
     .okp4-nemeton-web-accordion-content {
