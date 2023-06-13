@@ -71,12 +71,45 @@ const buildersFaqContent = (urls: BuildersFaqUrls): FaqContent[] => [
       </div>
     ),
     answer: (
-      <p>
-        When the submission period comes, we&apos;ll open a form to send a detailed presentation &
-        links to your contribution. It can be docs, code, proof of concepts... If it seems cool,
-        you&apos;ll be nominated by the judges and be invited to discuss your contribution with the
-        team.
-      </p>
+      <>
+        <p>
+          Follow the &quot;How to submit&quot; instructions provided for each challenge. Sometimes a
+          transaction you submit on-chain is enough; other times, you should tweet a thread with
+          specific hashtags. We may open a form to send a detailed presentation & links to your
+          contribution. It can be docs, code, proof of concepts...
+        </p>
+        <p>
+          For most of the challenges, you&apos;ll be nominated by the judges. You might be invited
+          to discuss your contribution with the team.
+        </p>
+      </>
+    )
+  },
+  {
+    question: (
+      <div className="okp4-nemeton-web-tasks-accordion-title">
+        <h3>How do I know I completed a challenge? When will I receive rewards?</h3>
+      </div>
+    ),
+    answer: (
+      <>
+        <p>
+          For each challenge, the OKP4 team will communicate eligible wallets a few days after the
+          end period. POAP badges (Stargaze NFT) will be sent at this moment, but $KNOW token will
+          be airdropped when the mainnet is launched (expected at the end of the 2023 year).
+        </p>
+        <p>
+          If you have doubts, if you&apos;re not sure your work is eligible to rewards, you can ask
+          on{' '}
+          <a href={urls.discordChannelUrl} rel="noreferrer" target="_blank">
+            the Discord dedicated channel
+          </a>{' '}
+          and{' '}
+          <a href={urls.discordTicketChannelUrl} rel="noreferrer" target="_blank">
+            open a ticket.
+          </a>
+        </p>
+      </>
     )
   }
 ]
@@ -169,3 +202,4 @@ export const getServerSideProps: GetServerSideProps<FaqProps> = async () => ({
 })
 
 export default Faq
+
