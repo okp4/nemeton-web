@@ -103,7 +103,9 @@ export const config: Config = {
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
         swiPrologFunctionsUrl: process.env.OKP4_SWI_PROLOG_FUNCTIONS_URL,
         objectariumAddress: process.env.OKP4_OBJECTARIUM_ADDRESS,
-        smartContractCodeID: process.env.OKP4_SMART_CONTRACT_CODE_ID
+        objectariumID: process.env.OKP4_OBJECTARIUM_ID,
+        smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
+        smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID
       },
       challenges: [
         {

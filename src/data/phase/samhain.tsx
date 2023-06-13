@@ -24,7 +24,9 @@ export const samhain = ({
       swiPrologUrl,
       swiPrologFunctionsUrl,
       objectariumAddress,
-      smartContractCodeID
+      objectariumID,
+      smartContractLawStoneCodeID,
+      smartContractCognitariumCodeID
     },
     challenges
   }
@@ -265,14 +267,15 @@ export const samhain = ({
                 <p>
                   (Difficulty: 1/5)
                   <br /> Setup with Keplr or another wallet, connect to the OKP4 testnet network,
-                  claim $KNOW tokens from the faucet and send 0.01 KNOW to this address: okp4….
+                  claim $KNOW tokens from the faucet and send 0.01 KNOW to this address:
+                  okp41r0pf2d78w8w29sm9a6qm8x6yqshezm0k6vwcrg
                 </p>
               )
             },
             {
               id: 'rewards',
               title: 'Rewards',
-              contentDescription: <p>An “OKP4 avant gardist user” POAP (Stargaze badge)</p>
+              contentDescription: <p>An “OKP4 young druid” POAP (Stargaze badge)</p>
             },
             {
               id: 'criteria',
@@ -291,7 +294,7 @@ export const samhain = ({
               title: 'How to Submit',
               contentDescription: (
                 <p>
-                  You have to send 0.05 KNOW to the OKP4 address above; you don’t need to do
+                  You have to send 0.01 KNOW to the OKP4 address above; you don’t need to do
                   anything else.
                 </p>
               )
@@ -319,7 +322,6 @@ export const samhain = ({
                       {faucetUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: Your first transaction” tutorial</li>
                 </ul>
               )
             }
@@ -340,12 +342,12 @@ export const samhain = ({
                 <p>
                   (Difficulty: 2/5)
                   <br /> Install the CLI with your terminal, and import the wallet seed you created
-                  for the previous task. Fetch object from the <span>objectarium</span> instance
-                  deployed at the <span>{objectariumAddress}</span>
-                  address, with the id …. Decode the base64 message, replace the okp4 address in it
-                  by yours. Store this new message in base64. You&apos;ll have to execute a
-                  transaction to the <span>objectarium</span> smart contract. The object should be
-                  pinned.
+                  for the previous task. Fetch object data from the <span>objectarium</span>{' '}
+                  instance deployed at the <span>{objectariumAddress}</span>
+                  address, with the <span>ID = {objectariumID}</span>. Decode the base64 message,
+                  and replace the okp4 address in it by yours. Store this new message in{' '}
+                  <span>base64</span>. You&apos;ll have to execute a transaction to the{' '}
+                  <span>objectarium</span> smart contract. The object should be pinned.
                 </p>
               )
             },
@@ -422,18 +424,18 @@ export const samhain = ({
                 <p>
                   (Difficulty: 2/5)
                   <br /> Create a Prolog file that categorizes any okp4 address starting with
-                  <span>okp4rocks</span> as a<span>wesome_addresses</span>. Authorize{' '}
+                  <span>okp4rocks</span> as <span>awesome_addresses</span>. Authorize{' '}
                   <span>get_vip_access</span>
                   for these addresses only. Add these governance rules on-chain; instantiate from a
                   <span>law stone</span> smart contract (
-                  <span>CODE_ID = {smartContractCodeID}</span>).
+                  <span>CODE_ID = {smartContractLawStoneCodeID}</span>).
                 </p>
               )
             },
             {
               id: 'rewards',
               title: 'Rewards',
-              contentDescription: <p>An “OKP4 governor trainee” POAP (Stargaze badge)</p>
+              contentDescription: <p>An “OKP4 law stone builder” POAP (Stargaze badge)</p>
             },
             {
               id: 'criteria',
@@ -509,9 +511,11 @@ export const samhain = ({
                 <p>
                   (Difficulty: 3/5)
                   <br /> Add an additional condition to the Prolog program from task 2 to authorize
-                  VIP access only during the day (07:00 - 22:00 UTC). Add these governance rules
-                  on-chain; instantiate from a <span>law stone</span> smart contract (
-                  <span>CODE_ID = {smartContractCodeID}</span>).
+                  VIP access only during a specific time slot of the day (e. g., 07:00 - 22:00 UTC).
+                  Add these governance rules on-chain; instantiate from a <span>
+                    law stone
+                  </span>{' '}
+                  smart contract (<span>CODE_ID = {smartContractLawStoneCodeID}</span>).
                 </p>
               )
             },
@@ -520,8 +524,12 @@ export const samhain = ({
               title: 'Rewards',
               contentDescription: (
                 <p>
-                  XX points + an “OKP4 time master” POAP (Stargaze badge) for the first one to give
-                  a valid solution
+                  20,000 $KNOW ($1500 at current valuation) + an “OKP4 Dagda Servant” POAP (Stargaze
+                  badge) for the first one to give a valid solution.
+                  <br />
+                  The first wallet with an eligible transaction will receive the on-chain badge on
+                  June 28th, and the $KNOW tokens will be sent out when the mainnet is launched
+                  (scheduled for late 2023).
                 </p>
               )
             },
@@ -531,19 +539,23 @@ export const samhain = ({
               contentDescription: (
                 <>
                   <p>
-                    The instantiate transaction should be from the address you used to complete task
-                    2.
-                    <br />A query like this one, with your deployed smart address as{' '}
+                    Schedule rules should be set between 07:00 and 22:00, but we should be able to
+                    change the time slot easily.
+                    <br />A query like the one below, with your deployed smart address as{' '}
                     <span>$CONTRACT_ADDR</span>, should return <span>true</span> between 07:00 and
                     22:00 only (UTC, any day).
                   </p>
                   <pre>
-                    okp4d query wasm contract-state smart $CONTRACT_ADDR
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR \
                     <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
-                    \&quot;an(apos;get_vip_accessapos;,
+                    \&quot;can(&apos;get_vip_access&apos;,
                     &apos;did:key:okp4rocks7en82gmzfm259y6z93r9qe63l25dfwwng6&apos;).\&quot;{'}}'}
                     &quot;
                   </pre>
+                  <p>
+                    The instantiate transaction should be from the address you used to complete task
+                    2.
+                  </p>
                 </>
               )
             },
@@ -574,6 +586,7 @@ export const samhain = ({
                       {swiPrologFunctionsUrl}
                     </a>
                   </li>
+                  <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
                 </ul>
               )
             }
@@ -641,8 +654,16 @@ export const samhain = ({
               title: 'Rewards',
               contentDescription: (
                 <p>
-                  XX points per validated template + an “OKP4 avant-gardist templator” POAP
-                  (Stargaze badge)
+                  $KNOW tokens + an “OKP4 governance creator” POAP (Stargaze badge) per validated
+                  template Up to 80,000 $KNOW (in total) will be sent to builders for this task.
+                  OKP4 team will manually evaluate the governance template and rewards the most
+                  relevant ones. The first wallet to propose it will be rewarded if there are
+                  similar templates. It&apos;s OK to propose several templates (for different use
+                  cases) to get $KNOW rewards multiple times.
+                  <br />
+                  Wallets with an eligible transaction will receive the on-chain badge on June 28th,
+                  and the $KNOW tokens will be sent out when the mainnet is launched (scheduled for
+                  late 2023).
                 </p>
               )
             },
@@ -717,7 +738,7 @@ export const samhain = ({
                   </p>
                   <p>
                     Then, instantiate a <span>cognitarium</span> smart contract (
-                    <span>CODE_ID = {smartContractCodeID}</span>).
+                    <span>CODE_ID = {smartContractCognitariumCodeID}</span>).
                   </p>
                   <p>
                     Finally, store the updated semantic data on-chain; you should execute an
@@ -730,7 +751,7 @@ export const samhain = ({
             {
               id: 'rewards',
               title: 'Rewards',
-              contentDescription: <p>An “OKP4 ontologist trainee“ POAP (Stargaze POAP)</p>
+              contentDescription: <p>An “OKP4 ontologist apprentice“ POAP (Stargaze POAP)</p>
             },
             {
               id: 'criteria',
@@ -772,10 +793,6 @@ export const samhain = ({
                     <a href={githubCognitariumMessagesUrl} rel="noreferrer" target="_blank">
                       {githubCognitariumMessagesUrl}
                     </a>
-                  </li>
-                  <li>
-                    ”Get started with OKP4 protocol: describe shared resources with their related
-                    governance and service executions using RDF triples” tutorial
                   </li>
                 </ul>
               )
