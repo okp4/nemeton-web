@@ -26,7 +26,7 @@ export const config: Config = {
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
       faqUrl: process.env.OKP4_DOCS_FAQ_URL,
       logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
-      technicalDocsUrl: process.env.OKP4_TECHNICAL_DOCS_URL,
+      tutorialsUrl: process.env.OKP4_TUTORIALS_URL,
       registrationFormUrl: process.env.OKP4_REGISTRATION_FORM_URL
     },
     supportUrls: {

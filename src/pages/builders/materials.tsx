@@ -16,7 +16,7 @@ const Materials: NextPage<MaterialsProps> = props => {
   const { urls } = props
   const {
     githubUrls: { githubOkp4dUrl, githubContractsUrl, githubAwesomeUrl },
-    docsUrls: { whitepaperUrl, technicalDocsUrl },
+    docsUrls: { whitepaperUrl, tutorialsUrl },
     socialMediaUrls: { mediumUrl },
     supportUrls: { discordChannelUrl, discordTicketChannelUrl }
   } = urls
@@ -29,13 +29,9 @@ const Materials: NextPage<MaterialsProps> = props => {
         url: whitepaperUrl
       },
       {
-        name: 'Technical documentation',
-        icon: 'technical-docs',
-        url: technicalDocsUrl
-      },
-      {
-        name: 'Tutorial videos',
-        icon: 'videos'
+        name: 'Tutorials',
+        icon: 'tutorials',
+        url: tutorialsUrl
       },
       {
         name: 'Github okp4d',
@@ -63,7 +59,7 @@ const Materials: NextPage<MaterialsProps> = props => {
       githubContractsUrl,
       githubOkp4dUrl,
       mediumUrl,
-      technicalDocsUrl,
+      tutorialsUrl,
       whitepaperUrl
     ]
   )
