@@ -8,7 +8,7 @@ import { useAccordion } from '@/hook/useAccordion'
 import type { AccordionState } from '@/hook/useAccordion'
 import { Accordion, ContentBlock, TaskContentIcon } from '@/components/index'
 import Phases from '@/data/phase/index'
-import type { PhaseDTO, PhaseStatus, TaskDTO, TaskContent } from '@/data/phase/dto.type'
+import type { PhaseDTO, Status, TaskDTO, TaskContent } from '@/data/phase/dto.type'
 
 export type TasksProps = Pick<Config, 'phases'>
 
@@ -17,7 +17,7 @@ type PhaseAccordionProps = Readonly<{
   onClick: (taskName: string) => () => void
   number: number
   phaseName: string
-  status: PhaseStatus
+  status: Status
   tasks: TaskDTO[]
 }>
 

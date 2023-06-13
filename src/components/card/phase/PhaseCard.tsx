@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import { useMediaType } from '@/hook/useMediaType'
-import type { TaskDTO, Duration, PhaseStatus } from '@/data/phase/dto.type'
+import type { TaskDTO, Duration, Status } from '@/data/phase/dto.type'
 import { PhaseDropDown } from '@/components/dropDown/phase/PhaseDropDown'
 
 export type PhaseCardProps = Readonly<{
@@ -11,7 +11,7 @@ export type PhaseCardProps = Readonly<{
   phaseDescription: string
   tasks: TaskDTO[]
   phaseDuration?: Duration
-  status: PhaseStatus
+  status: Status
 }>
 
 const PhaseCard = ({

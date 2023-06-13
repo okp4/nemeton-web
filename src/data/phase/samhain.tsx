@@ -1,4 +1,4 @@
-import { getPhaseStatus } from '@/utils'
+import { getStatusByDuration } from '@/utils'
 import type { PhasesConfig } from '@/types/config.type'
 import type { PhaseDTO } from './dto.type'
 
@@ -24,14 +24,15 @@ export const samhain = ({
       swiPrologUrl,
       swiPrologFunctionsUrl,
       objectariumAddress
-    }
+    },
+    challenges
   }
 }: PhasesConfig): PhaseDTO => ({
   number: 5,
   phaseName: 'samhain',
   phaseDescription:
     'Samhain is no longer only for validators but for builders too and its main objective is the emergence of uses and applications of the OKP4 protocol.',
-  status: getPhaseStatus(startDate, endDate),
+  status: getStatusByDuration(startDate, endDate),
   phaseDuration: {
     from: startDate,
     to: endDate
@@ -245,6 +246,7 @@ export const samhain = ({
   challenges: [
     {
       challengeName: 'The first fire of Tlachtga- From June, 14th to June, 28th',
+      challengeStatus: getStatusByDuration(challenges[0].startDate, challenges[0].endDate),
       challengeDescription: (
         <p>
           Enter in the Nemeton world with the first task that a druid should master before getting
