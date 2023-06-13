@@ -25,6 +25,7 @@ export const config: Config = {
       whitepaperUrl: process.env.OKP4_DOCS_URL,
       nodesUrl: process.env.OKP4_DOCS_NODES_URL,
       faqUrl: process.env.OKP4_DOCS_FAQ_URL,
+      faqStargazeUrl: process.env.OKP4_FAQ_STARGAZE_URL,
       logicModuleUrl: process.env.OKP4_DOCS_LOGIC_MODULE_URL,
       tutorialsUrl: process.env.OKP4_TUTORIALS_URL,
       registrationFormUrl: process.env.OKP4_REGISTRATION_FORM_URL

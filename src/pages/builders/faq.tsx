@@ -14,6 +14,7 @@ type BuildersFaqUrls = {
   discordChannelUrl: string
   discordTicketChannelUrl: string
   registrationFormUrl: string
+  faqStargazeUrl: string
 }
 
 export type FaqProps = Pick<Config, 'urls'>
@@ -95,8 +96,12 @@ const buildersFaqContent = (urls: BuildersFaqUrls): FaqContent[] => [
       <>
         <p>
           For each challenge, the OKP4 team will communicate eligible wallets a few days after the
-          end period. POAP badges (Stargaze NFT) will be sent at this moment, but $KNOW token will
-          be airdropped when the mainnet is launched (expected at the end of the 2023 year).
+          end period. POAP badges{' '}
+          <a href={urls.faqStargazeUrl} rel="noreferrer" target="_blank">
+            (Stargaze NFT)
+          </a>{' '}
+          will be sent at this moment, but $KNOW token will be airdropped when the mainnet is
+          launched (expected at the end of the 2023 year).
         </p>
         <p>
           If you have doubts, if you&apos;re not sure your work is eligible to rewards, you can ask
@@ -118,7 +123,7 @@ const Faq: NextPage<FaqProps> = props => {
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
-    docsUrls: { whitepaperUrl, nodesUrl, faqUrl, registrationFormUrl },
+    docsUrls: { whitepaperUrl, nodesUrl, faqUrl, registrationFormUrl, faqStargazeUrl },
     supportUrls: { discordChannelUrl, discordTicketChannelUrl }
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
@@ -171,7 +176,8 @@ const Faq: NextPage<FaqProps> = props => {
           {buildersFaqContent({
             discordChannelUrl,
             discordTicketChannelUrl,
-            registrationFormUrl
+            registrationFormUrl,
+            faqStargazeUrl
           }).map(({ part, question, answer }, index, array) => {
             const previous = index > 0 ? array[index - 1] : null
             const active = activeIndex === index
@@ -202,4 +208,3 @@ export const getServerSideProps: GetServerSideProps<FaqProps> = async () => ({
 })
 
 export default Faq
-
