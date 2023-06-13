@@ -59,6 +59,7 @@ export type Config = {
       whitepaperUrl: string
       nodesUrl: string
       faqUrl: string
+      faqStargazeUrl: string
       logicModuleUrl: string
       tutorialsUrl: string
       registrationFormUrl: string
