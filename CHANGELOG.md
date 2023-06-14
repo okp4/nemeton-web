@@ -1,5 +1,28 @@
 # ØKP4 Nemeton web changelog
 
+## [1.11.0](https://github.com/okp4/nemeton-web/compare/v1.10.4...v1.11.0) (2023-06-14)
+
+
+### Features
+
+* add builders program section ([11a580d](https://github.com/okp4/nemeton-web/commit/11a580dfee59c7340135ca03ae7a093baca00ad3))
+* add challenges content ([274a4ab](https://github.com/okp4/nemeton-web/commit/274a4ab16d82c01d7046f73eb47a48b4230c65a2))
+* add challenges tasks for on boarding phase ([32a9438](https://github.com/okp4/nemeton-web/commit/32a943875243d1d82364d8231fe9c0c519897c2b))
+* add code ID to env variables ([039ed21](https://github.com/okp4/nemeton-web/commit/039ed21221d74179d5246ec8f88cb5839a7aea19))
+* add env variables ([e5d3517](https://github.com/okp4/nemeton-web/commit/e5d3517aac2751031a3384946409071f04dcbb2b))
+* add faq content ([6cff298](https://github.com/okp4/nemeton-web/commit/6cff298d795cfd617e07184fffac6d30945c0966))
+* **config:** add dates properties for challenges ([5d7f31b](https://github.com/okp4/nemeton-web/commit/5d7f31b6281dfdd3acadffdb799d4b16a3b8ead5))
+* **data:** add status for challenges ([dafdf9d](https://github.com/okp4/nemeton-web/commit/dafdf9d36a5bee076ea2325e5e4864361925b0ec))
+* **ui:** handle challenge status in page ([53cf08d](https://github.com/okp4/nemeton-web/commit/53cf08dfcf75e347c26f31677c23d363080168f3))
+
+
+### Bug Fixes
+
+* **config:** add prolog tutorial link in challenge doc ([ef201f5](https://github.com/okp4/nemeton-web/commit/ef201f5ce705a94151d22a65147518392c06ee71))
+* **data:** enhance task 5 punctuation ([10a6811](https://github.com/okp4/nemeton-web/commit/10a68111f47e74a0a768f6de4247140edea2d34d))
+* **env:** modify config urls ([ac98684](https://github.com/okp4/nemeton-web/commit/ac9868449d2ca7b17540366b9b97e4c7ba7cfa9c))
+* **env:** rename okp4 releases url ([fd31688](https://github.com/okp4/nemeton-web/commit/fd31688aa9bfbb4a7813611a64cde042c7603782))
+
 ## [1.10.4](https://github.com/okp4/nemeton-web/compare/v1.10.3...v1.10.4) (2023-05-24)
 
 
