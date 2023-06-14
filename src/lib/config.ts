@@ -89,7 +89,7 @@ export const config: Config = {
         keplrWalletExtensionUrl: process.env.OKP4_KEPLR_WALLET_EXTENSION_URL,
         explorerWalletUrl: process.env.OKP4_EXPLORER_WALLET_URL,
         faucetUrl: process.env.OKP4_FAUCET_URL,
-        githubContractReleasesUrl: process.env.OKP4_GITHUB_CONTRACTS_RELEASES_URL,
+        githubOkp4dReleasesUrl: process.env.OKP4_GITHUB_OKP4D_RELEASES_URL,
         githubObjectariumUrl: process.env.OKP4_GITHUB_OBJECTARIUM_URL,
         githubCognitariumMessagesUrl: process.env.OKP4_GITHUB_COGNITARIUM_MESSAGES_URL,
         githubLawStoneUrl: process.env.OKP4_GITHUB_LAW_STONE_URL,
