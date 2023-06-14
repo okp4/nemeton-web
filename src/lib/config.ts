@@ -106,7 +106,8 @@ export const config: Config = {
         objectariumID: process.env.OKP4_OBJECTARIUM_ID,
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
         smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID,
-        chainAddress: process.env.OKP4_CHAIN_ADDRESS
+        chainAddress: process.env.OKP4_CHAIN_ADDRESS,
+        tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL
       },
       challenges: [
         {

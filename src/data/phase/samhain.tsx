@@ -27,7 +27,8 @@ export const samhain = ({
       objectariumID,
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
-      chainAddress
+      chainAddress,
+      tutorialsPrologUrl
     },
     challenges
   }
@@ -404,7 +405,11 @@ export const samhain = ({
                       {githubObjectariumUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: how to use the CLI” tutorial</li>
+                  <li>
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
+                    </a>
+                  </li>
                 </ul>
               )
             }
@@ -492,7 +497,11 @@ export const samhain = ({
                       {githubLawStoneUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
+                  <li>
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
+                    </a>
+                  </li>
                 </ul>
               )
             }
@@ -587,7 +596,11 @@ export const samhain = ({
                       {swiPrologFunctionsUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
+                  <li>
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
+                    </a>
+                  </li>
                 </ul>
               )
             }
@@ -705,7 +718,11 @@ export const samhain = ({
                       {githubPrologTemplateUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: governance rules with Prolog” tutorial</li>
+                  <li>
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
+                    </a>
+                  </li>
                 </ul>
               )
             }
