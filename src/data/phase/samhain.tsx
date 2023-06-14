@@ -23,6 +23,7 @@ export const samhain = ({
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
+      prologTutorialUrl,
       objectariumAddress,
       objectariumID,
       smartContractLawStoneCodeID,
@@ -404,7 +405,11 @@ export const samhain = ({
                       {githubObjectariumUrl}
                     </a>
                   </li>
-                  <li>”Get started with OKP4 protocol: how to use the CLI” tutorial</li>
+                  <li>
+                    <a href={prologTutorialUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
+                    </a>
+                  </li>
                 </ul>
               )
             }

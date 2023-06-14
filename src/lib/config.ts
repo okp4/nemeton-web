@@ -102,6 +102,7 @@ export const config: Config = {
         ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
         swiPrologFunctionsUrl: process.env.OKP4_SWI_PROLOG_FUNCTIONS_URL,
+        prologTutorialUrl: process.env.OKP4_PROLOG_TUTORIAL_URL,
         objectariumAddress: process.env.OKP4_OBJECTARIUM_ADDRESS,
         objectariumID: process.env.OKP4_OBJECTARIUM_ID,
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,

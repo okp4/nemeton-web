@@ -47,6 +47,7 @@ declare namespace NodeJS {
     OKP4_FAUCET_URL: string
     OKP4_SWI_PROLOG_URL: string
     OKP4_SWI_PROLOG_FUNCTIONS_URL: string
+    OKP4_PROLOG_TUTORIAL_URL: string
     OKP4_ONTOLOGY_DESCRIPTION_URL: string
     OKP4_OBJECTARIUM_ADDRESS: string
     OKP4_OBJECTARIUM_ID: string

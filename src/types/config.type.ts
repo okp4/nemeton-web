@@ -48,6 +48,7 @@ export type PhasesConfig = {
       ontologyDescriptionUrl: string
       swiPrologUrl: string
       swiPrologFunctionsUrl: string
+      prologTutorialUrl: string
       objectariumAddress: string
       objectariumID: string
       smartContractLawStoneCodeID: string
