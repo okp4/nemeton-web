@@ -1,5 +1,5 @@
 import type { PhasesConfig } from '@/types/config.type'
-import { getPhaseStatus } from '@/utils'
+import { getStatusByDuration } from '@/utils'
 import type { PhaseDTO } from './dto.type'
 
 export const imbolc = ({
@@ -13,7 +13,7 @@ export const imbolc = ({
   phaseName: 'imbolc',
   phaseDescription:
     "The second phase is focused on testing Druids' performance & security, even under stressed conditions… Only the stronger will survive. Good luck to all!",
-  status: getPhaseStatus(startDate, endDate),
+  status: getStatusByDuration(startDate, endDate),
   phaseDuration: {
     from: startDate,
     to: endDate

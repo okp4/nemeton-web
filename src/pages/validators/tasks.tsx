@@ -3,62 +3,23 @@ import moment from 'moment'
 import type { GetServerSideProps, NextPage } from 'next'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
-import ArticleIcon from '@mui/icons-material/Article'
-import GavelIcon from '@mui/icons-material/Gavel'
-import HelpIcon from '@mui/icons-material/Help'
-import MoneyIcon from '@mui/icons-material/Money'
 import React, { useCallback, useEffect } from 'react'
 import { useAccordion } from '@/hook/useAccordion'
 import type { AccordionState } from '@/hook/useAccordion'
-import { Accordion } from '@/components/index'
+import { Accordion, ContentBlock, TaskContentIcon } from '@/components/index'
 import Phases from '@/data/phase/index'
-import type {
-  PhaseDTO,
-  PhaseStatus,
-  TaskDTO,
-  TaskContent,
-  TaskContentId
-} from '@/data/phase/dto.type'
+import type { PhaseDTO, Status, TaskDTO, TaskContent } from '@/data/phase/dto.type'
 
 export type TasksProps = Pick<Config, 'phases'>
-
-type ContentBlockProps = Readonly<{
-  title: string
-  description: JSX.Element
-  icon: JSX.Element
-}>
 
 type PhaseAccordionProps = Readonly<{
   activeAccordion: AccordionState
   onClick: (taskName: string) => () => void
   number: number
   phaseName: string
-  status: PhaseStatus
+  status: Status
   tasks: TaskDTO[]
 }>
-
-const ContentBlock: React.FC<ContentBlockProps> = ({ title, description, icon }): JSX.Element => (
-  <div className="content-block-main">
-    <div className="content-block-title-container">
-      {icon}
-      <h3>{title}</h3>
-    </div>
-    {description}
-  </div>
-)
-
-const taskContentIcon = (id: TaskContentId): JSX.Element => {
-  switch (id) {
-    case 'description':
-      return <ArticleIcon />
-    case 'rewards':
-      return <MoneyIcon />
-    case 'criteria':
-      return <GavelIcon />
-    case 'submit':
-      return <HelpIcon />
-  }
-}
 
 const formatString = (text: string): string => text.trim().toLowerCase()
 
@@ -101,7 +62,7 @@ const PhaseAccordions: React.FC<PhaseAccordionProps> = ({
                     <div key={id}>
                       <ContentBlock
                         description={contentDescription}
-                        icon={taskContentIcon(id)}
+                        icon={<TaskContentIcon id={id} />}
                         title={title}
                       />
                     </div>

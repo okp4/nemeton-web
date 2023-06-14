@@ -31,6 +31,33 @@ export type PhasesConfig = {
   samhain: {
     startDate: string
     endDate: string
+    urls: {
+      keplrWalletExtensionUrl: string
+      explorerWalletUrl: string
+      faucetUrl: string
+      githubContractReleasesUrl: string
+      githubObjectariumUrl: string
+      githubCognitariumMessagesUrl: string
+      githubLawStoneUrl: string
+      githubPredicateBlockUrl: string
+      githubPredicateAddressUrl: string
+      githubLogicModulePredicatesUrl: string
+      githubPrologTemplateUrl: string
+      githubOntologyRhizomeUrl: string
+      okp4dDocsCommandsUrl: string
+      ontologyDescriptionUrl: string
+      swiPrologUrl: string
+      swiPrologFunctionsUrl: string
+      objectariumAddress: string
+      objectariumID: string
+      smartContractLawStoneCodeID: string
+      smartContractCognitariumCodeID: string
+      chainAddress: string
+    }
+    challenges: Array<{
+      startDate: string
+      endDate: string
+    }>
   }
 }
 

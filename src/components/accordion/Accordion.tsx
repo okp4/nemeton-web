@@ -11,7 +11,7 @@ type AccordionProps = {
     width?: number
     height?: number
   }
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
   disabled?: boolean
 }
 
@@ -33,14 +33,20 @@ const Accordion = ({
 
   return (
     <div
-      className={classNames(`okp4-nemeton-web-accordion-main ${variant}`, {
-        disabled
-      })}
+      className={classNames(
+        `okp4-nemeton-web-accordion-main ${variant} ${isExpanded ? 'active' : ''}`,
+        {
+          disabled
+        }
+      )}
     >
       <div
-        className={classNames(`okp4-nemeton-web-accordion-title-container ${variant}`, {
-          disabled
-        })}
+        className={classNames(
+          `okp4-nemeton-web-accordion-title-container ${variant} ${isExpanded ? 'active' : ''}`,
+          {
+            disabled
+          }
+        )}
       >
         {title}
         {!disabled && (
@@ -50,7 +56,7 @@ const Accordion = ({
               className={`okp4-nemeton-web-icon ${isExpanded ? 'rotate-up' : 'rotate-down'}`}
               height={iconProps?.height ?? 30}
               onClick={onToggle}
-              src="/icons/arrow.svg"
+              src={`/icons/${variant === 'tertiary' ? 'arrow-bold' : 'arrow'}.svg`}
               width={iconProps?.width ?? 48}
             />
           </div>

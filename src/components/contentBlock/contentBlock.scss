@@ -1,0 +1,19 @@
+.content-block-main {
+  margin: 50px 0;
+
+  .content-block-title-container {
+    @include flex-rows-with-gap(5px);
+    align-items: center;
+
+    > h3:first-of-type {
+      font-style: italic;
+      font-family: 'Gotham', sans-serif;
+      font-weight: 700;
+      padding-top: 18px;
+    }
+
+    > svg {
+      font-size: 30px;
+    }
+  }
+}
