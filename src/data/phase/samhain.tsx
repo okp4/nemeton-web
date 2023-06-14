@@ -669,11 +669,13 @@ export const samhain = ({
               contentDescription: (
                 <p>
                   $KNOW tokens + an “OKP4 governance creator” POAP (Stargaze badge) per validated
-                  template Up to 80,000 $KNOW (in total) will be sent to builders for this task.
-                  OKP4 team will manually evaluate the governance template and rewards the most
-                  relevant ones. The first wallet to propose it will be rewarded if there are
-                  similar templates. It&apos;s OK to propose several templates (for different use
-                  cases) to get $KNOW rewards multiple times.
+                  template.
+                  <br />
+                  Up to 80,000 $KNOW (in total) will be sent to builders for this task. OKP4 team
+                  will manually evaluate the governance template and rewards the most relevant ones.
+                  The first wallet to propose it will be rewarded if there are similar templates.
+                  It&apos;s OK to propose several templates (for different use cases) to get $KNOW
+                  rewards multiple times.
                   <br />
                   Wallets with an eligible transaction will receive the on-chain badge on June 28th,
                   and the $KNOW tokens will be sent out when the mainnet is launched (scheduled for
