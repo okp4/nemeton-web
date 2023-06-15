@@ -8,7 +8,7 @@ export const samhain = ({
     endDate,
     urls: {
       keplrWalletExtensionUrl,
-      explorerWalletUrl,
+      explorerDashboardUrl,
       faucetUrl,
       githubOkp4dReleasesUrl,
       okp4dDocsCommandsUrl,
@@ -314,8 +314,8 @@ export const samhain = ({
                   </li>
                   <li>
                     Explorer:{' '}
-                    <a href={explorerWalletUrl} rel="noreferrer" target="_blank">
-                      {explorerWalletUrl}
+                    <a href={explorerDashboardUrl} rel="noreferrer" target="_blank">
+                      {explorerDashboardUrl}
                     </a>
                   </li>
                   <li>
