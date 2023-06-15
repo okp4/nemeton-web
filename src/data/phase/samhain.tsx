@@ -451,8 +451,10 @@ export const samhain = ({
                   <p>
                     The instantiate transaction should be from the address you used to complete task
                     1.
-                    <br /> A query like this one, with your deployed smart address as{' '}
-                    <span>$CONTRACT_ADDR</span>, should return <span>true</span>:
+                    <br /> A query like this one, with your deployed smart <span>
+                      contract
+                    </span>{' '}
+                    address, should return <span>true</span>:
                   </p>
                   <pre>
                     okp4d query wasm contract-state smart $CONTRACT_ADDR \<br />
@@ -551,9 +553,11 @@ export const samhain = ({
                   <p>
                     Schedule rules should be set between 07:00 and 22:00, but we should be able to
                     change the time slot easily.
-                    <br />A query like the one below, with your deployed smart address as{' '}
-                    <span>$CONTRACT_ADDR</span>, should return <span>true</span> between 07:00 and
-                    22:00 only (UTC, any day).
+                    <br />A query like the one below, with your deployed smart <span>
+                      contract
+                    </span>{' '} 
+                    address, should return <span>true</span> between 07:00 and 22:00 only (UTC, any
+                    day).
                   </p>
                   <pre>
                     okp4d query wasm contract-state smart $CONTRACT_ADDR \
