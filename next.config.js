@@ -55,6 +55,16 @@ module.exports = {
         source: '/terms',
         destination: '/validators/terms#terms-conditions',
         permanent: true
+      },
+      {
+        source: '/builders',
+        destination: '/builders/challenges#challenges',
+        permanent: true
+      },
+      {
+        source: '/validators',
+        destination: '/validators/leaderboard#leaderboard',
+        permanent: true
       }
     ]
   }
