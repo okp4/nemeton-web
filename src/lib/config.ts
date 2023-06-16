@@ -87,7 +87,7 @@ export const config: Config = {
       endDate: process.env.OKP4_PHASE_SAMHAIN_END_DATE,
       urls: {
         keplrWalletExtensionUrl: process.env.OKP4_KEPLR_WALLET_EXTENSION_URL,
-        explorerWalletUrl: process.env.OKP4_EXPLORER_WALLET_URL,
+        explorerDashboardUrl: process.env.OKP4_EXPLORER_DASHBOARD_URL,
         faucetUrl: process.env.OKP4_FAUCET_URL,
         githubOkp4dReleasesUrl: process.env.OKP4_GITHUB_OKP4D_RELEASES_URL,
         githubObjectariumUrl: process.env.OKP4_GITHUB_OBJECTARIUM_URL,
