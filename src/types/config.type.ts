@@ -55,6 +55,7 @@ export type PhasesConfig = {
       smartContractCognitariumCodeID: string
       chainAddress: string
       tutorialsPrologUrl: string
+      tutorialsCliUrl: string
     }
     challenges: Array<{
       startDate: string

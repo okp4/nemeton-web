@@ -29,7 +29,8 @@ export const samhain = ({
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
       chainAddress,
-      tutorialsPrologUrl
+      tutorialsPrologUrl,
+      tutorialsCliUrl
     },
     challenges
   }
@@ -413,9 +414,10 @@ export const samhain = ({
                     </a>
                   </li>
                   <li>
-                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
