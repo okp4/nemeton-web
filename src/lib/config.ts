@@ -87,6 +87,7 @@ export const config: Config = {
       endDate: process.env.OKP4_PHASE_SAMHAIN_END_DATE,
       urls: {
         keplrWalletExtensionUrl: process.env.OKP4_KEPLR_WALLET_EXTENSION_URL,
+        keplrDocsTutorialsUrls: process.env.OKP4_KEPLR_DOCS_TUTORIALS_URL,
         explorerDashboardUrl: process.env.OKP4_EXPLORER_DASHBOARD_URL,
         faucetUrl: process.env.OKP4_FAUCET_URL,
         githubOkp4dReleasesUrl: process.env.OKP4_GITHUB_OKP4D_RELEASES_URL,
@@ -107,7 +108,8 @@ export const config: Config = {
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
         smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID,
         chainAddress: process.env.OKP4_CHAIN_ADDRESS,
-        tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL
+        tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL,
+        tutorialsCliUrl: process.env.OKP4_TUTORIALS_CLI_URL
       },
       challenges: [
         {

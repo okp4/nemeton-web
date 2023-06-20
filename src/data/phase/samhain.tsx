@@ -8,6 +8,7 @@ export const samhain = ({
     endDate,
     urls: {
       keplrWalletExtensionUrl,
+      keplrDocsTutorialsUrls,
       explorerDashboardUrl,
       faucetUrl,
       githubOkp4dReleasesUrl,
@@ -28,7 +29,8 @@ export const samhain = ({
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
       chainAddress,
-      tutorialsPrologUrl
+      tutorialsPrologUrl,
+      tutorialsCliUrl
     },
     challenges
   }
@@ -324,6 +326,12 @@ export const samhain = ({
                       {faucetUrl}
                     </a>
                   </li>
+                  <li>
+                    <a href={keplrDocsTutorialsUrls} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4: Your first transaction”
+                    </a>{' '}
+                    tutorial
+                  </li>
                 </ul>
               )
             }
@@ -406,9 +414,10 @@ export const samhain = ({
                     </a>
                   </li>
                   <li>
-                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
@@ -499,8 +508,9 @@ export const samhain = ({
                   </li>
                   <li>
                     <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                      ”Get started with OKP4 protocol: Governance rules with Prolog”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
@@ -598,8 +608,9 @@ export const samhain = ({
                   </li>
                   <li>
                     <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                      ”Get started with OKP4 protocol: Governance rules with Prolog”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
@@ -722,8 +733,9 @@ export const samhain = ({
                   </li>
                   <li>
                     <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                      ”Get started with OKP4 protocol: Governance rules with Prolog”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
@@ -813,6 +825,12 @@ export const samhain = ({
                     <a href={githubCognitariumMessagesUrl} rel="noreferrer" target="_blank">
                       {githubCognitariumMessagesUrl}
                     </a>
+                  </li>
+                  <li>
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )

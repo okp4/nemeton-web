@@ -18,6 +18,7 @@ declare namespace NodeJS {
     OKP4_OKP4D_DOCS_COMMANDS_URL: string
     OKP4_TUTORIALS_URL: string
     OKP4_TUTORIALS_PROLOG_URL: string
+    OKP4_TUTORIALS_CLI_URL: string
     OKP4_REGISTRATION_FORM_URL: string
     OKP4_DISCORD_NEMETON_URL: string
     OKP4_DISCORD_TICKET_URL: string
@@ -44,6 +45,7 @@ declare namespace NodeJS {
     OKP4_GITHUB_ONTOLOGY_RHIZOME_URL: string
     GRAPHQL_URI: string
     OKP4_KEPLR_WALLET_EXTENSION_URL: string
+    OKP4_KEPLR_DOCS_TUTORIALS_URL: string
     OKP4_EXPLORER_DASHBOARD_URL: string
     OKP4_FAUCET_URL: string
     OKP4_SWI_PROLOG_URL: string

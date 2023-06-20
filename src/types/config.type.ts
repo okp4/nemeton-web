@@ -33,6 +33,7 @@ export type PhasesConfig = {
     endDate: string
     urls: {
       keplrWalletExtensionUrl: string
+      keplrDocsTutorialsUrls: string
       explorerDashboardUrl: string
       faucetUrl: string
       githubOkp4dReleasesUrl: string
@@ -54,6 +55,7 @@ export type PhasesConfig = {
       smartContractCognitariumCodeID: string
       chainAddress: string
       tutorialsPrologUrl: string
+      tutorialsCliUrl: string
     }
     challenges: Array<{
       startDate: string
