@@ -1,5 +1,15 @@
 # ØKP4 Nemeton web changelog
 
+## [1.11.1](https://github.com/okp4/nemeton-web/compare/v1.11.0...v1.11.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **config:** update explorer url ([7af03dc](https://github.com/okp4/nemeton-web/commit/7af03dc949dff9624509eda6b0f3172d335968f8))
+* **data:** enhance task 5 data ([92c0159](https://github.com/okp4/nemeton-web/commit/92c015978e928b8e4911e069081ec74edc551c78))
+* **data:** improve task 5 data ([5b56e3f](https://github.com/okp4/nemeton-web/commit/5b56e3f2c25ab36254d7528af6849744d5f7df92))
+* enhance redirect urls ([6329c20](https://github.com/okp4/nemeton-web/commit/6329c20cdff49d87e0e7db32cd9dea037259613f))
+
 ## [1.11.0](https://github.com/okp4/nemeton-web/compare/v1.10.4...v1.11.0) (2023-06-14)
 
 
