@@ -733,8 +733,9 @@ export const samhain = ({
                   </li>
                   <li>
                     <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
-                      ”Get started with OKP4 protocol: how to use the CLI” tutorial
-                    </a>
+                      ”Get started with OKP4 protocol: Governance rules with Prolog”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
