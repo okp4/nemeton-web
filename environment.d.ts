@@ -44,6 +44,7 @@ declare namespace NodeJS {
     OKP4_GITHUB_ONTOLOGY_RHIZOME_URL: string
     GRAPHQL_URI: string
     OKP4_KEPLR_WALLET_EXTENSION_URL: string
+    OKP4_KEPLR_DOCS_TUTORIALS_URL: string
     OKP4_EXPLORER_DASHBOARD_URL: string
     OKP4_FAUCET_URL: string
     OKP4_SWI_PROLOG_URL: string

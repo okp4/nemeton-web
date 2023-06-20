@@ -33,6 +33,7 @@ export type PhasesConfig = {
     endDate: string
     urls: {
       keplrWalletExtensionUrl: string
+      keplrDocsTutorialsUrls: string
       explorerDashboardUrl: string
       faucetUrl: string
       githubOkp4dReleasesUrl: string

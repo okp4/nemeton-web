@@ -8,6 +8,7 @@ export const samhain = ({
     endDate,
     urls: {
       keplrWalletExtensionUrl,
+      keplrDocsTutorialsUrls,
       explorerDashboardUrl,
       faucetUrl,
       githubOkp4dReleasesUrl,
@@ -323,6 +324,12 @@ export const samhain = ({
                     <a href={faucetUrl} rel="noreferrer" target="_blank">
                       {faucetUrl}
                     </a>
+                  </li>
+                  <li>
+                    <a href={keplrDocsTutorialsUrls} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4: Your first transaction”
+                    </a>{' '}
+                    tutorial
                   </li>
                 </ul>
               )
