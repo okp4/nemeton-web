@@ -826,6 +826,12 @@ export const samhain = ({
                       {githubCognitariumMessagesUrl}
                     </a>
                   </li>
+                  <li>
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      ”Get started with OKP4 protocol: how to use the CLI”
+                    </a>{' '}
+                    tutorial
+                  </li>
                 </ul>
               )
             }
