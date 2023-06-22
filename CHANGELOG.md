@@ -1,5 +1,13 @@
 # ØKP4 Nemeton web changelog
 
+## [1.12.0](https://github.com/okp4/nemeton-web/compare/v1.11.1...v1.12.0) (2023-06-22)
+
+
+### Features
+
+* add task 1 kelpr tutorials link ([f677a82](https://github.com/okp4/nemeton-web/commit/f677a82bea378ba874058aea51560740bceccaef))
+* add task 6 kelpr tutorials link ([c855ffe](https://github.com/okp4/nemeton-web/commit/c855ffee668f160d00aef77be009ab25e0b88b65))
+
 ## [1.11.1](https://github.com/okp4/nemeton-web/compare/v1.11.0...v1.11.1) (2023-06-20)
 
 
