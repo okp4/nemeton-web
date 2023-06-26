@@ -6,10 +6,10 @@ import type { Config } from '@/types/config.type'
 
 export type MaterialsProps = Pick<Config, 'urls'>
 
-type MaterialLink = {
+type MaterialAnchor = {
   name: string
   icon: string
-  url?: string
+  url: string
 }
 
 const Materials: NextPage<MaterialsProps> = props => {
@@ -21,7 +21,7 @@ const Materials: NextPage<MaterialsProps> = props => {
     supportUrls: { discordChannelUrl, discordTicketChannelUrl }
   } = urls
 
-  const materialsLinks: MaterialLink[] = useMemo(
+  const materialsAnchors: MaterialAnchor[] = useMemo(
     () => [
       {
         name: 'Whitepaper',
@@ -54,14 +54,7 @@ const Materials: NextPage<MaterialsProps> = props => {
         url: githubContractsUrl
       }
     ],
-    [
-      githubAwesomeUrl,
-      githubContractsUrl,
-      githubOkp4dUrl,
-      mediumUrl,
-      tutorialsUrl,
-      whitepaperUrl
-    ]
+    [githubAwesomeUrl, githubContractsUrl, githubOkp4dUrl, mediumUrl, tutorialsUrl, whitepaperUrl]
   )
 
   return (
@@ -71,17 +64,17 @@ const Materials: NextPage<MaterialsProps> = props => {
           <h1>Materials</h1>
           <div className="okp4-nemeton-web-page-divider" />
           <p>Here are all the links you could need to realize the challenges.</p>
-          <div className="okp4-nemeton-web-page-materials-links-container">
-            {materialsLinks.map(({ name, icon, url }) => (
+          <div className="okp4-nemeton-web-page-materials-anchors-container">
+            {materialsAnchors.map(({ name, icon, url }, index) => (
               <a
-                className="okp4-nemeton-web-page-materials-link"
+                className="okp4-nemeton-web-page-materials-anchor"
                 href={url}
-                key={name}
+                key={`${name}-${index}`}
                 rel="noreferrer"
                 target="_blank"
               >
-                <div className="okp4-nemeton-web-page-materials-link-content">
-                  <div className="okp4-nemeton-web-page-materials-link-icon">
+                <div className="okp4-nemeton-web-page-materials-anchor-content">
+                  <div className="okp4-nemeton-web-page-materials-anchor-content-icon">
                     <Image alt={`${icon}-link`} height={19} src={`/icons/${icon}.svg`} width={20} />
                     <span>{name}</span>
                   </div>

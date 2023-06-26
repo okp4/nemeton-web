@@ -301,9 +301,7 @@ const Faq: NextPage<FaqProps> = props => {
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
 
-  const handleClick = (index: number) => () => {
-    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
-  }
+  const handleClick = (index: number) => () => setActiveIndex(activeIndex === index ? null : index)
 
   return (
     <div className="okp4-nemeton-web-page-main">

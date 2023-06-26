@@ -531,7 +531,7 @@ main {
         }
       }
 
-      .okp4-nemeton-web-page-materials-links-container {
+      .okp4-nemeton-web-page-materials-anchors-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 34px;
@@ -549,7 +549,7 @@ main {
           grid-template-columns: auto;
         }
 
-        .okp4-nemeton-web-page-materials-link {
+        .okp4-nemeton-web-page-materials-anchor {
           height: 64px;
           background: $black-100;
           border-radius: 12px;
@@ -557,7 +557,7 @@ main {
           line-height: 24px;
           text-decoration: none;
 
-          .okp4-nemeton-web-page-materials-link-content {
+          .okp4-nemeton-web-page-materials-anchor-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -565,7 +565,7 @@ main {
             padding-left: 22px;
             padding-right: 26px;
 
-            .okp4-nemeton-web-page-materials-link-icon {
+            .okp4-nemeton-web-page-materials-anchor-content-icon {
               @include flex-rows-with-gap(12px);
               align-items: center;
             }
@@ -574,7 +574,9 @@ main {
       }
 
       a {
-        font-family: Gotham bold, sans-serif;
+        font-family:
+          Gotham bold,
+          sans-serif;
       }
     }
 

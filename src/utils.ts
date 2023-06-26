@@ -6,3 +6,5 @@ export const getStatusByDuration = (startDate: string, endDate: string): Status 
   if (moment().isAfter(endDate)) return 'closed'
   return 'active'
 }
+
+export const normalizeString = (text: string): string => text.trim().toLowerCase()

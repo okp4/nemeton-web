@@ -16,9 +16,7 @@ const TasksSummary: React.FC<TasksSummaryProps> = ({ tasksPerPhase, points }) =>
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
   const handleClick = useCallback(
-    (index: number) => () => {
-      activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
-    },
+    (index: number) => () => setActiveIndex(activeIndex === index ? null : index),
     [activeIndex, setActiveIndex]
   )
 
