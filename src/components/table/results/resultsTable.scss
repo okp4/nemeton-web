@@ -1,0 +1,171 @@
+$podium-colors: ('gold', 'silver', 'bronze');
+
+.okp4-nemeton-web-results-table-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: baseline;
+
+  .okp4-nemeton-web-results-table-header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      gap: 28px;
+    }
+  }
+
+  .okp4-nemeton-web-results-table-content-container {
+    width: 100%;
+    margin-top: 20px;
+    min-height: 400px;
+    padding-left: 17px;
+
+    table {
+      width: 100%;
+      border-spacing: 0 12px;
+      table-layout: fixed;
+
+      tr {
+        height: 48px;
+      }
+
+      th {
+        font-family: Gotham bold, sans-serif;
+        line-height: 24px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        text-align: start;
+
+        &:first-child {
+          padding-left: 41px;
+
+          @media screen and (max-width: 1000px) {
+            padding-left: unset;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          font-family: Gotham light, sans-serif;
+          background: none;
+          border-radius: 6px;
+          position: relative;
+          transform: scale(1);
+          height: 48px;
+
+          &.gold {
+            background: linear-gradient(90deg, $choco-100 0%, rgba(209, 193, 147, 0) 100%);
+          }
+
+          &.silver {
+            background: linear-gradient(90deg, $white-200 0%, rgba(180, 184, 187, 0) 100%);
+          }
+
+          &.bronze {
+            background: linear-gradient(90deg, $choco 0%, rgba(180, 150, 137, 0) 100%);
+          }
+
+          &.gold,
+          &.silver,
+          &.bronze {
+            font-family: Gotham, sans-serif;
+            font-weight: 700;
+            background-attachment: fixed;
+          }
+
+          .okp4-nemeton-web-results-table-podium-logo {
+            position: absolute;
+            width: 39px;
+            height: 39px;
+            background-repeat: no-repeat;
+            background-position: 0;
+            left: -14px;
+            top: -6px;
+            bottom: 0;
+
+            @each $podium-color in $podium-colors {
+              &.#{$podium-color} {
+                background-image: url('/icons/#{$podium-color}-druid.svg');
+              }
+            }
+          }
+
+          .flex-cell,
+          a {
+            @include flex-rows-with-gap(8px);
+            align-items: center;
+            max-width: 95%;
+
+            > img:first-of-type {
+              border-radius: 4px;
+            }
+
+            .okp4-nemeton-web-copy-logo {
+              width: 100%;
+            }
+          }
+
+          td {
+            font-size: 16px;
+            color: $white;
+            border: unset;
+            padding: 11px 0;
+            vertical-align: top;
+
+            &:nth-child(2) {
+              font-family: Gotham light, sans-serif;
+            }
+
+            &:nth-child(3) {
+              li {
+                font-family: 'Gotham light', sans-serif;
+              }
+            }
+
+            &:first-child {
+              border-top-left-radius: 6px;
+              border-bottom-left-radius: 6px;
+              padding-left: 41px;
+
+              @media screen and (max-width: 1000px) {
+                padding-left: 15px;
+              }
+            }
+
+            &:last-child {
+              border-bottom-right-radius: 6px;
+              border-top-right-radius: 6px;
+            }
+
+            span {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              color: $white;
+              font-size: 16px;
+              font-family: Gotham;
+              line-height: 24px;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

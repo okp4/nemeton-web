@@ -45,8 +45,8 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
           label: 'Awarded POAP',
           renderCell: (druid: ResultsDTO) => (
             <ul>
-              {druid.poap.map(x => (
-                <li key={x}>{x}</li>
+              {druid.poap.map(item => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
           ),
