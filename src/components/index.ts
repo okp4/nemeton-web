@@ -12,6 +12,8 @@ const Podium = dynamic(async () => await import('@/components/podium/Podium'))
 
 const LeaderboardTable = dynamic(async () => await import('@/components/table/LeaderboardTable'))
 
+const ResultsTable = dynamic(async () => await import('@/components/table/results/ResultsTable'))
+
 const Countdown = dynamic(async () => await import('@/components/countdown/Countdown'))
 
 const Snackbar = dynamic(async () => await import('@/components/snackbar/Snackbar'))
@@ -37,6 +39,7 @@ export {
   BaseCard,
   Podium,
   LeaderboardTable,
+  ResultsTable,
   Countdown,
   Snackbar,
   GoBackButton,

@@ -55,5 +55,5 @@ export type PhaseDTO = Readonly<{
   phaseDuration?: Duration
   tasks: TaskDTO[]
   challenges?: ChallengeDTO[]
-  results: ResultsDTO[]
+  results?: ResultsDTO[]
 }>
