@@ -2,22 +2,24 @@ import React, { useMemo, useState, useCallback } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import type { Config } from '@/types/config.type'
 import { config } from '@/lib/config'
-import Phases from '@/data/phase'
-import { ResultsTable } from '@/components/index'
+import { BuilderLeaderboardTable } from '@/components/index'
+import { buildersData } from '@/data/builder/builder'
+import { mapBuilderDTOtoBuilderDescriptor } from '@/data/builder/mapper'
 
-export type ResultsProps = Pick<Config, 'urls' | 'phases'>
+export type ResultsProps = Pick<Config, 'urls'>
 
-const Results: NextPage<ResultsProps> = props => {
-  const { phases } = props
+const Results: NextPage = () => {
   const [query, setQuery] = useState<string>('')
-  const results = useMemo(
+  const builders = useMemo(
     () =>
-      Phases(phases)[Phases(phases).length - 1].results?.filter(
-        row =>
-          row.valoper.toLowerCase().includes(query.toLowerCase()) ||
-          row.poap.find(item => item.toLowerCase().includes(query.toLowerCase()))
-      ),
-    [phases, query]
+      buildersData
+        .map(mapBuilderDTOtoBuilderDescriptor)
+        .filter(
+          row =>
+            row.valoper.toLowerCase().includes(query.toLowerCase()) ||
+            row.earnings.poap.find(item => item.toLowerCase().includes(query.toLowerCase()))
+        ),
+    [query]
   )
 
   const handleSearchChange = useCallback((value: string): void => setQuery(value), [])
@@ -31,10 +33,7 @@ const Results: NextPage<ResultsProps> = props => {
           <p>Here you can consult the marks allocated to builders for the Samhain challenges.</p>
           <div className="okp4-nemeton-web-page-results-main-container">
             <div className="okp4-nemeton-web-page-results-main-wrapper">
-              <ResultsTable
-                onSearchChange={handleSearchChange}
-                results={results}
-              />
+              <BuilderLeaderboardTable data={builders} onSearchChange={handleSearchChange} />
             </div>
           </div>
         </div>
