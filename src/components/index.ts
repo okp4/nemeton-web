@@ -14,7 +14,7 @@ const ValidatorsLeaderboardTable = dynamic(
   async () => await import('@/components/table/validators/LeaderboardTable')
 )
 
-const BuilderLeaderboardTable = dynamic(
+const BuildersLeaderboardTable = dynamic(
   async () => await import('@/components/table/builders/LeaderboardTable')
 )
 
@@ -43,7 +43,7 @@ export {
   BaseCard,
   Podium,
   ValidatorsLeaderboardTable,
-  BuilderLeaderboardTable,
+  BuildersLeaderboardTable,
   Countdown,
   Snackbar,
   GoBackButton,

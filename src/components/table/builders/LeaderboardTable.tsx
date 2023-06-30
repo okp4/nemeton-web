@@ -55,7 +55,9 @@ const LeaderboardTable: React.FC<LeaderboardTable> = ({ data, onSearchChange }) 
         },
         {
           label: 'Awarded know',
-          renderCell: (druid: BuilderDescriptor) => <span>{druid.earnings.know}</span>,
+          renderCell: (druid: BuilderDescriptor) => (
+            <span>{druid.earnings.know.toLocaleString()}</span>
+          ),
           width: isMobileScreen ? '32%' : '30%'
         }
       ].filter(column => !column.hidden),

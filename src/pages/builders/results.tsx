@@ -2,7 +2,7 @@ import React, { useMemo, useState, useCallback } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import type { Config } from '@/types/config.type'
 import { config } from '@/lib/config'
-import { BuilderLeaderboardTable } from '@/components/index'
+import { BuildersLeaderboardTable } from '@/components/index'
 import { buildersData } from '@/data/builder/builder'
 import { mapBuilderDTOtoBuilderDescriptor } from '@/data/builder/mapper'
 
@@ -33,7 +33,7 @@ const Results: NextPage = () => {
           <p>Here you can consult the marks allocated to builders for the Samhain challenges.</p>
           <div className="okp4-nemeton-web-page-results-main-container">
             <div className="okp4-nemeton-web-page-results-main-wrapper">
-              <BuilderLeaderboardTable data={builders} onSearchChange={handleSearchChange} />
+              <BuildersLeaderboardTable data={builders} onSearchChange={handleSearchChange} />
             </div>
           </div>
         </div>
