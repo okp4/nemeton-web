@@ -40,13 +40,6 @@ export type ChallengeDTO = Readonly<{
   challengeTasks: ChallengeTasks[]
 }>
 
-export type ResultsDTO = Readonly<{
-  rank: number
-  valoper: string
-  poap: string[]
-  know: number
-}>
-
 export type PhaseDTO = Readonly<{
   number: number
   phaseName: string
@@ -55,5 +48,4 @@ export type PhaseDTO = Readonly<{
   phaseDuration?: Duration
   tasks: TaskDTO[]
   challenges?: ChallengeDTO[]
-  results?: ResultsDTO[]
 }>
