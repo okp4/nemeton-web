@@ -2,7 +2,13 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import type { BaseCardProps } from '@/components/card/base/BaseCard'
-import { BaseCard, Podium, LeaderboardTable, Countdown, Snackbar } from '@/components/index'
+import {
+  BaseCard,
+  Podium,
+  ValidatorsLeaderboardTable,
+  Countdown,
+  Snackbar
+} from '@/components/index'
 import type { PodiumStep } from '@/components/podium/Podium'
 import { config } from '@/lib/config'
 import type { Config } from '@/types/config.type'
@@ -202,7 +208,7 @@ const Leaderboard: NextPage<LeaderboardProps> = props => {
               scrollThreshold={0.91}
               style={{ overflow: 'unset' }}
             >
-              <LeaderboardTable
+              <ValidatorsLeaderboardTable
                 data={druids}
                 loading={boardLoading && !variables?.after}
                 loadingMore={boardLoading && !!variables?.after}

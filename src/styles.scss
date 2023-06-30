@@ -10,6 +10,7 @@
 @import 'src/components/podium/podium.scss';
 @import 'src/components/search/search.scss';
 @import 'src/components/table/table.scss';
+@import 'src/components/table/builders/leaderboardTable.scss';
 @import 'src/components/countdown/countdown.scss';
 @import 'src/components/accordion/accordion.scss';
 @import 'src/components/contentBlock/contentBlock.scss';
@@ -570,6 +571,64 @@ main {
 
       a {
         font-family: Gotham bold, sans-serif;
+      }
+    }
+
+    .okp4-nemeton-web-page-results-container {
+      padding: 0 83px;
+
+      @media screen and (max-width: 1000px) {
+        padding: 0;
+      }
+
+      p {
+        @media screen and (max-width: 1000px) {
+          text-align: center;
+        }
+
+        @media screen and (min-width: 1001px) {
+          font-size: 31px;
+          line-height: 37px;
+        }
+      }
+
+      .okp4-nemeton-web-page-results-main-container {
+        padding-top: 5px;
+
+        @media screen and (min-width: 1000px) {
+          &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url('/image/nemeton-medium-reversed.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            left: 0;
+          }
+        }
+
+        .okp4-nemeton-web-page-results-main-wrapper {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background: $green;
+          border-radius: 20px 20px 0 0;
+          margin-top: 74px;
+          border-radius: 20px 20px 0 0;
+          padding: 40px 20px;
+
+          @media screen and (max-width: 1000px) {
+            margin-top: 5px;
+            background: none;
+            padding: unset;
+            align-items: center;
+          }
+
+          @media screen and (min-width: 1200px) {
+            padding: 75px 141px 75px 115px;
+          }
+        }
       }
     }
   }

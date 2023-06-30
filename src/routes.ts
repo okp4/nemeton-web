@@ -41,6 +41,11 @@ const validatorsProgramMenu: SubRoute[] = [
 
 const buildersProgramMenu: SubRoute[] = [
   {
+    name: 'Results',
+    path: '/builders/results',
+    hash: '#results'
+  },
+  {
     name: 'Challenges',
     path: '/builders/challenges',
     hash: '#challenges'
