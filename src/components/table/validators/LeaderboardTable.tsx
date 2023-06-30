@@ -2,7 +2,7 @@ import { Skeleton } from '@mui/material'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import hatDruidAnimationData from '../../../public/json/hat-druid.json'
+import hatDruidAnimationData from '../../../../public/json/hat-druid.json'
 import React, { useCallback, useMemo, useState } from 'react'
 import { useMediaType } from '@/hook/useMediaType'
 import type { DruidDescriptor } from '@/entity/druid'
@@ -10,7 +10,7 @@ import { Search } from '@/components/search/Search'
 import Snackbar from '@/components/snackbar/Snackbar'
 import LottieLoader from '@/components/loader/LottieLoader'
 import { Copy } from '@/components/copy/Copy'
-import type { Column } from './table.type'
+import type { Column } from '../table.type'
 
 export type LeaderboardTableProps = {
   data: DruidDescriptor[]

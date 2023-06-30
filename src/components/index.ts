@@ -10,9 +10,13 @@ const Accordion = dynamic(async () => await import('@/components/accordion/Accor
 
 const Podium = dynamic(async () => await import('@/components/podium/Podium'))
 
-const LeaderboardTable = dynamic(async () => await import('@/components/table/LeaderboardTable'))
+const ValidatorsLeaderboardTable = dynamic(
+  async () => await import('@/components/table/validators/LeaderboardTable')
+)
 
-const ResultsTable = dynamic(async () => await import('@/components/table/results/ResultsTable'))
+const BuilderLeaderboardTable = dynamic(
+  async () => await import('@/components/table/builders/LeaderboardTable')
+)
 
 const Countdown = dynamic(async () => await import('@/components/countdown/Countdown'))
 
@@ -38,8 +42,8 @@ export {
   Accordion,
   BaseCard,
   Podium,
-  LeaderboardTable,
-  ResultsTable,
+  ValidatorsLeaderboardTable,
+  BuilderLeaderboardTable,
   Countdown,
   Snackbar,
   GoBackButton,

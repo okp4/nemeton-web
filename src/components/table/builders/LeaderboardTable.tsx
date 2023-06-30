@@ -4,15 +4,15 @@ import Snackbar from '@/components/snackbar/Snackbar'
 import { Search } from '@/components/search/Search'
 import { Copy } from '@/components/copy/Copy'
 import { useMediaType } from '@/hook/useMediaType'
-import type { ResultsDTO } from '@/data/phase/dto.type'
 import type { Column } from '@/components/table/table.type'
+import type { BuilderDescriptor, BuildersDescriptor } from '@/entity/builder'
 
-export type ResultsTableProps = {
-  results?: ResultsDTO[]
+export type LeaderboardTable = {
+  data: BuildersDescriptor
   onSearchChange: (value: string) => void
 }
 
-const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) => {
+const LeaderboardTable: React.FC<LeaderboardTable> = ({ data, onSearchChange }) => {
   const [address, setAddress] = useState<string>('')
   const isMobileScreen = useMediaType('(max-width: 580px)')
 
@@ -23,17 +23,17 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
     [setAddress]
   )
 
-  const columns: Column<ResultsDTO>[] = useMemo(
+  const columns: Column<BuilderDescriptor>[] = useMemo(
     () =>
       [
         {
           label: 'Rank',
-          renderCell: (druid: ResultsDTO) => <span>{druid.rank.toLocaleString()}</span>,
+          renderCell: (druid: BuilderDescriptor) => <span>{druid.rank.toLocaleString()}</span>,
           width: isMobileScreen ? '18%' : '10%'
         },
         {
           label: 'Address',
-          renderCell: (druid: ResultsDTO) => (
+          renderCell: (druid: BuilderDescriptor) => (
             <div className="flex-cell">
               <span>{druid.valoper}</span>
               <Copy item={druid.valoper} onCopied={handleCopyAddress} />
@@ -43,9 +43,9 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
         },
         {
           label: 'Awarded POAP',
-          renderCell: (druid: ResultsDTO) => (
+          renderCell: (druid: BuilderDescriptor) => (
             <ul>
-              {druid.poap.map(item => (
+              {druid.earnings.poap.map(item => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -55,7 +55,7 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
         },
         {
           label: 'Awarded know',
-          renderCell: (druid: ResultsDTO) => <span>{druid.know}</span>,
+          renderCell: (druid: BuilderDescriptor) => <span>{druid.earnings.know}</span>,
           width: isMobileScreen ? '32%' : '30%'
         }
       ].filter(column => !column.hidden),
@@ -92,9 +92,9 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
               </tr>
             </thead>
             <tbody>
-              {results && results.length > 0 && (
+              {data.length > 0 && (
                 <React.Fragment>
-                  {results.map((row, index) => {
+                  {data.map((row, index) => {
                     const podiumClassname = classNames({
                       gold: row.rank === 1,
                       silver: row.rank === 2,
@@ -116,10 +116,10 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
                   })}
                 </React.Fragment>
               )}
-              {!results?.length && (
+              {!data.length && (
                 <tr>
                   <td colSpan={4} style={{ textAlign: 'center' }}>
-                    No marks found...
+                    No results found...
                   </td>
                 </tr>
               )}
@@ -137,4 +137,4 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ results, onSearchChange }) 
   )
 }
 
-export default ResultsTable
+export default LeaderboardTable

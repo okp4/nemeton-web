@@ -10,7 +10,7 @@
 @import 'src/components/podium/podium.scss';
 @import 'src/components/search/search.scss';
 @import 'src/components/table/table.scss';
-@import 'src/components/table/results/resultsTable.scss';
+@import 'src/components/table/builders/leaderboardTable.scss';
 @import 'src/components/countdown/countdown.scss';
 @import 'src/components/accordion/accordion.scss';
 @import 'src/components/contentBlock/contentBlock.scss';
@@ -587,16 +587,16 @@ main {
         }
 
         @media screen and (min-width: 1001px) {
-            font-size: 31px;
-            line-height: 37px;
-        }   
+          font-size: 31px;
+          line-height: 37px;
+        }
       }
 
       .okp4-nemeton-web-page-results-main-container {
         padding-top: 5px;
 
         @media screen and (min-width: 1000px) {
-          &:before {
+          &::before {
             content: '';
             position: absolute;
             height: 100%;
@@ -615,7 +615,7 @@ main {
           background: $green;
           border-radius: 20px 20px 0 0;
           margin-top: 74px;
-          border-radius: 20px 20px 0px 0px;
+          border-radius: 20px 20px 0 0;
           padding: 40px 20px;
 
           @media screen and (max-width: 1000px) {
