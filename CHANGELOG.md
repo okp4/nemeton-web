@@ -1,5 +1,23 @@
 # ØKP4 Nemeton web changelog
 
+## [1.13.0](https://github.com/okp4/nemeton-web/compare/v1.12.0...v1.13.0) (2023-06-30)
+
+
+### Features
+
+* **data:** add builder dto types ([c59f744](https://github.com/okp4/nemeton-web/commit/c59f74432105bae0953fd980671f12b4895bb664))
+* **data:** add builders data ([729b384](https://github.com/okp4/nemeton-web/commit/729b384ae11b3888b89b8d297b2dde34a484a56e))
+* **data:** add results ([07d7997](https://github.com/okp4/nemeton-web/commit/07d799793740f0ec6f981751d7a4289f00323748))
+* **data:** remove builders data from phase ([f2cc9e4](https://github.com/okp4/nemeton-web/commit/f2cc9e41f16e199d98899e0cf6e77b4059813042))
+* **entity:** add builder entity ([84fea1a](https://github.com/okp4/nemeton-web/commit/84fea1a1c27d8827c38caf201409d9838381261e))
+* implement results page ([c1b3571](https://github.com/okp4/nemeton-web/commit/c1b3571963ad010f752cc3b2ec3f79c88e7e520f))
+* **mapper:** add builder mapper ([ec0bb01](https://github.com/okp4/nemeton-web/commit/ec0bb01fc439653bdd7744c2360e17e5ba494393))
+
+
+### Bug Fixes
+
+* know formatting display ([70db6e1](https://github.com/okp4/nemeton-web/commit/70db6e18645c1f95addb24e0e2cf5c2dcd381fdf))
+
 ## [1.12.0](https://github.com/okp4/nemeton-web/compare/v1.11.1...v1.12.0) (2023-06-22)
 
 
