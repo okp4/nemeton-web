@@ -4,7 +4,7 @@ import ArticleIcon from '@mui/icons-material/Article'
 import GavelIcon from '@mui/icons-material/Gavel'
 import HelpIcon from '@mui/icons-material/Help'
 import MoneyIcon from '@mui/icons-material/Money'
-import type { TaskContentId,ChallengeTaskContentId } from '@/data/phase/dto.type'
+import type { TaskContentId, ChallengeTaskContentId } from '@/data/phase/dto.type'
 
 type TaskContentIconProps = {
   id: TaskContentId | ChallengeTaskContentId
