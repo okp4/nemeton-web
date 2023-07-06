@@ -110,6 +110,7 @@ export const config: Config = {
         githubCognitariumDatasetMediaTypeUrl: process.env.OKP4_GITHUB_COGNITARIUM_DATASET_MEDIATYPE_URL,
         githubStorageServiceUrl: process.env.OKP4_GITHUB_STORAGE_SERVICE_URL,
         githubDatasetUrl: process.env.OKP4_GITHUB_DATASET_URL,
+        githubContractsUrl: process.env.OKP4_GITHUB_CONTRACTS_URL,
         okp4dDocsCommandsUrl: process.env.OKP4_OKP4D_DOCS_COMMANDS_URL,
         ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
@@ -131,7 +132,9 @@ export const config: Config = {
         testnetContractListUrl: process.env.OKP4_TESTNET_CONTRACT_LIST_URL,
         beyondTraditionalGovernanceUrl: process.env.BEYOND_TRADITIONAL_GOUVERNANCE_URL,
         grazDocsUrl: process.env.GRAZ_REACT_HOOKS_URL,
-        githubContractsUrl: process.env.OKP4_GITHUB_CONTRACTS_URL,
+        okp4WebsiteDocsUrl: process.env.OKP4_WEBSITE_DOCS_URL,
+        nemetonSupportUrl: process.env.NEMETON_SUPPORT_URL
+        
       },
       challenges: [
         {

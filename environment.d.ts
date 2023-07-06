@@ -10,6 +10,7 @@ declare namespace NodeJS {
     OKP4_TELEGRAM_URL: string
     OKP4_TWITTER_URL: string
     OKP4_WEBSITE_URL: string
+    OKP4_WEBSITE_DOCS_URL: string
     OKP4_EXPLORER_URL: string
     OKP4_DOCS_URL: string
     OKP4_DOCS_NODES_URL: string
@@ -77,6 +78,7 @@ declare namespace NodeJS {
     OKP4_TESTNET_CONTRACT_LIST_URL: string
     BEYOND_TRADITIONAL_GOUVERNANCE_URL: string
     GRAZ_REACT_HOOKS_URL: string
+    NEMETON_SUPPORT_URL: string
     OKP4_TASKS_SIDH_5_TYPEFORM_URL: string
     OKP4_TASKS_IMBOLC_1_TYPEFORM_URL: string
     OKP4_TASKS_IMBOLC_2_TYPEFORM_URL: string

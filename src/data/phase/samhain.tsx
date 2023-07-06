@@ -32,6 +32,7 @@ export const samhain = ({
       githubCognitariumDatasetMediaTypeUrl,
       githubStorageServiceUrl,
       githubDatasetUrl,
+      githubContractsUrl,
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
@@ -52,7 +53,8 @@ export const samhain = ({
       testnetContractListUrl,
       beyondTraditionalGovernanceUrl,
       grazDocsUrl,
-      githubContractsUrl
+      okp4WebsiteDocsUrl,
+      nemetonSupportUrl
     },
     challenges
   }
@@ -1317,7 +1319,7 @@ export const samhain = ({
                     codeId: 5, <br /> onError: () {'=>'} {'{}'}, <br /> onMutate: () {'=>'} {'{}'},{' '}
                     <br /> onSuccess: () {'=>'} {'{}'} <br />
                     {'}'}); <br /> <br />
-                    instantiateContract({'{'} <br /> msg: {'{'} <br /> {' '} program: &quot;base64 prolog
+                    instantiateContract({'{'} <br /> msg: {'{'} <br /> program: &quot;base64 prolog
                     program&quot;, <br /> {'  '}storage_address: &quot;
                     {objectariumAddress}&quot;
                     <br /> {'}'},<br /> options: {'{'}
@@ -1404,6 +1406,121 @@ export const samhain = ({
                     ”Explore the smart contracts” tutorial:{' '}
                     <a href={smartContractTutorialUrl} rel="noreferrer" target="_blank">
                       {smartContractTutorialUrl}
+                    </a>
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName:
+            'Open contribution, tweet a thread to explain the relevance of your OKP4 project',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 4/5)
+                    <br /> Much like the boundless forests of old, the sacred protocol welcomes
+                    contributions from every pilgrim. The Dagda challenges are stepping stones
+                    shaped to help you navigate the undergrowth and grasp the fundamental lore.
+                    Having now tamed the mystical beast of technology, you are as free as a druid in
+                    his grove. Go forth, conjure up your own vision, and let your ideas bloom like a
+                    sacred mistletoe on the mighty oaks of our digital woodland.
+                  </p>
+                  <p>
+                    Get the OKP4 blockchain on your own. Do you think something is missing and
+                    should be developed? Build it and get rewarded for it!
+                  </p>
+                  <p>Tweet a thread with the following:</p>
+                  <ul>
+                    <li>#OKP4BuildersProgram hashtag and @OKP4_Protocol tag</li>
+                    <li>Link to the Github repo</li>
+                    <li>Describe your project, and explain why what you developed is relevant</li>
+                  </ul>
+                  <p>Need inspiration? You could:</p>
+                  <ul>
+                    <li>Build on-chain analytics dashboards</li>
+                    <li>
+                      Enhance your web interface to generate a Prolog code with rules composed from
+                      form fields
+                    </li>
+                    <li>
+                      Enhance your web interface to generate RDF triples from metadata set in form
+                      fields
+                    </li>
+                    <li>
+                      Develop VSCode extension to evaluate rules (Prolog program) directly from the
+                      editor
+                    </li>
+                    <li>… and anything else you can imagine</li>
+                  </ul>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    100,000 $KNOW (0,05% of the total supply) + an “OKP4 visionary contributor” POAP
+                    (Stargaze badge) per validated project.
+                  </p>
+                  <p>
+                    300,000 $KNOW will be sent to builders for this task. OKP4 team will manually
+                    evaluate the user interfaces and rewards the three most relevant ones.
+                  </p>
+                  <p>
+                    Your GitHub repo README should provide an OKP4 address where to send the POAP
+                    and the $KNOW tokens. Wallets from elected projects will receive the on-chain
+                    badge on August 31, and the $KNOW tokens will be sent out when the mainnet is
+                    launched (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  Your tweet and README should clearly state the problem you want to solve and why
+                  it is a good contribution to the OKP4 community. Rewards will be sent in priority
+                  to developers submitting innovative applications. Feel free to{' '}
+                  <a href={nemetonSupportUrl} rel="noreferrer" target="_blank">
+                    contact us
+                  </a>{' '}
+                  if you want to discuss your project before developing it.
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  Send the tweet as required in the &apos;Description&apos; part above. You
+                  don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    OKP4 documentation:{' '}
+                    <a href={okp4WebsiteDocsUrl} rel="noreferrer" target="_blank">
+                      {okp4WebsiteDocsUrl}
                     </a>
                   </li>
                 </ul>

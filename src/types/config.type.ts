@@ -56,6 +56,7 @@ export type PhasesConfig = {
       githubCognitariumDatasetMediaTypeUrl: string
       githubStorageServiceUrl: string
       githubDatasetUrl: string
+      githubContractsUrl: string
       okp4dDocsCommandsUrl: string
       ontologyDescriptionUrl: string
       swiPrologUrl: string
@@ -77,7 +78,8 @@ export type PhasesConfig = {
       testnetContractListUrl: string
       beyondTraditionalGovernanceUrl: string
       grazDocsUrl: string
-      githubContractsUrl: string
+      okp4WebsiteDocsUrl: string,
+      nemetonSupportUrl: string
     }
     challenges: Array<{
       startDate: string
