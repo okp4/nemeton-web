@@ -64,6 +64,7 @@ export type PhasesConfig = {
       objectariumID: string
       smartContractLawStoneCodeID: string
       smartContractCognitariumCodeID: string
+      smartContractTutorialUrl: string
       dataCognitariumCodeID: string
       chainAddress: string
       tutorialsPrologUrl: string
@@ -75,6 +76,8 @@ export type PhasesConfig = {
       tutorialsOntologyUrl: string
       testnetContractListUrl: string
       beyondTraditionalGovernanceUrl: string
+      grazDocsUrl: string
+      githubContractsUrl: string
     }
     challenges: Array<{
       startDate: string

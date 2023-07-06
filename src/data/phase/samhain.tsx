@@ -39,6 +39,7 @@ export const samhain = ({
       objectariumID,
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
+      smartContractTutorialUrl,
       dataCognitariumCodeID,
       chainAddress,
       tutorialsPrologUrl,
@@ -49,7 +50,9 @@ export const samhain = ({
       uuidIdentifierUrl,
       tutorialsOntologyUrl,
       testnetContractListUrl,
-      beyondTraditionalGovernanceUrl
+      beyondTraditionalGovernanceUrl,
+      grazDocsUrl,
+      githubContractsUrl
     },
     challenges
   }
@@ -1131,8 +1134,7 @@ export const samhain = ({
                     <span>law-stone</span>
                     smart contract instantiation (
                     <span>CODE_ID = {smartContractLawStoneCodeID}</span>). You can set
-                    <span>{objectariumAddress}</span> as
-                    the default storage address or{' '}
+                    <span>{objectariumAddress}</span> as the default storage address or{' '}
                     <a href={testnetContractListUrl} rel="noreferrer" target="_blank">
                       any other available <span>objectarium</span> instance
                     </a>
@@ -1228,6 +1230,181 @@ export const samhain = ({
                     <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
                       {tutorialsOntologyUrl}
                     </a>{' '}
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName: 'Build a web interface to interact with the OKP4 blockchain',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 4/5)
+                    <br /> With the wisdom of data referencing now in our grasp and Prolog - the
+                    ancient druidic tongue for setting consent for sharing nature&apos;s gifts - in
+                    our command, the dawn of creation is upon us. It is time to craft portals of
+                    interaction, intuitive as the forest path, to empower all who wander in our
+                    digital grove to share and dictate the sacred laws according to the innate
+                    properties of the metadata. Like ancient druidic symbols carved on stones, these
+                    user interfaces shall guide and simplify the journey for all seekers of
+                    knowledge.
+                  </p>
+                  <p>
+                    Create a front-end application to list and submit shared resources and rules
+                    registered in the blockchain. You should then be able to retrieve data you
+                    previously submitted and even use it to reference resources or add a new Prolog
+                    program (resources rules or utils).
+                  </p>
+                  <p>Your web interface should at least have the following features:</p>
+                  <ul>
+                    <li>OKP4 wallet connection button (should support Keplr wallet).</li>
+                    <li>
+                      List all rules submitted (Prolog programs in <span>law-stone</span>{' '}
+                      instantiations, <span>CODE_ID = {smartContractLawStoneCodeID}</span>) with the
+                      following properties: smart contract address, creator address, instantiated
+                      date and decoded Prolog program. This list should be ordered by instantiated
+                      date and filterable on the okp4 creator address.
+                    </li>
+                    <li>
+                      List all data ontology submitted (from transactions with <span>insert</span>{' '}
+                      wasm action) with the following properties: smart contract address, sender
+                      address, transaction date and decoded data. This list should be ordered by
+                      transaction date and filterable on the okp4 sender address.
+                    </li>
+                    <li>
+                      <span>law-stone</span> instantiation from a Prolog file and/or code form (you
+                      can set {objectariumAddress} as default storage address, or{' '}
+                      <a href={testnetContractListUrl} rel="noreferrer" target="_blank">
+                        any other available <span>objectarium</span> instance
+                      </a>
+                      ).
+                    </li>
+                    <li>
+                      RDF triples insertion from a Turtle file and/or code form. You should check if
+                      the user instantiated a <span>cognitarium</span> smart contract. If not, the
+                      UI should propose to create one before using it to insert ontology data.
+                    </li>
+                  </ul>
+                  <p>
+                    For every transaction the UI submits, you should set in <span>memo</span>
+                    “Nemeton-Dagda3-GH_REPO” with <span>GH_REPO</span> as the Github repo link of
+                    the web interface you are developing.
+                  </p>
+                  <p>
+                    You can use any framework to develop your web interface. We advise you to look
+                    at the{' '}
+                    <a href={grazDocsUrl} rel="noreferrer" target="_blank">
+                      graz
+                    </a>{' '}
+                    React hooks. For example, to instantiate a <span>law-stone</span> with a{' '}
+                    <span>memo</span>:
+                  </p>
+                  <pre>
+                    import {'{'} useInstantiateContract {'}'} from &quot;graz&quot;;
+                    <br />
+                    <br />
+                    const {'{'} instantiateContract {'}'} = useInstantiateContract({'{'} <br />{' '}
+                    codeId: 5, <br /> onError: () {'=>'} {'{}'}, <br /> onMutate: () {'=>'} {'{}'},{' '}
+                    <br /> onSuccess: () {'=>'} {'{}'} <br />
+                    {'}'}); <br /> <br />
+                    instantiateContract({'{'} <br /> msg: {'{'} <br /> {' '} program: &quot;base64 prolog
+                    program&quot;, <br /> {'  '}storage_address: &quot;
+                    {objectariumAddress}&quot;
+                    <br /> {'}'},<br /> options: {'{'}
+                    <br /> {'   '}memo:
+                    &quot;Nemeton-Dagda3-http://your-github-repo-with-your-OKP4-addr-in-README.link&quot;
+                    <br /> {'}'}
+                    <br />
+                    {'}'});
+                  </pre>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    150 000 $KNOW tokens (0,075% of the total supply) + an “OKP4 interface
+                    innovator” POAP (Stargaze badge) per validated web interface.
+                  </p>
+                  <p>
+                    300,000 $KNOW will be sent to builders for this task. OKP4 team will manually
+                    evaluate the user interfaces and reward the two most relevant ones.
+                  </p>
+                  <p>
+                    The web interface GitHub repository README should provide an OKP4 address where
+                    to send the POAP and the $KNOW tokens. Wallets from elected interfaces will
+                    receive the on-chain badge on August 31, and the $KNOW tokens will be sent out
+                    when the mainnet is launched (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  Your web interface should propose the required functionalities. Rewards will be
+                  sent in priority to developers submitting early and/or providing the best UX
+                  and/or further features.
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  All the transactions executed from the web application should have
+                  “Nemeton-Dagda3” and your Github repository link in the transaction{' '}
+                  <span>memo</span>. At least one transaction should have been executed from the
+                  front end. Your Github repository should be an open-source project with a clear
+                  README to launch the web application locally. To receive the rewards, the README
+                  should contain your OKP4 address.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    OKP4 smart contracts GitHub repository:{' '}
+                    <a href={githubContractsUrl} rel="noreferrer" target="_blank">
+                      {githubContractsUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Graz documentation:{' '}
+                    <a href={grazDocsUrl} rel="noreferrer" target="_blank">
+                      {grazDocsUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Interactions with the CLI”:{' '}
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      {tutorialsCliUrl}
+                    </a>
+                  </li>
+                  <li>
+                    ”Explore the smart contracts” tutorial:{' '}
+                    <a href={smartContractTutorialUrl} rel="noreferrer" target="_blank">
+                      {smartContractTutorialUrl}
+                    </a>
                   </li>
                 </ul>
               )

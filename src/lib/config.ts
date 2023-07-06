@@ -118,6 +118,7 @@ export const config: Config = {
         objectariumID: process.env.OKP4_OBJECTARIUM_ID,
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
         smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID,
+        smartContractTutorialUrl: process.env.OKP4_SMART_CONTRACT_TUTORIAL_URL,
         dataCognitariumCodeID: process.env.OKP4_DATA_COGNITARIUM_CODE_ID,
         chainAddress: process.env.OKP4_CHAIN_ADDRESS,
         tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL,
@@ -128,7 +129,9 @@ export const config: Config = {
         uuidIdentifierUrl: process.env.UUID_IDENTIFIER_URL,
         tutorialsOntologyUrl: process.env.OKP4_TUTORIALS_ONTOLOGY_URL,
         testnetContractListUrl: process.env.OKP4_TESTNET_CONTRACT_LIST_URL,
-        beyondTraditionalGovernanceUrl: process.env.BEYOND_TRADITIONAL_GOUVERNANCE_URL
+        beyondTraditionalGovernanceUrl: process.env.BEYOND_TRADITIONAL_GOUVERNANCE_URL,
+        grazDocsUrl: process.env.GRAZ_REACT_HOOKS_URL,
+        githubContractsUrl: process.env.OKP4_GITHUB_CONTRACTS_URL,
       },
       challenges: [
         {
