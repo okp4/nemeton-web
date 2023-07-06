@@ -51,6 +51,11 @@ export type PhasesConfig = {
       githubOntologyCsvDatasetMetadataUrl: string
       githubServiceReferenceUrl: string
       githubDatasetReferenceUrl: string
+      githubCognitariumPrologCodeUrl: string
+      githubCognitariumServiceCategoryUrl: string
+      githubCognitariumDatasetMediaTypeUrl: string
+      githubStorageServiceUrl: string
+      githubDatasetUrl: string
       okp4dDocsCommandsUrl: string
       ontologyDescriptionUrl: string
       swiPrologUrl: string
@@ -68,6 +73,8 @@ export type PhasesConfig = {
       scaleWayObjectStorageUrl: string
       uuidIdentifierUrl: string
       tutorialsOntologyUrl: string
+      testnetContractListUrl: string
+      beyondTraditionalGovernanceUrl: string
     }
     challenges: Array<{
       startDate: string

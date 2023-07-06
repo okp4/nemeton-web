@@ -27,6 +27,11 @@ export const samhain = ({
       githubOntologyCsvDatasetMetadataUrl,
       githubServiceReferenceUrl,
       githubDatasetReferenceUrl,
+      githubCognitariumPrologCodeUrl,
+      githubCognitariumServiceCategoryUrl,
+      githubCognitariumDatasetMediaTypeUrl,
+      githubStorageServiceUrl,
+      githubDatasetUrl,
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
@@ -42,7 +47,9 @@ export const samhain = ({
       awsS3Url,
       scaleWayObjectStorageUrl,
       uuidIdentifierUrl,
-      tutorialsOntologyUrl
+      tutorialsOntologyUrl,
+      testnetContractListUrl,
+      beyondTraditionalGovernanceUrl
     },
     challenges
   }
@@ -1018,8 +1025,209 @@ export const samhain = ({
                     “Leverage the ontology” tutorial:{' '}
                     <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
                       {tutorialsOntologyUrl}
+                    </a>
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName: 'Prolog predicates to query the ontology',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 3/5)
+                    <br /> Under the celestial canopy of the OKP4 Protocol, Prolog unfolds as the
+                    sacred language, defining and interpreting the laws inscribed upon the shared
+                    resources. Craft your own druidic predicates, akin to the stones in a sacred
+                    henge, making it simpler to divine the mysteries of the ontology within the
+                    sacred script of Prolog code.
+                  </p>
+                  <p>
+                    Look at the{' '}
+                    <a href={githubCognitariumPrologCodeUrl} rel="noreferrer" target="_blank">
+                      Prolog code example in the cognitarium contract GitHub repository
+                    </a>
+                    . A<span>cognitarium_dataset_tags(CognitariumAddr, DatasetDID, Tags)</span>{' '}
+                    predicate allows you to get tags for a specific dataset (objects of{' '}
+                    <span>core:Tags</span> and <span>DatasetDID</span> as subject). Similarly, write
+                    several predicates to query the ontology from any Prolog program interpreted by
+                    the OKP4 blockchain.
+                  </p>
+                  <p>Write generic predicates to query ontology:</p>
+                  <ul>
+                    <li>
+                      <span>
+                        cognitarium_subject_predicate_objects(CognitariumAddr, Subject, Predicate,
+                        Objects)
+                      </span>
+                      , where <span>Objects</span> is the returned value from a SELECT query on
+                      <span>CognitariumAddr</span> with provided <span>Subject</span> and{' '}
+                      <span>Predicate</span>
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_subject_predicate_subjects(CognitariumAddr, Subjects, Predicate,
+                        Object)
+                      </span>
+                      , where <span>Subjects</span> is the returned value from a SELECT query on
+                      <span>CognitariumAddr</span> with provided <span>Object</span> and{' '}
+                      <span>Predicate</span>
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_has_stored_triple(CognitariumAddr, Subject, Predicate, Object)
+                      </span>
+                      indicates that the RDF triple <span>Subject</span>-<span>Predicate</span>-
+                      <span>Object</span> is stored in ontology queried on the smart contract
+                      address <span>CognitariumAddr</span>
+                    </li>
+                  </ul>
+                  <p>
+                    Use these Prolog helpers to write specific predicates retrieving metadata of the
+                    CSV you previously stored:
+                  </p>
+                  <ul>
+                    <li>
+                      <span>
+                        cognitarium_service_category(CognitariumAddr, ServiceId, ServiceCategory)
+                      </span>{' '}
+                      to get the{' '}
+                      <a
+                        href={githubCognitariumServiceCategoryUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        service category
+                      </a>{' '}
+                      of a service
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_dataset_mediatype(CognitariumAddr, DatasetId, MediaType)
+                      </span>{' '}
+                      to get the{' '}
+                      <a
+                        href={githubCognitariumDatasetMediaTypeUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        media type
+                      </a>{' '}
+                      of a dataset
+                    </li>
+                  </ul>
+                  <p>
+                    Submit a unique Prolog program containing the five predicates with a{' '}
+                    <span>law-stone</span>
+                    smart contract instantiation (
+                    <span>CODE_ID = {smartContractLawStoneCodeID}</span>). You can set
+                    <span>{objectariumAddress}</span> as
+                    the default storage address or{' '}
+                    <a href={testnetContractListUrl} rel="noreferrer" target="_blank">
+                      any other available <span>objectarium</span> instance
+                    </a>
+                    .
+                    <br />
+                    Provide “Nemeton-Dagda2” as a memo (add{' '}
+                    <span>--note &quot;Nemeton-Dagda2&quot;</span> to your command if you use the
+                    CLI).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    100,000 $KNOW (0,05% of the total supply) + an “OKP4 Prolog query master” POAP
+                    (Stargaze badge) for the first one to submit 5 valid expected predicates.
+                  </p>
+                  <p>
+                    The first wallet with an eligible transaction will receive the on-chain badge on
+                    August 31, and the $KNOW tokens will be sent out when the mainnet is launched
+                    (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <>
+                  <p>
+                    Each predicate will be evaluated. For example, a query like the one below, with
+                    your deployed <span>law-stone</span> instance address as{' '}
+                    <span>$CONTRACT_ADDR</span>, should return a
+                    <span>MediaType = application_vndms-excel</span> substitution:
+                  </p>
+                  <pre>
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR \
+                    <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
+                    \&quot;cognitarium_dataset_mediatype(okp41ehq2u2k5n45malyrncr8ln3cu8uk94cpfgxs80mma8jwrwmxjj3sa9l5zl,
+                    0ea1fc7a-dd97-4adc-a10e-169c6597bcde, MediaType).\&quot;{'}}'}
+                    &quot;
+                  </pre>
+                </>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  You have to instantiate a <span>law stone</span> with a Prolog program containing
+                  the five expected predicates. You should have instantiated with “Nemeton-Dagda2”
+                  as a memo. You don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    &quot;Beyond Traditional Governance&quot; article:{' '}
+                    <a href={beyondTraditionalGovernanceUrl} rel="noreferrer" target="_blank">
+                      {beyondTraditionalGovernanceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Storage” Service example:{' '}
+                    <a href={githubStorageServiceUrl} rel="noreferrer" target="_blank">
+                      {githubStorageServiceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “text_csv” media type and “igp” tagged Dataset example:{' '}
+                    <a href={githubDatasetUrl} rel="noreferrer" target="_blank">
+                      {githubDatasetUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Prolog tutorial:{' '}
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      {tutorialsPrologUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Leverage the ontology” tutorial:{' '}
+                    <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
+                      {tutorialsOntologyUrl}
                     </a>{' '}
-                    tutorial
                   </li>
                 </ul>
               )

@@ -105,6 +105,11 @@ export const config: Config = {
         githubOntologyCsvDatasetMetadataUrl: process.env.OKP4_GITHUB_ONTOLOGY_CSV_DATASET_METADATA_URL,
         githubServiceReferenceUrl: process.env.OKP4_GITHUB_SERVICE_REFERENCE_URL,
         githubDatasetReferenceUrl: process.env.OKP4_GITHUB_DATASET_REFERENCE_URL,
+        githubCognitariumPrologCodeUrl: process.env.OKP4_GITHUB_COGNITARIUM_PROLOG_CODE_URL,
+        githubCognitariumServiceCategoryUrl: process.env.OKP4_GITHUB_COGNITARIUM_SERVICE_CATEGORY_URL,
+        githubCognitariumDatasetMediaTypeUrl: process.env.OKP4_GITHUB_COGNITARIUM_DATASET_MEDIATYPE_URL,
+        githubStorageServiceUrl: process.env.OKP4_GITHUB_STORAGE_SERVICE_URL,
+        githubDatasetUrl: process.env.OKP4_GITHUB_DATASET_URL,
         okp4dDocsCommandsUrl: process.env.OKP4_OKP4D_DOCS_COMMANDS_URL,
         ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
@@ -122,6 +127,8 @@ export const config: Config = {
         scaleWayObjectStorageUrl: process.env.SCALEWAY_OBJECT_STORAGE_URL,
         uuidIdentifierUrl: process.env.UUID_IDENTIFIER_URL,
         tutorialsOntologyUrl: process.env.OKP4_TUTORIALS_ONTOLOGY_URL,
+        testnetContractListUrl: process.env.OKP4_TESTNET_CONTRACT_LIST_URL,
+        beyondTraditionalGovernanceUrl: process.env.BEYOND_TRADITIONAL_GOUVERNANCE_URL
       },
       challenges: [
         {
