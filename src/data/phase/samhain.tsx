@@ -21,6 +21,12 @@ export const samhain = ({
       githubLogicModulePredicatesUrl,
       githubPrologTemplateUrl,
       githubOntologyRhizomeUrl,
+      githubOntologyS3ServiceUrl,
+      githubS3ServiceMetadataUrl,
+      githubOntologyCsvDatasetUrl,
+      githubOntologyCsvDatasetMetadataUrl,
+      githubServiceReferenceUrl,
+      githubDatasetReferenceUrl,
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
@@ -28,9 +34,15 @@ export const samhain = ({
       objectariumID,
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
+      dataCognitariumCodeID,
       chainAddress,
       tutorialsPrologUrl,
-      tutorialsCliUrl
+      tutorialsCliUrl,
+      csvDatasetUrl,
+      awsS3Url,
+      scaleWayObjectStorageUrl,
+      uuidIdentifierUrl,
+      tutorialsOntologyUrl
     },
     challenges
   }
@@ -839,6 +851,183 @@ export const samhain = ({
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
+          }
+        }
+      ]
+    },
+    {
+      challengeName: 'Invoke the power of Dagda- From July, 12th to August, 30th',
+      challengeStatus: getStatusByDuration(challenges[1].startDate, challenges[1].endDate),
+      challengeDescription: (
+        <>
+          <p>
+            Summon the wisdom of the druids and harness the OKP4 Protocol - the key to unlocking
+            decentralized resource sharing. Delve into the enchanted tech to inscribe your own runes
+            of data, query their secrets, and craft user interfaces reminiscent of ancient stone
+            circles to establish consent rules for resources. Your journey begins here, within the
+            heart of this decentralized realm.
+          </p>
+          <p>
+            Complete these four challenges to imagine the tools and usages for the new world of
+            decentralized resource sharing!
+          </p>
+        </>
+      ),
+      challengeTasks: [
+        {
+          taskName: 'Reference within the OKP4 ontology a CSV file stored in S3',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 2.5/5)
+                    <br /> In the timeless wisdom of the druids, to share one&apos;s knowledge, one
+                    must first be able to name and reference it. This is the vital essence of
+                    ontology, the ancient tree of understanding from which all information grows.
+                    Like the sturdy oak representing the world, ontology thrives on RDF triplets,
+                    encoded into the essence of a smart contract, adhering to the sacred text of the
+                    OKP4 core specification. Just as druids believed in the interconnectedness of
+                    all things, so does the dataverse interweave every piece of data into a living,
+                    breathing digital grove.
+                  </p>
+                  <p>
+                    Add a CSV dataset (like this{' '}
+                    <a href={csvDatasetUrl} rel="noreferrer" target="_blank">
+                      one
+                    </a>{' '}
+                    for exemple) to the dataverse. You should previously store the data in an S3
+                    service you control (you can use{' '}
+                    <a href={awsS3Url} rel="noreferrer" target="_blank">
+                      AWS
+                    </a>{' '}
+                    or{' '}
+                    <a href={scaleWayObjectStorageUrl} rel="noreferrer" target="_blank">
+                      Scaleway
+                    </a>{' '}
+                    for example).
+                  </p>
+                  <p>Generate a Turtle file with descriptions of:</p>
+                  <ul>
+                    <li>
+                      the S3 service{' '}
+                      <a href={githubOntologyS3ServiceUrl} rel="noreferrer" target="_blank">
+                        <span>&lt;https://ontology.okp4.space/core/Service&gt;</span>
+                      </a>
+                    </li>
+                    <li>
+                      the S3 service metadata{' '}
+                      <a href={githubS3ServiceMetadataUrl} rel="noreferrer" target="_blank">
+                        <span>
+                          &lt;https://ontology.okp4.space/metadata/service/GeneralMetadata&gt;
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      the CSV dataset{' '}
+                      <a href={githubOntologyCsvDatasetUrl} rel="noreferrer" target="_blank">
+                        <span>&lt;https://ontology.okp4.space/core/Dataset&gt;</span>
+                      </a>
+                    </li>
+                    <li>
+                      the CSV dataset metadata{' '}
+                      <a
+                        href={githubOntologyCsvDatasetMetadataUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <span>
+                          &lt;https://ontology.okp4.space/metadata/dataset/GeneralMetadata&gt;
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <p>
+                    If you need to generate identifiers, use{' '}
+                    <a href={uuidIdentifierUrl} rel="noreferrer" target="_blank">
+                      <span>uuid-v4</span>
+                    </a>
+                    . Feel free to add any additional metadata!
+                  </p>
+                  <p>
+                    Store this semantic data on-chain; you should submit the whole by executing a
+                    single <span>insert_data</span> message to a <span>cognitarium</span> smart
+                    contract you&apos;ve instantiated (
+                    <span>CODE_ID = {dataCognitariumCodeID}</span>).
+                    <br /> Provide “Nemeton-Dagda1” as a memo (add{' '}
+                    <span>--note &quot;Nemeton-Dagda1&quot;</span> to your command if you use the
+                    CLI).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: <p>An “OKP4 Dataverse precursor“ POAP (Stargaze POAP)</p>
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  The first 250 wallets with an eligible transaction will receive the on-chain badge
+                  on August 31.
+                  <br /> It&apos;s useless to farm the POAP, don&apos;t expect related $KNOW airdrop
+                  eligibility 😄
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  You have to store the semantic data (Turtle format) in a <span>cognitarium</span>{' '}
+                  instance with “Nemeton-Dagda1” as a memo of your <span>insert_data</span>{' '}
+                  transaction. You don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    &quot;OKP4 Knowledge Sharing through Ontology-Driven Dataverse&quot; article:{' '}
+                    <a href={ontologyDescriptionUrl} rel="noreferrer" target="_blank">
+                      {ontologyDescriptionUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Service reference - Turtle file example:{' '}
+                    <a href={githubServiceReferenceUrl} rel="noreferrer" target="_blank">
+                      {githubServiceReferenceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Dataset reference - Turtle file example:{' '}
+                    <a href={githubDatasetReferenceUrl} rel="noreferrer" target="_blank">
+                      {githubDatasetReferenceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Leverage the ontology” tutorial:{' '}
+                    <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
+                      {tutorialsOntologyUrl}
+                    </a>{' '}
+                    tutorial
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
           }
         }
       ]

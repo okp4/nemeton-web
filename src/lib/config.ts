@@ -99,6 +99,12 @@ export const config: Config = {
         githubLogicModulePredicatesUrl: process.env.OKP4_GITHUB_LOGIC_MODULE_PREDICATES_URL,
         githubPrologTemplateUrl: process.env.OKP4_GITHUB_PROLOG_TEMPLATE_URL,
         githubOntologyRhizomeUrl: process.env.OKP4_GITHUB_ONTOLOGY_RHIZOME_URL,
+        githubOntologyS3ServiceUrl: process.env.OKP4_GITHUB_ONTOLOGY_S3_SERVICE_URL,
+        githubS3ServiceMetadataUrl: process.env.OKP4_GITHUB_S3_SERVICE_METADATA_URL,
+        githubOntologyCsvDatasetUrl: process.env.OKP4_GITHUB_ONTOLOGY_CSV_DATASET_URL,
+        githubOntologyCsvDatasetMetadataUrl: process.env.OKP4_GITHUB_ONTOLOGY_CSV_DATASET_METADATA_URL,
+        githubServiceReferenceUrl: process.env.OKP4_GITHUB_SERVICE_REFERENCE_URL,
+        githubDatasetReferenceUrl: process.env.OKP4_GITHUB_DATASET_REFERENCE_URL,
         okp4dDocsCommandsUrl: process.env.OKP4_OKP4D_DOCS_COMMANDS_URL,
         ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
@@ -107,14 +113,24 @@ export const config: Config = {
         objectariumID: process.env.OKP4_OBJECTARIUM_ID,
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
         smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID,
+        dataCognitariumCodeID: process.env.OKP4_DATA_COGNITARIUM_CODE_ID,
         chainAddress: process.env.OKP4_CHAIN_ADDRESS,
         tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL,
-        tutorialsCliUrl: process.env.OKP4_TUTORIALS_CLI_URL
+        tutorialsCliUrl: process.env.OKP4_TUTORIALS_CLI_URL,
+        csvDatasetUrl: process.env.CSV_DATASET_URL,
+        awsS3Url: process.env.AWS_S3_URL,
+        scaleWayObjectStorageUrl: process.env.SCALEWAY_OBJECT_STORAGE_URL,
+        uuidIdentifierUrl: process.env.UUID_IDENTIFIER_URL,
+        tutorialsOntologyUrl: process.env.OKP4_TUTORIALS_ONTOLOGY_URL,
       },
       challenges: [
         {
           startDate: process.env.OKP4_CHALLENGE_1_START_DATE,
           endDate: process.env.OKP4_CHALLENGE_1_END_DATE
+        },
+        {
+          startDate: process.env.OKP4_CHALLENGE_2_START_DATE,
+          endDate: process.env.OKP4_CHALLENGE_2_END_DATE
         }
       ]
     }

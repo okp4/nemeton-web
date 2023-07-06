@@ -45,6 +45,12 @@ export type PhasesConfig = {
       githubLogicModulePredicatesUrl: string
       githubPrologTemplateUrl: string
       githubOntologyRhizomeUrl: string
+      githubOntologyS3ServiceUrl: string
+      githubS3ServiceMetadataUrl: string
+      githubOntologyCsvDatasetUrl: string
+      githubOntologyCsvDatasetMetadataUrl: string
+      githubServiceReferenceUrl: string
+      githubDatasetReferenceUrl: string
       okp4dDocsCommandsUrl: string
       ontologyDescriptionUrl: string
       swiPrologUrl: string
@@ -53,9 +59,15 @@ export type PhasesConfig = {
       objectariumID: string
       smartContractLawStoneCodeID: string
       smartContractCognitariumCodeID: string
+      dataCognitariumCodeID: string
       chainAddress: string
       tutorialsPrologUrl: string
       tutorialsCliUrl: string
+      csvDatasetUrl: string
+      awsS3Url: string
+      scaleWayObjectStorageUrl: string
+      uuidIdentifierUrl: string
+      tutorialsOntologyUrl: string
     }
     challenges: Array<{
       startDate: string
