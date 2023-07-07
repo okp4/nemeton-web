@@ -23,7 +23,6 @@ export const samhain = ({
       githubOntologyRhizomeUrl,
       githubOntologyS3ServiceUrl,
       githubS3ServiceMetadataUrl,
-      githubOntologyCsvDatasetUrl,
       githubOntologyCsvDatasetMetadataUrl,
       githubServiceReferenceUrl,
       githubDatasetReferenceUrl,
@@ -48,7 +47,7 @@ export const samhain = ({
       csvDatasetUrl,
       awsS3Url,
       scaleWayObjectStorageUrl,
-      uuidIdentifierUrl,
+      githubUuidToolsUrl,
       tutorialsOntologyUrl,
       testnetContractListUrl,
       beyondTraditionalGovernanceUrl,
@@ -939,7 +938,7 @@ export const samhain = ({
                     </li>
                     <li>
                       the CSV dataset{' '}
-                      <a href={githubOntologyCsvDatasetUrl} rel="noreferrer" target="_blank">
+                      <a href={githubOntologyS3ServiceUrl} rel="noreferrer" target="_blank">
                         <span>&lt;https://ontology.okp4.space/core/Dataset&gt;</span>
                       </a>
                     </li>
@@ -958,7 +957,7 @@ export const samhain = ({
                   </ul>
                   <p>
                     If you need to generate identifiers, use{' '}
-                    <a href={uuidIdentifierUrl} rel="noreferrer" target="_blank">
+                    <a href={githubUuidToolsUrl} rel="noreferrer" target="_blank">
                       <span>uuid-v4</span>
                     </a>
                     . Feel free to add any additional metadata!

@@ -47,7 +47,6 @@ export type PhasesConfig = {
       githubOntologyRhizomeUrl: string
       githubOntologyS3ServiceUrl: string
       githubS3ServiceMetadataUrl: string
-      githubOntologyCsvDatasetUrl: string
       githubOntologyCsvDatasetMetadataUrl: string
       githubServiceReferenceUrl: string
       githubDatasetReferenceUrl: string
@@ -73,7 +72,7 @@ export type PhasesConfig = {
       csvDatasetUrl: string
       awsS3Url: string
       scaleWayObjectStorageUrl: string
-      uuidIdentifierUrl: string
+      githubUuidToolsUrl: string
       tutorialsOntologyUrl: string
       testnetContractListUrl: string
       beyondTraditionalGovernanceUrl: string
