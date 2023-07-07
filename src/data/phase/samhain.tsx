@@ -867,7 +867,7 @@ export const samhain = ({
       ]
     },
     {
-      challengeName: 'Invoke the power of Dagda- From July, 12th to August, 30th',
+      challengeName: 'Invoke the power of Dagda - From July, 12th to August, 30th',
       challengeStatus: getStatusByDuration(challenges[1].startDate, challenges[1].endDate),
       challengeDescription: (
         <>
@@ -1059,7 +1059,7 @@ export const samhain = ({
                   <p>
                     Look at the{' '}
                     <a href={githubCognitariumPrologCodeUrl} rel="noreferrer" target="_blank">
-                      Prolog code example in the cognitarium contract GitHub repository
+                      Prolog code example in the <span>cognitarium</span> contract GitHub repository
                     </a>
                     . A<span>cognitarium_dataset_tags(CognitariumAddr, DatasetDID, Tags)</span>{' '}
                     predicate allows you to get tags for a specific dataset (objects of{' '}
