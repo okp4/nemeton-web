@@ -872,11 +872,13 @@ export const samhain = ({
       challengeDescription: (
         <>
           <p>
-            Summon the wisdom of the druids and harness the OKP4 Protocol - the key to unlocking
-            decentralized resource sharing. Delve into the enchanted tech to inscribe your own runes
-            of data, query their secrets, and craft user interfaces reminiscent of ancient stone
-            circles to establish consent rules for resources. Your journey begins here, within the
-            heart of this decentralized realm.
+            <i>
+              Summon the wisdom of the druids and harness the OKP4 Protocol - the key to unlocking
+              decentralized resource sharing. Delve into the enchanted tech to inscribe your own
+              runes of data, query their secrets, and craft user interfaces reminiscent of ancient
+              stone circles to establish consent rules for resources. Your journey begins here,
+              within the heart of this decentralized realm.
+            </i>
           </p>
           <p>
             Complete these four challenges to imagine the tools and usages for the new world of
@@ -895,22 +897,25 @@ export const samhain = ({
                 <>
                   <p>
                     (Difficulty: 2.5/5)
-                    <br /> In the timeless wisdom of the druids, to share one&apos;s knowledge, one
-                    must first be able to name and reference it. This is the vital essence of
-                    ontology, the ancient tree of understanding from which all information grows.
-                    Like the sturdy oak representing the world, ontology thrives on RDF triplets,
-                    encoded into the essence of a smart contract, adhering to the sacred text of the
-                    OKP4 core specification. Just as druids believed in the interconnectedness of
-                    all things, so does the dataverse interweave every piece of data into a living,
-                    breathing digital grove.
+                    <br />{' '}
+                    <i>
+                      In the timeless wisdom of the druids, to share one&apos;s knowledge, one must
+                      first be able to name and reference it. This is the vital essence of ontology,
+                      the ancient tree of understanding from which all information grows. Like the
+                      sturdy oak representing the world, ontology thrives on RDF triplets, encoded
+                      into the essence of a smart contract, adhering to the sacred text of the OKP4
+                      core specification. Just as druids believed in the interconnectedness of all
+                      things, so does the dataverse interweave every piece of data into a living,
+                      breathing digital grove.
+                    </i>
                   </p>
                   <p>
                     Add a CSV dataset (like this{' '}
                     <a href={csvDatasetUrl} rel="noreferrer" target="_blank">
                       one
                     </a>{' '}
-                    for exemple) to the dataverse. You should previously store the data in an S3
-                    service you control (you can use{' '}
+                    for exemple) to the <i>dataverse</i>. You should previously store the data in an
+                    S3 service you control (you can use{' '}
                     <a href={awsS3Url} rel="noreferrer" target="_blank">
                       AWS
                     </a>{' '}
@@ -1050,11 +1055,14 @@ export const samhain = ({
                 <>
                   <p>
                     (Difficulty: 3/5)
-                    <br /> Under the celestial canopy of the OKP4 Protocol, Prolog unfolds as the
-                    sacred language, defining and interpreting the laws inscribed upon the shared
-                    resources. Craft your own druidic predicates, akin to the stones in a sacred
-                    henge, making it simpler to divine the mysteries of the ontology within the
-                    sacred script of Prolog code.
+                    <br />
+                    <i>
+                      Under the celestial canopy of the OKP4 Protocol, Prolog unfolds as the sacred
+                      language, defining and interpreting the laws inscribed upon the shared
+                      resources. Craft your own druidic predicates, akin to the stones in a sacred
+                      henge, making it simpler to divine the mysteries of the ontology within the
+                      sacred script of Prolog code.
+                    </i>
                   </p>
                   <p>
                     Look at the{' '}
@@ -1251,14 +1259,17 @@ export const samhain = ({
                 <>
                   <p>
                     (Difficulty: 4/5)
-                    <br /> With the wisdom of data referencing now in our grasp and Prolog - the
-                    ancient druidic tongue for setting consent for sharing nature&apos;s gifts - in
-                    our command, the dawn of creation is upon us. It is time to craft portals of
-                    interaction, intuitive as the forest path, to empower all who wander in our
-                    digital grove to share and dictate the sacred laws according to the innate
-                    properties of the metadata. Like ancient druidic symbols carved on stones, these
-                    user interfaces shall guide and simplify the journey for all seekers of
-                    knowledge.
+                    <br />{' '}
+                    <i>
+                      With the wisdom of data referencing now in our grasp and Prolog - the ancient
+                      druidic tongue for setting consent for sharing nature&apos;s gifts - in our
+                      command, the dawn of creation is upon us. It is time to craft portals of
+                      interaction, intuitive as the forest path, to empower all who wander in our
+                      digital grove to share and dictate the sacred laws according to the innate
+                      properties of the metadata. Like ancient druidic symbols carved on stones,
+                      these user interfaces shall guide and simplify the journey for all seekers of
+                      knowledge.
+                    </i>
                   </p>
                   <p>
                     Create a front-end application to list and submit shared resources and rules
@@ -1427,12 +1438,15 @@ export const samhain = ({
                 <>
                   <p>
                     (Difficulty: 4/5)
-                    <br /> Much like the boundless forests of old, the sacred protocol welcomes
-                    contributions from every pilgrim. The Dagda challenges are stepping stones
-                    shaped to help you navigate the undergrowth and grasp the fundamental lore.
-                    Having now tamed the mystical beast of technology, you are as free as a druid in
-                    his grove. Go forth, conjure up your own vision, and let your ideas bloom like a
-                    sacred mistletoe on the mighty oaks of our digital woodland.
+                    <br />{' '}
+                    <i>
+                      Much like the boundless forests of old, the sacred protocol welcomes
+                      contributions from every pilgrim. The Dagda challenges are stepping stones
+                      shaped to help you navigate the undergrowth and grasp the fundamental lore.
+                      Having now tamed the mystical beast of technology, you are as free as a druid
+                      in his grove. Go forth, conjure up your own vision, and let your ideas bloom
+                      like a sacred mistletoe on the mighty oaks of our digital woodland.
+                    </i>
                   </p>
                   <p>
                     Get the OKP4 blockchain on your own. Do you think something is missing and

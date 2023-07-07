@@ -246,6 +246,10 @@ main {
       .okp4-nemeton-web-page-challenges-content {
         padding: 0 121px;
 
+        h2 {
+          margin-top: 40px;
+        }
+
         @media screen and (max-width: 1000px) {
           padding: 0;
 
@@ -282,7 +286,7 @@ main {
             white-space: break-spaces;
             background-color: $black-300;
             border-radius: 6px;
-            line-height: 24px;
+            line-height: 33px;
           }
 
           pre {
