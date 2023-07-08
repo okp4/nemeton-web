@@ -99,6 +99,17 @@ export const config: Config = {
         githubLogicModulePredicatesUrl: process.env.OKP4_GITHUB_LOGIC_MODULE_PREDICATES_URL,
         githubPrologTemplateUrl: process.env.OKP4_GITHUB_PROLOG_TEMPLATE_URL,
         githubOntologyRhizomeUrl: process.env.OKP4_GITHUB_ONTOLOGY_RHIZOME_URL,
+        githubOntologyS3ServiceUrl: process.env.OKP4_GITHUB_ONTOLOGY_S3_SERVICE_URL,
+        githubS3ServiceMetadataUrl: process.env.OKP4_GITHUB_S3_SERVICE_METADATA_URL,
+        githubOntologyCsvDatasetMetadataUrl: process.env.OKP4_GITHUB_ONTOLOGY_CSV_DATASET_METADATA_URL,
+        githubServiceReferenceUrl: process.env.OKP4_GITHUB_SERVICE_REFERENCE_URL,
+        githubDatasetReferenceUrl: process.env.OKP4_GITHUB_DATASET_REFERENCE_URL,
+        githubCognitariumPrologCodeUrl: process.env.OKP4_GITHUB_COGNITARIUM_PROLOG_CODE_URL,
+        githubCognitariumServiceCategoryUrl: process.env.OKP4_GITHUB_COGNITARIUM_SERVICE_CATEGORY_URL,
+        githubCognitariumDatasetMediaTypeUrl: process.env.OKP4_GITHUB_COGNITARIUM_DATASET_MEDIATYPE_URL,
+        githubStorageServiceUrl: process.env.OKP4_GITHUB_STORAGE_SERVICE_URL,
+        githubDatasetUrl: process.env.OKP4_GITHUB_DATASET_URL,
+        githubContractsUrl: process.env.OKP4_GITHUB_CONTRACTS_URL,
         okp4dDocsCommandsUrl: process.env.OKP4_OKP4D_DOCS_COMMANDS_URL,
         ontologyDescriptionUrl: process.env.OKP4_ONTOLOGY_DESCRIPTION_URL,
         swiPrologUrl: process.env.OKP4_SWI_PROLOG_URL,
@@ -107,14 +118,31 @@ export const config: Config = {
         objectariumID: process.env.OKP4_OBJECTARIUM_ID,
         smartContractLawStoneCodeID: process.env.OKP4_SMART_CONTRACT_LAW_STONE_CODE_ID,
         smartContractCognitariumCodeID: process.env.OKP4_SMART_CONTRACT_COGNITARIUM_CODE_ID,
+        smartContractTutorialUrl: process.env.OKP4_SMART_CONTRACT_TUTORIAL_URL,
+        dataCognitariumCodeID: process.env.OKP4_DATA_COGNITARIUM_CODE_ID,
         chainAddress: process.env.OKP4_CHAIN_ADDRESS,
         tutorialsPrologUrl: process.env.OKP4_TUTORIALS_PROLOG_URL,
-        tutorialsCliUrl: process.env.OKP4_TUTORIALS_CLI_URL
+        tutorialsCliUrl: process.env.OKP4_TUTORIALS_CLI_URL,
+        csvDatasetUrl: process.env.CSV_DATASET_URL,
+        awsS3Url: process.env.AWS_S3_URL,
+        scaleWayObjectStorageUrl: process.env.SCALEWAY_OBJECT_STORAGE_URL,
+        githubUuidToolsUrl: process.env.GITHUB_UUID_TOOLS_URL,
+        tutorialsOntologyUrl: process.env.OKP4_TUTORIALS_ONTOLOGY_URL,
+        testnetContractListUrl: process.env.OKP4_TESTNET_CONTRACT_LIST_URL,
+        beyondTraditionalGovernanceUrl: process.env.BEYOND_TRADITIONAL_GOUVERNANCE_URL,
+        grazDocsUrl: process.env.GRAZ_REACT_HOOKS_URL,
+        okp4WebsiteDocsUrl: process.env.OKP4_WEBSITE_DOCS_URL,
+        nemetonSupportUrl: process.env.NEMETON_SUPPORT_URL
+        
       },
       challenges: [
         {
           startDate: process.env.OKP4_CHALLENGE_1_START_DATE,
           endDate: process.env.OKP4_CHALLENGE_1_END_DATE
+        },
+        {
+          startDate: process.env.OKP4_CHALLENGE_2_START_DATE,
+          endDate: process.env.OKP4_CHALLENGE_2_END_DATE
         }
       ]
     }

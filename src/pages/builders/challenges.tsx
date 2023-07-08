@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import moment from 'moment'
 import Phases from '@/data/phase'
@@ -13,14 +13,15 @@ export type ChallengesProps = Pick<Config, 'urls' | 'phases'>
 const Challenges: NextPage<ChallengesProps> = props => {
   const { phases } = props
   const challenges = useMemo(
-    () => Phases(phases)[Phases(phases).length - 1].challenges ?? [],
+    () => Phases(phases)[Phases(phases).length - 1].challenges?.reverse() ?? [],
     [phases]
   )
-  const [activeIndex, setActiveIndex] = useAccordion()
+  const [activeTask, setActiveTask] = useAccordion()
 
-  const handleClick = (index: number) => () => {
-    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index)
-  }
+  const handleClick = useCallback(
+    (taskName: string) => () => setActiveTask(activeTask === taskName ? null : taskName),
+    [activeTask, setActiveTask]
+  )
 
   return (
     <div className="okp4-nemeton-web-page-main">
@@ -53,7 +54,8 @@ const Challenges: NextPage<ChallengesProps> = props => {
                             </div>
                           </div>
                         )
-                        const active = activeIndex === index
+
+                        const active = activeTask === taskName
 
                         return (
                           <div key={index}>
@@ -79,7 +81,7 @@ const Challenges: NextPage<ChallengesProps> = props => {
                               }
                               iconProps={{ width: 21, height: 13 }}
                               isExpanded={active}
-                              onToggle={handleClick(index)}
+                              onToggle={handleClick(taskName)}
                               title={title}
                               variant="tertiary"
                             />

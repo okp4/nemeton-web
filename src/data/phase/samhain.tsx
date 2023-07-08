@@ -21,6 +21,17 @@ export const samhain = ({
       githubLogicModulePredicatesUrl,
       githubPrologTemplateUrl,
       githubOntologyRhizomeUrl,
+      githubOntologyS3ServiceUrl,
+      githubS3ServiceMetadataUrl,
+      githubOntologyCsvDatasetMetadataUrl,
+      githubServiceReferenceUrl,
+      githubDatasetReferenceUrl,
+      githubCognitariumPrologCodeUrl,
+      githubCognitariumServiceCategoryUrl,
+      githubCognitariumDatasetMediaTypeUrl,
+      githubStorageServiceUrl,
+      githubDatasetUrl,
+      githubContractsUrl,
       ontologyDescriptionUrl,
       swiPrologUrl,
       swiPrologFunctionsUrl,
@@ -28,9 +39,21 @@ export const samhain = ({
       objectariumID,
       smartContractLawStoneCodeID,
       smartContractCognitariumCodeID,
+      smartContractTutorialUrl,
+      dataCognitariumCodeID,
       chainAddress,
       tutorialsPrologUrl,
-      tutorialsCliUrl
+      tutorialsCliUrl,
+      csvDatasetUrl,
+      awsS3Url,
+      scaleWayObjectStorageUrl,
+      githubUuidToolsUrl,
+      tutorialsOntologyUrl,
+      testnetContractListUrl,
+      beyondTraditionalGovernanceUrl,
+      grazDocsUrl,
+      okp4WebsiteDocsUrl,
+      nemetonSupportUrl
     },
     challenges
   }
@@ -839,6 +862,687 @@ export const samhain = ({
           taskDuration: {
             from: '2023-06-14T12:00:00Z',
             to: '2023-06-28T12:00:00Z'
+          }
+        }
+      ]
+    },
+    {
+      challengeName: 'Invoke the power of Dagda - From July, 12th to August, 30th',
+      challengeStatus: getStatusByDuration(challenges[1].startDate, challenges[1].endDate),
+      challengeDescription: (
+        <>
+          <p>
+            <i>
+              Summon the wisdom of the druids and harness the OKP4 Protocol - the key to unlocking
+              decentralized resource sharing. Delve into the enchanted tech to inscribe your own
+              runes of data, query their secrets, and craft user interfaces reminiscent of ancient
+              stone circles to establish consent rules for resources. Your journey begins here,
+              within the heart of this decentralized realm.
+            </i>
+          </p>
+          <p>
+            Complete these four challenges to imagine the tools and usages for the new world of
+            decentralized resource sharing!
+          </p>
+        </>
+      ),
+      challengeTasks: [
+        {
+          taskName: 'Reference within the OKP4 ontology a CSV file stored in S3',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 2.5/5)
+                    <br />{' '}
+                    <i>
+                      In the timeless wisdom of the druids, to share one&apos;s knowledge, one must
+                      first be able to name and reference it. This is the vital essence of ontology,
+                      the ancient tree of understanding from which all information grows. Like the
+                      sturdy oak representing the world, ontology thrives on RDF triplets, encoded
+                      into the essence of a smart contract, adhering to the sacred text of the OKP4
+                      core specification. Just as druids believed in the interconnectedness of all
+                      things, so does the dataverse interweave every piece of data into a living,
+                      breathing digital grove.
+                    </i>
+                  </p>
+                  <p>
+                    Add a CSV dataset (like this{' '}
+                    <a href={csvDatasetUrl} rel="noreferrer" target="_blank">
+                      one
+                    </a>{' '}
+                    for exemple) to the <i>dataverse</i>. You should previously store the data in an
+                    S3 service you control (you can use{' '}
+                    <a href={awsS3Url} rel="noreferrer" target="_blank">
+                      AWS
+                    </a>{' '}
+                    or{' '}
+                    <a href={scaleWayObjectStorageUrl} rel="noreferrer" target="_blank">
+                      Scaleway
+                    </a>{' '}
+                    for example).
+                  </p>
+                  <p>Generate a Turtle file with descriptions of:</p>
+                  <ul>
+                    <li>
+                      the S3 service{' '}
+                      <a href={githubOntologyS3ServiceUrl} rel="noreferrer" target="_blank">
+                        <span>&lt;https://ontology.okp4.space/core/Service&gt;</span>
+                      </a>
+                    </li>
+                    <li>
+                      the S3 service metadata{' '}
+                      <a href={githubS3ServiceMetadataUrl} rel="noreferrer" target="_blank">
+                        <span>
+                          &lt;https://ontology.okp4.space/metadata/service/GeneralMetadata&gt;
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      the CSV dataset{' '}
+                      <a href={githubOntologyS3ServiceUrl} rel="noreferrer" target="_blank">
+                        <span>&lt;https://ontology.okp4.space/core/Dataset&gt;</span>
+                      </a>
+                    </li>
+                    <li>
+                      the CSV dataset metadata{' '}
+                      <a
+                        href={githubOntologyCsvDatasetMetadataUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <span>
+                          &lt;https://ontology.okp4.space/metadata/dataset/GeneralMetadata&gt;
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <p>
+                    If you need to generate identifiers, use{' '}
+                    <a href={githubUuidToolsUrl} rel="noreferrer" target="_blank">
+                      <span>uuid-v4</span>
+                    </a>
+                    . Feel free to add any additional metadata!
+                  </p>
+                  <p>
+                    Store this semantic data on-chain; you should submit the whole by executing a
+                    single <span>insert_data</span> message to a <span>cognitarium</span> smart
+                    contract you&apos;ve instantiated (
+                    <span>CODE_ID = {dataCognitariumCodeID}</span>).
+                    <br /> Provide “Nemeton-Dagda1” as a memo (add{' '}
+                    <span>--note &quot;Nemeton-Dagda1&quot;</span> to your command if you use the
+                    CLI).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: <p>An “OKP4 Dataverse precursor“ POAP (Stargaze POAP)</p>
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  The first 250 wallets with an eligible transaction will receive the on-chain badge
+                  on August 31.
+                  <br /> It&apos;s useless to farm the POAP, don&apos;t expect related $KNOW airdrop
+                  eligibility 😄
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  You have to store the semantic data (Turtle format) in a <span>cognitarium</span>{' '}
+                  instance with “Nemeton-Dagda1” as a memo of your <span>insert_data</span>{' '}
+                  transaction. You don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    &quot;OKP4 Knowledge Sharing through Ontology-Driven Dataverse&quot; article:{' '}
+                    <a href={ontologyDescriptionUrl} rel="noreferrer" target="_blank">
+                      {ontologyDescriptionUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Service reference - Turtle file example:{' '}
+                    <a href={githubServiceReferenceUrl} rel="noreferrer" target="_blank">
+                      {githubServiceReferenceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Dataset reference - Turtle file example:{' '}
+                    <a href={githubDatasetReferenceUrl} rel="noreferrer" target="_blank">
+                      {githubDatasetReferenceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Leverage the ontology” tutorial:{' '}
+                    <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
+                      {tutorialsOntologyUrl}
+                    </a>
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName: 'Prolog predicates to query the ontology',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 3/5)
+                    <br />
+                    <i>
+                      Under the celestial canopy of the OKP4 Protocol, Prolog unfolds as the sacred
+                      language, defining and interpreting the laws inscribed upon the shared
+                      resources. Craft your own druidic predicates, akin to the stones in a sacred
+                      henge, making it simpler to divine the mysteries of the ontology within the
+                      sacred script of Prolog code.
+                    </i>
+                  </p>
+                  <p>
+                    Look at the{' '}
+                    <a href={githubCognitariumPrologCodeUrl} rel="noreferrer" target="_blank">
+                      Prolog code example in the <span>cognitarium</span> contract GitHub repository
+                    </a>
+                    . A<span>cognitarium_dataset_tags(CognitariumAddr, DatasetDID, Tags)</span>{' '}
+                    predicate allows you to get tags for a specific dataset (objects of{' '}
+                    <span>core:Tags</span> and <span>DatasetDID</span> as subject). Similarly, write
+                    several predicates to query the ontology from any Prolog program interpreted by
+                    the OKP4 blockchain.
+                  </p>
+                  <p>Write generic predicates to query ontology:</p>
+                  <ul>
+                    <li>
+                      <span>
+                        cognitarium_subject_predicate_objects(CognitariumAddr, Subject, Predicate,
+                        Objects)
+                      </span>
+                      , where <span>Objects</span> is the returned value from a SELECT query on
+                      <span>CognitariumAddr</span> with provided <span>Subject</span> and{' '}
+                      <span>Predicate</span>
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_subject_predicate_subjects(CognitariumAddr, Subjects, Predicate,
+                        Object)
+                      </span>
+                      , where <span>Subjects</span> is the returned value from a SELECT query on
+                      <span>CognitariumAddr</span> with provided <span>Object</span> and{' '}
+                      <span>Predicate</span>
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_has_stored_triple(CognitariumAddr, Subject, Predicate, Object)
+                      </span>
+                      indicates that the RDF triple <span>Subject</span>-<span>Predicate</span>-
+                      <span>Object</span> is stored in ontology queried on the smart contract
+                      address <span>CognitariumAddr</span>
+                    </li>
+                  </ul>
+                  <p>
+                    Use these Prolog helpers to write specific predicates retrieving metadata of the
+                    CSV you previously stored:
+                  </p>
+                  <ul>
+                    <li>
+                      <span>
+                        cognitarium_service_category(CognitariumAddr, ServiceId, ServiceCategory)
+                      </span>{' '}
+                      to get the{' '}
+                      <a
+                        href={githubCognitariumServiceCategoryUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        service category
+                      </a>{' '}
+                      of a service
+                    </li>
+                    <li>
+                      <span>
+                        cognitarium_dataset_mediatype(CognitariumAddr, DatasetId, MediaType)
+                      </span>{' '}
+                      to get the{' '}
+                      <a
+                        href={githubCognitariumDatasetMediaTypeUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        media type
+                      </a>{' '}
+                      of a dataset
+                    </li>
+                  </ul>
+                  <p>
+                    Submit a unique Prolog program containing the five predicates with a{' '}
+                    <span>law-stone</span>
+                    smart contract instantiation (
+                    <span>CODE_ID = {smartContractLawStoneCodeID}</span>). You can set
+                    <span>{objectariumAddress}</span> as the default storage address or{' '}
+                    <a href={testnetContractListUrl} rel="noreferrer" target="_blank">
+                      any other available <span>objectarium</span> instance
+                    </a>
+                    .
+                    <br />
+                    Provide “Nemeton-Dagda2” as a memo (add{' '}
+                    <span>--note &quot;Nemeton-Dagda2&quot;</span> to your command if you use the
+                    CLI).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    100,000 $KNOW (0,05% of the total supply) + an “OKP4 Prolog query master” POAP
+                    (Stargaze badge) for the first one to submit 5 valid expected predicates.
+                  </p>
+                  <p>
+                    The first wallet with an eligible transaction will receive the on-chain badge on
+                    August 31, and the $KNOW tokens will be sent out when the mainnet is launched
+                    (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <>
+                  <p>
+                    Each predicate will be evaluated. For example, a query like the one below, with
+                    your deployed <span>law-stone</span> instance address as{' '}
+                    <span>$CONTRACT_ADDR</span>, should return a
+                    <span>MediaType = application_vndms-excel</span> substitution:
+                  </p>
+                  <pre>
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR \
+                    <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
+                    \&quot;cognitarium_dataset_mediatype(okp41ehq2u2k5n45malyrncr8ln3cu8uk94cpfgxs80mma8jwrwmxjj3sa9l5zl,
+                    0ea1fc7a-dd97-4adc-a10e-169c6597bcde, MediaType).\&quot;{'}}'}
+                    &quot;
+                  </pre>
+                </>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  You have to instantiate a <span>law stone</span> with a Prolog program containing
+                  the five expected predicates. You should have instantiated with “Nemeton-Dagda2”
+                  as a memo. You don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    &quot;Beyond Traditional Governance&quot; article:{' '}
+                    <a href={beyondTraditionalGovernanceUrl} rel="noreferrer" target="_blank">
+                      {beyondTraditionalGovernanceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Storage” Service example:{' '}
+                    <a href={githubStorageServiceUrl} rel="noreferrer" target="_blank">
+                      {githubStorageServiceUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “text_csv” media type and “igp” tagged Dataset example:{' '}
+                    <a href={githubDatasetUrl} rel="noreferrer" target="_blank">
+                      {githubDatasetUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Prolog tutorial:{' '}
+                    <a href={tutorialsPrologUrl} rel="noreferrer" target="_blank">
+                      {tutorialsPrologUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Leverage the ontology” tutorial:{' '}
+                    <a href={tutorialsOntologyUrl} rel="noreferrer" target="_blank">
+                      {tutorialsOntologyUrl}
+                    </a>{' '}
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName: 'Build a web interface to interact with the OKP4 blockchain',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 4/5)
+                    <br />{' '}
+                    <i>
+                      With the wisdom of data referencing now in our grasp and Prolog - the ancient
+                      druidic tongue for setting consent for sharing nature&apos;s gifts - in our
+                      command, the dawn of creation is upon us. It is time to craft portals of
+                      interaction, intuitive as the forest path, to empower all who wander in our
+                      digital grove to share and dictate the sacred laws according to the innate
+                      properties of the metadata. Like ancient druidic symbols carved on stones,
+                      these user interfaces shall guide and simplify the journey for all seekers of
+                      knowledge.
+                    </i>
+                  </p>
+                  <p>
+                    Create a front-end application to list and submit shared resources and rules
+                    registered in the blockchain. You should then be able to retrieve data you
+                    previously submitted and even use it to reference resources or add a new Prolog
+                    program (resources rules or utils).
+                  </p>
+                  <p>Your web interface should at least have the following features:</p>
+                  <ul>
+                    <li>OKP4 wallet connection button (should support Keplr wallet).</li>
+                    <li>
+                      List all rules submitted (Prolog programs in <span>law-stone</span>{' '}
+                      instantiations, <span>CODE_ID = {smartContractLawStoneCodeID}</span>) with the
+                      following properties: smart contract address, creator address, instantiated
+                      date and decoded Prolog program. This list should be ordered by instantiated
+                      date and filterable on the okp4 creator address.
+                    </li>
+                    <li>
+                      List all data ontology submitted (from transactions with <span>insert</span>{' '}
+                      wasm action) with the following properties: smart contract address, sender
+                      address, transaction date and decoded data. This list should be ordered by
+                      transaction date and filterable on the okp4 sender address.
+                    </li>
+                    <li>
+                      <span>law-stone</span> instantiation from a Prolog file and/or code form (you
+                      can set {objectariumAddress} as default storage address, or{' '}
+                      <a href={testnetContractListUrl} rel="noreferrer" target="_blank">
+                        any other available <span>objectarium</span> instance
+                      </a>
+                      ).
+                    </li>
+                    <li>
+                      RDF triples insertion from a Turtle file and/or code form. You should check if
+                      the user instantiated a <span>cognitarium</span> smart contract. If not, the
+                      UI should propose to create one before using it to insert ontology data.
+                    </li>
+                  </ul>
+                  <p>
+                    For every transaction the UI submits, you should set in <span>memo</span>
+                    “Nemeton-Dagda3-GH_REPO” with <span>GH_REPO</span> as the Github repo link of
+                    the web interface you are developing.
+                  </p>
+                  <p>
+                    You can use any framework to develop your web interface. We advise you to look
+                    at the{' '}
+                    <a href={grazDocsUrl} rel="noreferrer" target="_blank">
+                      graz
+                    </a>{' '}
+                    React hooks. For example, to instantiate a <span>law-stone</span> with a{' '}
+                    <span>memo</span>:
+                  </p>
+                  <pre>
+                    import {'{'} useInstantiateContract {'}'} from &quot;graz&quot;;
+                    <br />
+                    <br />
+                    const {'{'} instantiateContract {'}'} = useInstantiateContract({'{'} <br />{' '}
+                    codeId: 5, <br /> onError: () {'=>'} {'{}'}, <br /> onMutate: () {'=>'} {'{}'},{' '}
+                    <br /> onSuccess: () {'=>'} {'{}'} <br />
+                    {'}'}); <br /> <br />
+                    instantiateContract({'{'} <br /> msg: {'{'} <br /> program: &quot;base64 prolog
+                    program&quot;, <br /> {'  '}storage_address: &quot;
+                    {objectariumAddress}&quot;
+                    <br /> {'}'},<br /> options: {'{'}
+                    <br /> {'   '}memo:
+                    &quot;Nemeton-Dagda3-http://your-github-repo-with-your-OKP4-addr-in-README.link&quot;
+                    <br /> {'}'}
+                    <br />
+                    {'}'});
+                  </pre>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    150 000 $KNOW tokens (0,075% of the total supply) + an “OKP4 interface
+                    innovator” POAP (Stargaze badge) per validated web interface.
+                  </p>
+                  <p>
+                    300,000 $KNOW will be sent to builders for this task. OKP4 team will manually
+                    evaluate the user interfaces and reward the two most relevant ones.
+                  </p>
+                  <p>
+                    The web interface GitHub repository README should provide an OKP4 address where
+                    to send the POAP and the $KNOW tokens. Wallets from elected interfaces will
+                    receive the on-chain badge on August 31, and the $KNOW tokens will be sent out
+                    when the mainnet is launched (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  Your web interface should propose the required functionalities. Rewards will be
+                  sent in priority to developers submitting early and/or providing the best UX
+                  and/or further features.
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  All the transactions executed from the web application should have
+                  “Nemeton-Dagda3” and your Github repository link in the transaction{' '}
+                  <span>memo</span>. At least one transaction should have been executed from the
+                  front end. Your Github repository should be an open-source project with a clear
+                  README to launch the web application locally. To receive the rewards, the README
+                  should contain your OKP4 address.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    OKP4 smart contracts GitHub repository:{' '}
+                    <a href={githubContractsUrl} rel="noreferrer" target="_blank">
+                      {githubContractsUrl}
+                    </a>
+                  </li>
+                  <li>
+                    Graz documentation:{' '}
+                    <a href={grazDocsUrl} rel="noreferrer" target="_blank">
+                      {grazDocsUrl}
+                    </a>
+                  </li>
+                  <li>
+                    “Interactions with the CLI”:{' '}
+                    <a href={tutorialsCliUrl} rel="noreferrer" target="_blank">
+                      {tutorialsCliUrl}
+                    </a>
+                  </li>
+                  <li>
+                    ”Explore the smart contracts” tutorial:{' '}
+                    <a href={smartContractTutorialUrl} rel="noreferrer" target="_blank">
+                      {smartContractTutorialUrl}
+                    </a>
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
+          }
+        },
+        {
+          taskName:
+            'Open contribution, tweet a thread to explain the relevance of your OKP4 project',
+          taskContent: [
+            {
+              id: 'description',
+              title: 'Description',
+              contentDescription: (
+                <>
+                  <p>
+                    (Difficulty: 4/5)
+                    <br />{' '}
+                    <i>
+                      Much like the boundless forests of old, the sacred protocol welcomes
+                      contributions from every pilgrim. The Dagda challenges are stepping stones
+                      shaped to help you navigate the undergrowth and grasp the fundamental lore.
+                      Having now tamed the mystical beast of technology, you are as free as a druid
+                      in his grove. Go forth, conjure up your own vision, and let your ideas bloom
+                      like a sacred mistletoe on the mighty oaks of our digital woodland.
+                    </i>
+                  </p>
+                  <p>
+                    Get the OKP4 blockchain on your own. Do you think something is missing and
+                    should be developed? Build it and get rewarded for it!
+                  </p>
+                  <p>Tweet a thread with the following:</p>
+                  <ul>
+                    <li>#OKP4BuildersProgram hashtag and @OKP4_Protocol tag</li>
+                    <li>Link to the Github repo</li>
+                    <li>Describe your project, and explain why what you developed is relevant</li>
+                  </ul>
+                  <p>Need inspiration? You could:</p>
+                  <ul>
+                    <li>Build on-chain analytics dashboards</li>
+                    <li>
+                      Enhance your web interface to generate a Prolog code with rules composed from
+                      form fields
+                    </li>
+                    <li>
+                      Enhance your web interface to generate RDF triples from metadata set in form
+                      fields
+                    </li>
+                    <li>
+                      Develop VSCode extension to evaluate rules (Prolog program) directly from the
+                      editor
+                    </li>
+                    <li>… and anything else you can imagine</li>
+                  </ul>
+                </>
+              )
+            },
+            {
+              id: 'rewards',
+              title: 'Rewards',
+              contentDescription: (
+                <>
+                  <p>
+                    100,000 $KNOW (0,05% of the total supply) + an “OKP4 visionary contributor” POAP
+                    (Stargaze badge) per validated project.
+                  </p>
+                  <p>
+                    300,000 $KNOW will be sent to builders for this task. OKP4 team will manually
+                    evaluate the user interfaces and rewards the three most relevant ones.
+                  </p>
+                  <p>
+                    Your GitHub repo README should provide an OKP4 address where to send the POAP
+                    and the $KNOW tokens. Wallets from elected projects will receive the on-chain
+                    badge on August 31, and the $KNOW tokens will be sent out when the mainnet is
+                    launched (scheduled for late 2023).
+                  </p>
+                </>
+              )
+            },
+            {
+              id: 'criteria',
+              title: 'Judging Criteria',
+              contentDescription: (
+                <p>
+                  Your tweet and README should clearly state the problem you want to solve and why
+                  it is a good contribution to the OKP4 community. Rewards will be sent in priority
+                  to developers submitting innovative applications. Feel free to{' '}
+                  <a href={nemetonSupportUrl} rel="noreferrer" target="_blank">
+                    contact us
+                  </a>{' '}
+                  if you want to discuss your project before developing it.
+                </p>
+              )
+            },
+            {
+              id: 'submit',
+              title: 'How to Submit',
+              contentDescription: (
+                <p>
+                  Send the tweet as required in the &apos;Description&apos; part above. You
+                  don&apos;t need to do anything else.
+                </p>
+              )
+            },
+            {
+              id: 'documentation',
+              title: 'Documentation, useful links',
+              contentDescription: (
+                <ul>
+                  <li>
+                    OKP4 documentation:{' '}
+                    <a href={okp4WebsiteDocsUrl} rel="noreferrer" target="_blank">
+                      {okp4WebsiteDocsUrl}
+                    </a>
+                  </li>
+                </ul>
+              )
+            }
+          ],
+          taskDuration: {
+            from: '2023-07-12T12:00:00Z',
+            to: '2023-08-30T12:00:00Z'
           }
         }
       ]

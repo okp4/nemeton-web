@@ -45,6 +45,17 @@ export type PhasesConfig = {
       githubLogicModulePredicatesUrl: string
       githubPrologTemplateUrl: string
       githubOntologyRhizomeUrl: string
+      githubOntologyS3ServiceUrl: string
+      githubS3ServiceMetadataUrl: string
+      githubOntologyCsvDatasetMetadataUrl: string
+      githubServiceReferenceUrl: string
+      githubDatasetReferenceUrl: string
+      githubCognitariumPrologCodeUrl: string
+      githubCognitariumServiceCategoryUrl: string
+      githubCognitariumDatasetMediaTypeUrl: string
+      githubStorageServiceUrl: string
+      githubDatasetUrl: string
+      githubContractsUrl: string
       okp4dDocsCommandsUrl: string
       ontologyDescriptionUrl: string
       swiPrologUrl: string
@@ -53,9 +64,21 @@ export type PhasesConfig = {
       objectariumID: string
       smartContractLawStoneCodeID: string
       smartContractCognitariumCodeID: string
+      smartContractTutorialUrl: string
+      dataCognitariumCodeID: string
       chainAddress: string
       tutorialsPrologUrl: string
       tutorialsCliUrl: string
+      csvDatasetUrl: string
+      awsS3Url: string
+      scaleWayObjectStorageUrl: string
+      githubUuidToolsUrl: string
+      tutorialsOntologyUrl: string
+      testnetContractListUrl: string
+      beyondTraditionalGovernanceUrl: string
+      grazDocsUrl: string
+      okp4WebsiteDocsUrl: string,
+      nemetonSupportUrl: string
     }
     challenges: Array<{
       startDate: string
