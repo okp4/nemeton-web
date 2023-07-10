@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.14.1](https://github.com/okp4/nemeton-web/compare/v1.14.0...v1.14.1) (2023-07-10)
+
+
+### Bug Fixes
+
+* **ui:** remove coming soon mention from challenges page ([7e7322c](https://github.com/okp4/nemeton-web/commit/7e7322ca9e84e9a447b26ccc2d2ef5e024c622f4))
+
 ## [1.14.0](https://github.com/okp4/nemeton-web/compare/v1.13.0...v1.14.0) (2023-07-10)
 
 
