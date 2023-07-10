@@ -33,63 +33,57 @@ const Challenges: NextPage<ChallengesProps> = props => {
             {challenges.map(
               ({ challengeName, challengeDescription, challengeTasks, challengeStatus }) => (
                 <div key={challengeName}>
-                  {challengeStatus === 'coming' ? (
-                    <h2>Coming soon</h2>
-                  ) : (
-                    <>
-                      <h2>
-                        {challengeName}
-                        {challengeStatus === 'closed' && <span> (closed)</span>}
-                      </h2>
+                  <h2>
+                    {challengeName}
+                    {challengeStatus === 'closed' && <span> (closed)</span>}
+                  </h2>
 
-                      {challengeDescription}
-                      {challengeTasks.map(({ taskName, taskContent, taskDuration }, index) => {
-                        const { from, to } = taskDuration
-                        const title = (
-                          <div className="okp4-nemeton-web-challenges-accordion-title-wrapper">
-                            <h3>{taskName}</h3>
-                            <div className="okp4-nemeton-web-challenges-accordion-duration-wrapper">
-                              <p>{`${moment(from).utc().format('MMMM Do H:mm ')} UTC -`}</p>
-                              <p>{`${moment(to).utc().format('MMMM Do H:mm ')} UTC`}</p>
-                            </div>
-                          </div>
-                        )
+                  {challengeDescription}
+                  {challengeTasks.map(({ taskName, taskContent, taskDuration }, index) => {
+                    const { from, to } = taskDuration
+                    const title = (
+                      <div className="okp4-nemeton-web-challenges-accordion-title-wrapper">
+                        <h3>{taskName}</h3>
+                        <div className="okp4-nemeton-web-challenges-accordion-duration-wrapper">
+                          <p>{`${moment(from).utc().format('MMMM Do H:mm ')} UTC -`}</p>
+                          <p>{`${moment(to).utc().format('MMMM Do H:mm ')} UTC`}</p>
+                        </div>
+                      </div>
+                    )
 
-                        const active = activeTask === taskName
+                    const active = activeTask === taskName
 
-                        return (
-                          <div key={index}>
-                            <Accordion
-                              content={
-                                <>
-                                  {taskContent.map(
-                                    ({
-                                      id,
-                                      title,
-                                      contentDescription
-                                    }: ChallengeTaskContent): JSX.Element => (
-                                      <div key={title}>
-                                        <ContentBlock
-                                          description={contentDescription}
-                                          icon={<TaskContentIcon id={id} />}
-                                          title={title}
-                                        />
-                                      </div>
-                                    )
-                                  )}
-                                </>
-                              }
-                              iconProps={{ width: 21, height: 13 }}
-                              isExpanded={active}
-                              onToggle={handleClick(taskName)}
-                              title={title}
-                              variant="tertiary"
-                            />
-                          </div>
-                        )
-                      })}
-                    </>
-                  )}
+                    return (
+                      <div key={index}>
+                        <Accordion
+                          content={
+                            <>
+                              {taskContent.map(
+                                ({
+                                  id,
+                                  title,
+                                  contentDescription
+                                }: ChallengeTaskContent): JSX.Element => (
+                                  <div key={title}>
+                                    <ContentBlock
+                                      description={contentDescription}
+                                      icon={<TaskContentIcon id={id} />}
+                                      title={title}
+                                    />
+                                  </div>
+                                )
+                              )}
+                            </>
+                          }
+                          iconProps={{ width: 21, height: 13 }}
+                          isExpanded={active}
+                          onToggle={handleClick(taskName)}
+                          title={title}
+                          variant="tertiary"
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
               )
             )}
