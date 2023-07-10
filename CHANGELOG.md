@@ -1,5 +1,15 @@
 # ØKP4 Nemeton web changelog
 
+## [1.14.0](https://github.com/okp4/nemeton-web/compare/v1.13.0...v1.14.0) (2023-07-10)
+
+
+### Features
+
+* add dagda challenges task 1 ([4cff2ee](https://github.com/okp4/nemeton-web/commit/4cff2eecbcf92d41b18d392dc10cfe3481c4bef6))
+* add dagda challenges task 2 ([03abe40](https://github.com/okp4/nemeton-web/commit/03abe407c188835ef7a8caaf4079189aa6bd1663))
+* add dagda challenges task 3 ([0053928](https://github.com/okp4/nemeton-web/commit/00539288ac6f2a6ebd49199581b3c4a7fa8bda0e))
+* add dagda challenges task 4 ([cafd192](https://github.com/okp4/nemeton-web/commit/cafd19252e79378df4bab052d141c4978e979cf3))
+
 ## [1.13.0](https://github.com/okp4/nemeton-web/compare/v1.12.0...v1.13.0) (2023-06-30)
 
 
