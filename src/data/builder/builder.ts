@@ -3,23 +3,23 @@ import type { BuildersDTO } from './dto.type'
 export const buildersData: BuildersDTO = [
   {
     rank: 1,
+    valoper: 'okp41wy8ywt98sv5pmsg873rct4pxtw0ntxuwxdtzen',
+    poap: [
+      'OKP4 Ontologist Apprentice',
+      'OKP4 Governance Creator',
+      'OKP4 Law-Stone Builder',
+      'OKP4 Objectarium Explorer',
+      'OKP4 Young Druid'
+    ],
+    know: 70000
+  },
+  {
+    rank: 1,
     valoper: 'okp41u6vp630kpjpxqp2p6xwagtlkzq58tw3zadwrgu',
     poap: [
       'OKP4 Ontologist Apprentice',
       'OKP4 Governance Creator',
       'Dagda Servant',
-      'OKP4 Law-Stone Builder',
-      'OKP4 Objectarium Explorer',
-      'OKP4 Young Druid'
-    ],
-    know: 30000
-  },
-  {
-    rank: 2,
-    valoper: 'okp41wy8ywt98sv5pmsg873rct4pxtw0ntxuwxdtzen',
-    poap: [
-      'OKP4 Ontologist Apprentice',
-      'OKP4 Governance Creator',
       'OKP4 Law-Stone Builder',
       'OKP4 Objectarium Explorer',
       'OKP4 Young Druid'
