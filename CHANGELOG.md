@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.15.0](https://github.com/okp4/nemeton-web/compare/v1.14.1...v1.15.0) (2023-07-13)
+
+
+### Features
+
+* update results ranking ([4d38732](https://github.com/okp4/nemeton-web/commit/4d387327c2eedf494d71f1f2aea74da5536e3570))
+
 ## [1.14.1](https://github.com/okp4/nemeton-web/compare/v1.14.0...v1.14.1) (2023-07-10)
 
 
