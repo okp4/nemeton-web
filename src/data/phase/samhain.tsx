@@ -487,7 +487,7 @@ export const samhain = ({
                     smart contract address, should return <span>true</span>:
                   </p>
                   <pre>
-                    okp4d query wasm contract-state smart $CONTRACT_ADDR \<br />
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR --node https://api.testnet.okp4.network:443/rpc \<br />
                     &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
                     \&quot;can(&apos;get_vip_access&apos;,
                     &apos;did:key:okp4rocks7en82gmzfm259y6z93r9qe63l25dfwwng6&apos;).\&quot;{'}}'}
@@ -589,7 +589,7 @@ export const samhain = ({
                     and 22:00 only (UTC, any day).
                   </p>
                   <pre>
-                    okp4d query wasm contract-state smart $CONTRACT_ADDR \
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR --node https://api.testnet.okp4.network:443/rpc \
                     <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
                     \&quot;can(&apos;get_vip_access&apos;,
                     &apos;did:key:okp4rocks7en82gmzfm259y6z93r9qe63l25dfwwng6&apos;).\&quot;{'}}'}
@@ -1185,7 +1185,7 @@ export const samhain = ({
                     <span>MediaType = application_vndms-excel</span> substitution:
                   </p>
                   <pre>
-                    okp4d query wasm contract-state smart $CONTRACT_ADDR \
+                    okp4d query wasm contract-state smart $CONTRACT_ADDR --node https://api.testnet.okp4.network:443/rpc \
                     <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
                     \&quot;cognitarium_dataset_mediatype(&apos;okp41ehq2u2k5n45malyrncr8ln3cu8uk94cpfgxs80mma8jwrwmxjj3sa9l5zl&apos;,
                       &apos;0ea1fc7a-dd97-4adc-a10e-169c6597bcde&apos;, MediaType).\&quot;{'}}'}
