@@ -1,5 +1,13 @@
 # ØKP4 Nemeton web changelog
 
+## [1.15.1](https://github.com/okp4/nemeton-web/compare/v1.15.0...v1.15.1) (2023-07-14)
+
+
+### Bug Fixes
+
+* **builder:** add rpc node to cli commands ([f270f73](https://github.com/okp4/nemeton-web/commit/f270f737921918b87ba193c18cab9ffc7e42c531))
+* **builder:** typos on dagda challenges ([3ede3b9](https://github.com/okp4/nemeton-web/commit/3ede3b99f92af43814b6e3a2bf71c9f9a11f33ad))
+
 ## [1.15.0](https://github.com/okp4/nemeton-web/compare/v1.14.1...v1.15.0) (2023-07-13)
 
 
