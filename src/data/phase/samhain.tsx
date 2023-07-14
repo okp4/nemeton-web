@@ -1088,7 +1088,7 @@ export const samhain = ({
                     </li>
                     <li>
                       <span>
-                        cognitarium_subject_predicate_subjects(CognitariumAddr, Subjects, Predicate,
+                        cognitarium_subjects_predicate_object(CognitariumAddr, Subjects, Predicate,
                         Object)
                       </span>
                       , where <span>Subjects</span> is the returned value from a SELECT query on
@@ -1187,8 +1187,8 @@ export const samhain = ({
                   <pre>
                     okp4d query wasm contract-state smart $CONTRACT_ADDR \
                     <br /> &quot;{'{'}\&quot;ask\&quot;: {'{'}\&quot;query\&quot;:
-                    \&quot;cognitarium_dataset_mediatype(okp41ehq2u2k5n45malyrncr8ln3cu8uk94cpfgxs80mma8jwrwmxjj3sa9l5zl,
-                    0ea1fc7a-dd97-4adc-a10e-169c6597bcde, MediaType).\&quot;{'}}'}
+                    \&quot;cognitarium_dataset_mediatype(&apos;okp41ehq2u2k5n45malyrncr8ln3cu8uk94cpfgxs80mma8jwrwmxjj3sa9l5zl&apos;,
+                      &apos;0ea1fc7a-dd97-4adc-a10e-169c6597bcde&apos;, MediaType).\&quot;{'}}'}
                     &quot;
                   </pre>
                 </>
