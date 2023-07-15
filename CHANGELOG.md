@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.16.0](https://github.com/okp4/nemeton-web/compare/v1.15.1...v1.16.0) (2023-07-15)
+
+
+### Features
+
+* update challenge definition ([d83a52b](https://github.com/okp4/nemeton-web/commit/d83a52b491677b1695b869758686ea59591036c1))
+
 ## [1.15.1](https://github.com/okp4/nemeton-web/compare/v1.15.0...v1.15.1) (2023-07-14)
 
 
