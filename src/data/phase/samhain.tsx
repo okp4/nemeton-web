@@ -1105,7 +1105,7 @@ export const samhain = ({
                     </li>
                   </ul>
                   <p>
-                    Use these Prolog helpers to write specific predicates retrieving metadata of the
+                    Write also Prolog helpers predicates to retrieve metadata of the
                     CSV you previously stored:
                   </p>
                   <ul>
