@@ -33,7 +33,7 @@
     "@emotion/styled": "^11.11.0",
     "@graphql-codegen/cli": "^4.0.1",
     "@graphql-codegen/typescript": "^4.0.1",
-    "@graphql-codegen/typescript-operations": "^2.5.12",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.13.7",
