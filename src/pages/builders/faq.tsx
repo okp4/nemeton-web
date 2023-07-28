@@ -123,7 +123,7 @@ const Faq: NextPage<FaqProps> = props => {
   const { urls } = props
   const {
     socialMediaUrls: { discordUrl },
-    docsUrls: { whitepaperUrl, faqUrl, registrationFormUrl, faqStargazeUrl },
+    docsUrls: { whitepaperUrl, tutorialsUrl, faqUrl, registrationFormUrl, faqStargazeUrl },
     supportUrls: { discordChannelUrl, discordTicketChannelUrl }
   } = urls
   const [activeIndex, setActiveIndex] = useAccordion()
@@ -146,6 +146,13 @@ const Faq: NextPage<FaqProps> = props => {
               <p>
                 <a href={whitepaperUrl} rel="noreferrer" target="_blank">
                   Whitepaper
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href={tutorialsUrl} rel="noreferrer" target="_blank">
+                  Tutorials
                 </a>
               </p>
             </li>
