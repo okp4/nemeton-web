@@ -1,4 +1,5 @@
 import React, { useMemo, useCallback } from 'react'
+import Link from 'next/link'
 import type { GetServerSideProps, NextPage } from 'next'
 import moment from 'moment'
 import Phases from '@/data/phase'
@@ -30,9 +31,19 @@ const Challenges: NextPage<ChallengesProps> = props => {
           <div className="okp4-nemeton-web-page-challenges-content">
             <h1>Challenges</h1>
             <div className="okp4-nemeton-web-page-divider" />
+            <p>
+              You are a new druid ? It is wise to begin with the{' '}
+              <Link href="/builders/challenges#tlachtga">Tlachtga challenges.</Link>
+            </p>
             {challenges.map(
-              ({ challengeName, challengeDescription, challengeTasks, challengeStatus }) => (
-                <div key={challengeName}>
+              ({
+                challengeId,
+                challengeName,
+                challengeDescription,
+                challengeTasks,
+                challengeStatus
+              }) => (
+                <div id={challengeId} key={challengeName}>
                   <h2>
                     {challengeName}
                     {challengeStatus === 'closed' && <span> (closed)</span>}

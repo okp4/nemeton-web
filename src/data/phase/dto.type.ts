@@ -34,6 +34,7 @@ export type ChallengeTasks = Readonly<{
 }>
 
 export type ChallengeDTO = Readonly<{
+  challengeId: string
   challengeName: string
   challengeDescription: JSX.Element
   challengeStatus: Status

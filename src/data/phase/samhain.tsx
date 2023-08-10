@@ -275,6 +275,7 @@ export const samhain = ({
   ],
   challenges: [
     {
+      challengeId: 'tlachtga',
       challengeName: 'The first fire of Tlachtga- From June, 14th to June, 28th',
       challengeStatus: getStatusByDuration(challenges[0].startDate, challenges[0].endDate),
       challengeDescription: (
@@ -867,6 +868,7 @@ export const samhain = ({
       ]
     },
     {
+      challengeId: 'dagda',
       challengeName: 'Invoke the power of Dagda - From July, 12th to August, 30th',
       challengeStatus: getStatusByDuration(challenges[1].startDate, challenges[1].endDate),
       challengeDescription: (
