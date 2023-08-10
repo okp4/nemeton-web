@@ -36,6 +36,8 @@ const TaskContentIcon = dynamic(
   async () => await import('@/components/taskContentIcon/TaskContentIcon')
 )
 
+const PhaseAccordions = dynamic(async () => await import('@/components/phaseAccordions/PhaseAccordions'))
+
 export {
   PhaseCard,
   Layout,
@@ -51,5 +53,6 @@ export {
   TasksSummary,
   LottieLoader,
   ContentBlock,
-  TaskContentIcon
+  TaskContentIcon,
+  PhaseAccordions
 }

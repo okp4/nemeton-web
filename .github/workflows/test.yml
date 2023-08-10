@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  workflow_call:
+
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-ts:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup node environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.18
+
+      - name: Fetch dependencies
+        run: |
+          yarn
+      - name: Test typescript
+        run: |
+          yarn test
