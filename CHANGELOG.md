@@ -1,5 +1,13 @@
 # ØKP4 Nemeton web changelog
 
+## [1.17.0](https://github.com/okp4/nemeton-web/compare/v1.16.0...v1.17.0) (2023-08-17)
+
+
+### Features
+
+* add anchor to the tlachtga challenges ([08e263f](https://github.com/okp4/nemeton-web/commit/08e263f84299c6bf1bda3d131d7171131e0b69b2))
+* add faq tutorials link ([77d712d](https://github.com/okp4/nemeton-web/commit/77d712d1497743fc7778bd6fa2fa8518a8234552))
+
 ## [1.16.0](https://github.com/okp4/nemeton-web/compare/v1.15.1...v1.16.0) (2023-07-15)
 
 
