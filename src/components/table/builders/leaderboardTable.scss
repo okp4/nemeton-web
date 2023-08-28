@@ -133,6 +133,10 @@ $podium-colors: ('gold', 'silver', 'bronze');
               padding-left: 41px;
 
               @media screen and (max-width: 1000px) {
+                padding-left: 35px;
+              }
+
+              @media screen and (max-width: 580px) {
                 padding-left: 15px;
               }
             }
