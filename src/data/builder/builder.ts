@@ -9,9 +9,13 @@ export const buildersData: BuildersDTO = [
       'OKP4 Governance Creator',
       'OKP4 Law-Stone Builder',
       'OKP4 Objectarium Explorer',
-      'OKP4 Young Druid'
+      'OKP4 Young Druid',
+      'OKP4 Dataverse Precursor',
+      'OKP4 Prolog Query Master',
+      'OKP4 Interface Innovator',
+      'OKP4 Visionary Contributor'
     ],
-    know: 70000
+    know: 420000
   },
   {
     rank: 1,
