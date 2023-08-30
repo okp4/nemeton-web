@@ -1,5 +1,13 @@
 # ØKP4 Nemeton web changelog
 
+## [1.18.0](https://github.com/okp4/nemeton-web/compare/v1.17.0...v1.18.0) (2023-08-30)
+
+
+### Features
+
+* extend end date dagda challenges ([44f1942](https://github.com/okp4/nemeton-web/commit/44f194295b0582c7d7bacc59639c8eefb486e99c))
+* update nemeton results page ([ac925fc](https://github.com/okp4/nemeton-web/commit/ac925fc1ec42adfd7e97b473aaf3488b39f3758f))
+
 ## [1.17.0](https://github.com/okp4/nemeton-web/compare/v1.16.0...v1.17.0) (2023-08-17)
 
 
