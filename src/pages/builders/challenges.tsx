@@ -32,7 +32,8 @@ const Challenges: NextPage<ChallengesProps> = props => {
             <h1>Challenges</h1>
             <div className="okp4-nemeton-web-page-divider" />
             <p>
-              You are a new druid ? It is wise to begin with the{' '}
+              Builders: We heard your concerns, Dagda challenges are extended to September 30!
+              <br /> You are a new druid ? It is wise to begin with the{' '}
               <Link href="/builders/challenges#tlachtga">Tlachtga challenges.</Link>
             </p>
             {challenges.map(

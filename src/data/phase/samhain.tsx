@@ -869,7 +869,7 @@ export const samhain = ({
     },
     {
       challengeId: 'dagda',
-      challengeName: 'Invoke the power of Dagda - From July, 12th to August, 30th',
+      challengeName: 'Invoke the power of Dagda - From July, 12th to September, 30th',
       challengeStatus: getStatusByDuration(challenges[1].startDate, challenges[1].endDate),
       challengeDescription: (
         <>
@@ -1044,7 +1044,7 @@ export const samhain = ({
           ],
           taskDuration: {
             from: '2023-07-12T12:00:00Z',
-            to: '2023-08-30T12:00:00Z'
+            to: '2023-09-30T12:00:00Z'
           }
         },
         {
@@ -1248,7 +1248,7 @@ export const samhain = ({
           ],
           taskDuration: {
             from: '2023-07-12T12:00:00Z',
-            to: '2023-08-30T12:00:00Z'
+            to: '2023-09-30T12:00:00Z'
           }
         },
         {
@@ -1426,7 +1426,7 @@ export const samhain = ({
           ],
           taskDuration: {
             from: '2023-07-12T12:00:00Z',
-            to: '2023-08-30T12:00:00Z'
+            to: '2023-09-30T12:00:00Z'
           }
         },
         {
@@ -1544,7 +1544,7 @@ export const samhain = ({
           ],
           taskDuration: {
             from: '2023-07-12T12:00:00Z',
-            to: '2023-08-30T12:00:00Z'
+            to: '2023-09-30T12:00:00Z'
           }
         }
       ]
