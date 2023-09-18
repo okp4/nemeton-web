@@ -62,7 +62,7 @@
     "sass": "^1.66.1",
     "stylelint": "^14.16.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-scss": "^5.0.1",
+    "stylelint-scss": "^5.2.1",
     "typescript": "5.2.2"
   }
 }
