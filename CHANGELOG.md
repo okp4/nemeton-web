@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.19.0](https://github.com/okp4/nemeton-web/compare/v1.18.0...v1.19.0) (2023-09-29)
+
+
+### Features
+
+* **data:** update builders leaderboard with azoyalabs rewards ([16c7f2b](https://github.com/okp4/nemeton-web/commit/16c7f2b74014af844978ec81145e0f18adc65963))
+
 ## [1.18.0](https://github.com/okp4/nemeton-web/compare/v1.17.0...v1.18.0) (2023-08-30)
 
 
