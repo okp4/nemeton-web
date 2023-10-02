@@ -1,5 +1,12 @@
 # ØKP4 Nemeton web changelog
 
+## [1.20.0](https://github.com/okp4/nemeton-web/compare/v1.19.0...v1.20.0) (2023-10-02)
+
+
+### Features
+
+* add fadroma contribution rewards for dagda open build challenge ([b02dd22](https://github.com/okp4/nemeton-web/commit/b02dd22cba0b09c93c535085a407b7622ca683a9))
+
 ## [1.19.0](https://github.com/okp4/nemeton-web/compare/v1.18.0...v1.19.0) (2023-09-29)
 
 
