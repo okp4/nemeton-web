@@ -239,7 +239,7 @@ const Privacy: NextPage<PrivacyProps> = props => {
             <a href={discordNemetonUrl} rel="noreferrer" target="_blank">
               our Nemeton program channel
             </a>{' '}
-            on OKP4 Discord server or at <a href={`mailto:${contact}`}>{'nemeton@okp4.com'}</a>
+            on OKP4 Discord server or at <a href={`mailto:${contact}`}>{'hello@okp4.org'}</a>
           </p>
           <p>You can also contact us by post using the information below:</p>
           <ul>
