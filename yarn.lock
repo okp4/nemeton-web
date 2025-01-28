@@ -1933,10 +1933,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@okp4/eslint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@okp4/eslint-config/-/eslint-config-1.2.0.tgz#f7b4cde62a89d756a9d5e01516a75e93e1d229a3"
-  integrity sha512-ydLi6mc6GiGf94CUoYAIEhxFrg9dw0yYkYvdbMpg4KyvsL1EHMnKeNMi4yTRSe06BtP6rkRerqU9vaxhH+HjtA==
+"@okp4/eslint-config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@okp4/eslint-config/-/eslint-config-2.0.0.tgz#cd3e56c23d2d3d161734ec67c19281e35c6fda6d"
+  integrity sha512-CI6mkDorrpYuMH5jR+TII4/3bHjPWVA7o1AFabTqiT86oxEtH8hTAt7pZiGbucb01lld7elKkTuWicj6hCE3sQ==
   dependencies:
     "@typescript-eslint/parser" ">=5.14.0"
     tsutils ">=3.21.0"
